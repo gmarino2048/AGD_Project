@@ -179,6 +179,21 @@ If you don't think the feature should be implemented, make sure that you say so
 in the comments of the issue. Any feature that doesn't get implemented must
 have a comment saying that the feature was not implemented.
 
+### Submitting a CODE RED Notification
+
+If you have a problem that you can't resolve, needs urgent attention, or breaks
+the current build of the game, you need to submit a Code Red notification. These
+issues are not to be taken lightly, and should only be submitted if something
+needs the immediate attention of one or more people.
+
+When submitting a request, give as much information as possible, and be sure to
+set the tags appropriately. If you're not sure what to include, see the Tag
+Conventions, Bug Reporting, or Help Request section of this document.
+
+Whenever you log into github, you need to check and make sure there are no
+active Code Red notifications, because these are the ones that require
+everyone's immediate attention.
+
 ## Projects
 
 ## Naming Conventions
