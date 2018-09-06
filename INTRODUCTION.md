@@ -113,6 +113,44 @@ mistakes.
 
 ## Merge Conflicts
 
+Merging takes the changes made from one branch, and tries to combine them
+with those of another branch. Sometimes the computer can't do this
+automatically. This generates a merge conflict.
+
+Merge conflicts happen when the GitHub server has a modified version of the
+same file that you do. To prevent most merge conflicts, we will each be 
+operating on separate branches. However, there may be some cases where you'll
+encounter them (like if you're working on the same branch from separate 
+machines).
+
+If you have a merge conflict, GitHub desktop should walk you through each
+conflict and ask you if you want to keep the local version or the remote
+version. In each case, just choose which you want to keep. In the 
+worst-case scenario, GitHub will not be able to resolve these merge conflicts.
+**There is a known issue with Unity Scenes that causes unresolvable merge
+conflicts. This will be covered later.**
+
+If you have a merge conflict and don't know how to resolve it, **Please do 
+not guess blindly.** Instead, abort the merge and switch to a different 
+branch until you can find someone to help you. If the situation is really
+urgent, **submit a pull request to master, and someone will merge your
+branch for you.**
+
+### Unity Scenes
+
+Editing a Unity scene can be a giant pain when it comes to working with git.
+This is why I recommend working on the same scene in a single branch, and when
+you want to merge that scene with master, submit a pull request. I will also
+release files on Discord which will add this file automatically.
+
+Another tactic to avoid scene merge conflicts is to notify everyone else
+before you start working on a scene. This will help us to know which scenes
+we can modify at any given time.
+
+**Remember: if you have a merge conflict and you can't figure it out, someone
+will help you. Ideally this won't happen until we go to merge branches, in
+which case someone else can perform the merge.**
+
 ## Issues
 
 ## Projects
