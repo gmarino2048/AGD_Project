@@ -92,6 +92,30 @@ are saved if anything happens to your device.
 
 ## Issues
 
+### Tag Conventions
+
+When submitting any kind of issue, it can be difficult to determine who should
+take the issue on as a task. This is why we will add several different tags to
+our issues so that they can be filtered and assigned more easily.
+
+**ALL issues must contain AT LEAST ONE tag from the following categories:**
+
+**Area:** Information about who can fix the bug.
+- Programming
+- Art
+- Audio
+- Unity
+- Other
+
+**Type:** Information about the request.
+- Bug Report
+- Help Request
+- Feature Suggestion
+- Code Red
+
+If you're not sure which tags belong, you can add multiple. If you're still 
+having issues tagging it, be sure to say so in the comments.
+
 ### Creating a Bug Report
 
 When creating a bug report, you should always include an image of the bug in 
@@ -115,6 +139,7 @@ The more information we have on the issue, the faster we can fix it. And
 remember: **If you don't submit an issue containing the bug, it might not get
 fixed.** So please be sure to submit an issue on github instead of telling 
 someone about it.
+
 
 ## Projects
 
