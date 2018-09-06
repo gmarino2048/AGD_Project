@@ -73,6 +73,17 @@ I will ask that you use the golden rule:
 
 **If you can't say it in 50 characters or less, it's not a single commit.**
 
+### Pushing and Pulling
+
+These aren't rules, more like general guidelines. To avoid merge conflicts as
+much as possible, you should generally **pull** before you start any work,
+even if you don't think there have been any updates since you last pulled.
+
+Similarly, it's a good idea to **commit** your work every time you finish with
+a single task. Once again, see the `File Updates` section of this document.
+Also, it's a good idea to push after every commit. This ensures your changes 
+are saved if anything happens to your device.
+
 ## Issues
 
 ## Projects
