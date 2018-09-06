@@ -60,6 +60,19 @@ can then add your changes and merge your branch with theirs. This will cause
 the fewest issues, but is not exactly easy for new git users. If you'd like to
 do this but don't know how, feel free to ask one of your other teammates.
 
+### File Updates
+
+In general, **you should only be changing one file per commit**. Commits are
+like save points in a game. They're unlimited and the more you do it, the 
+harder it is to mess things up. If you do make a mistake, you can undo changes
+between commits, but if ALL your changes are in a single commit one mistake
+can undo all your work.
+
+I'm not going to add a file limit to each commit because that's stupid, but
+I will ask that you use the golden rule:
+
+**If you can't say it in 50 characters or less, it's not a single commit.**
+
 ## Issues
 
 ## Projects
