@@ -153,4 +153,17 @@ which case someone else can perform the merge.**
 
 ## Issues
 
+Issues are our way of figuring out what needs to get done and telling each
+other what needs to get done. An issue can be opened about literally anything,
+and the GitHub issues window lets us be very specific about different parts
+of the project. We can even link to specific files or places in the code if
+we want to be as specific as possible.
+
+We can assign issues, label issues, and create new issues all from the 
+GitHub website. This will be our preferred way of leaving comments on the
+project because issues are much more visible than Discord comments.
+
+Anything at all can be an issue, but for more information on how to create
+and managing issues, please see `CONTRIBUTING.md`.
+
 ## Projects
