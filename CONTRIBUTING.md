@@ -1,4 +1,4 @@
-# Commit Rules
+# Contributing Rules
 
 ## Committing
 
