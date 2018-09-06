@@ -101,6 +101,7 @@ our issues so that they can be filtered and assigned more easily.
 **ALL issues must contain AT LEAST ONE tag from the following categories:**
 
 **Area:** Information about who can fix the bug.
+
 - Programming
 - Art
 - Audio
@@ -108,6 +109,7 @@ our issues so that they can be filtered and assigned more easily.
 - Other
 
 **Type:** Information about the request.
+
 - Bug Report
 - Help Request
 - Feature Suggestion
@@ -140,6 +142,24 @@ remember: **If you don't submit an issue containing the bug, it might not get
 fixed.** So please be sure to submit an issue on github instead of telling 
 someone about it.
 
+### Submitting a Help Request
+
+A help request is the fastest way to get another person to take over one or
+more of your responsibilities. If you're ever stuck on something or can't
+complete it in time, please submit an issue on github so another artist or
+developer can get working on it ASAP.
+
+Your help request should include:
+
+- Your current branch
+- A general overview of the thing you need help with.
+- A description of the problem OR
+- Why you can't complete the given task
+
+If you know that you won't be able to finish something on time, try to get an
+issue in as soon as possible, because we're all on the same deadlines, and we
+need time to be able to help you out. Also, be sure to thank the person who 
+takes your request.
 
 ## Projects
 
