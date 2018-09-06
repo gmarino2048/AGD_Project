@@ -161,6 +161,24 @@ issue in as soon as possible, because we're all on the same deadlines, and we
 need time to be able to help you out. Also, be sure to thank the person who 
 takes your request.
 
+Also, if you decide to take a help request, be sure to comment on the issue
+to let everyone else know that you're working on it.
+
+### Submitting a Feature Suggestion
+
+There is no right way to submit a feature, but if you have any implementation
+ideas or other suggestions, be sure to leave them in the comment section of the
+issue.
+
+If you're implementing a feature, you can always ask questions on the idea or
+feature using the comments section on the issue. The person who initially 
+submitted the feature request should then do their best to answer your
+questions.
+
+If you don't think the feature should be implemented, make sure that you say so
+in the comments of the issue. Any feature that doesn't get implemented must
+have a comment saying that the feature was not implemented.
+
 ## Projects
 
 ## Naming Conventions
