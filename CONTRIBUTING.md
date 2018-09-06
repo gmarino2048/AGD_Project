@@ -196,4 +196,48 @@ everyone's immediate attention.
 
 ## Projects
 
+### Creating a New Project
+
+When creating a new project on github, be sure that the project is long enough
+to warrant the attention of multiple people and deserving of its own category.
+For example, working on the cooking scene would be a project, while adding
+an asset to that scene is an assignment.
+
+Make sure you know which projects and assignments within those projects concern
+you, so that you're constanly aware of what you have to work on. I don't see why
+individual members of the group would not be allowed to make projects, but if 
+it begins to get out of hand I might impose more limits on what constitutes
+a project.
+
+All group members have the ability to add and reassign topics within a project,
+so make sure you're constantly recording what you need to do (for administrative
+purposes). If a single subproject ends up being too long, you can always remove
+it from the parent project and give it its own complete project designation.
+
+### Creating Tasks
+
+If you see something that needs to be done, make a task for it. Tasks can
+range from code documentation to updated art assets, but if it needs to happen
+within a project, make sure you've created a task for it so that you or others
+remember to complete it.
+
+### Project Categories
+
+Each project must at least have a TODO and DONE category. If you feel the need
+to add more, please do. 
+
+### Assigning Members to Tasks
+
+In general, task assignments are done on an individual basis. If you want to 
+work on a specific task, then assign yourself. If a certain individual doesn't
+appear to be doing enough, anyone can petition to assign them to a given task.
+
+You are also in charge of making sure that your tasks get updated. Keep in mind 
+that this is how we can track your progress, so if you fail to update your
+tasks then there's no way for the rest of the group to see the progress you're
+making. If you don't update your progress on your tasks, then expect to get 
+some emails reminding you to update your progress.
+
 ## Naming Conventions
+
+*This will be discussed in the next meeting*
