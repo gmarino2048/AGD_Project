@@ -42,6 +42,10 @@ Where LastName is your last name and BranchInfo is a very brief (< 20
 characters) description of what that branch is for. This will help you keep
 track of your own branches, and also help identify changes in pull requests.
 
+When submitting a pull request for a branch you've been working on, be sure to
+specify in the comments whether you'd like the branch to remain open or be 
+deleted should the merge request be approved.
+
 ### Multiple Users
 
 In general, it's a bad idea to have 2 people working on the same branch at 
