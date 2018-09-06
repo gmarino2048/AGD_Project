@@ -34,6 +34,32 @@ general goal.** For example, if you want to update the contributing rules you
 should checkout a new branch, modify this file, and then submit a pull 
 request.
 
+When naming your branch, you should always name the branch as follows:
+
+`LastName_BranchInfo`
+
+Where LastName is your last name and BranchInfo is a very brief (< 20 
+characters) description of what that branch is for. This will help you keep
+track of your own branches, and also help identify changes in pull requests.
+
+### Multiple Users
+
+In general, it's a bad idea to have 2 people working on the same branch at 
+once. This is due to the fact that if someone pushes a file to your branch
+that conflicts with your changes to a file, it will cause a merge confilct
+that needs to be resolved.
+
+**This is never fun for anyone.**
+
+So, in general, it's best to have one person working on a branch at any given
+time. If you want to work with someone, just be sure that you're not
+modifying the same files at the same time.
+
+A more advanced solution is to create a new branch off of someone else's. You
+can then add your changes and merge your branch with theirs. This will cause
+the fewest issues, but is not exactly easy for new git users. If you'd like to
+do this but don't know how, feel free to ask one of your other teammates.
+
 ## Issues
 
 ## Projects
