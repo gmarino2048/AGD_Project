@@ -25,6 +25,25 @@ project-specific topics within the code itself.
 
 ## Committing
 
+Commiting is the "Meat and Potatoes" of Git. When you create a commit, it's
+basically a "save" or "snapshot" of everything you've done up to that point.
+Commiting is the equivalent of saving in a videogame. Just like in a 
+videogame, it's a really good idea to commit often so if you run into trouble
+you can go back to an old save.
+
+Commiting your code always requires a message. This should be a short 
+description of what you did, probably less than 50 characters. It doesn't
+have to be very detailed, but at the very least it should give you some idea
+of what you had done up to that point. Please don't just keyboard-bash your
+commit messages, because I guarantee that eventually you'll regret it.
+
+Sometimes, when you commit you might get something called a `merge conflict`.
+These are the bane of every programmer's existence, and if you get one and
+don't know how to fix it, make sure you get help ASAP. There is a merge
+conflict resolution tool in GitHub Desktop, but Unity has its own tool 
+designed specifically for merging scenes together. This is native in Git for
+Unity, but if you're using normal git, you might want to get some help.
+
 ## Pull/Push
 
 ### Pull
