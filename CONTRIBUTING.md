@@ -44,7 +44,9 @@ track of your own branches, and also help identify changes in pull requests.
 
 When submitting a pull request for a branch you've been working on, be sure to
 specify in the comments whether you'd like the branch to remain open or be 
-deleted should the merge request be approved.
+deleted should the merge request be approved. If you want to get your branch
+up to the latest version of master, submit a merge request and say not to 
+delete the branch.
 
 ### Multiple Users
 
@@ -89,6 +91,30 @@ Also, it's a good idea to push after every commit. This ensures your changes
 are saved if anything happens to your device.
 
 ## Issues
+
+### Creating a Bug Report
+
+When creating a bug report, you should always include an image of the bug in 
+your description. If the bug has no image, be sure to include the problem code
+or a link to the file where you think the bug occurs.
+
+As always, try to provide as detailed of a bug report as possible, so that we 
+can track and resolve the issue quickly and efficiently. The report needs to 
+include:
+
+- The branch you're working on
+- A brief description of the problem
+- Anything that would help a developer or artist find and resolve the bug
+
+Reports may also include:
+
+- Suggestions for the fix
+- Tags to specific artists or developers
+
+The more information we have on the issue, the faster we can fix it. And 
+remember: **If you don't submit an issue containing the bug, it might not get
+fixed.** So please be sure to submit an issue on github instead of telling 
+someone about it.
 
 ## Projects
 
