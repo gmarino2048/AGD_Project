@@ -1,5 +1,0 @@
-# Naming Conventions
-
-## Programmer
-
-## Artist
