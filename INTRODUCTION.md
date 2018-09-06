@@ -77,6 +77,40 @@ moment.
 
 ## Branches
 
+Branches allow us to work on different versions of the project at the same
+time. Normally, if two people work on the same file and try to commit it,
+the server would tell them they have a merge conflict every time they tried
+to pull/push. However, creating a branch takes a snapshot of the entire
+project at that moment and allows each person to edit them without worrying
+about merging.
+
+**We will be making heavy use of branches during this project.**
+
+Every time you have to do something, you should make a new branch for it. This
+will make it much easier for everyone involved to work at the same time. There
+is also a known problem in Unity where editing a scene can cause a merge 
+conflict. **Creating a branch will prevent this as long as you're working on
+that branch.** You can also have multiple branches open at once, or create
+more branches from your branches if you really wnt to get fancy.
+
+### Pull Requests
+
+While the name may be similar, a pull request is not pulling from the 
+repository. Instead, a pull request is how you take all the work you've made
+on a branch and put it into the main branch. Whenever you complete something
+you're working on, you should submit a pull request.
+
+**The main branch of the project, `master`, is locked.**
+
+This means that you cannot push anything directly to it. Instead, you will
+need to create a new branch and submit a pull request to put any code into
+the final version of the game. I know this is annoying, but it will prevent
+anyone from fucking up our main version of the game. **When you submit a
+pull request to `master` you will need one other person to OK it.** This can
+be anyone, and is designed so that at least one other person has reviewed
+your submission before it's added to the project so that we don't make
+mistakes.
+
 ## Merge Conflicts
 
 ## Issues
