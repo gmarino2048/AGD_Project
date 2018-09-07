@@ -11,7 +11,8 @@
 # Unity.app/Contents/Tools/UnityYAMLMerge
 
 # Remember, you need to copy the WHOLE path. If you don't know what this is,
-# I'll explain it to you. Also, please COPY this file.
+# I'll explain it to you. Also, please COPY this file before commiting
+# again.
 
 [merge]
 tool = unityyamlmerge
