@@ -167,3 +167,24 @@ Anything at all can be an issue, but for more information on how to create
 and managing issues, please see `CONTRIBUTING.md`.
 
 ## Projects
+
+If you've ever used Trello before, then the GitHub Projects tab should look
+very familiar to you. The projects page allows us to keep tabs on what has
+been done and what needs to be done in a simpler way than the issues tab.
+
+Basically, the project section allows us to manage different projects in a 
+series of boards. Each board has several columns where you can put each
+individual task. Some of the more standard column label are **TODO**, 
+**IN PROGRESS**, and **DONE**. 
+
+The projects tab is just a place where we can all see the progress you're 
+making. As you make more and more progress on your task, be sure to keep
+the projects page updated so that the rest of your teammates (and the 
+professors) can see the progress your making. This is important to let others
+know when an image or script you're working on is complete and ready 
+to be integrated into the final version of the game.
+
+Please remember to fill out your projects and tasks because it will help me
+to create the update documents that we have to submit and it would definitely
+be helpful for me to have one place to see what's been done and what needs
+to be done.
