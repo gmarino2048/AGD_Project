@@ -37,3 +37,6 @@ sysinfo.txt
 
 # Mac-specific organizational file
 .DS_Store
+
+# OS Specific merge resolver
+.gitconfig
