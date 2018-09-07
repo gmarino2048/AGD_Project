@@ -1,0 +1,21 @@
+# To make sure that unity scenes merge automatically, change the name of this file
+# to ".gitconfig" and change <path to UnityYAMLMerge> to the path to the 
+# Unity YAML Merge file, which automatically merges scenes.
+
+# In Unity for Windows, find your Unity version folder and go to:
+# Editor -> Data -> Tools -> UnityYAMLMerge.exe OR
+# Editor\Data\Tools\UnityYAMLMerge.exe
+
+# In Unity for MacOS, find your Unity version folder and go to:
+# Unity.app -> Contents -> Tools -> UnityYAMLMerge OR
+# Unity.app/Contents/Tools/UnityYAMLMerge
+
+# Remember, you need to copy the WHOLE path. If you don't know what this is,
+# I'll explain it to you.
+
+[merge]
+tool = unityyamlmerge
+
+[mergetool "unityyamlmerge"]
+trustExitCode = false
+cmd = '<path to UnityYAMLMerge>' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
