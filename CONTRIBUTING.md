@@ -219,7 +219,8 @@ it from the parent project and give it its own complete project designation.
 If you see something that needs to be done, make a task for it. Tasks can
 range from code documentation to updated art assets, but if it needs to happen
 within a project, make sure you've created a task for it so that you or others
-remember to complete it.
+remember to complete it. This will also help with administrative tasks 
+throughout the semester.
 
 ### Project Categories
 
