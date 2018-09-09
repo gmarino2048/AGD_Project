@@ -242,3 +242,21 @@ some emails reminding you to update your progress.
 ## Naming Conventions
 
 *This will be discussed in the next meeting*
+
+All art assets should follow a very similar naming convention. Raw files 
+(.PSD, .AI, .FLA etc.) should all be LASTNAME_DESCRIPTOR_VERSIONNUMBER 
+(Ex Phillips_Concept_1) .pngs and similar assets should follow the same 
+convention if and only if they are being uploaded to the google drive. 
+If the asset is going to the programmers to be implemented in the game 
+the file should be named DESCRIPTOR_IMPLEMENTVERSIONNUMBER or 
+ASSET_ DESCRIPTOR_IMPLEMENTVERSIONNUMBER the first is for singular assets, 
+while the second is for things like characters where say you have different 
+types of a similar asset (Ex. Monster_sad_3). 
+
+The implement version number refers to the fact that an asset may have only been 
+given to the programmers to implement twice but you've revised the core PSD file 
+13 times. So you may have 13 versions of an asset that has been critiqued and edited
+but only two have made it to the programmers hands. Changing the number to match the 
+amount they've seen can help streamline the process of making sure the 
+correct assets are being used. (Git may make this unnecessary but for now I'm
+keeping these rules in.)
