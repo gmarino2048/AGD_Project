@@ -1,1 +1,2 @@
 Art/** filter=lfs diff=lfs merge=lfs -text
+Master[[:space:]]Project/** filter=lfs diff=lfs merge=lfs -text
