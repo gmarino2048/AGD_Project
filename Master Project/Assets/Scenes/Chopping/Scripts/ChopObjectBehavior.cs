@@ -24,9 +24,13 @@ public class ChopObjectBehavior : MonoBehaviour {
 	}
 
     void SetBounds (BoxCollider2D boundaries) {
+        // Get global position of the collider
         Vector3 position = boundaries.gameObject.transform.position;
 
-        Debug.Log(boundaries.bounds.center);
-        Debug.Log(boundaries.bounds.extents);
+        // Set Horizontal bounds based on extents of collider
+        float halfWidth = boundaries.bounds.extents.x;
+
+        LeftBound = position.x - halfWidth;
+        RightBound = position.x + halfWidth;
     }
 }
