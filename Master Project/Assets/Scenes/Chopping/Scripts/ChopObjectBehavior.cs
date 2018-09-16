@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ChopObjectBehavior : MonoBehaviour {
 
-    [Header("Sprite Information")]
-    [SerializeField]
-    public BoxCollider2D ChopObject;
+    public BoxCollider2D ChopObject { get; private set; }
 
-    public float LeftBound;
-    public float RightBound;
+    public float LeftBound { get; private set; }
+    public float RightBound { get; private set; }
 
 	// Use this for initialization
 	void Start () {
