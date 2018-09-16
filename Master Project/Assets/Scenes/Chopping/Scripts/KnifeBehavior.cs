@@ -17,6 +17,11 @@ public class KnifeBehavior : MonoBehaviour {
     public Collider2D ItemToChop;
     public float BufferWidth;
 
+    enum Direction {
+        Left,
+        Right
+    }
+
 	// Use this for initialization
 	void Start () 
     {
