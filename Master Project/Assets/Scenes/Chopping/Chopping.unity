@@ -159,7 +159,8 @@ MonoBehaviour:
   YOffset: 0
   ZIndex: 0
   ItemToChop: {fileID: 1127444286}
-  BufferWidth: 0
+  BufferWidth: 0.5
+  Velocity: 5
 --- !u!1 &370099757
 GameObject:
   m_ObjectHideFlags: 0
