@@ -68,11 +68,6 @@ public class KnifeBehavior : MonoBehaviour {
         }
     }
 
-    void MoveX (float newX) 
-    {
-
-    }
-
     float GetNextPosition (float currentPosition, float elapsedTime) 
     {
         // Check if we should switch direction
@@ -94,13 +89,9 @@ public class KnifeBehavior : MonoBehaviour {
 
     float MovementFunction (float start, float stop, float time) 
     {
-        if (start > stop) 
-        {
-            return start - (Velocity * time);
-        }
-        else 
-        {
-            return start + (Velocity * time);
-        }
+        // Replace with an exponential smoothdamp function
+        return start > stop
+                ? start - (Velocity * time)
+                : start + (Velocity * time);
     }
 }

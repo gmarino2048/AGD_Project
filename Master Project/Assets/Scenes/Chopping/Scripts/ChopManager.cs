@@ -10,6 +10,8 @@ public class ChopManager : MonoBehaviour {
 
     [SerializeField]
     public KnifeBehavior Reference;
+    [SerializeField]
+    public KeyCode InputKey = KeyCode.Space;
 
     public struct Chop 
     {
@@ -34,21 +36,35 @@ public class ChopManager : MonoBehaviour {
 
 	void Update () 
     {
-		
+        // Listen for space bar input
+        if (Input.GetKeyDown(InputKey))
+            InsertChop(Reference.transform.position.x);
 	}
 
     void InsertChop (float position)
     {
+        Chop currentChop = new Chop
+        {
+            LowerBound = position - ChopWidth,
+            ActualPosition = position,
+            UpperBound = position + ChopWidth
+        };
 
+        AlreadyChopped.Add(currentChop);
+
+        DrawChop(currentChop);
+
+        PrintHitOrMiss(ValidPosition(currentChop));
     }
 
      
-    HitOrMiss ValidPosition(float position)
+    HitOrMiss ValidPosition(Chop current)
     {
         List<Chop> cutWithin = AlreadyChopped.Where(chopValue =>
-                                                        position >= chopValue.LowerBound &&
-                                                        position <= chopValue.UpperBound)
+                                                    current.ActualPosition >= chopValue.LowerBound &&
+                                                    current.ActualPosition <= chopValue.UpperBound)
                                              .ToList();
+
         if (cutWithin.Any())
         {
             return HitOrMiss.Collision;
@@ -57,12 +73,23 @@ public class ChopManager : MonoBehaviour {
         float lowerBound = Reference.ItemToChop.LeftBound;
         float upperBound = Reference.ItemToChop.RightBound;
 
-        return position < lowerBound || position > upperBound ? HitOrMiss.Miss : HitOrMiss.Hit;
+        return current.ActualPosition < lowerBound || current.ActualPosition > upperBound 
+                      ? HitOrMiss.Miss : HitOrMiss.Hit;
     }
 
-    void DrawChop (float position) 
+    void DrawChop (Chop current) 
     {
+        float upperY = 10;
+        float lowerY = -10;
 
+        Vector3[] centerPositions = {new Vector3(current.ActualPosition, upperY, 0),
+            new Vector3(current.ActualPosition, lowerY, 0)};
+
+        LineRenderer centerLine = GetComponent<LineRenderer>();
+        centerLine.positionCount = 2;
+        centerLine.SetPositions(centerPositions);
+        centerLine.startColor = Color.red;
+        centerLine.endColor = Color.red;
     }
 
     void PrintHitOrMiss (HitOrMiss status) {
