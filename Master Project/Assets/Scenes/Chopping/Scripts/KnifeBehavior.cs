@@ -26,6 +26,8 @@ public class KnifeBehavior : MonoBehaviour {
         Right
     }
 
+    Direction CurrentDirection;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -44,7 +46,13 @@ public class KnifeBehavior : MonoBehaviour {
 	void Update () 
     {
         float currentX = transform.position.x;
+        float currentY = transform.position.y;
+        float currentZ = transform.position.z;
+
         float newX = GetNextPosition(currentX, Time.deltaTime);
+
+        Vector3 newPosition = new Vector3(newX, currentY, currentZ);
+        transform.position = newPosition;
 	}
 
     void SetBounds()
@@ -62,6 +70,16 @@ public class KnifeBehavior : MonoBehaviour {
 
     float GetNextPosition (float currentPosition, float elapsedTime) 
     {
+        // Check if we should switch direction
+        if (currentPosition <= LeftBound) {
+            CurrentDirection = Direction.Right;
+        }
+        else if (currentPosition >= RightBound){
+            CurrentDirection = Direction.Left;
+        }
+    }
+
+    float expLerp (float start, float stop, float current, float t){
 
     }
 }
