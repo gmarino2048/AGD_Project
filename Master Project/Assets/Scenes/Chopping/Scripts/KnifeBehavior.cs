@@ -14,10 +14,14 @@ public class KnifeBehavior : MonoBehaviour {
 
     [Header("Scene References")]
     [SerializeField]
-    public Collider2D ItemToChop;
+    public ChopObjectBehavior ItemToChop;
     public float BufferWidth;
 
-    enum Direction {
+    private float LeftBound;
+    private float RightBound;
+
+    enum Direction 
+    {
         Left,
         Right
     }
@@ -31,11 +35,33 @@ public class KnifeBehavior : MonoBehaviour {
 
         Vector3 knifePosition = new Vector3(initialX, initialY, ZIndex);
         gameObject.transform.position = knifePosition;
+
+        // Set the bounds for motion
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-		
+        float currentX = transform.position.x;
+        float newX = GetNextPosition(currentX, Time.deltaTime);
 	}
+
+    void SetBounds()
+    {
+        if (ItemToChop != null)
+        {
+            LeftBound = ItemToChop.LeftBound - BufferWidth;
+            RightBound = ItemToChop.RightBound + BufferWidth;
+        }
+        else
+        {
+            throw new MissingComponentException("Could not find Choppable Item");
+        }
+    }
+
+    float GetNextPosition (float currentPosition, float elapsedTime) 
+    {
+
+    }
 }
