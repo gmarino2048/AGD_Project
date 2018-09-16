@@ -16,6 +16,9 @@ public class KnifeBehavior : MonoBehaviour {
     public ChopObjectBehavior ItemToChop;
     public float BufferWidth;
 
+    [Header("Knife Movement Attributes")]
+    public float Velocity;
+
     float LeftBound;
     float RightBound;
 
@@ -84,13 +87,20 @@ public class KnifeBehavior : MonoBehaviour {
 
         // Move the knife
         float newX = CurrentDirection == Direction.Left
-            ? MovementFunction(currentPosition, LeftBound, elapsedTime)
-            : MovementFunction(currentPosition, RightBound, elapsedTime);
+            ? MovementFunction(currentPosition, LeftBound - 1, elapsedTime)
+            : MovementFunction(currentPosition, RightBound + 1, elapsedTime);
         return newX;
     }
 
     float MovementFunction (float start, float stop, float time) 
     {
-        return Mathf.Lerp(start, stop, time);
+        if (start > stop) 
+        {
+            return start - (Velocity * time);
+        }
+        else 
+        {
+            return start + (Velocity * time);
+        }
     }
 }
