@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class KnifeBehavior : MonoBehaviour {
 
@@ -17,8 +16,8 @@ public class KnifeBehavior : MonoBehaviour {
     public ChopObjectBehavior ItemToChop;
     public float BufferWidth;
 
-    private float LeftBound;
-    private float RightBound;
+    float LeftBound;
+    float RightBound;
 
     enum Direction 
     {
@@ -28,7 +27,6 @@ public class KnifeBehavior : MonoBehaviour {
 
     Direction CurrentDirection;
 
-	// Use this for initialization
 	void Start () 
     {
         // Set the inital position of the knife
@@ -39,10 +37,9 @@ public class KnifeBehavior : MonoBehaviour {
         gameObject.transform.position = knifePosition;
 
         // Set the bounds for motion
-
+        SetBounds();
 	}
 	
-	// Update is called once per frame
 	void Update () 
     {
         float currentX = transform.position.x;
@@ -68,18 +65,32 @@ public class KnifeBehavior : MonoBehaviour {
         }
     }
 
+    void MoveX (float newX) 
+    {
+
+    }
+
     float GetNextPosition (float currentPosition, float elapsedTime) 
     {
         // Check if we should switch direction
-        if (currentPosition <= LeftBound) {
+        if (currentPosition <= LeftBound) 
+        {
             CurrentDirection = Direction.Right;
         }
-        else if (currentPosition >= RightBound){
+        else if (currentPosition >= RightBound)
+        {
             CurrentDirection = Direction.Left;
         }
+
+        // Move the knife
+        float newX = CurrentDirection == Direction.Left
+            ? MovementFunction(currentPosition, LeftBound, elapsedTime)
+            : MovementFunction(currentPosition, RightBound, elapsedTime);
+        return newX;
     }
 
-    float expLerp (float start, float stop, float current, float t){
-
+    float MovementFunction (float start, float stop, float time) 
+    {
+        return Mathf.Lerp(start, stop, time);
     }
 }
