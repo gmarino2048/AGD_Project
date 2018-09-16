@@ -85,7 +85,7 @@ public class ChopManager : MonoBehaviour {
         Vector3[] centerPositions = {new Vector3(current.ActualPosition, upperY, 0),
             new Vector3(current.ActualPosition, lowerY, 0)};
 
-        LineRenderer centerLine = GetComponent<LineRenderer>();
+        LineRenderer centerLine = new GameObject().AddComponent<LineRenderer>();
         centerLine.positionCount = 2;
         centerLine.SetPositions(centerPositions);
         centerLine.startColor = Color.red;
