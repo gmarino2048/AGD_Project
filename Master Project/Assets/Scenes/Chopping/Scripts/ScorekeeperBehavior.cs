@@ -32,6 +32,8 @@ public class ScorekeeperBehavior : MonoBehaviour
         CurrentTime = TimeInSeconds;
         TimerActive = true;
         TimerDone = false;
+
+        FinishButton.onClick.AddListener(OnFinishButtonPressed);
     }
 
 
@@ -39,7 +41,7 @@ public class ScorekeeperBehavior : MonoBehaviour
     {
         if (CurrentTime > 0 && TimerActive)
         {
-            TimerText.text = ((int)CurrentTime).ToString();
+
             CurrentTime -= Time.deltaTime;
         }
         else if (TimerActive)
@@ -53,19 +55,23 @@ public class ScorekeeperBehavior : MonoBehaviour
             Score();
             TimerDone = false;
         }
+
+        TimerText.text = ((int)CurrentTime).ToString();
     }
 
     #endregion
 
     #region Auxiliary
 
-    float Score () {
+    float Score()
+    {
         float average = AverageDistance(SortChops(ChopManager));
         Debug.Log(average);
         return average;
     }
 
-    List<float> SortChops (ChopManager manager){
+    List<float> SortChops(ChopManager manager)
+    {
         List<float> chops = new List<float>();
 
         manager.AlreadyChopped.ForEach(chop => chops.Add(chop.ActualPosition));
@@ -94,6 +100,16 @@ public class ScorekeeperBehavior : MonoBehaviour
             return average;
         }
         return 0;
+    }
+
+    #endregion
+
+    #region UI
+
+    void OnFinishButtonPressed () {
+        CurrentTime = 0f;
+        TimerActive = false;
+        TimerDone = true;
     }
 
     #endregion
