@@ -7,34 +7,41 @@ public class KnifeBehavior : MonoBehaviour
 
     [Header("Screen Information")]
     [SerializeField]
-    public Camera SceneCamera;
-    public float XOffset;
-    public float YOffset;
-    public float ZIndex;
+    public Camera SceneCamera; // The main camera within the scene
+    public float XOffset; // The action item's X offset from the center of the camera
+    public float YOffset; // The action item's Y offset from the center of the camera
+    public float ZIndex; // The action item's Z position in the scene
 
     [Header("Scene References")]
     [SerializeField]
-    public ChopObjectBehavior ItemToChop;
-    public float BufferWidth;
+    public ChopObjectBehavior ItemToChop; // The Choppable Object
+    public float BufferWidth; // The width of the buffer to the end of the screen
 
     [Header("Knife Movement Attributes")]
-    public float Velocity;
+    public float Velocity; // The speed with which the knife moves
 
-    float LeftBound;
-    float RightBound;
+    float LeftBound; // The left bound of the knife's movement
+    float RightBound; // The right bound of the knife's movement
 
+
+    /// <summary>
+    /// The direction that the knife moves in.
+    /// </summary>
     enum Direction
     {
         Left,
         Right
     }
 
-    Direction CurrentDirection;
+    Direction CurrentDirection; // The knife object's current direction
 
     #endregion
 
     #region MonoBehaviour
 
+    /// <summary>
+    /// Called once at the start of the game.
+    /// </summary>
     void Start()
     {
         // Set the inital position of the knife
@@ -48,6 +55,10 @@ public class KnifeBehavior : MonoBehaviour
         SetBounds();
     }
 
+
+    /// <summary>
+    /// Called once every frame.
+    /// </summary>
     void Update()
     {
         // Get the current values of the knife
@@ -67,6 +78,9 @@ public class KnifeBehavior : MonoBehaviour
 
     #region Auxiliary
 
+    /// <summary>
+    /// Sets the left and right bounds for the knife's movement.
+    /// </summary>
     void SetBounds()
     {
         // Calculate Vertical and Horizontal Extents of the camera
@@ -76,6 +90,12 @@ public class KnifeBehavior : MonoBehaviour
         RightBound = SceneCamera.transform.position.x + horiExtent - BufferWidth;
     }
 
+    /// <summary>
+    /// Gets the knife's next position in its mvoement path.
+    /// </summary>
+    /// <returns>The next position of the knife.</returns>
+    /// <param name="currentPosition">The knife's current X position.</param>
+    /// <param name="elapsedTime">The elapsed time.</param>
     float GetNextPosition(float currentPosition, float elapsedTime)
     {
         // Check if we should switch direction
@@ -95,6 +115,14 @@ public class KnifeBehavior : MonoBehaviour
         return newX;
     }
 
+
+    /// <summary>
+    /// The function controlling the knife's movement pattern.
+    /// </summary>
+    /// <returns>The next position of the knife</returns>
+    /// <param name="start">The knife path starting position.</param>
+    /// <param name="stop">The knife path ending position.</param>
+    /// <param name="time">The elapsed time.</param>
     float MovementFunction(float start, float stop, float time)
     {
         // TODO: Replace with an exponential smoothdamp function
