@@ -6,6 +6,9 @@ public class ScorekeeperBehavior : MonoBehaviour
 {
 
     #region Parameters
+    [Header("Scene References")]
+    [SerializeField]
+    public ChopManager ChopManager { get; set; }
 
     #endregion
 
@@ -23,5 +26,7 @@ public class ScorekeeperBehavior : MonoBehaviour
     }
     #endregion
 
-    #region 
+    #region Auxiliary
+
+    #endregion
 }
