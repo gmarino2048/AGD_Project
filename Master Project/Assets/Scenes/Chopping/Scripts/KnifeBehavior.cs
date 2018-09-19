@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class KnifeBehavior : MonoBehaviour {
 
@@ -45,12 +43,15 @@ public class KnifeBehavior : MonoBehaviour {
 	
 	void Update () 
     {
+        // Get the current values of the knife
         float currentX = transform.position.x;
         float currentY = transform.position.y;
         float currentZ = transform.position.z;
 
+        // Get the next X position
         float newX = GetNextPosition(currentX, Time.deltaTime);
 
+        // Set the knife position
         Vector3 newPosition = new Vector3(newX, currentY, currentZ);
         transform.position = newPosition;
 	}
@@ -85,7 +86,7 @@ public class KnifeBehavior : MonoBehaviour {
 
     float MovementFunction (float start, float stop, float time) 
     {
-        // Replace with an exponential smoothdamp function
+        // TODO: Replace with an exponential smoothdamp function
         return start > stop
                 ? start - (Velocity * time)
                 : start + (Velocity * time);

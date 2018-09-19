@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ChopManager : MonoBehaviour {
 
+    // TODO: Add sprite renderer for every chop instead of drawline
+
     [Header("Chop configurations")]
     public float ChopWidth = 0.25f;
 

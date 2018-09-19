@@ -15,16 +15,6 @@ public class ChopObjectBehavior : MonoBehaviour {
         SetBounds(ChopObject);
     }
 
-    void Start () 
-    {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     void SetBounds (BoxCollider2D boundaries) {
         // Get global position of the collider
         Vector3 position = boundaries.gameObject.transform.position;
