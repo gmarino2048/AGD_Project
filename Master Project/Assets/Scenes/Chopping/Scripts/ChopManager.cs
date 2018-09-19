@@ -38,7 +38,10 @@ public class ChopManager : MonoBehaviour {
     {
         // Listen for space bar input
         if (Input.GetKeyDown(InputKey))
+        {
+            Debug.Log(Reference.transform.position.x);
             InsertChop(Reference.transform.position.x);
+        }
 	}
 
     void InsertChop (float position)
@@ -50,11 +53,14 @@ public class ChopManager : MonoBehaviour {
             UpperBound = position + ChopWidth
         };
 
-        AlreadyChopped.Add(currentChop);
 
+        // Draw the chop in the debug frame
+        // TODO: REMOVE LATER
         DrawChop(currentChop);
 
         PrintHitOrMiss(ValidPosition(currentChop));
+
+        AlreadyChopped.Add(currentChop);
     }
 
      
@@ -82,14 +88,29 @@ public class ChopManager : MonoBehaviour {
         float upperY = 10;
         float lowerY = -10;
 
-        Vector3[] centerPositions = {new Vector3(current.ActualPosition, upperY, 0),
-            new Vector3(current.ActualPosition, lowerY, 0)};
+        // Draw Center Line
+        Vector3 centerStart = new Vector3(current.ActualPosition, upperY, 0);
+        Vector3 centerEnd = new Vector3(current.ActualPosition, lowerY, 0);
 
-        LineRenderer centerLine = new GameObject().AddComponent<LineRenderer>();
-        centerLine.positionCount = 2;
-        centerLine.SetPositions(centerPositions);
-        centerLine.startColor = Color.red;
-        centerLine.endColor = Color.red;
+        Color centerColor = Color.red;
+
+        Debug.DrawLine(centerStart, centerEnd, centerColor, Mathf.Infinity, false);
+
+        // Draw Left line
+        Vector3 leftStart = new Vector3(current.ActualPosition - ChopWidth, upperY, 0);
+        Vector3 leftEnd = new Vector3(current.ActualPosition - ChopWidth, lowerY, 0);
+
+        Color leftColor = Color.green;
+
+        Debug.DrawLine(leftStart, leftEnd, leftColor, Mathf.Infinity, false);
+
+        // Draw Right Line
+        Vector3 rightStart = new Vector3(current.ActualPosition + ChopWidth, upperY, 0);
+        Vector3 rightEnd = new Vector3(current.ActualPosition + ChopWidth, lowerY, 0);
+
+        Color rightColor = Color.green;
+
+        Debug.DrawLine(rightStart, rightEnd, rightColor, Mathf.Infinity, false);
     }
 
     void PrintHitOrMiss (HitOrMiss status) {

@@ -9,11 +9,15 @@ public class ChopObjectBehavior : MonoBehaviour {
     public float LeftBound { get; private set; }
     public float RightBound { get; private set; }
 
-	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
         ChopObject = gameObject.GetComponentInChildren<BoxCollider2D>();
-
         SetBounds(ChopObject);
+    }
+
+    void Start () 
+    {
+
 	}
 	
 	// Update is called once per frame
