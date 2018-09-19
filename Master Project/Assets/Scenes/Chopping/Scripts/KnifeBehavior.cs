@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class KnifeBehavior : MonoBehaviour {
+public class KnifeBehavior : MonoBehaviour
+{
+
+    #region Parameters
 
     [Header("Screen Information")]
     [SerializeField]
@@ -20,7 +23,7 @@ public class KnifeBehavior : MonoBehaviour {
     float LeftBound;
     float RightBound;
 
-    enum Direction 
+    enum Direction
     {
         Left,
         Right
@@ -28,7 +31,11 @@ public class KnifeBehavior : MonoBehaviour {
 
     Direction CurrentDirection;
 
-	void Start () 
+    #endregion
+
+    #region MonoBehaviour
+
+    void Start()
     {
         // Set the inital position of the knife
         float initialX = SceneCamera.transform.position.x + XOffset;
@@ -39,9 +46,9 @@ public class KnifeBehavior : MonoBehaviour {
 
         // Set the bounds for motion
         SetBounds();
-	}
-	
-	void Update () 
+    }
+
+    void Update()
     {
         // Get the current values of the knife
         float currentX = transform.position.x;
@@ -54,7 +61,11 @@ public class KnifeBehavior : MonoBehaviour {
         // Set the knife position
         Vector3 newPosition = new Vector3(newX, currentY, currentZ);
         transform.position = newPosition;
-	}
+    }
+
+    #endregion
+
+    #region Auxiliary
 
     void SetBounds()
     {
@@ -65,10 +76,10 @@ public class KnifeBehavior : MonoBehaviour {
         RightBound = SceneCamera.transform.position.x + horiExtent - BufferWidth;
     }
 
-    float GetNextPosition (float currentPosition, float elapsedTime) 
+    float GetNextPosition(float currentPosition, float elapsedTime)
     {
         // Check if we should switch direction
-        if (currentPosition <= LeftBound) 
+        if (currentPosition <= LeftBound)
         {
             CurrentDirection = Direction.Right;
         }
@@ -84,11 +95,13 @@ public class KnifeBehavior : MonoBehaviour {
         return newX;
     }
 
-    float MovementFunction (float start, float stop, float time) 
+    float MovementFunction(float start, float stop, float time)
     {
         // TODO: Replace with an exponential smoothdamp function
         return start > stop
                 ? start - (Velocity * time)
                 : start + (Velocity * time);
     }
+
+    #endregion
 }
