@@ -7,24 +7,10 @@ public class ChopObjectBehavior : MonoBehaviour
 
     #region Parameters
 
-    /// <summary>
-    /// The Box Collider surrounding the sprite of the choppable object.
-    /// </summary>
-    /// <value>The box collider attached to this object's sprite.</value>
-    public BoxCollider2D ChopObject { get; private set; }
+    public BoxCollider2D ChopObject { get; private set; } // The bounds of this object's child sprite.
 
-    /// <summary>
-    /// The left hand side of the sprite's box collider.
-    /// </summary>
-    /// <value>A float value signifying the left bound of the
-    /// collider.</value>
-    public float LeftBound { get; private set; }
-
-    /// <summary>
-    /// The right hand side of the sprite's box collider.
-    /// </summary>
-    /// <value>The right bound.</value>
-    public float RightBound { get; private set; }
+    public float LeftBound { get; private set; } // The left bound of the child sprite's collider.
+    public float RightBound { get; private set; } // The right bound of the child sprite's collider.
 
     #endregion
 
