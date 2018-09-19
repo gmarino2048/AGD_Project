@@ -6,7 +6,7 @@ public class KnifeBehavior : MonoBehaviour {
 
     [Header("Screen Information")]
     [SerializeField]
-    public Camera Camera;
+    public Camera SceneCamera;
     public float XOffset;
     public float YOffset;
     public float ZIndex;
@@ -33,8 +33,8 @@ public class KnifeBehavior : MonoBehaviour {
 	void Start () 
     {
         // Set the inital position of the knife
-        float initialX = Camera.transform.position.x + XOffset;
-        float initialY = Camera.transform.position.y + YOffset;
+        float initialX = SceneCamera.transform.position.x + XOffset;
+        float initialY = SceneCamera.transform.position.y + YOffset;
 
         Vector3 knifePosition = new Vector3(initialX, initialY, ZIndex);
         gameObject.transform.position = knifePosition;
@@ -57,15 +57,11 @@ public class KnifeBehavior : MonoBehaviour {
 
     void SetBounds()
     {
-        if (ItemToChop != null)
-        {
-            LeftBound = ItemToChop.LeftBound - BufferWidth;
-            RightBound = ItemToChop.RightBound + BufferWidth;
-        }
-        else
-        {
-            throw new MissingComponentException("Could not find Choppable Item");
-        }
+        // Calculate Vertical and Horizontal Extents of the camera
+        float horiExtent = (SceneCamera.orthographicSize * Screen.width / Screen.height);
+
+        LeftBound = SceneCamera.transform.position.x - horiExtent + BufferWidth;
+        RightBound = SceneCamera.transform.position.x + horiExtent - BufferWidth;
     }
 
     float GetNextPosition (float currentPosition, float elapsedTime) 

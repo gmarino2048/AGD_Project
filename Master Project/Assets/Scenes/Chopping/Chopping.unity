@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d1799ce195944b7a6ecd5dd20a7b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 370099760}
+  SceneCamera: {fileID: 370099760}
   XOffset: 0
   YOffset: 0
   ZIndex: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c088e8ddd69c2438ea8ca9986e6a32b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChopWidth: 0.25
+  ChopWidth: 0.5
   Reference: {fileID: 337079250}
   InputKey: 32
 --- !u!1 &370099757
