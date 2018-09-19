@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChopManager : MonoBehaviour {
+public class ChopManager : MonoBehaviour
+{
 
     // TODO: Add sprite renderer for every chop instead of drawline
+
+    #region Parameters
 
     [Header("Chop configurations")]
     public float ChopWidth = 0.25f;
@@ -15,7 +17,7 @@ public class ChopManager : MonoBehaviour {
     [SerializeField]
     public KeyCode InputKey = KeyCode.Space;
 
-    public struct Chop 
+    public struct Chop
     {
         public float LowerBound;
         public float ActualPosition;
@@ -31,12 +33,16 @@ public class ChopManager : MonoBehaviour {
         Collision
     }
 
-	void Start () 
+    #endregion
+
+    #region MonoBehavior
+
+    void Start()
     {
         AlreadyChopped = new List<Chop>();
-	}
+    }
 
-	void Update () 
+    void Update()
     {
         // Listen for space bar input
         if (Input.GetKeyDown(InputKey))
@@ -44,9 +50,13 @@ public class ChopManager : MonoBehaviour {
             Debug.Log(Reference.transform.position.x);
             InsertChop(Reference.transform.position.x);
         }
-	}
+    }
 
-    void InsertChop (float position)
+    #endregion
+
+    #region Auxiliary
+
+    void InsertChop(float position)
     {
         Chop currentChop = new Chop
         {
@@ -65,9 +75,10 @@ public class ChopManager : MonoBehaviour {
         AlreadyChopped.Add(currentChop);
     }
 
-     
+
     HitOrMiss ValidPosition(Chop current)
     {
+        // TODO: Check if bounds overlap??
         List<Chop> cutWithin = AlreadyChopped.Where(chopValue =>
                                                     current.ActualPosition >= chopValue.LowerBound &&
                                                     current.ActualPosition <= chopValue.UpperBound)
@@ -81,11 +92,15 @@ public class ChopManager : MonoBehaviour {
         float lowerBound = Reference.ItemToChop.LeftBound;
         float upperBound = Reference.ItemToChop.RightBound;
 
-        return current.ActualPosition < lowerBound || current.ActualPosition > upperBound 
+        return current.ActualPosition < lowerBound || current.ActualPosition > upperBound
                       ? HitOrMiss.Miss : HitOrMiss.Hit;
     }
 
-    void DrawChop (Chop current) 
+    #endregion
+
+    #region Debug
+
+    void DrawChop(Chop current)
     {
         float upperY = 10;
         float lowerY = -10;
@@ -115,10 +130,12 @@ public class ChopManager : MonoBehaviour {
         Debug.DrawLine(rightStart, rightEnd, rightColor, Mathf.Infinity, false);
     }
 
-    void PrintHitOrMiss (HitOrMiss status) {
+    void PrintHitOrMiss(HitOrMiss status)
+    {
         string message;
 
-        switch (status){
+        switch (status)
+        {
             case HitOrMiss.Hit:
                 message = "Valid Position";
                 break;
@@ -134,4 +151,6 @@ public class ChopManager : MonoBehaviour {
 
         Debug.Log(message);
     }
+
+    #endregion
 }
