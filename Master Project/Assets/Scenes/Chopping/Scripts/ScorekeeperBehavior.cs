@@ -8,22 +8,27 @@ public class ScorekeeperBehavior : MonoBehaviour
 
     #region Parameters
 
+    [Header("Scorekeeping Info")]
     [SerializeField]
-    public ChopManager ChopManager;
+    public ChopManager ChopManager; // The chop manager with a record of all the valid chops.
 
-    public float TimeInSeconds;
+    public float TimeInSeconds = 30f; // The amount of time to start the countdown with. Default is 30 seconds.
 
-    Text TimerText;
-    Button FinishButton;
+    Text TimerText; // The text object used to display time remaining.
+    Button FinishButton; // The button used to finish and exit this minigame early.
 
-    float CurrentTime;
-    bool TimerActive;
-    bool TimerDone;
+    float CurrentTime; // The current time on the countdown
+    bool TimerActive; // Is the timer currently active and counting down?
+    bool TimerDone; // Has the timer finished counting down?
 
     #endregion
 
     #region MonoBehaviour
 
+    /// <summary>
+    /// Run once at the start of the scene. Gets the UI elements from the scene and attaches a
+    /// simple listener to the button. Activates the timer based on the value of TimeInSeconds.
+    /// </summary>
     void Start()
     {
         TimerText = GetComponentInChildren<Text>();
@@ -37,11 +42,15 @@ public class ScorekeeperBehavior : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Run once per frame update. This function manages the time remaining on the counter
+    /// and calculates the score once the finish button is pressed or the time remaining on the
+    /// timer runs out.
+    /// </summary>
     void Update()
     {
         if (CurrentTime > 0 && TimerActive)
         {
-
             CurrentTime -= Time.deltaTime;
         }
         else if (TimerActive)
@@ -63,6 +72,11 @@ public class ScorekeeperBehavior : MonoBehaviour
 
     #region Auxiliary
 
+    /// <summary>
+    /// Calculates the player's score. Is currently just an average of the distances between chops.
+    /// </summary>
+    /// <returns>Should return a float between 0 and 1 representing the minigame's score. Doesn't
+    /// do that yet though.</returns>
     float Score()
     {
         float average = AverageDistance(SortChops(ChopManager));
@@ -70,6 +84,14 @@ public class ScorekeeperBehavior : MonoBehaviour
         return average;
     }
 
+
+    /// <summary>
+    /// Creates an ascending list of Chops used to calculate the average distance between each valid
+    /// chop. The sorting guarantees that two chops next to each other in the list will be next to each
+    /// other in the scene.
+    /// </summary>
+    /// <param name="manager">The ChopManager used to get the list of chops.</param>
+    /// <returns>A sorted float list of chop positions.</returns>
     List<float> SortChops(ChopManager manager)
     {
         List<float> chops = new List<float>();
@@ -81,6 +103,12 @@ public class ScorekeeperBehavior : MonoBehaviour
         return chops;
     }
 
+
+    /// <summary>
+    /// Calculates the average distance between each chop object.
+    /// </summary>
+    /// <param name="values">The list of chop positions.</param>
+    /// <returns>The float representing the average distance between each chop.</returns>
     float AverageDistance(List<float> values)
     {
         if (values.Count > 1)
@@ -88,13 +116,18 @@ public class ScorekeeperBehavior : MonoBehaviour
             int current = 1;
             int total = values.Count;
 
-            float average = values[0];
+            float average = values[1] - values[0];
 
-            while (current < total)
+            if (values.Count > 2)
             {
-                float val = values[current];
-                average = ((average * (current - 1)) + val) / current;
                 current++;
+
+                while (current < total)
+                {
+                    float val = values[current] - values[current - 1];
+                    average = ((average * (current - 1)) + val) / current;
+                    current++;
+                }
             }
 
             return average;
@@ -106,6 +139,9 @@ public class ScorekeeperBehavior : MonoBehaviour
 
     #region UI
 
+    /// <summary>
+    /// The function which defines what should happen once the finish button is pressed.
+    /// </summary>
     void OnFinishButtonPressed () {
         CurrentTime = 0f;
         TimerActive = false;
