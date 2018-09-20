@@ -10,13 +10,17 @@ public class ChopManager : MonoBehaviour
     #region Parameters
 
     [Header("Chop configurations")]
-    public float ChopWidth = 0.25f;
+    public float ChopWidth = 0.25f; // The width of the chop stroke for calculating whether there's a knife collision
 
     [SerializeField]
-    public KnifeBehavior Reference;
+    public KnifeBehavior Reference; // The KnifeBehavior object to reference for position, etc... So that this script can run anywhere
     [SerializeField]
-    public KeyCode InputKey = KeyCode.Space;
+    public KeyCode InputKey = KeyCode.Space; // The input key for the knife to chop on
 
+    /// <summary>
+    /// A struct to contain the actual position of the chop, as well as the range of values that the chop encompasses so that
+    /// collisions between knife chops can be calculated.
+    /// </summary>
     public struct Chop
     {
         public float LowerBound;
@@ -24,8 +28,12 @@ public class ChopManager : MonoBehaviour
         public float UpperBound;
     }
 
-    public List<Chop> AlreadyChopped { get; private set; }
+    public List<Chop> AlreadyChopped { get; private set; } // A list of valid chops for calculating collisions
 
+    /// <summary>
+    /// Contains the information about whether each chop is a Hit (valid position on the choppable object), a Miss (outside
+    /// the choppable object sprite), or a collision (at the same place as another knife chop).
+    /// </summary>
     public enum HitOrMiss
     {
         Hit,
@@ -37,11 +45,18 @@ public class ChopManager : MonoBehaviour
 
     #region MonoBehavior
 
+    /// <summary>
+    /// Runs once at the start of the scene.
+    /// </summary>
     void Start()
     {
         AlreadyChopped = new List<Chop>();
     }
 
+
+    /// <summary>
+    /// Runs every time the frame updates.
+    /// </summary>
     void Update()
     {
         // Listen for space bar input
@@ -56,6 +71,10 @@ public class ChopManager : MonoBehaviour
 
     #region Auxiliary
 
+    /// <summary>
+    /// Inserts a single Chop into a list if it was made in a valid position. Otherwise, it's ignored.
+    /// </summary>
+    /// <param name="position">The X position of the knife at the time when the chop was made.</param>
     void InsertChop(float position)
     {
         Chop currentChop = new Chop
@@ -70,15 +89,27 @@ public class ChopManager : MonoBehaviour
         // TODO: REMOVE LATER
         DrawChop(currentChop);
 
-        PrintHitOrMiss(ValidPosition(currentChop));
+        HitOrMiss status = ValidPosition(currentChop);
 
-        AlreadyChopped.Add(currentChop);
+        PrintHitOrMiss(status);
+
+        // Only add if it was a valid knife chop.
+        if (status == HitOrMiss.Hit) AlreadyChopped.Add(currentChop);
     }
 
 
+    /// <summary>
+    /// Checks to make sure that the position is valid on the choppable object. A position is defined as
+    /// valid if it 1. is within the bounds of the choppable objece and 2. Is not within the bounds of
+    /// any other valid chop.
+    /// </summary>
+    /// <param name="current">The Chop structure to check.</param>
+    /// <returns>The HitOrMiss status of the current Chop.</returns>
     HitOrMiss ValidPosition(Chop current)
     {
         // TODO: Check if bounds overlap??
+
+        // Get all overlaps with Linq query
         List<Chop> cutWithin = AlreadyChopped.Where(chopValue =>
                                                     current.ActualPosition >= chopValue.LowerBound &&
                                                     current.ActualPosition <= chopValue.UpperBound)
@@ -100,6 +131,10 @@ public class ChopManager : MonoBehaviour
 
     #region Debug
 
+    /// <summary>
+    /// Draws the chop bounds in the scene for visual debug.
+    /// </summary>
+    /// <param name="current">The chop to be drawn.</param>
     void DrawChop(Chop current)
     {
         float upperY = 10;
@@ -130,6 +165,11 @@ public class ChopManager : MonoBehaviour
         Debug.DrawLine(rightStart, rightEnd, rightColor, Mathf.Infinity, false);
     }
 
+
+    /// <summary>
+    /// Prints the HitOrMiss value in plain English.
+    /// </summary>
+    /// <param name="status">The status of some Chop structure.</param>
     void PrintHitOrMiss(HitOrMiss status)
     {
         string message;
