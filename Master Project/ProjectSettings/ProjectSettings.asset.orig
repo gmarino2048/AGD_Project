@@ -5,10 +5,10 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
 <<<<<<< HEAD
-  productGUID: 1916f37321443d24a9cf09dd10554f92
-=======
   productGUID: 380b69cb4e4020f40b5b9be29ac21da7
->>>>>>> Chopping_Marino
+=======
+  productGUID: 6a651db006c3148a9ab48be993ea277a
+>>>>>>> origin/Microwave-Goldberg
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -158,10 +158,10 @@ PlayerSettings:
   useHDRDisplay: 0
   m_ColorGamuts: 00000000
 <<<<<<< HEAD
-  targetPixelDensity: 30
-=======
   targetPixelDensity: 0
->>>>>>> Chopping_Marino
+=======
+  targetPixelDensity: 30
+>>>>>>> origin/Microwave-Goldberg
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
@@ -186,16 +186,16 @@ PlayerSettings:
     m_Bits: 238
   iPhoneSdkVersion: 988
 <<<<<<< HEAD
-  iOSTargetOSVersionString: 7.0
-  tvOSSdkVersion: 0
-  tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 9.0
-=======
   iOSTargetOSVersionString: 
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 
->>>>>>> Chopping_Marino
+=======
+  iOSTargetOSVersionString: 7.0
+  tvOSSdkVersion: 0
+  tvOSRequireExtendedGameController: 0
+  tvOSTargetOSVersionString: 9.0
+>>>>>>> origin/Microwave-Goldberg
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -246,7 +246,11 @@ PlayerSettings:
   iOSURLSchemes: []
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
+<<<<<<< HEAD
   metalEditorSupport: 1
+=======
+  metalEditorSupport: 0
+>>>>>>> origin/Microwave-Goldberg
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 0
   appleDeveloperTeamID: 
@@ -472,10 +476,10 @@ PlayerSettings:
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
 <<<<<<< HEAD
-  ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
-=======
   ps4Passcode: JcrgRYwTiizs2trQF69AzBlax3CF3EDN
->>>>>>> Chopping_Marino
+=======
+  ps4Passcode: 5PN2qmWqBlQ9wQj99nsQzldVI5ZuGXbE
+>>>>>>> origin/Microwave-Goldberg
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -522,10 +526,10 @@ PlayerSettings:
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
 <<<<<<< HEAD
-  psp2PackagePassword: F69AzBlax3CF3EDNhm3soLBPh71Yexui
-=======
   psp2PackagePassword: hm3soLBPh71YexuieaoEiIgxIX4a2dRE
->>>>>>> Chopping_Marino
+=======
+  psp2PackagePassword: WRK5RhRXdCdG5nG5azdNMK66MuCV6GXi
+>>>>>>> origin/Microwave-Goldberg
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
