@@ -7,8 +7,8 @@ PlayerSettings:
 <<<<<<< HEAD
   productGUID: 380b69cb4e4020f40b5b9be29ac21da7
 =======
-  productGUID: 6a651db006c3148a9ab48be993ea277a
->>>>>>> origin/Microwave-Goldberg
+  productGUID: 0efe9df58c7014e5b857ef3b4cce8ade
+>>>>>>> origin/Ahmed_DialogueScene
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -161,7 +161,7 @@ PlayerSettings:
   targetPixelDensity: 0
 =======
   targetPixelDensity: 30
->>>>>>> origin/Microwave-Goldberg
+>>>>>>> origin/Ahmed_DialogueScene
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
@@ -195,7 +195,7 @@ PlayerSettings:
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 9.0
->>>>>>> origin/Microwave-Goldberg
+>>>>>>> origin/Ahmed_DialogueScene
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -250,7 +250,7 @@ PlayerSettings:
   metalEditorSupport: 1
 =======
   metalEditorSupport: 0
->>>>>>> origin/Microwave-Goldberg
+>>>>>>> origin/Ahmed_DialogueScene
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 0
   appleDeveloperTeamID: 
@@ -479,7 +479,7 @@ PlayerSettings:
   ps4Passcode: JcrgRYwTiizs2trQF69AzBlax3CF3EDN
 =======
   ps4Passcode: 5PN2qmWqBlQ9wQj99nsQzldVI5ZuGXbE
->>>>>>> origin/Microwave-Goldberg
+>>>>>>> origin/Ahmed_DialogueScene
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -529,7 +529,7 @@ PlayerSettings:
   psp2PackagePassword: hm3soLBPh71YexuieaoEiIgxIX4a2dRE
 =======
   psp2PackagePassword: WRK5RhRXdCdG5nG5azdNMK66MuCV6GXi
->>>>>>> origin/Microwave-Goldberg
+>>>>>>> origin/Ahmed_DialogueScene
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0
