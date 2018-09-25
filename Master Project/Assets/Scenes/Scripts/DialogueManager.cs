@@ -3,18 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/* 
+* the DialogueManager class displays the dialogue through text scrolling
+* */
 public class DialogueManager : MonoBehaviour {
 
+	/* 
+	 * the text for the name of the character for the dialogue
+	 * */
 	public Text nameText;
+
+	/* 
+	 * the text for the name of the character for the dialogue
+	 * */
 	public Text dialogueText;
 
+	/* 
+	 * the list of sentences for the dialogue
+	 * */
 	private Queue<string> sentences;
 
-	// Use this for initialization
+	/* 
+	 * used for initialization
+	 * */
 	void Start () {
 		sentences = new Queue<string>();
 	}
 
+
+	/* 
+	 * starts and displays the dialogue for each sentence in the list of sentences
+	 * */
 	public void StartDialogue (Dialogue dialogue)
 	{
 		nameText.text = dialogue.name;
@@ -29,6 +48,9 @@ public class DialogueManager : MonoBehaviour {
 		DisplayNextSentence();
 	}
 
+	/* 
+	 * the sentence is displayed using a coroutine
+	 * */
 	public void DisplayNextSentence ()
 	{
 		if (sentences.Count == 0)
@@ -42,6 +64,9 @@ public class DialogueManager : MonoBehaviour {
 		StartCoroutine(TypeSentence(sentence));
 	}
 
+	/* 
+	 * the sentence is typed character by character
+	 * */
 	IEnumerator TypeSentence (string sentence)
 	{
 		dialogueText.text = "";
@@ -51,9 +76,4 @@ public class DialogueManager : MonoBehaviour {
 			yield return null;
 		}
 	}
-
-	void EndDialogue()
-	{
-	}
-
 }
