@@ -161,7 +161,7 @@ MonoBehaviour:
   ZIndex: 0
   ItemToChop: {fileID: 1127444286}
   BufferWidth: 2
-  Velocity: 5
+  Velocity: 20
 --- !u!114 &337079251
 MonoBehaviour:
   m_ObjectHideFlags: 0
