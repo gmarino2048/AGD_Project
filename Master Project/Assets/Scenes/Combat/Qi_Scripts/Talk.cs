@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class Talk : MonoBehaviour {
 
     public GameObject Info;
+    public GameObject beg;
+    public BegHandler beghandler;
+    public Slider bar;
     public bool showup;
 
     private void Awake()
@@ -20,5 +23,14 @@ public class Talk : MonoBehaviour {
         Debug.Log("Open talk options");
         showup = true;
         Info.SetActive(true);
+        if((bar.value >= 0.85) && (!beghandler.begshown))
+        {
+            Debug.Log(bar.value);
+            beg.SetActive(true);
+        }
+        else
+        {
+            beg.SetActive(false);
+        }
     }
 }
