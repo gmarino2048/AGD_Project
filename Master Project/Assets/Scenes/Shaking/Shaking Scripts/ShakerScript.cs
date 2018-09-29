@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +17,9 @@ public class ShakerScript : MonoBehaviour
     private bool isStarted;
     private bool isFinished;
 
-	// Use this for initialization
+	/// <summary>
+    /// Start configures most elements in the scene, including instance variables, text for the text boxes, and counters
+    /// </summary>
 	void Start () {
         isSelected = false;
         isStarted = false;
@@ -30,6 +32,9 @@ public class ShakerScript : MonoBehaviour
         lastEnteredZone = new Collider2D();
 	}
 	
+    /// <summary>
+    /// This method detects when you pick up the shaker, and starts the minigame
+    /// </summary>
     void OnMouseDown()
     {
         if(!isFinished)
@@ -42,6 +47,9 @@ public class ShakerScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// this method determines if the shaker is let go
+    /// </summary>
     void OnMouseUp()
     {
         isSelected = false;
@@ -51,6 +59,12 @@ public class ShakerScript : MonoBehaviour
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0f);
     }
 
+    /// <summary>
+    /// This method is called when the rigidbody attached to the shaker collides with one of the hitboxes of the "shaking" zones.
+    /// It saves a pointer to the last entered zone in order to make sure you're colliding with the other zone next time,
+    /// and counts the number of collisions, which forces you to make a shaking motion.
+    /// </summary>
+    /// <param name="other"></param>
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Collision Entered");
@@ -62,7 +76,10 @@ public class ShakerScript : MonoBehaviour
         }
     }
 
-	// Update is called once per frame
+	/// <summary>
+    /// Update handles the movement of the shaker via the isSelected variable, as well as handles the countdown timer once
+    /// the minigame begins.
+    /// </summary>
 	void Update ()
     {
         if(isSelected)
