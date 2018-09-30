@@ -60,8 +60,8 @@ public class stirringTimer : MonoBehaviour
     /// </summary>
     private void FinishStirringGame()
     {
-        GameObject thePlayer = GameObject.Find("spoon");
-        spoon playerScript = thePlayer.GetComponent<spoon>();
-        float distance =  playerScript.travelDistance;
+        /*GameObject thePlayer = GameObject.Find("spoon");
+        spoon spoonScript = thePlayer.GetComponent<spoon>();
+        float distance =  spoonScript.travelDistance;*/
     }
 }

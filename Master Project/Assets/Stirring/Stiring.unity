@@ -282,8 +282,8 @@ GameObject:
   m_Component:
   - component: {fileID: 928140980}
   - component: {fileID: 928140979}
-  - component: {fileID: 928140981}
   - component: {fileID: 928140982}
+  - component: {fileID: 928140981}
   m_Layer: 0
   m_Name: spoon
   m_TagString: Untagged
