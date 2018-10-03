@@ -13,7 +13,7 @@ public class GrillBehavior : MonoBehaviour
 
     public float Z_Index;
 
-    public Rect Limits { get; private set; }
+    public BoxCollider Limits { get; private set; }
 
     [Header("Sausage Object")]
     // TODO: Edit this so that it creates a new sausage behavior object
@@ -40,13 +40,12 @@ public class GrillBehavior : MonoBehaviour
             Ray ray = Main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)){
-                if (Limits.Contains(hit.point)){
-                    SausageBehavior created = Instantiate(SausagePrefab);
-                    created.transform.position = new Vector3(hit.point.x,
-                                                             hit.point.y,
-                                                             Z_Index);
+                SausageBehavior created = Instantiate(SausagePrefab);
+                created.transform.position = new Vector3(hit.point.x,
+                                                         hit.point.y,
+                                                         Z_Index);
                     // Do necessary stuff here
-                }
+                
             }
             else {
                 Debug.Log("Position is outside allowed bounds");
@@ -61,23 +60,20 @@ public class GrillBehavior : MonoBehaviour
     /// </summary>
     void SetLimits()
     {
-        if (Main.orthographic)
-        {
-            // Calculate the extents of the camera view
+        if (Main.orthographic){
             float verticalExtents = Main.orthographicSize;
-            float horizontalExtents = Main.orthographicSize * (Screen.width /
-                                                               Screen.height);
+            float horizontalExtents = Main.orthographicSize * Screen.width /
+                                                              Screen.height;
+            Debug.Log(Screen.height + " " + Screen.width);
+            Vector3 centerPosition = new Vector3(Main.transform.position.x,
+                                                 Main.transform.position.y,
+                                                 transform.position.z);
 
-            // Get position of camera assuming looking in Z direction
-            float x = Main.transform.position.x;
-            float y = Main.transform.position.y;
-
-            float width = horizontalExtents * 2;
-            float height = verticalExtents * 2;
-
-            Limits = new Rect(x, y, width, height);
+            BoxCollider boxCollider = GetComponent<BoxCollider>();
+            boxCollider.center = centerPosition;
+            boxCollider.size = new Vector3((2 * horizontalExtents) - (2 * TopBoundaries),
+                                           (2 * verticalExtents) - (2 * SideBoundaries),
+                                           0.01f);
         }
-        else throw new UnityException("Camera Needs to be orthographic for " +
-                                      "GrillBehavior");
     }
 }
