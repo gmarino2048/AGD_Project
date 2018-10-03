@@ -31,8 +31,6 @@ public class SausageBehavior : MonoBehaviour {
 
     void Evaluate () {
         int length = Sprites.Count;
-
-        float position = 
     }
 
     void SwapSprite () {
