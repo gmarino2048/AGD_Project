@@ -1,6 +1,6 @@
 # AGD_Project
 
-### Welcome to Kenny's
+### Welcome to Qennie's
 
 ## Overview
 

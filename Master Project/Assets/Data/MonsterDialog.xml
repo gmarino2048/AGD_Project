@@ -1,0 +1,35 @@
+﻿<xml>
+    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" initialDialog="{9DAE5429-5CF9-41C1-9CED-6D612AC855EA}">
+        <prompt id="{9DAE5429-5CF9-41C1-9CED-6D612AC855EA}" responseSet="{C8476166-3CDA-4660-8C22-C21C62A15560}">
+            This is a test
+        </prompt>
+        
+        <prompt id="{C0B6B913-D394-4B0D-A5FA-EF44ED86019E}" nextPrompt="{C2B9035A-337B-49E5-A555-7EFE9F7B68A6}">
+            Good response was received.
+        </prompt>
+        
+        <prompt id="{C0B6B913-D394-4B0D-A5FA-EF44ED86019E}" nextPrompt="{C2B9035A-337B-49E5-A555-7EFE9F7B68A6}">
+            Good response was received.
+        </prompt>
+        
+        <prompt id="{2B3669E6-A339-4FFC-91DA-91ED97167493}" nextPrompt="{C2B9035A-337B-49E5-A555-7EFE9F7B68A6}">
+            Good response was received.
+        </prompt>
+        
+        <prompt id="{C2B9035A-337B-49E5-A555-7EFE9F7B68A6}">
+            And this ends it.
+        </prompt>
+        
+        <responseSet id="{C8476166-3CDA-4660-8C22-C21C62A15560}">
+            <response value="1" nextPrompt="{C0B6B913-D394-4B0D-A5FA-EF44ED86019E}">
+                Good response
+            </response>
+            <response value="0" nextPrompt="{C2B9035A-337B-49E5-A555-7EFE9F7B68A6}">
+                Neutral response
+            </response>
+            <response value="-1" nextPrompt="{2B3669E6-A339-4FFC-91DA-91ED97167493}">
+                Bad response
+            </response>
+        </responseSet>
+    </monster>
+</xml>

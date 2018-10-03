@@ -4,4 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ScenePicker/ScenePicker.unity
+    guid: 64d68d94cc801bf498b20ddf9bb5ca5e
+  - enabled: 1
+    path: Assets/Scenes/Chopping/Chopping.unity
+    guid: 5483dd7ca4ee7427ca1f82c3cb07dc4d
+  - enabled: 1
+    path: Assets/Scenes/Combat/CombatScene.unity
+    guid: c3534fcd3fa644bb4b61fb1efa8a5a02
+  - enabled: 1
+    path: Assets/Scenes/Dialogue/DialogueScene.unity
+    guid: 4f9285bf519f04e619a893762f3ca9c4
+  - enabled: 1
+    path: Assets/Scenes/Microwave/Microwave_Goldberg.unity
+    guid: 00d103a83ccd94d429303fea7b988fed
+  - enabled: 1
+    path: Assets/Scenes/Shaking/Shaking.unity
+    guid: b58c927a16f574c439861de848aac19b
