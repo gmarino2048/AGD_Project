@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SausageBehavior : MonoBehaviour {
+/// <summary>
+/// Controls the actions of a grill object, and makes sure that its animations are
+/// handled correctly.
+/// </summary>
+public class GrillObjectBehavior : MonoBehaviour {
 
     [Header("Cook time options")]
     public float LifeCycle; // The number of seconds this object takes to cook.

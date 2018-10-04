@@ -16,15 +16,24 @@ public class GrillBehavior : MonoBehaviour
     public BoxCollider Limits { get; private set; }
 
     [Header("Sausage Object")]
-    // TODO: Edit this so that it creates a new sausage behavior object
     [SerializeField]
-    public SausageBehavior SausagePrefab;
+    public GrillObjectBehavior SausagePrefab;
 
+    /// <summary>
+    /// Sets the limits of the grill top and defines where the user can and
+    /// cannot place the grill objects.
+    /// </summary>
     void Start()
     {
+        // TODO: Include sprite size into limit setting.
         SetLimits();
     }
 
+    /// <summary>
+    /// Handles proper placement of the sausages on the grill top. Places and
+    /// runs individual sausages on the grill every time the player clicks 
+    /// there.
+    /// </summary>
     void Update()
     {
         PlaceSausage();
@@ -40,7 +49,7 @@ public class GrillBehavior : MonoBehaviour
             Ray ray = Main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)){
-                SausageBehavior created = Instantiate(SausagePrefab);
+                GrillObjectBehavior created = Instantiate(SausagePrefab);
                 created.transform.position = new Vector3(hit.point.x,
                                                          hit.point.y,
                                                          Z_Index);
