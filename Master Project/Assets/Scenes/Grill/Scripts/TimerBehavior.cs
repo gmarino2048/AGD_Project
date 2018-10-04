@@ -7,7 +7,7 @@ public class TimerBehavior : MonoBehaviour {
 
     public float InitialTime = 30f; // Set timer for 30s by default.
 
-    float CurrentTime; // The current time of the countdown.
+    public float CurrentTime { get; private set; } // The current time of the countdown.
     Text Text; // The timer's text.
 
 	/// <summary>

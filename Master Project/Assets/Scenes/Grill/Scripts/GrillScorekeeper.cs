@@ -13,4 +13,8 @@ public class GrillScorekeeper : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void AddScore (SausageBehavior grilled) {
+
+    }
 }
