@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-/* 
- * starts the dialogue for a character
-* */
+/// <summary>
+/// Starts a dialogue
+/// </summary>
 public class StartDialogue : MonoBehaviour {
 
-	/* 
-	 * the dialogue for the character
-	 * */
-	public Dialogue dialogue;
-
-	/* 
-	 * starts or triggers the dialogue
-	 * */
+	/// <summary>
+    /// The ID of the monster to start a dialogue with
+    /// </summary>
+	public Guid MonsterID;
+    
+    /// <summary>
+    /// Starts the dialogue
+    /// </summary>
 	public void TriggerDialogue ()
 	{
-		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+		FindObjectOfType<DialogueManager>().StartDialogue(MonsterID);
 	}
-
 }
