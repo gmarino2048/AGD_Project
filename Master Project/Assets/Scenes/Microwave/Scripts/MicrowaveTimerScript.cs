@@ -12,6 +12,8 @@ public class MicrowaveTimerScript : MonoBehaviour
     //whether the game is still going
     private bool stillRunning;
 
+    Animator anim;
+
     /// <summary>
     /// Start this instance.
     /// initializes variables
@@ -19,7 +21,7 @@ public class MicrowaveTimerScript : MonoBehaviour
     /// </summary>
     void Start()
     {
-
+        anim = GameObject.Find("Microwave Sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +66,7 @@ public class MicrowaveTimerScript : MonoBehaviour
     /// </summary>
    public void buttonClicked(){
         stillRunning = false;
+        anim.SetTrigger("Open");
         FinishMicrowaveGame();
     }
 
