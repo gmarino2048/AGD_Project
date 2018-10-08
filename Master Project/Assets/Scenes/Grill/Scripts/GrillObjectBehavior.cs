@@ -42,6 +42,12 @@ public class GrillObjectBehavior : MonoBehaviour {
         // Get the sprite Renderer for this object
         Master = GetComponent<Animator>();
 
+        Main = Master.runtimeAnimatorController.animationClips
+                     .Where(clip => clip.name == MainName).FirstOrDefault();
+
+        Loop = Master.runtimeAnimatorController.animationClips
+                     .Where(clip => clip.name == LoopName).FirstOrDefault();
+
         // Set the animator speed to take the correct amount of time
         float multiplier = Main.length / MainTime;
         Master.speed = multiplier;
