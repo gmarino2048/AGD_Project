@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: 463a9a23c86864477aaddda5aaec899a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Hudson_TUTMicrowave_1_0
+    21300002: Hudson_TUTMicrowave_1_1
+    21300004: Hudson_TUTMicrowave_1_2
+    21300006: Hudson_TUTMicrowave_1_3
+    21300008: Hudson_TUTMicrowave_1_4
+    21300010: Hudson_TUTMicrowave_1_5
+    21300012: Hudson_TUTMicrowave_1_6
+    21300014: Hudson_TUTMicrowave_1_7
+    21300016: Hudson_TUTMicrowave_1_8
+    21300018: Hudson_TUTMicrowave_1_9
+    21300020: Hudson_TUTMicrowave_1_10
+    21300022: Hudson_TUTMicrowave_1_11
+    21300024: Hudson_TUTMicrowave_1_12
+    21300026: Hudson_TUTMicrowave_1_13
+    21300028: Hudson_TUTMicrowave_1_14
+    21300030: Hudson_TUTMicrowave_1_15
+    21300032: Hudson_TUTMicrowave_1_16
+    21300034: Hudson_TUTMicrowave_1_17
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3616
+        width: 826
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_1
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 3616
+        width: 832
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_2
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 3616
+        width: 828
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_3
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 3616
+        width: 832
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3112
+        width: 826
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_5
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 3112
+        width: 832
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_6
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 3112
+        width: 828
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_7
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 3112
+        width: 832
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2616
+        width: 826
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_9
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 2616
+        width: 832
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_10
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 2514
+        width: 828
+        height: 590
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_11
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 2346
+        width: 834
+        height: 754
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1552
+        width: 832
+        height: 778
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_13
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1510
+        width: 834
+        height: 820
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_14
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 1560
+        width: 1198
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 824
+        width: 1392
+        height: 668
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_16
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 832
+        width: 1434
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hudson_TUTMicrowave_1_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 1444
+        height: 658
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
