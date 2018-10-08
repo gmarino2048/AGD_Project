@@ -5,10 +5,10 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
 <<<<<<< HEAD
-  productGUID: 380b69cb4e4020f40b5b9be29ac21da7
-=======
   productGUID: 0efe9df58c7014e5b857ef3b4cce8ade
->>>>>>> origin/Ahmed_DialogueScene
+=======
+  productGUID: 8034ffb6836124dbe868fa113d75e5c0
+>>>>>>> Grill_Marino
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -157,11 +157,7 @@ PlayerSettings:
   protectGraphicsMemory: 0
   useHDRDisplay: 0
   m_ColorGamuts: 00000000
-<<<<<<< HEAD
-  targetPixelDensity: 0
-=======
   targetPixelDensity: 30
->>>>>>> origin/Ahmed_DialogueScene
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
@@ -185,17 +181,10 @@ PlayerSettings:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-<<<<<<< HEAD
-  iOSTargetOSVersionString: 
-  tvOSSdkVersion: 0
-  tvOSRequireExtendedGameController: 0
-  tvOSTargetOSVersionString: 
-=======
   iOSTargetOSVersionString: 7.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 9.0
->>>>>>> origin/Ahmed_DialogueScene
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -246,11 +235,7 @@ PlayerSettings:
   iOSURLSchemes: []
   iOSBackgroundModes: 0
   iOSMetalForceHardShadows: 0
-<<<<<<< HEAD
-  metalEditorSupport: 1
-=======
   metalEditorSupport: 0
->>>>>>> origin/Ahmed_DialogueScene
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 0
   appleDeveloperTeamID: 
@@ -475,11 +460,7 @@ PlayerSettings:
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
-<<<<<<< HEAD
-  ps4Passcode: JcrgRYwTiizs2trQF69AzBlax3CF3EDN
-=======
   ps4Passcode: 5PN2qmWqBlQ9wQj99nsQzldVI5ZuGXbE
->>>>>>> origin/Ahmed_DialogueScene
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -525,11 +506,7 @@ PlayerSettings:
   psp2LiveAreaTrialPath: 
   psp2PatchChangeInfoPath: 
   psp2PatchOriginalPackage: 
-<<<<<<< HEAD
-  psp2PackagePassword: hm3soLBPh71YexuieaoEiIgxIX4a2dRE
-=======
   psp2PackagePassword: WRK5RhRXdCdG5nG5azdNMK66MuCV6GXi
->>>>>>> origin/Ahmed_DialogueScene
   psp2KeystoneFile: 
   psp2MemoryExpansionMode: 0
   psp2DRMType: 0

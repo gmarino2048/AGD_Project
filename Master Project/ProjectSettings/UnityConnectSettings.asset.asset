@@ -3,7 +3,11 @@
 --- !u!310 &1
 UnityConnectSettings:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
+  m_Enabled: 1
+=======
   m_Enabled: 0
+>>>>>>> Grill_Marino
   m_TestMode: 0
   m_TestEventUrl: 
   m_TestConfigUrl: 

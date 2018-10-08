@@ -3,9 +3,11 @@ Demo/** filter=lfs diff=lfs merge=lfs -text
 
 # Put all large file types here
 *.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.ai  filter=lfs diff=lfs merge=lfs -text
 *.fla filter=lfs diff=lfs merge=lfs -text
+*.anim filter=lfs diff=lfs merge=lfs -text
 
 # Sound Files
 *.mp3 filter=lfs diff=lfs merge=lfs -text
