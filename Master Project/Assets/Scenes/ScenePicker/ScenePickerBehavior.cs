@@ -37,6 +37,11 @@ public class ScenePickerBehavior : MonoBehaviour
     public Button ShakingButton; // The button to press for the shaking scene
     public string ShakingName; // The name of the shaking scene
 
+    [Header("Grill")]
+    [SerializeField]
+    public Button GrillButton; // The button to press for the shaking scene
+    public string GrillName; // The name of the shaking scene
+
 
     /// <summary>
     /// Adds the listeners to each individual button so that when they are pressed
@@ -53,6 +58,8 @@ public class ScenePickerBehavior : MonoBehaviour
         MicrowaveButton.onClick.AddListener(OnMicrowavePressed);
 
         ShakingButton.onClick.AddListener(OnShakingPressed);
+
+        GrillButton.onClick.AddListener(OnGrillPressed);
     }
 
     /// <summary>
@@ -95,6 +102,15 @@ public class ScenePickerBehavior : MonoBehaviour
     /// Loads the shaking scene.
     /// </summary>
     private void OnShakingPressed()
+    {
+        SceneManager.LoadScene(ShakingName);
+    }
+
+
+    /// <summary>
+    /// Loads the grill scene.
+    /// </summary>
+    private void OnGrillPressed()
     {
         SceneManager.LoadScene(ShakingName);
     }
