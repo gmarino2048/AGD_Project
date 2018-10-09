@@ -112,6 +112,6 @@ public class ScenePickerBehavior : MonoBehaviour
     /// </summary>
     private void OnGrillPressed()
     {
-        SceneManager.LoadScene(ShakingName);
+        SceneManager.LoadScene(GrillName);
     }
 }

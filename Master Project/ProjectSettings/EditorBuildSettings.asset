@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shaking/Shaking.unity
     guid: b58c927a16f574c439861de848aac19b
+  - enabled: 1
+    path: Assets/Scenes/Grill/Grill.unity
+    guid: 20bcaff4a6c81453a9e442f3964b3392
