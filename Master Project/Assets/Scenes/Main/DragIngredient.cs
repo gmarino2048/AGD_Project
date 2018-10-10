@@ -54,4 +54,5 @@ public class DragIngredient : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
         transform.position = mousePosition;
     }
+		
 }

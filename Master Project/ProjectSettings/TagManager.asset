@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ItemOne
+  - ItemTwo
+  - ItemThree
+  - ItemFour
   layers:
   - Default
   - TransparentFX
@@ -13,12 +17,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FoodItem1
+  - FoodItem2
+  - FoodItem3
+  - FoodItem4
+  - IngredientDirective
+  - Pause
   - 
   - 
   - 

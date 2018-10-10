@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour {
+public class PauseStatus : MonoBehaviour {
 
 	// Use this for initialization
 	public static bool paused = false;
 
 	public GameObject pauseMenu;
 
+	public GameObject pauseButton;
+
+	void Start() {
+		pauseMenu.SetActive (false);
+	}
+		
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0)) {
+		if(Input.GetKeyDown(KeyCode.Escape)) {
 			if (paused) {
 				Resume ();
 			} 

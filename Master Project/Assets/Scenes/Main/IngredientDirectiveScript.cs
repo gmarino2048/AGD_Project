@@ -18,8 +18,26 @@ public class IngredientDirectiveScript : MonoBehaviour {
         Collider2D[] overlap = Physics2D.OverlapAreaAll(boxCollider.bounds.min, boxCollider.bounds.max);
         if (overlap.Length > 1){
             overlap[0].transform.position = this.transform.position;
-            Debug.Log(string.Format("Found {0} overlapping object(s)", overlap.Length - 1));
+           // Debug.Log(string.Format("Found {0} overlapping object(s)", overlap.Length - 1));
         }
             
     }
+
+	public void OnCollisionEnter2D(Collision2D col) {
+		//Debug.Log ("Collision");
+		if (col.gameObject.tag == "ItemOne") {
+			Debug.Log ("first");
+		}
+		else if (col.gameObject.tag == "ItemTwo") {
+			Debug.Log ("second");
+		}
+
+		else if (col.gameObject.tag == "ItemThree") {
+			Debug.Log ("third");
+		}
+
+		else if (col.gameObject.tag == "ItemFour") {
+			Debug.Log ("fourth");
+		}
+	}
 }
