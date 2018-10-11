@@ -91,6 +91,16 @@ namespace Shaking
             return scaledScore + "/1000";
         }
 
+
+        /// <summary>
+        /// Fades in the canvas group containing the final score display once
+        /// the minigame has finished. 
+        /// </summary>
+        /// <returns>An IEnumerator used to enable the coroutine.</returns>
+        /// <param name="canvas">The Canvas Group to fade in.</param>
+        /// <param name="startAlpha">The starting opacity of the canvas.</param>
+        /// <param name="duration">The duration of the fade effect.</param>
+        /// <param name="endAlpha">The final opacity of the Canvas Group.</param>
         IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha){
             float startTime = Time.time;
 
