@@ -25,14 +25,12 @@ namespace Shaking
             Bottom
         }
 
-        private bool Excluded;
         private Position LastPosition;
         private Vector3 Offset;
 
         private void Start()
         {
             Collider = GetComponent<BoxCollider2D>();
-            Excluded = false;
             LastPosition = Position.Bottom;
             Shakes = 0;
             Offset = new Vector2(0, 0);
@@ -64,7 +62,16 @@ namespace Shaking
         {
             Vector3 relativePosition = MouseToWorldPoint() + Offset;
             relativePosition.z = 0;
-            transform.position = relativePosition;
+
+            if (!Collider.IsTouching(ExclusionZone))
+                transform.position = relativePosition;
+            else
+            {
+                transform.position = relativePosition.y > transform.position.y ?
+                    relativePosition : new Vector3(relativePosition.x, transform.position.y);
+
+                Offset = transform.position - MouseToWorldPoint();
+            }
         }
 
         private Vector3 MouseToWorldPoint ()
