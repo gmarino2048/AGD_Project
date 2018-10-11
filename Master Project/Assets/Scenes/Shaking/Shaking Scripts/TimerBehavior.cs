@@ -17,7 +17,7 @@ namespace Shaking
         public string CompleteValue = "Minigame Complete"; // The value to show when the timer finishes.
 
         [Header("Initial Value")]
-        public float TotalTime; // The total time to count for.
+        public float TotalTime = 30f; // The total time to count for.
 
         public float CurrentTime { get; private set; } // The current value for the time remaining.
         public bool Finished { get; private set; } // Set to True when the timer has finished.
