@@ -19,9 +19,31 @@ public class DialogueManager : MonoBehaviour {
     /// </summary>
     public Text dialogueText;
 
+    /// <summary>
+    /// The response buttons.
+    /// </summary>
+    public Button[] responseButtons;
+
+    /// <summary>
+    /// The prompt display.
+    /// </summary>
+    public GameObject promptDisplay;
+
+    /// <summary>
+    /// The responses display.
+    /// </summary>
+    public GameObject responsesDisplay;
+
+    /// <summary>
+    /// The continue button.
+    /// </summary>
+    public GameObject continueButton;
+
     private DialogDataManager _DialogDataManager;
     private Prompt _CurrentPrompt;
-    
+
+    private readonly Guid _NESSIE_ID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
+
     /// <summary>
     /// Starts and displays the dialogue for each sentence in the list of sentences
     /// </summary>
@@ -57,8 +79,21 @@ public class DialogueManager : MonoBehaviour {
     /// <param name="chosenResponse">The chosen response.</param>
     public void GoToNextPrompt(Response chosenResponse)
     {
+        ResetResponseButtonEventHandlers();
+
         _CurrentPrompt = _DialogDataManager.Prompts[chosenResponse.NextPromptID];
         DisplayPromptBody();
+    }
+
+    public bool ShowResponseOptions()
+    {
+        if (string.IsNullOrEmpty(_CurrentPrompt.ResponseSetID))
+        {
+            return false;
+        }
+
+        DisplayResponseOptions();
+        return true;
     }
     
     /// <summary>
@@ -66,29 +101,70 @@ public class DialogueManager : MonoBehaviour {
     /// </summary>
 	private void DisplayPromptBody()
 	{
-        var speakerName = _CurrentPrompt.IsSaidByPlayer ? "You" : "Customer"; //TODO: Replace "Customer" with the actual name of the monster.
+        responsesDisplay.SetActive(false);
+        continueButton.SetActive(false);
+
+        var speakerName = _CurrentPrompt.IsSaidByPlayer ? "You" : "Nessie"; //TODO: Replace "Nessie" with the actual name of the monster.
 
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(speakerName, _CurrentPrompt.Body));
 
-        if (!string.IsNullOrEmpty(_CurrentPrompt.ResponseSetID))
-        {
-            // TODO: Display response options
-        }
+        promptDisplay.SetActive(true);
 	}
+
+    /// <summary>
+    /// Resets the response button event handlers.
+    /// </summary>
+    private void ResetResponseButtonEventHandlers()
+    {
+        foreach (var responseButton in responseButtons)
+        {
+            responseButton.onClick.RemoveAllListeners();
+        }
+    }
+
+    /// <summary>
+    /// Displays the response options.
+    /// </summary>
+    private void DisplayResponseOptions()
+    {
+        promptDisplay.SetActive(false);
+        continueButton.SetActive(false);
+
+        var responseSet = _DialogDataManager.ResponseSets[_CurrentPrompt.ResponseSetID];
+        for (int i = 0; i < responseSet.Length; i++)
+        {
+            var response = responseSet[i];
+            var responseButton = responseButtons[i];
+
+            responseButton.GetComponentInChildren<Text>().text = response.Body;
+            responseButton.onClick.AddListener(() => GoToNextPrompt(response));
+        }
+        
+        responsesDisplay.SetActive(true);
+    }
 
     /// <summary>
     /// The sentence is typed character by character
     /// </summary>
     /// <param name="speakerName">The name of the speaker that is saying the sentence</param>
     /// <param name="sentence">The sentence to type</param>
-    private IEnumerator TypeSentence (string speakerName, string sentence)
-	{
-		dialogueText.text = string.Empty;
-		foreach (char letter in sentence.ToCharArray())
-		{
-			dialogueText.text += letter;
-			yield return null;
-		}
-	}
+    private IEnumerator TypeSentence(string speakerName, string sentence)
+    {
+        nameText.text = speakerName;
+
+        dialogueText.text = string.Empty;
+        foreach (char letter in sentence)
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
+
+        continueButton.SetActive(true);
+    }
+
+    public void Start()
+    {
+        StartDialogue(_NESSIE_ID);
+    }
 }

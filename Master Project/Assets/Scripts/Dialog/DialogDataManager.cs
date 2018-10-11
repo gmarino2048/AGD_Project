@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
+using System.IO;
 using UnityEngine;
 
 namespace Dialog
 {
     public class DialogDataManager
     {
-        private const string _MONSTER_DIALOG_DATA_FILE_PATH = "Data/MonsterDialog.xml";
+        private const string _MONSTER_DIALOG_DATA_FILE_PATH = "Assets/Data/MonsterDialog.xml";
 
         /// <summary>
         /// Gets the response sets.
@@ -39,13 +40,11 @@ namespace Dialog
         /// <returns>The new DialogDataManager</returns>
         /// <param name="monsterId">Monster identifier.</param>
         public static DialogDataManager LoadFromXml(Guid monsterId) {
-            var xmlAsset = new TextAsset();
-            xmlAsset = (TextAsset)Resources.Load(_MONSTER_DIALOG_DATA_FILE_PATH, typeof(TextAsset));
-
+            var xmlFileContents = File.ReadAllText(_MONSTER_DIALOG_DATA_FILE_PATH);
             var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xmlAsset.text);
+            xmlDoc.LoadXml(xmlFileContents);
 
-            var monsterDialogData = xmlDoc.GetElementById(monsterId.ToString());
+            var monsterDialogData = xmlDoc.GetElementById(monsterId.ToString("B").ToUpper());
             var dialogDataManager = new DialogDataManager
             {
                 InitialPromptID = monsterDialogData.Attributes["initialDialog"].Value,
@@ -56,7 +55,7 @@ namespace Dialog
             foreach (XmlNode xmlNode in monsterDialogData.GetElementsByTagName("prompt")) {
                 var prompt = new Prompt
                 {
-                    Body = xmlNode.InnerText
+                    Body = xmlNode.InnerText.Trim()
                 };
 
                 if (xmlNode.Attributes["nextPrompt"] != null)
@@ -82,7 +81,7 @@ namespace Dialog
                 foreach (XmlNode responseNode in xmlNode.ChildNodes) {
                     responses.Add(new Response
                     {
-                        Body = responseNode.InnerText,
+                        Body = responseNode.InnerText.Trim(),
                         Value = int.Parse(responseNode.Attributes["value"].Value),
                         NextPromptID = responseNode.Attributes["nextPrompt"].Value
                     });
