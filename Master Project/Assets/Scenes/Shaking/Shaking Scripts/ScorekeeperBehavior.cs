@@ -43,6 +43,7 @@ namespace Shaking
             ShakerScore.text = 0.ToString();
 
             ScoreDisplay.alpha = 0f;
+            FinalScoreText.text = "";
         }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Shaking
 
                 // TODO: Report the score here
                 FinalScoreText.text = GetScoreText(score);
+                StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
 
                 Finished = true;
             }
@@ -78,9 +80,28 @@ namespace Shaking
             return 1f / (1f + Shaker.Shakes);
         }
 
+
+        /// <summary>
+        /// Gets the score text.
+        /// </summary>
+        /// <returns>The score text.</returns>
+        /// <param name="score">Score.</param>
         string GetScoreText (float score) {
             int scaledScore = Mathf.RoundToInt((1 - score) * 1000);
             return scaledScore + "/1000";
+        }
+
+        IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha){
+            float startTime = Time.time;
+
+            float change = (endAlpha - startAlpha) / duration;
+
+            while (Time.time - startTime <= duration){
+                float currentTime = Time.time - startTime;
+                canvas.alpha = startAlpha + (change * currentTime);
+
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
 }
