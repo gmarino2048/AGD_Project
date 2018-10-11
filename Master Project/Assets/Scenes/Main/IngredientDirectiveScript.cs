@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IngredientDirectiveScript : MonoBehaviour {
 
@@ -27,17 +28,16 @@ public class IngredientDirectiveScript : MonoBehaviour {
 		//Debug.Log ("Collision");
 		if (col.gameObject.tag == "ItemOne") {
 			Debug.Log ("first");
+			SceneManager.LoadScene ("Shaking");
 		}
 		else if (col.gameObject.tag == "ItemTwo") {
 			Debug.Log ("second");
+			SceneManager.LoadScene ("Microwave_Goldberg");
 		}
 
 		else if (col.gameObject.tag == "ItemThree") {
 			Debug.Log ("third");
-		}
-
-		else if (col.gameObject.tag == "ItemFour") {
-			Debug.Log ("fourth");
+			SceneManager.LoadScene ("Stiring");
 		}
 	}
 }
