@@ -1,44 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Pause : MonoBehaviour {
+public class PauseMenu : MonoBehaviour {
 
-    public static bool Gamepaused = false;
-    public GameObject pausemenu;
+	// Use this for initialization
+	public static bool paused = false;
 
-    private void Awake()
-    {
-        pausemenu.SetActive(false);
-    }
-    private void Update()
-    {
-        if (Gamepaused)
-        {
-            pause();
-        }
-        else
-        {
-            resume();
-        }
-    }
-    public void PauseHandler()
-    {
-        //Output this to console when the Button is clicked
-        Debug.Log("Pause");
-        Gamepaused = true;
-    }
+	public GameObject pauseMenu;
 
-    public void pause()
-    {
-        pausemenu.SetActive(true);
-        Time.timeScale = 0f;
-        Gamepaused = true;
-    }
-    public void resume()
-    {
-        pausemenu.SetActive(false);
-        Time.timeScale = 1f;
-        Gamepaused = false;
-    }
+	// Update is called once per frame
+	void Update () {
+		if(Input.GetMouseButtonDown(0)) {
+			if (paused) {
+				Resume ();
+			} 
+			else {
+				Pause ();
+			}
+		}
+	}
+
+	public void Resume () {
+		pauseMenu.SetActive(false);
+		Time.timeScale = 1;
+		paused = false;
+	}
+
+
+	void Pause() {
+		pauseMenu.SetActive (true);
+		Time.timeScale = 0;
+		paused = true;
+	}
+
+	public void QuitGame() {
+		Application.Quit ();
+	}
 }
