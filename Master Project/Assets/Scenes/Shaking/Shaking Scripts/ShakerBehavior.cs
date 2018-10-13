@@ -18,6 +18,12 @@ namespace Shaking
 
         [SerializeField]
         public BoxCollider2D ExclusionZone; // The zone that you can't enter.
+        private float ExclusionTop;
+
+        // Screen Bounds
+        private float ScreenTop;
+        private float ScreenLeft;
+        private float ScreenRight;
 
         private enum Position
         {
@@ -34,6 +40,7 @@ namespace Shaking
             LastPosition = Position.Bottom;
             Shakes = 0;
             Offset = new Vector2(0, 0);
+            GetBounds();
         }
 
         private void Update()
@@ -52,6 +59,24 @@ namespace Shaking
             }
         }
 
+        private void GetBounds () {
+            float exclusionHeight = ExclusionZone.bounds.center.y +
+                                          ExclusionZone.bounds.extents.y;
+            ExclusionTop = exclusionHeight + Collider.bounds.extents.y;
+
+            if (Camera.main.orthographic){
+                float height = Camera.main.orthographicSize;
+                float width = height * Screen.width / Screen.height;
+
+                float x = Camera.main.transform.position.x;
+                float y = Camera.main.transform.position.y;
+
+                ScreenTop = y + height - Collider.bounds.extents.y;
+                ScreenLeft = x - width + Collider.bounds.extents.x;
+                ScreenRight = x + width - Collider.bounds.extents.x;
+            }
+        }
+
         private void OnMouseDown()
         {
             Offset = transform.position - MouseToWorldPoint();
@@ -64,7 +89,13 @@ namespace Shaking
             relativePosition.z = 0;
 
             if (!Collider.IsTouching(ExclusionZone))
-                transform.position = relativePosition;
+            {
+                float newX = Mathf.Clamp(relativePosition.x, ScreenLeft, ScreenRight);
+                float newY = Mathf.Clamp(relativePosition.y, ExclusionTop, ScreenTop);
+                Vector3 newPosition = new Vector3(newX, newY, relativePosition.z);
+
+                transform.position = newPosition;
+            }
             else
             {
                 transform.position = relativePosition.y > transform.position.y ?
