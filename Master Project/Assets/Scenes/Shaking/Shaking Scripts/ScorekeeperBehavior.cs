@@ -64,9 +64,11 @@ namespace Shaking
                 float score = GetScore();
                 Debug.Log(score);
 
-
                 FinalScoreText.text = GetScoreText(score);
                 StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
+
+                var ScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
+                ScoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AquariumGravel, GetScore());
 
                 Finished = true;
             }
@@ -103,7 +105,8 @@ namespace Shaking
         /// <param name="startAlpha">The starting opacity of the canvas.</param>
         /// <param name="duration">The duration of the fade effect.</param>
         /// <param name="endAlpha">The final opacity of the Canvas Group.</param>
-        IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha){
+        IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha)
+        {
             float startTime = Time.time;
 
             float change = (endAlpha - startAlpha) / duration;
