@@ -24,6 +24,11 @@ public class IngredientDirectiveScript : MonoBehaviour {
             
     }
 
+	/// <summary>
+	/// Chnages scene on collision
+	/// </summary>
+	/// <param name="col">The collision of the ingredient with the ingredient directive</param>
+	/// <returns> prints out the object colliding.</returns>
 	public void OnCollisionEnter2D(Collision2D col) {
 		//Debug.Log ("Collision");
 		if (col.gameObject.tag == "ItemOne") {
