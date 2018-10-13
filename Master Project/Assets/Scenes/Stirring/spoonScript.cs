@@ -20,10 +20,16 @@ public class spoonScript : MonoBehaviour {
 
     public float mouseRadius;
 
+    public Vector3 center;
+
+    public float spoonX;
+
+    public float spoonY;
+
 
     // Use this for initialization
     void Start () {
-		
+        center = new Vector3(0, 0, 0);
 	}
 	
 	
@@ -54,6 +60,23 @@ public class spoonScript : MonoBehaviour {
         Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
         mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
         //transform.position = mousePosition;
+
+        mouseRadius = Vector3.Distance(mousePosition, center);
+
+        angle = Mathf.Atan2(mousePosition.y, mousePosition.x);
+
+        if (mouseRadius < 2)
+        {
+            spoonX = Mathf.Cos(angle) * mouseRadius;
+            spoonY = Mathf.Sin(angle) * mouseRadius;
+        }
+        else{
+            spoonX = Mathf.Cos(angle) * 2;
+            spoonY = Mathf.Sin(angle) * 2;
+        }
+
+        transform.position = new Vector3(spoonX, spoonY, 0);
+
 
 
     }
