@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
 public class NextButton : MonoBehaviour {
+    public bool shouldSkipDialogue = false;
+
     public void OnClick() {
         var dialogueManager = FindObjectOfType<DialogueManager>();
-        if (!dialogueManager.GoToNextPrompt() && !dialogueManager.ShowResponseOptions()) {
+        if (shouldSkipDialogue || (!dialogueManager.GoToNextPrompt() && !dialogueManager.ShowResponseOptions())) {
             dialogueManager.EndDialogue();
         }
     }

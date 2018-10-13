@@ -134,6 +134,9 @@ public class DialogueManager : MonoBehaviour {
     /// <returns>A number between 0 and 1. 0 is best, 1 is worst.</returns>
     private float GetConversationScore()
     {
+        if (_TotalPossibleResponseScore == 0)
+            return 0;
+            
         float conversationScore = (_TotalPossibleResponseScore - _ResponsesScore) / (2.0f * _TotalPossibleResponseScore);
         return conversationScore;
     }

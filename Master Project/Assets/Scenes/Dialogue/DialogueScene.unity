@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39eac907f5e494d8bb3557e5cee26414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldSkipDialogue: 1
 --- !u!114 &1027985361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1429,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7277ad2b808b1400db571e741d94c915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: ScenePicker
+  nextSceneName: IngredientsScene
   nameText: {fileID: 1462387376}
   dialogueText: {fileID: 126655104}
   responseButtons:
