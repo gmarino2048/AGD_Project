@@ -16,6 +16,10 @@ public class spoonScript : MonoBehaviour {
     //how far the spoon traveled
     public float travelDistance = 0;
 
+    public float angle;
+
+    public float mouseRadius;
+
 
     // Use this for initialization
     void Start () {
@@ -49,6 +53,8 @@ public class spoonScript : MonoBehaviour {
     {
         Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
         mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
-        transform.position = mousePosition;
+        //transform.position = mousePosition;
+
+
     }
 }
