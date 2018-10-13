@@ -100,9 +100,9 @@ namespace Shaking
             {
                 transform.position = relativePosition.y > transform.position.y ?
                     relativePosition : new Vector3(relativePosition.x, transform.position.y);
-
-                Offset = transform.position - MouseToWorldPoint();
             }
+
+            Offset = transform.position - MouseToWorldPoint();
         }
 
         private Vector3 MouseToWorldPoint ()

@@ -9,6 +9,8 @@ namespace Shaking
 {
     public class ScorekeeperBehavior : MonoBehaviour
     {
+        [Header("Scoring Settings")]
+        public uint TargetShakes; // The target number of shakes for the scene.
 
         [Header("Scene Objects")]
         [SerializeField]
@@ -62,7 +64,7 @@ namespace Shaking
                 float score = GetScore();
                 Debug.Log(score);
 
-                // TODO: Report the score here
+
                 FinalScoreText.text = GetScoreText(score);
                 StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
 
@@ -77,7 +79,7 @@ namespace Shaking
         /// </summary>
         /// <returns>The score of this minigame.</returns>
         float GetScore () {
-            return 1f / (1f + Shaker.Shakes);
+            return 1f / (1f + (Shaker.Shakes / TargetShakes));
         }
 
 
