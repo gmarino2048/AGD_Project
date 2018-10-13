@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 /// <summary>
 /// The DialogueManager class that manages the Dialogue GUI
 /// </summary>
