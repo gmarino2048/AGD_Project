@@ -35,7 +35,7 @@ public class MicrowaveTimerScript : MonoBehaviour
         counter = 10;
         //every second call countdown method (starts after a second)
         InvokeRepeating("Countdown", 1, 1);
-        TimerText.text = "00:" + counter.ToString();
+        TimerText.text = "00:" + counter.ToString("D2");
         stillRunning = true;
     }
 
@@ -50,7 +50,7 @@ public class MicrowaveTimerScript : MonoBehaviour
             if (stillRunning == true)
             {
                 counter--;
-                TimerText.text = "00:" + counter.ToString();
+                TimerText.text = "00:" + counter.ToString("D2");
             }
         }
         else{
@@ -75,6 +75,7 @@ public class MicrowaveTimerScript : MonoBehaviour
     /// not sure what to do here yet
     /// </summary>
     private void FinishMicrowaveGame(){
-
+        GameObject ScoreManager;
+        //ScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
     }
 }

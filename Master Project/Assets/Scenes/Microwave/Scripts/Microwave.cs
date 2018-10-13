@@ -12,7 +12,7 @@ public class Microwave : MonoBehaviour {
 	void Start () {
         counter = 300;
         InvokeRepeating("Countdown", 1, 1);
-        TimerText.text = "00:" + counter.ToString();
+        TimerText.text = "00:" + counter.ToString("D2");
     }
 	
 	// Update is called once per frame
@@ -23,6 +23,6 @@ public class Microwave : MonoBehaviour {
     void Countdown()
     {
         counter--;
-        TimerText.text = "00:" + counter.ToString();
+        TimerText.text = "00:" + counter.ToString("D2");
     }
 }
