@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65537a09a2b4d34ababcd43c84ad41e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: {fileID: 1163841236}
   TopBound: {fileID: 381521534}
   BottomBound: {fileID: 1507643723}
   ExclusionZone: {fileID: 2049761329}
@@ -1049,6 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ca1edcc0f6d44e99c9d85baeb694af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetShakes: 30
   Shaker: {fileID: 459468225}
   Timer: {fileID: 1163841236}
   ShakerLabel: {fileID: 1715404690}

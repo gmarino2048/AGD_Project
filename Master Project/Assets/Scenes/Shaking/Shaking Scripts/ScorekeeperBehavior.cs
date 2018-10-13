@@ -79,7 +79,7 @@ namespace Shaking
         /// </summary>
         /// <returns>The score of this minigame.</returns>
         float GetScore () {
-            return 1f / (1f + (Shaker.Shakes / TargetShakes));
+            return 1f / (1f + ((float)Shaker.Shakes / (float)TargetShakes));
         }
 
 
