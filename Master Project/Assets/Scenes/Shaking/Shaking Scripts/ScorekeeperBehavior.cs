@@ -67,8 +67,14 @@ namespace Shaking
                 FinalScoreText.text = GetScoreText(score);
                 StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
 
-                var ScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
-                ScoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AquariumGravel, GetScore());
+                try
+                {
+                    var ScoreManager = FindObjectOfType<DishScoreManager>();
+                    ScoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AquariumGravel, GetScore());
+                }
+                catch (NullReferenceException ex) {
+                    Debug.Log(ex.StackTrace);
+                }
 
                 Finished = true;
             }
