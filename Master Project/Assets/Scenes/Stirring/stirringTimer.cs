@@ -3,69 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class stirringTimer : MonoBehaviour
+namespace Stirring
 {
-    //how much time is left
-    public  int counter;
-    //textbox with countdown
-    public Text TimerText;
-    //whether the game is still going
-    private bool stillRunning;
-
-    /// <summary>
-    /// Start this instance.
-    /// initializes variables
-    /// starts timer
-    /// </summary>
-    void Start()
+    public class stirringTimer : MonoBehaviour
     {
-        counter = 10;
-        //every second call countdown method (starts after a second)
-        InvokeRepeating("Countdown", 1, 1);
-        TimerText.text = "00:" + counter.ToString();
-        stillRunning = true;
-    }
+        //how much time is left
+        public int counter;
+        //textbox with countdown
+        public Text TimerText;
+        //whether the game is still going
+        private bool stillRunning;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    /// <summary>
-    /// assuming game hasn't finished, decrements counter
-    /// also updates textbox
-    /// </summary>
-    void Countdown()
-    {
-        if (counter > 0)
+        /// <summary>
+        /// Start this instance.
+        /// initializes variables
+        /// starts timer
+        /// </summary>
+        void Start()
         {
-            if (stillRunning == true)
+            counter = 10;
+            //every second call countdown method (starts after a second)
+            InvokeRepeating("Countdown", 1, 1);
+            TimerText.text = "00:" + counter.ToString("D2");
+            stillRunning = true;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        /// <summary>
+        /// assuming game hasn't finished, decrements counter
+        /// also updates textbox
+        /// </summary>
+        void Countdown()
+        {
+            if (counter > 0)
             {
-                counter--;
-                TimerText.text = "00:" + counter.ToString();
+                if (stillRunning == true)
+                {
+                    counter--;
+                    TimerText.text = "00:" + counter.ToString("D2");
+                }
             }
+            else
+            {
+                GameObject.Find("spoon").GetComponent<spoonScript>().timerDone = true;
+                FinishStirringGame();
+            }
+
         }
-        else
+
+
+        /// <summary>
+        /// after game is done, this is called
+        /// not sure what to do here yet
+        /// </summary>
+        private void FinishStirringGame()
         {
-            GameObject.Find("spoon").GetComponent<spoonScript>().timerDone = true;
-            FinishStirringGame();
+            /*GameObject thePlayer = GameObject.Find("spoon");
+            spoon spoonScript = thePlayer.GetComponent<spoon>();
+            float distance =  spoonScript.travelDistance;*/
+            //Debug.Log("hi");
+            GameObject.Find("Scorekeeper").GetComponent<ScoreKeeperScript>().sendScore();
+
         }
-
-    }
-
-
-    /// <summary>
-    /// after game is done, this is called
-    /// not sure what to do here yet
-    /// </summary>
-    private void FinishStirringGame()
-    {
-        /*GameObject thePlayer = GameObject.Find("spoon");
-        spoon spoonScript = thePlayer.GetComponent<spoon>();
-        float distance =  spoonScript.travelDistance;*/
-        //Debug.Log("hi");
-        GameObject.Find("Scorekeeper").GetComponent<ScoreKeeperScript>().sendScore();
-
     }
 }
+
