@@ -16,10 +16,28 @@ public class spoonScript : MonoBehaviour {
     //how far the spoon traveled
     public float travelDistance = 0;
 
+    //angle of mouse relative to center
+    public float angle;
+
+    //how far the mouse is from the center
+    public float mouseRadius;
+
+    //where the center is
+    private Vector3 center;
+
+    //x location of spoon
+    public float spoonX;
+
+    //y location of spoon
+    public float spoonY;
+
+    //if time is up
+    public bool timerDone = false;
+
 
     // Use this for initialization
     void Start () {
-		
+        center = new Vector3(0, 0, 0);
 	}
 	
 	
@@ -28,10 +46,10 @@ public class spoonScript : MonoBehaviour {
     /// </summary>
 	void Update () {
 
-        travelDistance += Vector3.Distance(mousePosition, prevMousePosition);
+        travelDistance += Vector3.Distance(transform.position, prevMousePosition);
 
 
-        prevMousePosition = mousePosition;
+        prevMousePosition = transform.position;
     }
 
     /// <summary>
@@ -47,8 +65,30 @@ public class spoonScript : MonoBehaviour {
     /// </summary>
     void OnMouseDrag()
     {
-        Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
-        mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
-        transform.position = mousePosition;
+        if (!timerDone)
+        {
+            Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
+            mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
+            //transform.position = mousePosition;
+
+            mouseRadius = Vector3.Distance(mousePosition, center);
+
+            angle = Mathf.Atan2(mousePosition.y, mousePosition.x);
+
+            if (mouseRadius < 2)
+            {
+                spoonX = Mathf.Cos(angle) * mouseRadius;
+                spoonY = Mathf.Sin(angle) * mouseRadius;
+            }
+            else
+            {
+                spoonX = Mathf.Cos(angle) * 2;
+                spoonY = Mathf.Sin(angle) * 2;
+            }
+
+            transform.position = new Vector3(spoonX, spoonY, 0);
+
+        }
+
     }
 }
