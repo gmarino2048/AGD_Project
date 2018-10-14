@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -160,7 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4700d98ad15ed4c1394aec912bd0ae59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerText: {fileID: 53031017}
+  counter: 0
+  timerText: {fileID: 53031017}
 --- !u!114 &53031017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,11 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  angle: 0
-  mouseRadius: 0
-  center: {x: 0, y: 0, z: 0}
-  spoonX: 0
-  spoonY: 0
+  isTimerDone: 0
 --- !u!65 &928140982
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -13,9 +13,9 @@ public class DishPreparationManager : MonoBehaviour
 
     private const string _CHOPPING_SCENE_NAME = "Chopping";
     private const string _GRILLING_SCENE_NAME = "Grill";
-    private const string _MICROWAVE_SCENE_NAME = "Microwave_Goldberg";
+    private const string _MICROWAVE_SCENE_NAME = "Microwaving";
     private const string _SHAKING_SCENE_NAME = "Shaking";
-    private const string _STIRRING_SCENE_NAME = "Stiring";
+    private const string _STIRRING_SCENE_NAME = "Stirring";
     private readonly Dictionary<IngredientType, string> _INGREDIENT_SCENES = new Dictionary<IngredientType, string>() {
         {IngredientType.IceCream, _STIRRING_SCENE_NAME},
         {IngredientType.AlgaeSlime, _MICROWAVE_SCENE_NAME},
@@ -23,7 +23,11 @@ public class DishPreparationManager : MonoBehaviour
     };
 
     private Queue<IngredientType> _IngredientsQueue;
-    private IngredientType _CurrentIngredient;
+
+    /// <summary>
+    /// The current ingredient being prepared
+    /// </summary>
+    public IngredientType currentIngredient { get; private set; }
 
     public void StartPreparingDish(List<IngredientType> ingredientsList)
     {
@@ -48,7 +52,7 @@ public class DishPreparationManager : MonoBehaviour
             return;
         }
         
-        _CurrentIngredient = _IngredientsQueue.Dequeue();
-        SceneManager.LoadScene(_INGREDIENT_SCENES[_CurrentIngredient]);
+        currentIngredient = _IngredientsQueue.Dequeue();
+        SceneManager.LoadScene(_INGREDIENT_SCENES[currentIngredient]);
     }
 }
