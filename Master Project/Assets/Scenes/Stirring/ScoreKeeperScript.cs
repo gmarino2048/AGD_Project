@@ -12,18 +12,7 @@ namespace Stirring
         public float score { get; private set; }
 
         private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        
         /// <summary>
         /// takes distance and converts to 1-0 scale with 0 being the best
         /// </summary>
@@ -40,8 +29,8 @@ namespace Stirring
         {
             convertScore();
 
-            var ScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
-            ScoreManager.AddIngredientToDish(_NESSIE_GUID, IngredientType.IceCream, score);
+            var scoreManager = GameObject.FindObjectOfType<DishScoreManager>();
+            scoreManager.AddIngredientToDish(_NESSIE_GUID, IngredientType.IceCream, score);
         }
     }
 }
