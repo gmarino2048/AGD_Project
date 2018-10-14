@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Heal : MonoBehaviour {
-
+    private MonsterAction ma;
     public GameObject heal;
     public HealthBar healthbar;
     private int healtime;
@@ -12,6 +12,7 @@ public class Heal : MonoBehaviour {
 
     private void Awake()
     {
+        ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
         healtime = 4;
     }
     private void Update()
@@ -35,5 +36,6 @@ public class Heal : MonoBehaviour {
         {
             heal.SetActive(false);
         }
+        ma.playerhealed = true;
     }
 }

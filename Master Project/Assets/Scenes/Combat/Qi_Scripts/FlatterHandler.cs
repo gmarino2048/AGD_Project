@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlatterHandler : MonoBehaviour {
-
+    private MonsterAction ma;
     public ManagerBar bar;
     public MonsterAction.Monster monster;
-
+    private void Awake()
+    {
+        ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+    }
     public void Flatter(){
         Debug.Log("Flatter");
         if (monster == MonsterAction.Monster.Nessie)
@@ -21,5 +24,6 @@ public class FlatterHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-25);
         }
+        ma.playermoved = true;
     }
 }

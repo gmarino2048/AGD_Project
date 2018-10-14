@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class FreeFoodHandler : MonoBehaviour {
 
-    public ManagerBar bar;
-    public MonsterAction.Monster monster; 
+    private MonsterAction ma;
 
+    public ManagerBar bar;
+    public MonsterAction.Monster monster;
+
+    private void Awake()
+    {
+        ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+    }
     public void FreeFood()
     {
         Debug.Log("FreeFood");
@@ -23,5 +29,6 @@ public class FreeFoodHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-5);
         }
+        ma.playermoved = true;
     }
 }
