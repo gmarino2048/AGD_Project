@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FreeFoodHandler : MonoBehaviour {
-
-    private MonsterAction ma;
-
-    public ManagerBar bar;
-    public MonsterAction.Monster monster;
-
-    private void Awake()
+namespace Combat
+{
+    public class FreeFoodHandler : MonoBehaviour
     {
-        ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
-    }
-    public void FreeFood()
-    {
-        Debug.Log("FreeFood");
-        if(monster == MonsterAction.Monster.Nessie)
+
+        private MonsterAction ma;
+
+        public ManagerBar bar;
+        public MonsterAction.Monster monster;
+
+        private void Awake()
         {
-            bar.ChangeManagerBar(-10);
+            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
         }
-        if (monster == MonsterAction.Monster.Cerberus)
+        public void FreeFood()
         {
-            bar.ChangeManagerBar(-25);
+            Debug.Log("FreeFood");
+            if (monster == MonsterAction.Monster.Nessie)
+            {
+                bar.ChangeManagerBar(-10);
+            }
+            if (monster == MonsterAction.Monster.Cerberus)
+            {
+                bar.ChangeManagerBar(-25);
+            }
+            if (monster == MonsterAction.Monster.REDACTED)
+            {
+                bar.ChangeManagerBar(-5);
+            }
+            ma.PlayerMoved = true;
         }
-        if (monster == MonsterAction.Monster.REDACTED)
-        {
-            bar.ChangeManagerBar(-5);
-        }
-        ma.PlayerMoved = true;
     }
 }
