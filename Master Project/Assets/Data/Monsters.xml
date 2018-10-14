@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE monsters [
+    <!ELEMENT monster ANY>
+    <!ATTLIST monster id ID #REQUIRED>
+]>
+<monsters>
+    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" name="Nessie" fightThreshold="0.3">
+        <ingredient type="WhippedCream"/>
+    </monster>
+</monsters>

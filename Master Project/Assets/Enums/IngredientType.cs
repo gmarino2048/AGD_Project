@@ -3,6 +3,7 @@
 /// </summary>
 public enum IngredientType
 {
-    WhippedCream = 1,
-    IceCream = 2
+    IceCream = 1,
+    AlgaeSlime = 2,
+    AquariumGravel = 3
 }

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml;
 using System.IO;
+using System.Xml;
 using UnityEngine;
 
 namespace Dialog
 {
     public class DialogDataManager
     {
-        private const string _MONSTER_DIALOG_DATA_FILE_PATH = "Assets/Data/MonsterDialog.xml";
+        /// <summary>
+        /// The path to the data file for monster dialog.
+        /// </summary>
+        public static string monsterDialogDataFilePath = "Assets/Data/MonsterDialog.xml";
 
         /// <summary>
         /// Gets the response sets.
@@ -40,7 +43,7 @@ namespace Dialog
         /// <returns>The new DialogDataManager</returns>
         /// <param name="monsterId">Monster identifier.</param>
         public static DialogDataManager LoadFromXml(Guid monsterId) {
-            var xmlFileContents = File.ReadAllText(_MONSTER_DIALOG_DATA_FILE_PATH);
+            var xmlFileContents = File.ReadAllText(monsterDialogDataFilePath);
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlFileContents);
 

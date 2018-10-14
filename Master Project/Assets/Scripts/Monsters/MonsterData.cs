@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml;
 using UnityEngine;
 
 namespace Monsters
 {
     public class MonsterData
     {
-        private const string _MONSTER_DATA_FILE_PATH = "Data/Monsters.xml";
+        private const float _CONVERSATION_WEIGHT = 0.3f;
+        private const float _DISH_WEIGHT = 0.7f;
+        private const float _WRONG_INGREDIENT_CHOSEN_AFFECT_CONSTANT = 0.05f;
+
+        private int _WrongIngredientsCount = 0;
 
         /// <summary>
         /// The name of the monster
@@ -19,52 +22,44 @@ namespace Monsters
         /// </summary>
         public float FightThreshold { get; private set; }
 
+        private float _affectionValue;
+        /// <summary>
+        /// The amount that a monster likes the player. 0 is not at all, 1 is completely.
+        /// </summary>
+        public float AffectionValue { get; private set; }
+
         /// <summary>
         /// The ingredients this monster desires
         /// </summary>
-        public IEnumerable<IngredientType> DesiredIngredients { get; set; }
+        public List<IngredientType> DesiredIngredients { get; set; }
 
-        private MonsterData()
+        internal MonsterData(string name, float fightThreshold, List<IngredientType> desiredIngredients)
         {
+            Name = name;
+            FightThreshold = fightThreshold;
+            DesiredIngredients = desiredIngredients;
+
+            AffectionValue = 1;
         }
 
-        /// <summary>
-        /// Loads a monster from xml
-        /// </summary>
-        /// <param name="monsterId">The ID of the monster to load information on</param>
-        /// <returns>Data on the given monster</returns>
-        public static MonsterData LoadFromXML(Guid monsterId)
+        public void UpdateAffectionFromConversationScore(float conversationScore)
         {
-            var xmlAsset = new TextAsset();
-            xmlAsset = (TextAsset)Resources.Load(_MONSTER_DATA_FILE_PATH, typeof(TextAsset));
+            AffectionValue -= conversationScore * _CONVERSATION_WEIGHT;
+        }
 
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xmlAsset.text);
-
-            var monsterNode = xmlDoc.GetElementById(monsterId.ToString());
-
-            var monsterData = new MonsterData
-            {
-                Name = monsterNode.Attributes["name"].Value,
-                FightThreshold = float.Parse(monsterNode.Attributes["fightThreshold"].Value)
-            };
-
-            // Get desired ingredients
-            var desiredIngredients = new List<IngredientType>();
-            foreach (XmlNode xmlNode in monsterNode.GetElementsByTagName("ingredient"))
-            {
-                try
-                {
-                    desiredIngredients.Add((IngredientType)Enum.Parse(typeof(IngredientType), xmlNode.Attributes["type"].Value));
-                }
-                catch (Exception e) {
-                    Debug.LogError(e);
-                }
+        public void UpdateAffectionFromIngredientSelection(IngredientType ingredientType)
+        {
+            if (DesiredIngredients.Contains(ingredientType)) {
+                return;
             }
 
-            monsterData.DesiredIngredients = desiredIngredients;
+            _WrongIngredientsCount++;
+            AffectionValue -= _WrongIngredientsCount * _WRONG_INGREDIENT_CHOSEN_AFFECT_CONSTANT;
+        }
 
-            return monsterData;
+        public void UpdateAffectionFromDishScore(float dishScore)
+        {
+            AffectionValue -= dishScore * _DISH_WEIGHT;
         }
     }
 }

@@ -26,3 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Grill/Grill.unity
     guid: 20bcaff4a6c81453a9e442f3964b3392
+  - enabled: 1
+    path: Assets/Scenes/Main/MainScene.unity
+    guid: 1324bb127c9e54a50ae3e5f230e4adbc
+  - enabled: 1
+    path: Assets/Scenes/Stirring/Stiring.unity
+    guid: 5164d78bdf6334368803c29d48ddc96a
