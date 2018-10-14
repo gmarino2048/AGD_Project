@@ -135,9 +135,11 @@ namespace Shaking
                 }
                 else
                 {
+                    float relativeX = Mathf.Clamp(relativePosition.x, ScreenLeft, ScreenRight);
+
                     // Make sure that the shaker can escape the exclusion zone
                     transform.position = relativePosition.y > transform.position.y ?
-                        relativePosition : new Vector3(relativePosition.x, transform.position.y);
+                        relativePosition : new Vector3(relativeX, transform.position.y);
                 }
 
                 Offset = transform.position - MouseToWorldPoint();
