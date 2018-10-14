@@ -69,8 +69,8 @@ namespace Shaking
 
                 try
                 {
-                    var ScoreManager = FindObjectOfType<DishScoreManager>();
-                    ScoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AquariumGravel, GetScore());
+                    var scoreManager = FindObjectOfType<DishScoreManager>();
+                    scoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AquariumGravel, GetScore());
                 }
                 catch (NullReferenceException ex) {
                     Debug.Log(ex.StackTrace);
