@@ -10,6 +10,7 @@ public class DishScoreManager : MonoBehaviour
 {
     private Dictionary<Guid, List<KeyValuePair<IngredientType, float>>> _PREPARED_DISHES = new Dictionary<Guid, List<KeyValuePair<IngredientType, float>>>();
 
+
     /// <summary>
     /// Scores the currently stored feature vector representing the success on each ingredient for the dish.
     /// </summary>

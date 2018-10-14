@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39eac907f5e494d8bb3557e5cee26414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldSkipDialogue: 0
 --- !u!114 &1027985361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,6 +913,7 @@ GameObject:
   - component: {fileID: 1353459277}
   - component: {fileID: 1353459276}
   - component: {fileID: 1353459275}
+  - component: {fileID: 1353459278}
   - component: {fileID: 1353459274}
   m_Layer: 0
   m_Name: GameData
@@ -967,6 +969,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353459278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353459273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a07de90af0674bcd8d826e805c02700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435526848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7277ad2b808b1400db571e741d94c915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: ScenePicker
+  nextSceneName: IngredientsScene
   nameText: {fileID: 1462387376}
   dialogueText: {fileID: 126655104}
   responseButtons:

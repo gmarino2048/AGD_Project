@@ -5,6 +5,8 @@
 ]>
 <monsters>
     <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" name="Nessie" fightThreshold="0.3">
-        <ingredient type="WhippedCream"/>
+        <ingredient type="AlgaeSlime"/>
+        <ingredient type="IceCream"/>
+        <ingredient type="AquariumGravel"/>
     </monster>
 </monsters>
