@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class stirringTimer : MonoBehaviour
 {
     //how much time is left
-    private int counter;
+    public  int counter;
     //textbox with countdown
     public Text TimerText;
     //whether the game is still going
@@ -19,7 +19,7 @@ public class stirringTimer : MonoBehaviour
     /// </summary>
     void Start()
     {
-        counter = 30;
+        counter = 10;
         //every second call countdown method (starts after a second)
         InvokeRepeating("Countdown", 1, 1);
         TimerText.text = "00:" + counter.ToString();
@@ -48,6 +48,7 @@ public class stirringTimer : MonoBehaviour
         }
         else
         {
+            GameObject.Find("spoon").GetComponent<spoonScript>().timerDone = true;
             FinishStirringGame();
         }
 
@@ -63,5 +64,8 @@ public class stirringTimer : MonoBehaviour
         /*GameObject thePlayer = GameObject.Find("spoon");
         spoon spoonScript = thePlayer.GetComponent<spoon>();
         float distance =  spoonScript.travelDistance;*/
+        //Debug.Log("hi");
+        GameObject.Find("Scorekeeper").GetComponent<ScoreKeeperScript>().sendScore();
+
     }
 }
