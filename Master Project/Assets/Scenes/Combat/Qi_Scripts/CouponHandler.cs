@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CouponHandler : MonoBehaviour {
-
+    private MonsterAction ma;
     public ManagerBar bar;
     public MonsterAction.Monster monster;
-
+    private void Awake()
+    {
+        ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+    }
     public void Coupon()
     {
         Debug.Log("Coupon");
@@ -22,5 +25,6 @@ public class CouponHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-10);
         }
+        ma.playermoved = true;
     }
 }

@@ -20,7 +20,7 @@ public class Talk : MonoBehaviour {
     {
         if ((bar.value >= 0.85) && (!beghandler.begshown))
         {
-            Debug.Log(bar.value);
+            //Debug.Log(bar.value);
             beg.SetActive(true);
         }
         else
