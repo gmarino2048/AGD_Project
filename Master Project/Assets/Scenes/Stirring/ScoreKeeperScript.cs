@@ -33,6 +33,6 @@ public class ScoreKeeperScript : MonoBehaviour {
     /// </summary>
     public void sendScore(){
         convertScore();
-        DishScoreManager.AddIngredientToDish(_NESSIE_GUID, IngredientType.IceCream, score);
+        //DishScoreManager.AddIngredientToDish(_NESSIE_GUID, IngredientType.IceCream, score);
     }
 }

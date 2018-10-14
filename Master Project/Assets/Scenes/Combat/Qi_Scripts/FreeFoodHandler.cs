@@ -29,6 +29,6 @@ public class FreeFoodHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-5);
         }
-        ma.playermoved = true;
+        ma.PlayerMoved = true;
     }
 }

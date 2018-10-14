@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour {
     {
         if(currentHealth <= 0)
         {
-            ma.combat = false;
+            ma.Combat = false;
         }
     }
     public void ChangeHealth(int amount)

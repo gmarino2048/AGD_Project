@@ -24,12 +24,12 @@ public class ManagerBar : MonoBehaviour {
 	void Update () {
 		if(currentManagerValue >= maxManagerValue)
         {
-            ma.combat = false;
+            ma.Combat = false;
         }
         if(currentManagerValue <= 0)
         {
-            ma.combat = false;
-            ma.win = true;
+            ma.Combat = false;
+            ma.Win = true;
         }
 
     }

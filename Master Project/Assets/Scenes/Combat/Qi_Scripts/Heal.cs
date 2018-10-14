@@ -36,6 +36,6 @@ public class Heal : MonoBehaviour {
         {
             heal.SetActive(false);
         }
-        ma.playerhealed = true;
+        ma.PlayerHealed = true;
     }
 }

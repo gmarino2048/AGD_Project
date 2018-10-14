@@ -25,6 +25,6 @@ public class CouponHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-10);
         }
-        ma.playermoved = true;
+        ma.PlayerMoved = true;
     }
 }
