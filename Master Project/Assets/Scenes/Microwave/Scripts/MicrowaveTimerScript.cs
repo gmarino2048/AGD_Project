@@ -9,13 +9,13 @@ namespace Microwave
     public class MicrowaveTimerScript : MonoBehaviour
     {
         //how much time is left
-        private int counter;
+        private int Counter;
         //textbox with countdown
         public Text TimerText;
         //gets the score of the minigame
         public MicrowaveScorekeeper Scorekeeper;
         //whether the game is still going
-        private bool stillRunning;
+        private bool StillRunning;
 
         Animator anim;
 
@@ -29,19 +29,14 @@ namespace Microwave
             anim = GameObject.Find("Microwave Sprite").GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void StartGame()
         {
-            counter = 10;
+            Counter = 10;
             //every second call countdown method (starts after a second)
             InvokeRepeating("Countdown", 1, 1);
-            TimerText.text = "00:" + counter.ToString("D2");
-            stillRunning = true;
+            TimerText.text = "00:" + Counter.ToString("D2");
+            StillRunning = true;
         }
 
         /// <summary>
@@ -50,11 +45,11 @@ namespace Microwave
         /// </summary>
         void Countdown()
         {
-            if (counter > 0)
+            if (Counter > 0)
             {
-                if (stillRunning == true)
+                if (StillRunning == true)
                 {
-                    counter--;
+                    Counter--;
                     TimerText.text = "00:" + counter.ToString("D2");
                 }
             }
@@ -71,7 +66,7 @@ namespace Microwave
         /// </summary>
         public void buttonClicked()
         {
-            stillRunning = false;
+            StillRunning = false;
             anim.SetTrigger("Open");
             FinishMicrowaveGame();
         }
