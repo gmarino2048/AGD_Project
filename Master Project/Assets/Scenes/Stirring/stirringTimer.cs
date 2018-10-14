@@ -8,11 +8,11 @@ namespace Stirring
     public class stirringTimer : MonoBehaviour
     {
         //how much time is left
-        public int counter;
+        public int Counter;
         //textbox with countdown
         public Text TimerText;
         //whether the game is still going
-        private bool stillRunning;
+        private bool StillRunning;
 
         /// <summary>
         /// Start this instance.
@@ -21,18 +21,13 @@ namespace Stirring
         /// </summary>
         void Start()
         {
-            counter = 10;
+            Counter = 10;
             //every second call countdown method (starts after a second)
             InvokeRepeating("Countdown", 1, 1);
-            TimerText.text = "00:" + counter.ToString("D2");
-            stillRunning = true;
+            TimerText.text = "00:" + Counter.ToString("D2");
+            StillRunning = true;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         /// <summary>
         /// assuming game hasn't finished, decrements counter
@@ -40,12 +35,12 @@ namespace Stirring
         /// </summary>
         void Countdown()
         {
-            if (counter > 0)
+            if (Counter > 0)
             {
-                if (stillRunning == true)
+                if (StillRunning == true)
                 {
-                    counter--;
-                    TimerText.text = "00:" + counter.ToString("D2");
+                    Counter--;
+                    TimerText.text = "00:" + Counter.ToString("D2");
                 }
             }
             else

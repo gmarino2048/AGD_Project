@@ -8,27 +8,22 @@ namespace Microwave
     public class Microwave : MonoBehaviour
     {
 
-        private int counter;
+        private int Counter;
         public Text TimerText;
 
         // Use this for initialization
         void Start()
         {
-            counter = 300;
+            Counter = 300;
             InvokeRepeating("Countdown", 1, 1);
-            TimerText.text = "00:" + counter.ToString("D2");
+            TimerText.text = "00:" + Counter.ToString("D2");
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         void Countdown()
         {
-            counter--;
-            TimerText.text = "00:" + counter.ToString("D2");
+            Counter--;
+            TimerText.text = "00:" + Counter.ToString("D2");
         }
     }
 }
