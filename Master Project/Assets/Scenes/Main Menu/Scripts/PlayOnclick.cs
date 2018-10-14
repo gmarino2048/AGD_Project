@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class stores methods that are called when the cooresponding main menu buttons are clicked
 /// </summary>
-public class PlayOnclick : MonoBehaviour {
+public class PlayOnclick : MonoBehaviour
+{
+    private bool _AreOptionsActive = false;
 
-    bool areOptionsActive = false;
     public GameObject optionsMenu;
+    public string firstSceneName;
 
     public void whenClickedPlay()
     {
-        Debug.Log("Playbutton was clicked");
+        SceneManager.LoadScene(firstSceneName);
     }
 
     public void whenClickedInstructions()
@@ -28,9 +31,8 @@ public class PlayOnclick : MonoBehaviour {
     public void whenClickedOptions()
     {
         Debug.Log("Options button was clicked");
-        areOptionsActive = !areOptionsActive;
-        optionsMenu.SetActive(areOptionsActive);
-
+        _AreOptionsActive = !_AreOptionsActive;
+        optionsMenu.SetActive(_AreOptionsActive);
     }
 
     public void whenClickedQuit()
