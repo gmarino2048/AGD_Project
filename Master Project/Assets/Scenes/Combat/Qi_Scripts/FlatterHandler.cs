@@ -24,6 +24,6 @@ public class FlatterHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-25);
         }
-        ma.playermoved = true;
+        ma.PlayerMoved = true;
     }
 }

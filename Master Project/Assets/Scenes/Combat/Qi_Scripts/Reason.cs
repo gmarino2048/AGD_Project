@@ -12,6 +12,6 @@ public class Reason : MonoBehaviour {
     public void reason()
     {
         bar.ChangeManagerBar(-10);
-        ma.playermoved = true;
+        ma.PlayerMoved = true;
     }
 }

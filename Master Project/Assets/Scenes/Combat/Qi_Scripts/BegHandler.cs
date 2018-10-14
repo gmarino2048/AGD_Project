@@ -19,6 +19,6 @@ public class BegHandler : MonoBehaviour {
         bar.ChangeManagerBar(-35);
         begshown = true;
         beg.SetActive(false);
-        ma.playermoved = true;
+        ma.PlayerMoved = true;
     }
 }

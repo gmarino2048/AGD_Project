@@ -25,6 +25,6 @@ public class OfferDrinkHandler : MonoBehaviour {
         {
             bar.ChangeManagerBar(-15);
         }
-        ma.playermoved = true;
+        ma.PlayerMoved = true;
     } 
 }

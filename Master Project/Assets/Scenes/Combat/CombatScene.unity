@@ -1817,11 +1817,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4149482416907324, guid: 0e085d2ea3dfb394f8092e91c70e9517,
     type: 2}
   m_PrefabInternal: {fileID: 1556335518}
---- !u!95 &1161207704 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95319127941068456, guid: 0e085d2ea3dfb394f8092e91c70e9517,
-    type: 2}
-  m_PrefabInternal: {fileID: 1556335518}
 --- !u!114 &1161207705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,13 +1828,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba59bce6b1d1f5f459bda233b1efdf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: 0
-  Movement: {fileID: 1161207704}
-  bar: {fileID: 1640936636}
+  CurrentMonster: 0
+  Movement: {fileID: 0}
+  Bar: {fileID: 1640936636}
   health: {fileID: 1105954781}
-  playermoved: 0
-  playerhealed: 0
-  combat: 0
   CombatMessage: {fileID: 409523339}
   CombatUI: {fileID: 1871964675}
 --- !u!1 &1230185597

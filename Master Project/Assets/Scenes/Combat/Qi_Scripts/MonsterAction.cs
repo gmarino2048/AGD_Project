@@ -13,65 +13,66 @@ public class MonsterAction : MonoBehaviour {
     private int damageholder;
 
     public enum Monster { Nessie, Cerberus, REDACTED };
-    public Monster monster;
+    public Monster CurrentMonster;
     public Animator Movement;
-    public ManagerBar bar;
+    public ManagerBar Bar;
     public HealthBar health;
-    public bool playermoved;
-    public bool playerhealed;
-    public bool combat;
-    public bool win;
+    public bool PlayerMoved { get; set; }
+    public bool PlayerHealed { get; set; }
+    public bool Combat { get; set; }
+    public bool Win { get; set; }
     public Text CombatMessage;
     public GameObject CombatUI;
 
 
     private void Awake()
     {
+        Movement = GetComponent<Animator>();
         monstermoved = false;
-        playermoved = false;
-        playerhealed = false;
-        win = false;
-        combat = true;
-        monster = Monster.Nessie;
+        PlayerMoved = false;
+        PlayerHealed = false;
+        Win = false;
+        Combat = true;
+        CurrentMonster = Monster.Nessie;
     }
     private void Start()
     {
-        StartCoroutine("Combat");
+        StartCoroutine("CombatFunction");
     }
 
-    IEnumerator Combat()
+    IEnumerator CombatFunction()
     {
-        while (combat)
+        while (Combat)
         {
-            Debug.Log(combat);
-            if (!monstermoved && !playermoved)
+            //Debug.Log(Combat);
+            if (!monstermoved && !PlayerMoved)
             {
                 CombatMessage.text = "What should I do?";
                 CombatUI.SetActive(true);
             }
-            if (!monstermoved && (playermoved || playerhealed))
+            if (!monstermoved && (PlayerMoved || PlayerHealed))
             {
                 CombatUI.SetActive(false);
-                if (playermoved)
+                if (PlayerMoved)
                 {
                     StartCoroutine("Monsterdamamged");
                 }
                 yield return new WaitForSeconds(2f);
                 StartCoroutine("MonsterAttack");
                 yield return new WaitForSeconds(2f);
-                if (!combat)
+                if (!Combat)
                 {
                     break;
                 }
             }
-            if (monstermoved && (playermoved || playerhealed))
+            if (monstermoved && (PlayerMoved || PlayerHealed))
             {
                 StartCoroutine("NewTurn");
                 yield return new WaitForSeconds(2f);
             }
             yield return null;
         }
-        if (!win)
+        if (!Win)
         {
             CombatMessage.text = "Game Over!";
         }
@@ -83,7 +84,7 @@ public class MonsterAction : MonoBehaviour {
     }
     IEnumerator Monsterdamamged()
     {
-        CombatMessage.text = monster + " received damage";
+        CombatMessage.text = CurrentMonster + " received damage";
         Movement.SetTrigger("hit");
         yield return null;
     }
@@ -94,21 +95,21 @@ public class MonsterAction : MonoBehaviour {
         {
             damageholder = damagedice.Next(0, 5);
             health.ChangeHealth(-15 - damageholder);
-            CombatMessage.text = monster + " used Normal Attack! Dealt " + (15 + damageholder).ToString()+ " damage!";
+            CombatMessage.text = CurrentMonster + " used Normal Attack! Dealt " + (15 + damageholder).ToString()+ " damage!";
             Movement.SetTrigger("attack3");
             
         }
         else if (monsteraction == 2 || monsteraction == 4)
         {
-            bar.ChangeManagerBar(10);
-            CombatMessage.text = monster + " used Healing! Raised manager meter by 10!";
+            Bar.ChangeManagerBar(10);
+            CombatMessage.text = CurrentMonster + " used Healing! Raised manager meter by 10!";
             Movement.SetTrigger("attack2");
         }
         else
         {
             damageholder = damagedice.Next(0, 10);
             health.ChangeHealth(-25 - damageholder);
-            CombatMessage.text = monster + " used Super Attack! Dealt " + (25 + damageholder).ToString() + " damage!";
+            CombatMessage.text = CurrentMonster + " used Super Attack! Dealt " + (25 + damageholder).ToString() + " damage!";
             Movement.SetTrigger("attack1");
         }
         monstermoved = true;
@@ -119,9 +120,9 @@ public class MonsterAction : MonoBehaviour {
     {
         CombatMessage.text = "Too loud! Manager bar goes up!";
         monstermoved = false;
-        playermoved = false;
-        playerhealed = false;
-        bar.ChangeManagerBar(5);
+        PlayerMoved = false;
+        PlayerHealed = false;
+        Bar.ChangeManagerBar(5);
         yield return null;
 
     }

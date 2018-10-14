@@ -24,7 +24,6 @@ namespace Stirring
         {
 
         }
-
         /// <summary>
         /// takes distance and converts to 1-0 scale with 0 being the best
         /// </summary>
