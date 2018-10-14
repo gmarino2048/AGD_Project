@@ -3400,7 +3400,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1682611463}
   - component: {fileID: 1980438708}
-  - component: {fileID: 1980438707}
   m_Layer: 5
   m_Name: LevelChanger
   m_TagString: Untagged
@@ -3408,17 +3407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1980438707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1980438706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1980438708
 Animator:
   serializedVersion: 3
