@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ingredients/IngredientsScene.unity
     guid: 1324bb127c9e54a50ae3e5f230e4adbc
   - enabled: 1
-    path: Assets/Scenes/Microwave/Microwave_Goldberg.unity
+    path: Assets/Scenes/Microwave/Microwaving.unity
     guid: 00d103a83ccd94d429303fea7b988fed
   - enabled: 1
     path: Assets/Scenes/Shaking/Shaking.unity

@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DishPreparationManager : MonoBehaviour
 {
-    private readonly string _SUCCESSFUL_SCENE_NAME = "IngredientsScene";
+    private readonly string _SUCCESSFUL_SCENE_NAME = "ScenePicker";
 
     private const string _CHOPPING_SCENE_NAME = "Chopping";
     private const string _GRILLING_SCENE_NAME = "Grill";
