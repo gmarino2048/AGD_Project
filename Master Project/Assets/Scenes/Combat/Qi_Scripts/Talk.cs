@@ -7,7 +7,6 @@ namespace Combat
 {
     public class Talk : MonoBehaviour
     {
-
         public GameObject Info;
         public GameObject beg;
         public BegHandler beghandler;

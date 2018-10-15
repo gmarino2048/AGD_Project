@@ -30,10 +30,10 @@ public class DishScoreManager : MonoBehaviour
         for (var i = 0; i < dishVector.Length; i++)
         {
             // TODO Check if the monster actually wanted the ingredient, otherwise do 1 - x.
-            score += Mathf.Pow(dishVector[i], 2);
+            score += dishVector[i];
         }
 
-        score = Mathf.Sqrt(score);
+        score = score / dishVector.Length;
 
         return score;
     }

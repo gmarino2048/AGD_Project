@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Monsters;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ namespace Combat
     {
         private MonsterAction ma;
         public ManagerBar bar;
-        public MonsterAction.Monster monster;
         private void Awake()
         {
             ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
@@ -16,18 +16,7 @@ namespace Combat
         public void Coupon()
         {
             Debug.Log("Coupon");
-            if (monster == MonsterAction.Monster.Nessie)
-            {
-                bar.ChangeManagerBar(-15);
-            }
-            if (monster == MonsterAction.Monster.Cerberus)
-            {
-                bar.ChangeManagerBar(-5);
-            }
-            if (monster == MonsterAction.Monster.REDACTED)
-            {
-                bar.ChangeManagerBar(-10);
-            }
+            bar.IncrementValue(-15); //TODO: Rewrite for handling varying degrees of success
             ma.PlayerMoved = true;
         }
     }

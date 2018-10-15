@@ -6,18 +6,33 @@ using UnityEngine.UI;
 
 namespace Microwave
 {
-    public class MicrowaveTimerScript : MonoBehaviour
+    public class MicrowaveTimerScript : MonoBehaviour, IDishScoreKeeper
     {
-        //how much time is left
-        private int counter;
-        //textbox with countdown
-        public Text TimerText;
-        //gets the score of the minigame
-        public MicrowaveScorekeeper Scorekeeper;
-        //whether the game is still going
-        private bool stillRunning;
+        private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
 
-        Animator anim;
+        //how much time is left
+        private int _Counter;
+
+        //whether the game is still going
+        private bool _IsStillRunning;
+
+        /// <summary>
+        /// The dish preparation manager
+        /// </summary>
+        private DishPreparationManager _DishPreparationManager;
+
+        /// <summary>
+        /// The dish score manager
+        /// </summary>
+        private DishScoreManager _DishScoreManager;
+
+        //textbox with countdown
+        public Text timerText;
+
+        /// <summary>
+        /// The animator for the microwave
+        /// </summary>
+        public Animator anim;
 
         /// <summary>
         /// Start this instance.
@@ -27,21 +42,17 @@ namespace Microwave
         void Start()
         {
             anim = GameObject.Find("Microwave Sprite").GetComponent<Animator>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            _DishPreparationManager = GameObject.FindObjectOfType<DishPreparationManager>();
+            _DishScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
         }
 
         public void StartGame()
         {
-            counter = 10;
+            _Counter = 10;
             //every second call countdown method (starts after a second)
             InvokeRepeating("Countdown", 1, 1);
-            TimerText.text = "00:" + counter.ToString("D2");
-            stillRunning = true;
+            UpdateTimerText();
+            _IsStillRunning = true;
         }
 
         /// <summary>
@@ -50,18 +61,25 @@ namespace Microwave
         /// </summary>
         void Countdown()
         {
-            if (counter > 0)
+            if (_Counter > 0)
             {
-                if (stillRunning == true)
+                if (_IsStillRunning == true)
                 {
-                    counter--;
-                    TimerText.text = "00:" + counter.ToString("D2");
+                    _Counter--;
+                    UpdateTimerText();
                 }
             }
             else {
                 FinishMicrowaveGame();
             }
+        }
 
+        /// <summary>
+        /// Gets the score for the minigame
+        /// </summary>
+        /// <returns>A number between 0 and 1 representing the score for the minigame.</returns>
+        public float GetScore() {
+            return 0.5f; //TODO
         }
 
         /// <summary>
@@ -69,11 +87,19 @@ namespace Microwave
         /// stops timer
         /// stops game
         /// </summary>
-        public void buttonClicked()
+        public void OnButtonClicked()
         {
-            stillRunning = false;
+            _IsStillRunning = false;
             anim.SetTrigger("Open");
             FinishMicrowaveGame();
+        }
+
+        /// <summary>
+        /// Updates the text for the timer using proper formatting
+        /// </summary>
+        private void UpdateTimerText()
+        {
+            timerText.text = "00:" + _Counter.ToString("D2");
         }
 
         /// <summary>
@@ -82,9 +108,25 @@ namespace Microwave
         /// </summary>
         private void FinishMicrowaveGame()
         {
-            var ScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
-            ScoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AlgaeSlime, Scorekeeper.Score());
+            StartCoroutine(EndMiniGame());
+        }
+
+        /// <summary>
+        /// Sends the score and goes to the next scene
+        /// </summary>
+        private IEnumerator EndMiniGame()
+        {
+            yield return new WaitForSeconds(10);
+
+            if (_DishPreparationManager != null)
+            {
+                if (_DishScoreManager != null)
+                {
+                    _DishScoreManager.AddIngredientToDish(_NESSIE_GUID, _DishPreparationManager.currentIngredient, GetScore());
+                }
+
+                _DishPreparationManager.GoToNextScene();
+            }
         }
     }
-
 }
