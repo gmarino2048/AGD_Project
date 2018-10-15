@@ -8,7 +8,7 @@ namespace Ingredients
 {
 	public class IngredientsManager : MonoBehaviour
 	{
-    	private readonly Guid _NESSIE_ID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
+    	private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
 
 		private DishPreparationManager _DishPreparationManager;
 
@@ -29,7 +29,7 @@ namespace Ingredients
 				throw new Exception("DishPreparationManager did not exist in scene");
 			}
 
-			_MonsterData = monsterFactory.LoadMonster(_NESSIE_ID);
+			_MonsterData = monsterFactory.LoadMonster(_NESSIE_GUID);
 			_IngredientsAdded = new List<IngredientType>();
 		}
 
@@ -44,7 +44,7 @@ namespace Ingredients
 
 			if (_IngredientsAdded.Count == _MonsterData.DesiredIngredients.Count)
 			{
-				_DishPreparationManager.StartPreparingDish(_MonsterData.DesiredIngredients);
+				_DishPreparationManager.StartPreparingDish(_NESSIE_GUID, _MonsterData.DesiredIngredients);
 				_DishPreparationManager.GoToNextScene();
 			}
 		}

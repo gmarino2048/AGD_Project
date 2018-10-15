@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 namespace Stirring
 {
-    public class stirringTimer : MonoBehaviour
+    public class StirringTimer : MonoBehaviour
     {
         //how much time is left
-        public int Counter;
+        public int counter;
+
         //textbox with countdown
-        public Text TimerText;
+        public Text timerText;
+
         //whether the game is still going
-        private bool StillRunning;
+        private bool _IsStillRunning;
 
         /// <summary>
         /// Start this instance.
@@ -21,11 +23,11 @@ namespace Stirring
         /// </summary>
         void Start()
         {
-            Counter = 10;
+            counter = 10;
             //every second call countdown method (starts after a second)
             InvokeRepeating("Countdown", 1, 1);
-            TimerText.text = "00:" + Counter.ToString("D2");
-            StillRunning = true;
+            UpdateTimerText();
+            _IsStillRunning = true;
         }
 
 
@@ -35,22 +37,24 @@ namespace Stirring
         /// </summary>
         void Countdown()
         {
-            if (Counter > 0)
+            if (counter > 0 && _IsStillRunning)
             {
-                if (StillRunning == true)
-                {
-                    Counter--;
-                    TimerText.text = "00:" + Counter.ToString("D2");
-                }
+                counter--;
+                UpdateTimerText();
             }
             else
             {
-                GameObject.Find("spoon").GetComponent<spoonScript>().timerDone = true;
                 FinishStirringGame();
             }
-
         }
 
+        /// <summary>
+        /// Updates the text for the timer using proper formatting
+        /// </summary>
+        private void UpdateTimerText()
+        {
+            timerText.text = "00:" + counter.ToString("D2");
+        }
 
         /// <summary>
         /// after game is done, this is called
@@ -62,8 +66,9 @@ namespace Stirring
             spoon spoonScript = thePlayer.GetComponent<spoon>();
             float distance =  spoonScript.travelDistance;*/
             //Debug.Log("hi");
-            GameObject.Find("Scorekeeper").GetComponent<ScoreKeeperScript>().sendScore();
-
+            GameObject.Find("spoon").GetComponent<SpoonScript>().isTimerDone = true;
+            _IsStillRunning = false;
+            GameObject.Find("Scorekeeper").GetComponent<ScoreKeeperScript>().SendScore();
         }
     }
 }

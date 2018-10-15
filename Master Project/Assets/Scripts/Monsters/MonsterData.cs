@@ -61,5 +61,10 @@ namespace Monsters
         {
             AffectionValue -= dishScore * _DISH_WEIGHT;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

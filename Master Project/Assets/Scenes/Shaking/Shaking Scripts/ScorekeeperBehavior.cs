@@ -7,8 +7,20 @@ using UnityEngine.UI;
 
 namespace Shaking
 {
-    public class ScorekeeperBehavior : MonoBehaviour
+    public class ScorekeeperBehavior : MonoBehaviour, IDishScoreKeeper
     {
+        private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
+
+        /// <summary>
+        /// The dish preparation manager
+        /// </summary>
+        private DishPreparationManager _DishPreparationManager;
+
+        /// <summary>
+        /// The dish score manager
+        /// </summary>
+        private DishScoreManager _DishScoreManager;
+
         [Header("Scoring Settings")]
         public uint TargetShakes; // The target number of shakes for the scene.
 
@@ -41,6 +53,9 @@ namespace Shaking
         /// </summary>
         void Start()
         {
+            _DishPreparationManager = GameObject.FindObjectOfType<DishPreparationManager>();
+            _DishScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
+
             ShakerLabel.text = ShakerInitial;
             ShakerScore.text = 0.ToString();
 
@@ -67,16 +82,8 @@ namespace Shaking
                 FinalScoreText.text = GetScoreText(score);
                 StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
 
-                try
-                {
-                    var scoreManager = FindObjectOfType<DishScoreManager>();
-                    scoreManager.AddIngredientToDish(new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}"), IngredientType.AquariumGravel, GetScore());
-                }
-                catch (NullReferenceException ex) {
-                    Debug.Log(ex.StackTrace);
-                }
-
                 Finished = true;
+                StartCoroutine(EndMiniGame());
             }
         }
 
@@ -86,10 +93,9 @@ namespace Shaking
         /// converges to 0 as x approaches infinity, denoting a perfect game.
         /// </summary>
         /// <returns>The score of this minigame.</returns>
-        float GetScore () {
+        public float GetScore() {
             return 1f / (1f + ((float)Shaker.Shakes / (float)TargetShakes));
         }
-
 
         /// <summary>
         /// Gets the score text.
@@ -100,7 +106,6 @@ namespace Shaking
             int scaledScore = Mathf.RoundToInt((1 - score) * 1000);
             return scaledScore + "/1000";
         }
-
 
         /// <summary>
         /// Fades in the canvas group containing the final score display once
@@ -122,6 +127,24 @@ namespace Shaking
                 canvas.alpha = startAlpha + (change * currentTime);
 
                 yield return new WaitForEndOfFrame();
+            }
+        }
+
+        /// <summary>
+        /// Sends the score and goes to the next scene
+        /// </summary>
+        private IEnumerator EndMiniGame()
+        {
+            yield return new WaitForSeconds(10);
+
+            if (_DishPreparationManager != null)
+            {
+                if (_DishScoreManager != null)
+                {
+                    _DishScoreManager.AddIngredientToDish(_NESSIE_GUID, _DishPreparationManager.currentIngredient, GetScore());
+                }
+
+                _DishPreparationManager.GoToNextScene();
             }
         }
     }

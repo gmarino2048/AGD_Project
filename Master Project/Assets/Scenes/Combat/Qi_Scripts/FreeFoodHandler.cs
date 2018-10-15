@@ -11,7 +11,6 @@ namespace Combat
         private MonsterAction ma;
 
         public ManagerBar bar;
-        public MonsterAction.Monster monster;
 
         private void Awake()
         {
@@ -20,18 +19,7 @@ namespace Combat
         public void FreeFood()
         {
             Debug.Log("FreeFood");
-            if (monster == MonsterAction.Monster.Nessie)
-            {
-                bar.ChangeManagerBar(-10);
-            }
-            if (monster == MonsterAction.Monster.Cerberus)
-            {
-                bar.ChangeManagerBar(-25);
-            }
-            if (monster == MonsterAction.Monster.REDACTED)
-            {
-                bar.ChangeManagerBar(-5);
-            }
+            bar.IncrementValue(-10); //TODO: Rewrite for handling varying degrees of success
             ma.PlayerMoved = true;
         }
     }

@@ -4,44 +4,33 @@ using UnityEngine;
 
 namespace Stirring
 {
-    public class spoonScript : MonoBehaviour
+    public class SpoonScript : MonoBehaviour
     {
+        private const float _SPOON_Z_POS = 0f;
+        private const float _SPOON_MAX_RADIUS = 2f;
 
         //distance of the mouse from the center of the spoon
-        private Vector3 Offset;
+        private Vector3 _Offset;
 
         //where mouse is
-        private Vector3 MousePosition;
+        private Vector3 _MousePosition;
 
         //where mouse was last frame
-        private Vector3 PrevMousePosition;
-
-        //how far the spoon traveled
-        public float TravelDistance = 0;
-
-        //angle of mouse relative to center
-        public float Angle;
-
-        //how far the mouse is from the center
-        public float MouseRadius;
+        private Vector3 _PrevMousePosition;
 
         //where the center is
-        private Vector3 Center;
+        private Vector3 _Center;
 
-        //x location of spoon
-        public float SpoonX;
-
-        //y location of spoon
-        public float SpoonY;
+        //how far the spoon traveled
+        public float travelDistance = 0;
 
         //if time is up
-        public bool TimerDone = false;
-
+        public bool isTimerDone = false;
 
         // Use this for initialization
         void Start()
         {
-            Center = new Vector3(0, 0, 0);
+            _Center = new Vector3(0, 0, 0);
         }
 
 
@@ -50,11 +39,8 @@ namespace Stirring
         /// </summary>
         void Update()
         {
-
-            TravelDistance += Vector3.Distance(transform.position, PrevMousePosition);
-
-
-            PrevMousePosition = transform.position;
+            travelDistance += Vector3.Distance(transform.position, _PrevMousePosition);
+            _PrevMousePosition = transform.position;
         }
 
         /// <summary>
@@ -62,7 +48,7 @@ namespace Stirring
         /// </summary>
         void OnMousePressed()
         {
-            Offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
+            _Offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         }
 
         /// <summary>
@@ -70,28 +56,19 @@ namespace Stirring
         /// </summary>
         void OnMouseDrag()
         {
-            if (!TimerDone)
+            if (!isTimerDone)
             {
                 Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
-                MousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
-                //transform.position = mousePosition;
+                _MousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + _Offset;
 
-                MouseRadius = Vector3.Distance(MousePosition, Center);
+                var mouseRadius = Mathf.Min(_SPOON_MAX_RADIUS, Vector3.Distance(_MousePosition, _Center));
 
-                Angle = Mathf.Atan2(MousePosition.y, MousePosition.x);
+                var angle = Mathf.Atan2(_MousePosition.y, _MousePosition.x);
 
-                if (MouseRadius < 2)
-                {
-                    SpoonX = Mathf.Cos(Angle) * MouseRadius;
-                    SpoonY = Mathf.Sin(Angle) * MouseRadius;
-                }
-                else
-                {
-                    SpoonX = Mathf.Cos(Angle) * 2;
-                    SpoonY = Mathf.Sin(Angle) * 2;
-                }
+                var spoonX = Mathf.Cos(angle) * mouseRadius;
+                var spoonY = Mathf.Sin(angle) * mouseRadius;
 
-                transform.position = new Vector3(SpoonX, SpoonY, 0);
+                transform.position = new Vector3(spoonX, spoonY, _SPOON_Z_POS);
             }
         }
     }
