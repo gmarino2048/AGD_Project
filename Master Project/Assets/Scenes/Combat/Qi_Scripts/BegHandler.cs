@@ -19,7 +19,7 @@ namespace Combat
 
         public void Beg()
         {
-            bar.ChangeManagerBar(-35);
+            bar.IncrementValue(-35); //TODO: Rewrite for handling varying degrees of success
             begshown = true;
             beg.SetActive(false);
             ma.PlayerMoved = true;

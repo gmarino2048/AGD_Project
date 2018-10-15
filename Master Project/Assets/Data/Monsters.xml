@@ -4,7 +4,7 @@
     <!ATTLIST monster id ID #REQUIRED>
 ]>
 <monsters>
-    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" name="Nessie" fightThreshold="0.3">
+    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" name="Nessie" fightThreshold="0.4">
         <ingredient type="AlgaeSlime"/>
         <ingredient type="IceCream"/>
         <ingredient type="AquariumGravel"/>

@@ -38,13 +38,30 @@ namespace Combat
             }
 
         }
-        public void ChangeManagerBar(int value)
+
+        /// <summary>
+        /// Sets the value of the manager bar
+        /// </summary>
+        /// <param name="value">The value to be set to</param>
+        public void SetValue(int value)
         {
-            currentManagerValue += value;
+            baramount.value = (float) value / maxManagerValue;
+        }
+
+        /// <summary>
+        /// Increments the value of the manager bar by the given offset
+        /// </summary>
+        /// <param name="offset">The amount to add to the current manager bar value</param>
+        public void IncrementValue(int offset)
+        {
+            currentManagerValue += offset;
             currentManagerValue = Mathf.Clamp(currentManagerValue, 0, maxManagerValue);
             baramount.value = (float)currentManagerValue / maxManagerValue;
-
         }
+
+        /// <summary>
+        /// Displays the current manager bar value
+        /// </summary>
         public void DisplayManagerNum()
         {
             managernum.text = (baramount.value * 100f).ToString();

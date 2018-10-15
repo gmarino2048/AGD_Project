@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Monsters;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 namespace Combat
 {
@@ -15,8 +16,6 @@ namespace Combat
         private bool monstermoved;
         private int damageholder;
 
-        public enum Monster { Nessie, Cerberus, REDACTED };
-        public Monster CurrentMonster;
         public Animator Movement;
         public ManagerBar Bar;
         public HealthBar health;
@@ -27,8 +26,10 @@ namespace Combat
         public Text CombatMessage;
         public GameObject CombatUI;
 
+        private CombatInitiator _CombatInitiator;
+        public MonsterData _CurrentMonster;
 
-        private void Awake()
+        void Awake()
         {
             Movement = GetComponent<Animator>();
             monstermoved = false;
@@ -36,10 +37,21 @@ namespace Combat
             PlayerHealed = false;
             Win = false;
             Combat = true;
-            CurrentMonster = Monster.Nessie;
         }
-        private void Start()
+        void Start()
         {
+            _CombatInitiator = GameObject.FindObjectOfType<CombatInitiator>();
+            if (_CombatInitiator != null)
+            {
+                var monsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+                _CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
+                Bar.SetValue((int)Mathf.Ceil(_CombatInitiator.InitialManagerMeterValue * Bar.maxManagerValue));
+            }
+            else
+            {
+                // Just default, other values are not necessary for this scene.
+                _CurrentMonster = new MonsterData("Nessie", 0, null);
+            }
             StartCoroutine("CombatFunction");
         }
 
@@ -87,7 +99,7 @@ namespace Combat
         }
         IEnumerator Monsterdamamged()
         {
-            CombatMessage.text = CurrentMonster + " received damage";
+            CombatMessage.text = _CurrentMonster + " received damage";
             Movement.SetTrigger("hit");
             yield return null;
         }
@@ -98,21 +110,21 @@ namespace Combat
             {
                 damageholder = damagedice.Next(0, 5);
                 health.ChangeHealth(-15 - damageholder);
-                CombatMessage.text = CurrentMonster + " used Normal Attack! Dealt " + (15 + damageholder).ToString() + " damage!";
+                CombatMessage.text = _CurrentMonster + " used Normal Attack! Dealt " + (15 + damageholder).ToString() + " damage!";
                 Movement.SetTrigger("attack3");
 
             }
             else if (monsteraction == 2 || monsteraction == 4)
             {
-                Bar.ChangeManagerBar(10);
-                CombatMessage.text = CurrentMonster + " used Healing! Raised manager meter by 10!";
+                Bar.IncrementValue(10);
+                CombatMessage.text = _CurrentMonster + " used Healing! Raised manager meter by 10!";
                 Movement.SetTrigger("attack2");
             }
             else
             {
                 damageholder = damagedice.Next(0, 10);
                 health.ChangeHealth(-25 - damageholder);
-                CombatMessage.text = CurrentMonster + " used Super Attack! Dealt " + (25 + damageholder).ToString() + " damage!";
+                CombatMessage.text = _CurrentMonster + " used Super Attack! Dealt " + (25 + damageholder).ToString() + " damage!";
                 Movement.SetTrigger("attack1");
             }
             monstermoved = true;
@@ -125,7 +137,7 @@ namespace Combat
             monstermoved = false;
             PlayerMoved = false;
             PlayerHealed = false;
-            Bar.ChangeManagerBar(5);
+            Bar.IncrementValue(5);
             yield return null;
 
         }
