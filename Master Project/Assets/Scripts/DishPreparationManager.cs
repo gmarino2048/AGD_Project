@@ -17,6 +17,7 @@ public class DishPreparationManager : MonoBehaviour
     private const string _MICROWAVE_SCENE_NAME = "Microwaving";
     private const string _SHAKING_SCENE_NAME = "Shaking";
     private const string _STIRRING_SCENE_NAME = "Stirring";
+    private const string _COMBAT_SCENE_NAME = "CombatScene";
     private readonly Dictionary<IngredientType, string> _INGREDIENT_SCENES = new Dictionary<IngredientType, string>() {
         {IngredientType.IceCream, _STIRRING_SCENE_NAME},
         {IngredientType.AlgaeSlime, _MICROWAVE_SCENE_NAME},
