@@ -11,7 +11,7 @@ namespace Dialog
         /// <summary>
         /// The path to the data file for monster dialog.
         /// </summary>
-        public static string monsterDialogDataFilePath = "Assets/Data/MonsterDialog.xml";
+        public static string monsterDialogDataFilePath = Application.streamingAssetsPath + "/Data/MonsterDialog.xml";
 
         /// <summary>
         /// Gets the response sets.

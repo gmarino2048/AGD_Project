@@ -13,8 +13,13 @@ namespace Monsters
         /// <summary>
         /// The path to the data file for the monsters
         /// </summary>
-        public string monsterDataFilePath = "Assets/Data/Monsters.xml";
-        
+        public string monsterDataFilePath;
+
+        private void Awake()
+        {
+            monsterDataFilePath = Application.streamingAssetsPath + "/Data/Monsters.xml";
+        }
+
         /// <summary>
         /// Retrieves existing cached data about a monster or loads a monster from xml
         /// </summary>
