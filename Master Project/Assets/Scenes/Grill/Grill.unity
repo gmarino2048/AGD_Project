@@ -405,6 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialTime: 10
+  FinalScoreText: {fileID: 345983125}
   ScoreDisplay: {fileID: 1213187613}
 --- !u!4 &943857794
 Transform:
