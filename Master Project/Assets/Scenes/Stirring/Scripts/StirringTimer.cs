@@ -44,6 +44,7 @@ namespace Stirring
             }
             else
             {
+                CancelInvoke();
                 FinishStirringGame();
             }
         }

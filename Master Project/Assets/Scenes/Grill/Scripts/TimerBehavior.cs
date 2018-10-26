@@ -10,6 +10,12 @@ public class TimerBehavior : MonoBehaviour {
     public float CurrentTime { get; private set; } // The current time of the countdown.
     Text Text; // The timer's text.
 
+    private bool isFinished = false;
+
+    public Text FinalScoreText; // The text used to display the user's final score.
+
+    public CanvasGroup ScoreDisplay;
+
 	/// <summary>
     /// Runs on start of the scene.
     /// </summary>
@@ -25,6 +31,12 @@ public class TimerBehavior : MonoBehaviour {
         if (CurrentTime > 0) {
             Text.text = ((int)CurrentTime).ToString();
             CurrentTime = CurrentTime - Time.deltaTime;
+        }
+        else if (!isFinished){
+            isFinished = true;
+            FinalScoreText.text = GameObject.Find("Scorekeeper").GetComponent<GrillScorekeeper>().GetScoreText();
+            StartCoroutine(GameObject.Find("Scorekeeper").GetComponent<GrillScorekeeper>().FadeCanvas(ScoreDisplay, 0, 2f, 1f));
+
         }
 	}
 }
