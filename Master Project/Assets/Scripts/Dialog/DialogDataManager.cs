@@ -11,7 +11,7 @@ namespace Dialog
         /// <summary>
         /// The path to the data file for monster dialog.
         /// </summary>
-        public static string monsterDialogDataFilePath = Application.streamingAssetsPath + "/Data/MonsterDialog.xml";
+        private static string _MONSTER_DIALOG_STREAMING_ASSETS_FILE_PATH = "/Data/MonsterDialog.xml";
 
         /// <summary>
         /// Gets the response sets.
@@ -43,7 +43,7 @@ namespace Dialog
         /// <returns>The new DialogDataManager</returns>
         /// <param name="monsterId">Monster identifier.</param>
         public static DialogDataManager LoadFromXml(Guid monsterId) {
-            var xmlFileContents = File.ReadAllText(monsterDialogDataFilePath);
+            var xmlFileContents = File.ReadAllText(Application.streamingAssetsPath + _MONSTER_DIALOG_STREAMING_ASSETS_FILE_PATH);
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlFileContents);
 

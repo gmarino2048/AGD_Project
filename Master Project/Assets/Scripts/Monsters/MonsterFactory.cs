@@ -13,12 +13,7 @@ namespace Monsters
         /// <summary>
         /// The path to the data file for the monsters
         /// </summary>
-        public string monsterDataFilePath;
-
-        private void Awake()
-        {
-            monsterDataFilePath = Application.streamingAssetsPath + "/Data/Monsters.xml";
-        }
+        private readonly string _MONSTER_STREAMING_ASSETS_FILE_PATH;
 
         /// <summary>
         /// Retrieves existing cached data about a monster or loads a monster from xml
@@ -29,7 +24,7 @@ namespace Monsters
         {
             if (!_Monsters.ContainsKey(monsterId))
             {
-                var xmlFileContents = File.ReadAllText(monsterDataFilePath);
+                var xmlFileContents = File.ReadAllText(Application.streamingAssetsPath + _MONSTER_STREAMING_ASSETS_FILE_PATH);
                 var xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xmlFileContents);
 
