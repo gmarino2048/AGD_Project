@@ -22,6 +22,7 @@ namespace Chopping
         [Header("Chop Renderer")]
         [SerializeField]
         public SpriteControllerBehavior SpriteController;
+        public float ZIndex = 5;
 
         /// <summary>
         /// A struct to contain the actual position of the chop, as well as the range of values that the chop encompasses so that
@@ -89,18 +90,19 @@ namespace Chopping
                 ActualPosition = position,
                 UpperBound = position + ChopWidth
             };
-
-
-            // Draw the chop in the debug frame
-            // TODO: REMOVE LATER
-            DrawChop(currentChop);
-
+            
             HitOrMiss status = ValidPosition(currentChop);
 
             PrintHitOrMiss(status);
 
             // Only add if it was a valid knife chop.
-            if (status == HitOrMiss.Hit) AlreadyChopped.Add(currentChop);
+            if (status == HitOrMiss.Hit)
+            {
+                AlreadyChopped.Add(currentChop);
+
+                Vector3 chopPosition = new Vector3(currentChop.ActualPosition, 0, ZIndex);
+                SpriteController.Chop(chopPosition, currentChop.UpperBound - currentChop.LowerBound);
+            }
         }
 
 
