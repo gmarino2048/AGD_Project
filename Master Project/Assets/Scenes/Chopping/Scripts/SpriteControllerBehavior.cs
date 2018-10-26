@@ -11,15 +11,18 @@ namespace Chopping
         [SerializeField]
         public Sprite KnifeCut;
 
-        // Use this for initialization
+        public List<SpriteRenderer> ChopSprites { get; set; }
+
+
         void Start()
         {
-
+            ChopSprites = new List<SpriteRenderer>();
         }
 
-        // Update is called once per frame
-        void Update()
+        void Chop (Vector3 position, float width)
         {
+            SpriteRenderer cutRenderer = new SpriteRenderer();
+            cutRenderer.sprite = KnifeCut;
 
         }
     }
