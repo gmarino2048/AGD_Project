@@ -8,5 +8,12 @@
         <ingredient type="AlgaeSlime"/>
         <ingredient type="IceCream"/>
         <ingredient type="AquariumGravel"/>
+
+        <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
+        <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
+        <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
+        <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
+        <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
+        <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
     </monster>
 </monsters>
