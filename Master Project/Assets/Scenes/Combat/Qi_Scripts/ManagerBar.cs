@@ -43,7 +43,7 @@ namespace Combat
         /// Sets the value of the manager bar
         /// </summary>
         /// <param name="value">The value to be set to</param>
-        public void SetValue(int value)
+        public void SetValue(float value)
         {
             baramount.value = (float) value / maxManagerValue;
         }
@@ -57,6 +57,24 @@ namespace Combat
             currentManagerValue += offset;
             currentManagerValue = Mathf.Clamp(currentManagerValue, 0, maxManagerValue);
             baramount.value = (float)currentManagerValue / maxManagerValue;
+        }
+
+        /// <summary>
+        /// Updates the manager bar value based on the option the player chose
+        /// </summary>
+        /// <param name="combatChoice">The enum representing the combat choice the player decided upon</param>
+        public void HandlePlayerCombatChoice(CombatChoice combatChoice)
+        {
+            // In the case of just testing this one scene in isolation
+            if (ma.CurrentMonster == null || ma.CurrentMonster.CombatChoices == null || !ma.CurrentMonster.CombatChoices.ContainsKey(combatChoice))
+            {
+                IncrementValue(-10);
+                return;
+            }
+
+            var combatChoiceStatus = ma.CurrentMonster.CombatChoices[combatChoice];
+            IncrementValue(-1 * combatChoiceStatus.Power);
+            combatChoiceStatus.UpdatePower();
         }
 
         /// <summary>

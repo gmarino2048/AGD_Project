@@ -27,7 +27,7 @@ namespace Combat
         public GameObject CombatUI;
 
         private CombatInitiator _CombatInitiator;
-        public MonsterData _CurrentMonster;
+        public MonsterData CurrentMonster;
 
         void Awake()
         {
@@ -44,13 +44,13 @@ namespace Combat
             if (_CombatInitiator != null)
             {
                 var monsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
-                _CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
+                CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
                 Bar.SetValue((int)Mathf.Ceil(_CombatInitiator.InitialManagerMeterValue * Bar.maxManagerValue));
             }
             else
             {
                 // Just default, other values are not necessary for this scene.
-                _CurrentMonster = new MonsterData("Nessie", 0, null);
+                CurrentMonster = new MonsterData("Nessie", 0, null, null);
             }
             StartCoroutine("CombatFunction");
         }
@@ -99,7 +99,7 @@ namespace Combat
         }
         IEnumerator Monsterdamamged()
         {
-            CombatMessage.text = _CurrentMonster + " received damage";
+            CombatMessage.text = CurrentMonster + " received damage";
             Movement.SetTrigger("hit");
             yield return null;
         }
@@ -110,21 +110,21 @@ namespace Combat
             {
                 damageholder = damagedice.Next(0, 5);
                 health.ChangeHealth(-15 - damageholder);
-                CombatMessage.text = _CurrentMonster + " used Normal Attack! Dealt " + (15 + damageholder).ToString() + " damage!";
+                CombatMessage.text = CurrentMonster + " used Normal Attack! Dealt " + (15 + damageholder).ToString() + " damage!";
                 Movement.SetTrigger("attack3");
 
             }
             else if (monsteraction == 2 || monsteraction == 4)
             {
                 Bar.IncrementValue(10);
-                CombatMessage.text = _CurrentMonster + " used Healing! Raised manager meter by 10!";
+                CombatMessage.text = CurrentMonster + " used Healing! Raised manager meter by 10!";
                 Movement.SetTrigger("attack2");
             }
             else
             {
                 damageholder = damagedice.Next(0, 10);
                 health.ChangeHealth(-25 - damageholder);
-                CombatMessage.text = _CurrentMonster + " used Super Attack! Dealt " + (25 + damageholder).ToString() + " damage!";
+                CombatMessage.text = CurrentMonster + " used Super Attack! Dealt " + (25 + damageholder).ToString() + " damage!";
                 Movement.SetTrigger("attack1");
             }
             monstermoved = true;

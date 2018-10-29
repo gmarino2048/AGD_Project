@@ -24,30 +24,43 @@ namespace Monsters
         {
             if (!_Monsters.ContainsKey(monsterId))
             {
-            var xmlFilePath = Path.Combine(Application.streamingAssetsPath, _MONSTER_STREAMING_ASSETS_FILE_PATH);
-            var xmlFileContents = File.ReadAllText(xmlFilePath);
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xmlFileContents);
-
-                var monsterNode = xmlDoc.GetElementById(monsterId.ToString("B").ToUpper());
-
-                var name = monsterNode.Attributes["name"].Value;
-                var fightThreshold = float.Parse(monsterNode.Attributes["fightThreshold"].Value);
-
-                // Get desired ingredients
-                var desiredIngredients = new List<IngredientType>();
-                foreach (XmlNode xmlNode in monsterNode.GetElementsByTagName("ingredient"))
+                try
                 {
-                    try
+                    var xmlFilePath = Path.Combine(Application.streamingAssetsPath, _MONSTER_STREAMING_ASSETS_FILE_PATH);
+                    var xmlFileContents = File.ReadAllText(xmlFilePath);
+                    var xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(xmlFileContents);
+
+                    var monsterNode = xmlDoc.GetElementById(monsterId.ToString("B").ToUpper());
+
+                    var name = monsterNode.Attributes["name"].Value;
+                    var fightThreshold = float.Parse(monsterNode.Attributes["fightThreshold"].Value);
+
+                    // Get desired ingredients
+                    var desiredIngredients = new List<IngredientType>();
+                    foreach (XmlNode xmlNode in monsterNode.GetElementsByTagName("ingredient"))
                     {
                         desiredIngredients.Add((IngredientType)Enum.Parse(typeof(IngredientType), xmlNode.Attributes["type"].Value));
                     }
-                    catch (Exception e) {
-                        Debug.LogError(e);
-                    }
-                }
 
-                _Monsters.Add(monsterId, new MonsterData(name, fightThreshold, desiredIngredients));
+                    // Get the combat choice stats
+                    var combatChoices = new Dictionary<CombatChoice, CombatChoiceStatus>();
+                    foreach (XmlNode xmlNode in monsterNode.GetElementsByTagName("combatchoice"))
+                    {
+                        var combatChoice = (CombatChoice)Enum.Parse(typeof(CombatChoice), xmlNode.Attributes["name"].Value);
+                        var combatChoiceStatus = new CombatChoiceStatus(
+                            int.Parse(xmlNode.Attributes["start"].Value),
+                            float.Parse(xmlNode.Attributes["decayrate"].Value),
+                            int.Parse(xmlNode.Attributes["min"].Value)
+                        );
+                        combatChoices.Add(combatChoice, combatChoiceStatus);
+                    }
+
+                    _Monsters.Add(monsterId, new MonsterData(name, fightThreshold, desiredIngredients, combatChoices));
+                }
+                catch (Exception e) {
+                    Debug.LogError(e);
+                }
             }
 
             return _Monsters[monsterId];
