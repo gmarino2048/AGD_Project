@@ -14,8 +14,7 @@ namespace Combat
         }
         public void Flatter()
         {
-            Debug.Log("Flatter");
-            bar.IncrementValue(-5); //TODO: Rewrite for handling varying degrees of success
+            bar.HandlePlayerCombatChoice(CombatChoice.Flatter);
             ma.PlayerMoved = true;
         }
     }

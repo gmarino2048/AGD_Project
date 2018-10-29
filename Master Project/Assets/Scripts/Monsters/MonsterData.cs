@@ -31,13 +31,16 @@ namespace Monsters
         /// <summary>
         /// The ingredients this monster desires
         /// </summary>
-        public List<IngredientType> DesiredIngredients { get; set; }
+        public List<IngredientType> DesiredIngredients { get; private set; }
 
-        internal MonsterData(string name, float fightThreshold, List<IngredientType> desiredIngredients)
+        public Dictionary<CombatChoice, CombatChoiceStatus> CombatChoices { get; private set; }
+
+        internal MonsterData(string name, float fightThreshold, List<IngredientType> desiredIngredients, Dictionary<CombatChoice, CombatChoiceStatus> combatChoices)
         {
             Name = name;
             FightThreshold = fightThreshold;
             DesiredIngredients = desiredIngredients;
+            CombatChoices = combatChoices;
 
             AffectionValue = 1;
         }
