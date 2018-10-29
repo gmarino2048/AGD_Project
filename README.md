@@ -9,4 +9,4 @@ To view the Design Document, click
 
 ## Bug Reporting
 
-To submit a bug report, please click [here]() and follow the instructions
+To submit a bug report, please click [here](https://github.com/gmarino2048/AGD_Project/issues/new?template=qennies-bug-report-form.md) and follow the instructions
