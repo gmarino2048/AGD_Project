@@ -21,6 +21,7 @@ namespace Chopping
 
         [Header("Chop Renderer")]
         [SerializeField]
+        public GameObject SpriteParent;
         public SpriteControllerBehavior SpriteController;
         public float ZIndex = 5;
 
@@ -101,7 +102,7 @@ namespace Chopping
                 AlreadyChopped.Add(currentChop);
 
                 Vector3 chopPosition = new Vector3(currentChop.ActualPosition, 0, ZIndex);
-                SpriteController.Chop(chopPosition, currentChop.UpperBound - currentChop.LowerBound);
+                SpriteController.DrawChop(SpriteParent, chopPosition, currentChop.UpperBound - currentChop.LowerBound);
             }
         }
 
@@ -143,7 +144,7 @@ namespace Chopping
         /// Draws the chop bounds in the scene for visual debug.
         /// </summary>
         /// <param name="current">The chop to be drawn.</param>
-        void DrawChop(Chop current)
+        void DebugDrawChop(Chop current)
         {
             float upperY = 10;
             float lowerY = -10;

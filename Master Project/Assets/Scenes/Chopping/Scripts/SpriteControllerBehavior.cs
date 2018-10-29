@@ -23,10 +23,10 @@ namespace Chopping
         }
 
 
-        public void Chop (Vector3 position, float width)
+        public void DrawChop (GameObject parent, Vector3 position, float width)
         {
             GameObject child = new GameObject();
-            child.transform.parent = transform;
+            child.transform.parent = parent.transform;
 
             SpriteRenderer cutRenderer = child.AddComponent<SpriteRenderer>();
             cutRenderer.sprite = KnifeCut;

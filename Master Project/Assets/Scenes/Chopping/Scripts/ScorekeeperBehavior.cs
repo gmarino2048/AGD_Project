@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -158,6 +159,50 @@ namespace Chopping
             CurrentTime = 0f;
             TimerActive = false;
             TimerDone = true;
+        }
+
+        /// <summary>
+        /// Ends this minigame by setting each of the different components to their finished
+        /// state. 
+        /// </summary>
+        void EndGame () 
+        {
+            CurrentTime = 0f;
+            TimerActive = false;
+            TimerDone = true;
+
+            float scaledScore = (1 - Score) * 1000;
+
+            FinalScore.text = 
+            StartCoroutine(FadeCanvas())
+        }
+
+        /// <summary>
+        /// Fades in the canvas group containing the final score display once
+        /// the minigame has finished. 
+        /// </summary>
+        /// <returns>An IEnumerator used to enable the coroutine.</returns>
+        /// <param name="canvas">The Canvas Group to fade in.</param>
+        /// <param name="startAlpha">The starting opacity of the canvas.</param>
+        /// <param name="duration">The duration of the fade effect.</param>
+        /// <param name="endAlpha">The final opacity of the Canvas Group.</param>
+        IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha)
+        {
+            float startTime = Time.time;
+
+            float change = (endAlpha - startAlpha) / duration;
+
+            while (Time.time - startTime <= duration)
+            {
+                float currentTime = Time.time - startTime;
+                canvas.alpha = startAlpha + (change * currentTime);
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        float ScoreGame () {
+            return 0f;
         }
 
         #endregion
