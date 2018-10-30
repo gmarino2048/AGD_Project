@@ -11,12 +11,16 @@ namespace Ingredients
 
         private IngredientType? chosenIngredientType;
 
+		public GameObject incorrectIngredientMark;
+
         BoxCollider2D boxCollider;
 
         // Use this for initialization
         void Start ()
         {
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
+			incorrectIngredientMark = GameObject.Find ("RedX");
+			incorrectIngredientMark.SetActive (false);
         }
         
         // Update is called once per frame
@@ -48,6 +52,7 @@ namespace Ingredients
             {
                 ingredient.SendBackToOriginalPosition();
                 //TODO: Show an 'x' saying no!
+				incorrectIngredientMark.SetActive(true);
             }
         }
     }
