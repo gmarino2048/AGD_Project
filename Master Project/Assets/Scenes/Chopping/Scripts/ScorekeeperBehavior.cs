@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,12 +16,14 @@ namespace Chopping
 
         public float TimeInSeconds = 30f; // The amount of time to start the countdown with. Default is 30 seconds.
 
-        Text TimerText; // The text object used to display time remaining.
-        Button FinishButton; // The button used to finish and exit this minigame early.
+        public Text TimerText; // The text object used to display time remaining.
+        public Button FinishButton; // The button used to finish and exit this minigame early.
 
         float CurrentTime; // The current time on the countdown
         bool TimerActive; // Is the timer currently active and counting down?
         bool TimerDone; // Has the timer finished counting down?
+
+        public float Score { get; private set; } // The score for this minigame
 
 
         [Header("Final Score Display")]
@@ -41,9 +42,6 @@ namespace Chopping
         /// </summary>
         void Start()
         {
-            TimerText = GetComponentInChildren<Text>();
-            FinishButton = GetComponentInChildren<Button>();
-
             CurrentTime = TimeInSeconds;
             TimerActive = true;
             TimerDone = false;
@@ -51,6 +49,7 @@ namespace Chopping
             FinishButton.onClick.AddListener(OnFinishButtonPressed);
 
             FinalScoreDisplay.alpha = 0;
+            FinalScoreDisplay.gameObject.SetActive(false);
         }
 
 
@@ -73,7 +72,7 @@ namespace Chopping
 
             if (TimerDone)
             {
-                Score();
+                EndGame();
                 TimerDone = false;
             }
 
@@ -89,11 +88,11 @@ namespace Chopping
         /// </summary>
         /// <returns>Should return a float between 0 and 1 representing the minigame's score. Doesn't
         /// do that yet though.</returns>
-        float Score()
+        void CalculateScore()
         {
             float average = AverageDistance(SortChops(ChopManager));
             Debug.Log(average);
-            return average;
+            Score = average;
         }
 
 
@@ -156,9 +155,7 @@ namespace Chopping
         /// </summary>
         void OnFinishButtonPressed()
         {
-            CurrentTime = 0f;
-            TimerActive = false;
-            TimerDone = true;
+            EndGame();
         }
 
         /// <summary>
@@ -167,14 +164,18 @@ namespace Chopping
         /// </summary>
         void EndGame () 
         {
+            FinalScoreDisplay.gameObject.SetActive(true);
+
             CurrentTime = 0f;
             TimerActive = false;
             TimerDone = true;
 
+            CalculateScore();
+
             float scaledScore = (1 - Score) * 1000;
 
-            FinalScore.text = 
-            StartCoroutine(FadeCanvas())
+            FinalScore.text = scaledScore.ToString() + "/1000";
+            StartCoroutine(FadeCanvas(FinalScoreDisplay, 0, 5, 1));
         }
 
         /// <summary>
