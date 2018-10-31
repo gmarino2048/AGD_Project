@@ -159,6 +159,7 @@ MonoBehaviour:
   XOffset: 0
   YOffset: 0
   ZIndex: 0
+  Scorekeeper: {fileID: 1152476654}
   ItemToChop: {fileID: 1127444286}
   BufferWidth: 2
   Velocity: 20

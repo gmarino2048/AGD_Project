@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Chopping
 {
@@ -65,18 +66,24 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if 
-            // Get the current values of the knife
-            float currentX = transform.position.x;
-            float currentY = transform.position.y;
-            float currentZ = transform.position.z;
+            if (Scorekeeper.TimerActive)
+            {
+                // Get the current values of the knife
+                float currentX = transform.position.x;
+                float currentY = transform.position.y;
+                float currentZ = transform.position.z;
 
-            // Get the next X position
-            float newX = GetNextPosition(currentX, Time.deltaTime);
+                // Get the next X position
+                float newX = GetNextPosition(currentX, Time.deltaTime);
 
-            // Set the knife position
-            Vector3 newPosition = new Vector3(newX, currentY, currentZ);
-            transform.position = newPosition;
+                // Set the knife position
+                Vector3 newPosition = new Vector3(newX, currentY, currentZ);
+                transform.position = newPosition;
+            }
+        }
+
+        IEnumerator RunAnimation () {
+            yield return null;
         }
 
         #endregion
@@ -134,11 +141,6 @@ namespace Chopping
             return start > stop
                     ? start - (Velocity * time)
                     : start + (Velocity * time);
-        }
-
-        void RunAnimation()
-        {
-            throw new System.Exception("Method Not Yet Implemented");
         }
 
         #endregion

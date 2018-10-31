@@ -20,8 +20,8 @@ namespace Chopping
         public Button FinishButton; // The button used to finish and exit this minigame early.
 
         float CurrentTime; // The current time on the countdown
-        bool TimerActive; // Is the timer currently active and counting down?
-        bool TimerDone; // Has the timer finished counting down?
+        public bool TimerActive { get; private set; } // Is the timer currently active and counting down?
+        public bool TimerDone { get; private set; } // Has the timer finished counting down?
 
         public float Score { get; private set; } // The score for this minigame
 
@@ -69,7 +69,6 @@ namespace Chopping
                 TimerDone = true;
                 TimerActive = false;
             }
-
             if (TimerDone)
             {
                 EndGame();
@@ -155,7 +154,8 @@ namespace Chopping
         /// </summary>
         void OnFinishButtonPressed()
         {
-            EndGame();
+            TimerDone = true;
+            TimerActive = false;
         }
 
         /// <summary>
