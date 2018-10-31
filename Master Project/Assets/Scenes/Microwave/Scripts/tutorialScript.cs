@@ -6,18 +6,29 @@ namespace Microwave
 {
     public class tutorialScript : MonoBehaviour
     {
-
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
+        public CanvasGroup TutorialGroup;
 
         private void OnMouseDown()
         {
-            this.transform.Translate(Vector3.forward * 100);
+            StartCoroutine(FadeTutorial(TutorialGroup, 0, 2f, 1f));
             GameObject.Find("TimerText").GetComponent<MicrowaveTimerScript>().StartGame();
         }
+
+        public IEnumerator FadeTutorial(CanvasGroup tutorial, float startAlpha, float duration, float endAlpha)
+        {
+            float startTime = Time.time;
+
+            float change = (endAlpha - startAlpha) / duration;
+
+            while (Time.time - startTime <= duration)
+            {
+                float currentTime = Time.time - startTime;
+                tutorial.alpha = startAlpha + (change * currentTime);
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
     }
+
+
 }

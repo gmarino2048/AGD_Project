@@ -11,7 +11,7 @@ namespace Microwave
         private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
 
         //how much time is left
-        private int _Counter;
+        public int _Counter;
 
         //whether the game is still going
         private bool _IsStillRunning;
@@ -34,6 +34,10 @@ namespace Microwave
         /// </summary>
         public Animator anim;
 
+        public CanvasGroup ScoreDisplay;// The place to display the final score.
+
+        public Text FinalScoreText; // The text used to display the user's final score.
+
         /// <summary>
         /// Start this instance.
         /// initializes variables
@@ -44,16 +48,22 @@ namespace Microwave
             anim = GameObject.Find("Microwave Sprite").GetComponent<Animator>();
             _DishPreparationManager = GameObject.FindObjectOfType<DishPreparationManager>();
             _DishScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
-        }
 
-        public void StartGame()
-        {
-            _Counter = 10;
+            ScoreDisplay.alpha = 0f;
+            FinalScoreText.text = "";
+
+            _Counter = 1000;
             //every second call countdown method (starts after a second)
-            InvokeRepeating("Countdown", 1, 1);
+            InvokeRepeating("Countdown", 1, 0.01f);
             UpdateTimerText();
             _IsStillRunning = true;
         }
+
+        public void StartGame(){
+
+        }
+
+
 
         /// <summary>
         /// assuming game hasn't finished, decrements counter
@@ -99,7 +109,7 @@ namespace Microwave
         /// </summary>
         private void UpdateTimerText()
         {
-            timerText.text = "00:" + _Counter.ToString("D2");
+            timerText.text = "00:" + Mathf.RoundToInt(_Counter/100).ToString("D2") + ":" + Mathf.RoundToInt(_Counter % 100).ToString("D2");
         }
 
         /// <summary>
@@ -118,6 +128,9 @@ namespace Microwave
         {
             yield return new WaitForSeconds(10);
 
+            FinalScoreText.text = GetScoreText();
+            StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
+
             if (_DishPreparationManager != null)
             {
                 if (_DishScoreManager != null)
@@ -127,6 +140,32 @@ namespace Microwave
 
                 _DishPreparationManager.GoToNextScene();
             }
+        }
+
+        public IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha)
+        {
+            float startTime = Time.time;
+
+            float change = (endAlpha - startAlpha) / duration;
+
+            while (Time.time - startTime <= duration)
+            {
+                float currentTime = Time.time - startTime;
+                canvas.alpha = startAlpha + (change * currentTime);
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        /// <summary>
+        /// Gets the score text.
+        /// </summary>
+        /// <returns>The score text.</returns>
+        /// <param name="score">Score.</param>
+        public string GetScoreText()
+        {
+            int scaledScore = Mathf.RoundToInt(GetScore() * 1000);//((1 - Score()) * 1000);
+            return scaledScore + "/1000";
         }
     }
 }

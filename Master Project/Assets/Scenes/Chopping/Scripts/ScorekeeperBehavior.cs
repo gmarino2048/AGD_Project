@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,16 @@ public class ScorekeeperBehavior : MonoBehaviour
     bool TimerActive; // Is the timer currently active and counting down?
     bool TimerDone; // Has the timer finished counting down?
 
+
+    /// <summary>
+    /// The dish preparation manager
+    /// </summary>
+    private DishPreparationManager _DishPreparationManager;
+
+    public CanvasGroup ScoreDisplay;// The place to display the final score.
+
+    public Text FinalScoreText; // The text used to display the user's final score.
+
     #endregion
 
     #region MonoBehaviour
@@ -37,6 +48,9 @@ public class ScorekeeperBehavior : MonoBehaviour
         CurrentTime = TimeInSeconds;
         TimerActive = true;
         TimerDone = false;
+
+        ScoreDisplay.alpha = 0f;
+        FinalScoreText.text = "";
 
         FinishButton.onClick.AddListener(OnFinishButtonPressed);
     }
@@ -61,7 +75,9 @@ public class ScorekeeperBehavior : MonoBehaviour
 
         if (TimerDone)
         {
-            Score();
+            FinalScoreText.text = GetScoreText();
+            StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
+
             TimerDone = false;
         }
 
@@ -149,4 +165,39 @@ public class ScorekeeperBehavior : MonoBehaviour
     }
 
     #endregion
+
+
+
+    public IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha)
+    {
+        float startTime = Time.time;
+
+        float change = (endAlpha - startAlpha) / duration;
+
+        while (Time.time - startTime <= duration)
+        {
+            float currentTime = Time.time - startTime;
+            canvas.alpha = startAlpha + (change * currentTime);
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+
+
+    /// <summary>
+    /// Gets the score text.
+    /// </summary>
+    /// <returns>The score text.</returns>
+    /// <param name="score">Score.</param>
+    public string GetScoreText()
+    {
+        int scaledScore = Mathf.RoundToInt(Score() * 1000);//((1 - Score()) * 1000);
+        return scaledScore + "/1000";
+    }
+
+
+    
 }
+
+
