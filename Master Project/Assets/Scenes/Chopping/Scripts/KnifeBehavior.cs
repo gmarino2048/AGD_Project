@@ -14,6 +14,8 @@ namespace Chopping
         public float YOffset; // The action item's Y offset from the center of the camera
         public float ZIndex; // The action item's Z position in the scene
 
+        public ScorekeeperBehavior Scorekeeper; // The scorekeeper object for the scene
+
         [Header("Scene References")]
         [SerializeField]
         public ChopObjectBehavior ItemToChop; // The Choppable Object
@@ -63,6 +65,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
+            if 
             // Get the current values of the knife
             float currentX = transform.position.x;
             float currentY = transform.position.y;
