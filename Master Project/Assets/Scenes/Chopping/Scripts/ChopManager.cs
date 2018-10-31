@@ -59,6 +59,7 @@ namespace Chopping
         void Start()
         {
             AlreadyChopped = new List<Chop>();
+
         }
 
 
@@ -99,6 +100,8 @@ namespace Chopping
             // Only add if it was a valid knife chop.
             if (status == HitOrMiss.Hit)
             {
+                StartCoroutine(Reference.PauseForSeconds(1));
+
                 AlreadyChopped.Add(currentChop);
 
                 Vector3 chopPosition = new Vector3(currentChop.ActualPosition, 0, ZIndex);

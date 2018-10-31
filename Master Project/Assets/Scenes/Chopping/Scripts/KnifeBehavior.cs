@@ -16,6 +16,7 @@ namespace Chopping
         public float ZIndex; // The action item's Z position in the scene
 
         public ScorekeeperBehavior Scorekeeper; // The scorekeeper object for the scene
+        public ChopManager InputSource;
 
         [Header("Scene References")]
         [SerializeField]
@@ -27,6 +28,8 @@ namespace Chopping
 
         float LeftBound; // The left bound of the knife's movement
         float RightBound; // The right bound of the knife's movement
+
+        bool Paused; // Tells the knife whether to move
 
 
         /// <summary>
@@ -53,6 +56,8 @@ namespace Chopping
             float initialX = SceneCamera.transform.position.x + XOffset;
             float initialY = SceneCamera.transform.position.y + YOffset;
 
+            Paused = false;
+
             Vector3 knifePosition = new Vector3(initialX, initialY, ZIndex);
             gameObject.transform.position = knifePosition;
 
@@ -66,7 +71,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if (Scorekeeper.TimerActive)
+            if (Scorekeeper.TimerActive && !Paused)
             {
                 // Get the current values of the knife
                 float currentX = transform.position.x;
@@ -82,13 +87,21 @@ namespace Chopping
             }
         }
 
-        IEnumerator RunAnimation () {
-            yield return null;
-        }
-
         #endregion
 
         #region Auxiliary
+
+        /// <summary>
+        /// Pauses the knife movement for a set number of seconds.
+        /// </summary>
+        /// <returns>The IEnumerator allowing this to be a coroutine.</returns>
+        /// <param name="seconds">The number of seconds to pause for.</param>
+        public IEnumerator PauseForSeconds(int seconds)
+        {
+            Paused = true;
+            yield return new WaitForSeconds(seconds);
+            Paused = false;
+        }
 
         /// <summary>
         /// Sets the left and right bounds for the knife's movement.
