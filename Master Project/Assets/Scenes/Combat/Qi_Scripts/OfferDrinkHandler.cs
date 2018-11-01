@@ -14,8 +14,7 @@ namespace Combat
         }
         public void OfferDrink()
         {
-            Debug.Log("Offer Drink");
-            bar.IncrementValue(-25); //TODO: Rewrite for handling varying degrees of success
+            bar.HandlePlayerCombatChoice(CombatChoice.OfferDrink);
             ma.PlayerMoved = true;
         }
     }

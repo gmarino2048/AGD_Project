@@ -14,7 +14,7 @@ namespace Combat
         }
         public void reason()
         {
-            bar.IncrementValue(-10);
+            bar.HandlePlayerCombatChoice(CombatChoice.Reason);
             ma.PlayerMoved = true;
         }
     }
