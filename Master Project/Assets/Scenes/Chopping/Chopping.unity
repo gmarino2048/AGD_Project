@@ -140,6 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1753153034}
+  - {fileID: 1726052002}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -159,9 +160,12 @@ MonoBehaviour:
   YOffset: 0
   ZIndex: 0
   Scorekeeper: {fileID: 1152476654}
+  InputSource: {fileID: 0}
   ItemToChop: {fileID: 1127444286}
   BufferWidth: 2
   Velocity: 20
+  KnifeAnimator: {fileID: 1753153035}
+  PerformChop: DoChop
 --- !u!1 &370099757
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892903093}
   - component: {fileID: 892903092}
+  - component: {fileID: 892903094}
   m_Layer: 0
   m_Name: ChopManager
   m_TagString: Untagged
@@ -571,10 +576,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ChopWidth: 0.5
   Reference: {fileID: 337079250}
+  ReferencePosition: {fileID: 1726052001}
   InputKey: 32
   SpriteParent: {fileID: 892903091}
-  SpriteController: {fileID: 0}
-  ZIndex: 5
+  SpriteController: {fileID: 892903094}
+  ZIndex: 3
 --- !u!4 &892903093
 Transform:
   m_ObjectHideFlags: 0
@@ -588,6 +594,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &892903094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892903091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8979d4284a52434ea2371f18f2801e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KnifeCut: {fileID: 21300000, guid: 33c2a692101a34a5097ad65a9b215e48, type: 3}
+  PositionReference: {fileID: 1726052001}
+  ZPosition: 0
+  ChopSprites: []
 --- !u!1 &893732980
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +891,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127444284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1931811778}
@@ -1090,6 +1111,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4924d37169724424b1c4706952c90cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1726052001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1726052002}
+  m_Layer: 0
+  m_Name: CutReference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1726052002
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726052001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 337079249}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753153033
 GameObject:
   m_ObjectHideFlags: 0

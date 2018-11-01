@@ -17,6 +17,8 @@ namespace Chopping
         [SerializeField]
         public KnifeBehavior Reference; // The KnifeBehavior object to reference for position, etc... So that this script can run anywhere
         [SerializeField]
+        public GameObject ReferencePosition; // The position to insert the chop at
+        [SerializeField]
         public KeyCode InputKey = KeyCode.Space; // The input key for the knife to chop on
 
         [Header("Chop Renderer")]
@@ -71,8 +73,8 @@ namespace Chopping
             // Listen for space bar input
             if (Input.GetKeyDown(InputKey))
             {
-                Debug.Log(Reference.transform.position.x);
-                InsertChop(Reference.transform.position.x);
+                Debug.Log(ReferencePosition.transform.position.x);
+                InsertChop(ReferencePosition.transform.position.x);
             }
         }
 
@@ -100,12 +102,11 @@ namespace Chopping
             // Only add if it was a valid knife chop.
             if (status == HitOrMiss.Hit)
             {
-                StartCoroutine(Reference.PauseForSeconds(1));
+                StartCoroutine(Reference.DoAnimation(1));
 
                 AlreadyChopped.Add(currentChop);
 
-                Vector3 chopPosition = new Vector3(currentChop.ActualPosition, 0, ZIndex);
-                SpriteController.DrawChop(SpriteParent, chopPosition, currentChop.UpperBound - currentChop.LowerBound);
+                SpriteController.DrawChop();
             }
         }
 

@@ -31,6 +31,11 @@ namespace Chopping
 
         bool Paused; // Tells the knife whether to move
 
+        [Header("Animator Preferences")]
+        [SerializeField]
+        public Animator KnifeAnimator;
+        public string PerformChop = "DoChop";
+
 
         /// <summary>
         /// The direction that the knife moves in.
@@ -96,9 +101,10 @@ namespace Chopping
         /// </summary>
         /// <returns>The IEnumerator allowing this to be a coroutine.</returns>
         /// <param name="seconds">The number of seconds to pause for.</param>
-        public IEnumerator PauseForSeconds(int seconds)
+        public IEnumerator DoAnimation(int seconds)
         {
             Paused = true;
+            KnifeAnimator.SetTrigger(PerformChop);
             yield return new WaitForSeconds(seconds);
             Paused = false;
         }

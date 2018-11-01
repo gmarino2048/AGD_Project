@@ -11,8 +11,10 @@ namespace Chopping
         [SerializeField]
         public Sprite KnifeCut;
 
-        [Header("Sprite Height")]
-        public float SpriteHeight;
+        [Header("Reference Object")]
+        [SerializeField]
+        public GameObject PositionReference;
+        public float ZPosition;
 
         public List<SpriteRenderer> ChopSprites;
 
@@ -23,16 +25,18 @@ namespace Chopping
         }
 
 
-        public void DrawChop (GameObject parent, Vector3 position, float width)
+        public void DrawChop ()
         {
             GameObject child = new GameObject();
-            child.transform.parent = parent.transform;
+            child.transform.parent = gameObject.transform;
 
             SpriteRenderer cutRenderer = child.AddComponent<SpriteRenderer>();
             cutRenderer.sprite = KnifeCut;
 
-            cutRenderer.transform.position = position;
-            cutRenderer.size = new Vector2(width, SpriteHeight);
+            Vector3 position = PositionReference.transform.position;
+            position.z = ZPosition;
+
+            child.transform.position = position;
         }
     }
 }
