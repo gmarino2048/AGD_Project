@@ -80,7 +80,10 @@ namespace Microwave
                 }
             }
             else {
-                FinishMicrowaveGame();
+                if (_IsStillRunning == true)
+                {
+                    FinishMicrowaveGame();
+                }
             }
         }
 
@@ -89,7 +92,12 @@ namespace Microwave
         /// </summary>
         /// <returns>A number between 0 and 1 representing the score for the minigame.</returns>
         public float GetScore() {
-            return 0.5f; //TODO
+            if(_Counter == 0){
+                return 0;
+            }
+            else{
+                return 1 - (_Counter / 1000);
+            }
         }
 
         /// <summary>
@@ -126,7 +134,9 @@ namespace Microwave
         /// </summary>
         private IEnumerator EndMiniGame()
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(1);
+
+            _IsStillRunning = false;
 
             FinalScoreText.text = GetScoreText();
             StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
