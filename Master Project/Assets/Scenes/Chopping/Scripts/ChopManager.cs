@@ -7,8 +7,6 @@ namespace Chopping
     public class ChopManager : MonoBehaviour
     {
 
-        // TODO: Add sprite renderer for every chop instead of drawline
-
         #region Parameters
 
         [Header("Chop configurations")]
@@ -27,6 +25,9 @@ namespace Chopping
         public SpriteControllerBehavior SpriteController;
         public float ZIndex = 5;
 
+        public int TotalChops { get; private set; } // The total number of attempted chops on the object
+        public List<Chop> AlreadyChopped { get; private set; } // A list of valid chops for calculating collisions
+
         /// <summary>
         /// A struct to contain the actual position of the chop, as well as the range of values that the chop encompasses so that
         /// collisions between knife chops can be calculated.
@@ -38,7 +39,7 @@ namespace Chopping
             public float UpperBound;
         }
 
-        public List<Chop> AlreadyChopped { get; private set; } // A list of valid chops for calculating collisions
+
 
         /// <summary>
         /// Contains the information about whether each chop is a Hit (valid position on the choppable object), a Miss (outside
@@ -61,7 +62,7 @@ namespace Chopping
         void Start()
         {
             AlreadyChopped = new List<Chop>();
-
+            TotalChops = 0;
         }
 
 
@@ -107,7 +108,10 @@ namespace Chopping
                 AlreadyChopped.Add(currentChop);
 
                 SpriteController.DrawChop();
+
+                TotalChops++;
             }
+            if (status == HitOrMiss.Collision) TotalChops++;
         }
 
 
@@ -124,8 +128,8 @@ namespace Chopping
 
             // Get all overlaps with Linq query
             List<Chop> cutWithin = AlreadyChopped.Where(chopValue =>
-                                                        current.ActualPosition >= chopValue.LowerBound &&
-                                                        current.ActualPosition <= chopValue.UpperBound)
+                                                        current.UpperBound >= chopValue.LowerBound &&
+                                                        current.LowerBound <= chopValue.UpperBound)
                                                  .ToList();
 
             if (cutWithin.Any())

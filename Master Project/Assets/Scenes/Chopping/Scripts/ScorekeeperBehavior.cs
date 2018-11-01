@@ -23,6 +23,7 @@ namespace Chopping
         public bool TimerActive { get; private set; } // Is the timer currently active and counting down?
         public bool TimerDone { get; private set; } // Has the timer finished counting down?
 
+        public float ScoreScaler = 2;
         public float Score { get; private set; } // The score for this minigame
 
 
@@ -89,9 +90,15 @@ namespace Chopping
         /// do that yet though.</returns>
         void CalculateScore()
         {
-            float average = AverageDistance(SortChops(ChopManager));
-            Debug.Log(average);
-            Score = average;
+            float validChops = ChopManager.AlreadyChopped.Count;
+            float totalChops = ChopManager.TotalChops;
+
+            float precisionScaler = validChops / totalChops;
+            //precisionScaler = precisionScaler / ScoreScaler;
+
+            float scaledValid =  validChops * precisionScaler;
+
+            Score = scaledValid < 1 ? 1 : 1 / scaledValid;
         }
 
 
@@ -174,7 +181,7 @@ namespace Chopping
 
             float scaledScore = (1 - Score) * 1000;
 
-            FinalScore.text = scaledScore.ToString() + "/1000";
+            FinalScore.text = Mathf.RoundToInt(scaledScore).ToString() + "/1000";
             StartCoroutine(FadeCanvas(FinalScoreDisplay, 0, 5, 1));
         }
 
