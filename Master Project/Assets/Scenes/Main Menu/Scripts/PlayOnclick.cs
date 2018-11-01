@@ -9,8 +9,12 @@ using UnityEngine.SceneManagement;
 public class PlayOnclick : MonoBehaviour
 {
     private bool _AreOptionsActive = false;
+    private bool _AreCreditsActive = false;
+    private bool _AreInstructionsActive = false;
 
     public GameObject optionsMenu;
+    public GameObject creditsMenu;
+    public GameObject instructionsMenu;
     public string firstSceneName;
 
     public void whenClickedPlay()
@@ -21,11 +25,15 @@ public class PlayOnclick : MonoBehaviour
     public void whenClickedInstructions()
     {
         Debug.Log("Instructions button was clicked");
+        _AreInstructionsActive = !_AreInstructionsActive;
+        instructionsMenu.SetActive(_AreInstructionsActive);
     }
 
     public void whenClickedCredits()
     {
         Debug.Log("Credits button was clicked");
+        _AreCreditsActive = !_AreCreditsActive;
+        creditsMenu.SetActive(_AreCreditsActive);
     }
 
     public void whenClickedOptions()
@@ -40,5 +48,23 @@ public class PlayOnclick : MonoBehaviour
         Debug.Log("Quit button was clicked");
         Application.Quit();
     }
-	
+    
+    public void whenOptionsClickedBack()
+    {
+        _AreOptionsActive = false;
+        optionsMenu.SetActive(_AreOptionsActive);
+    }
+
+    public void whenCreditsClickedBack()
+    {
+        _AreCreditsActive = false;
+        creditsMenu.SetActive(_AreCreditsActive);
+    }
+
+    public void whenInstructionsClickedBack()
+    {
+        _AreInstructionsActive = false;
+        instructionsMenu.SetActive(_AreInstructionsActive);
+    }
+
 }
