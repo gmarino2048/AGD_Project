@@ -18,8 +18,7 @@ namespace Combat
         }
         public void FreeFood()
         {
-            Debug.Log("FreeFood");
-            bar.IncrementValue(-10); //TODO: Rewrite for handling varying degrees of success
+            bar.HandlePlayerCombatChoice(CombatChoice.FreeFood);
             ma.PlayerMoved = true;
         }
     }

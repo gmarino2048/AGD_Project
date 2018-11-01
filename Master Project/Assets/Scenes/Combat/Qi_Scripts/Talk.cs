@@ -32,8 +32,6 @@ namespace Combat
         //Make sure to attach these Buttons in the Inspector
         public void TalkHandler()
         {
-            //Output this to console when the Button is clicked
-            Debug.Log("Open talk options");
             showup = true;
             Info.SetActive(true);
         }

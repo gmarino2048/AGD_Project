@@ -20,14 +20,6 @@ public class PauseMenu : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if(Input.GetMouseButtonDown(0)) {
-			if (paused) {
-				Resume ();
-			} 
-			else {
-				Pause ();
-			}
-		}
 	}
 
 	public void Resume () {
@@ -37,13 +29,9 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 
-	void Pause() {
+	public void Pause() {
 		pauseMenu.SetActive (true);
 		Time.timeScale = 0;
 		paused = true;
-	}
-
-	public void QuitGame() {
-		Application.Quit ();
 	}
 }

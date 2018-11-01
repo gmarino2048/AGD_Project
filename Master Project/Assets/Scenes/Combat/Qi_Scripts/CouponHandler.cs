@@ -15,8 +15,7 @@ namespace Combat
         }
         public void Coupon()
         {
-            Debug.Log("Coupon");
-            bar.IncrementValue(-15); //TODO: Rewrite for handling varying degrees of success
+            bar.HandlePlayerCombatChoice(CombatChoice.Coupon);
             ma.PlayerMoved = true;
         }
     }
