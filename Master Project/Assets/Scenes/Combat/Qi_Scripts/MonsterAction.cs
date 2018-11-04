@@ -29,6 +29,9 @@ namespace Combat
         private CombatInitiator _CombatInitiator;
         public MonsterData CurrentMonster;
 
+        //private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
+       
+
         void Awake()
         {
             Movement = GetComponent<Animator>();
@@ -49,8 +52,16 @@ namespace Combat
             }
             else
             {
+                //intial conbatchoice and its decay rates
+                var combatChoices = new Dictionary<CombatChoice, CombatChoiceStatus>();
+                combatChoices.Add(CombatChoice.Beg, new CombatChoiceStatus(35, 0f, 0));
+                combatChoices.Add(CombatChoice.Coupon, new CombatChoiceStatus(15, 0.85f, 5));
+                combatChoices.Add(CombatChoice.Flatter, new CombatChoiceStatus(-5, 1.5f, -15));
+                combatChoices.Add(CombatChoice.FreeFood, new CombatChoiceStatus(10, 0.75f, 3));
+                combatChoices.Add(CombatChoice.OfferDrink, new CombatChoiceStatus(25, 0.80f, 10));
+                combatChoices.Add(CombatChoice.Reason, new CombatChoiceStatus(10, 0.9f, 2));
                 // Just default, other values are not necessary for this scene.
-                CurrentMonster = new MonsterData("Nessie", 0, null, null);
+                CurrentMonster = new MonsterData("Nessie", 0, null, combatChoices);
             }
             StartCoroutine("CombatFunction");
         }
