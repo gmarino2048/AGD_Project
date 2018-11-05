@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Linq;
 
 namespace Ingredients
 {
@@ -11,16 +12,22 @@ namespace Ingredients
 
         private IngredientType? chosenIngredientType;
 
+		public GameObject incorrectIngredientMark;
+
         BoxCollider2D boxCollider;
 
         // Use this for initialization
         void Start ()
         {
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
+			incorrectIngredientMark = GameObject.Find ("RedX");
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
         }
+
+	
         
         // Update is called once per frame
-        void Update ()
+		void Update ()
         {
             if (chosenIngredientType.HasValue)
                 return;
@@ -48,7 +55,17 @@ namespace Ingredients
             {
                 ingredient.SendBackToOriginalPosition();
                 //TODO: Show an 'x' saying no!
+				StartCoroutine(ShowRedX());
+
             }
         }
+			
+
+		IEnumerator ShowRedX()
+		{
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = true;
+			yield return new WaitForSeconds(2);
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
+		}
     }
 }
