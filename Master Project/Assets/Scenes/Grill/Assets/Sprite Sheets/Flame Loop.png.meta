@@ -1,7 +1,33 @@
 fileFormatVersion: 2
-guid: 783d447d4f34f479d96c169d3280c41c
+guid: 1bbf779432a7d415784f100446d1dca2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Flame Loop_0
+    21300002: Flame Loop_1
+    21300004: Flame Loop_2
+    21300006: Flame Loop_3
+    21300008: Flame Loop_4
+    21300010: Flame Loop_5
+    21300012: Flame Loop_6
+    21300014: Flame Loop_7
+    21300016: Flame Loop_8
+    21300018: Flame Loop_9
+    21300020: Flame Loop_10
+    21300022: Flame Loop_11
+    21300024: Flame Loop_12
+    21300026: Flame Loop_13
+    21300028: Flame Loop_14
+    21300030: Flame Loop_15
+    21300032: Flame Loop_16
+    21300034: Flame Loop_17
+    21300036: Flame Loop_18
+    21300038: Flame Loop_19
+    21300040: Flame Loop_20
+    21300042: Flame Loop_21
+    21300044: Flame Loop_22
+    21300046: Flame Loop_23
+    21300048: Flame Loop_24
+    21300050: Flame Loop_25
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -35,10 +61,10 @@ TextureImporter:
     wrapU: -1
     wrapV: -1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -47,7 +73,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 0
   textureShape: 1
@@ -65,9 +91,383 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Flame Loop_0
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 4085
+        width: 11
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_1
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 4089
+        width: 8
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_2
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 3927
+        width: 87
+        height: 166
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3573
+        width: 677
+        height: 414
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_4
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 3537
+        width: 682
+        height: 332
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_5
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 3443
+        width: 52
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_6
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 3496
+        width: 39
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2933
+        width: 677
+        height: 404
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_8
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 2912
+        width: 683
+        height: 401
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_9
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 3265
+        width: 74
+        height: 152
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_10
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 2835
+        width: 44
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_11
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 2879
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_12
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 2841
+        width: 35
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2301
+        width: 691
+        height: 472
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_14
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 2395
+        width: 680
+        height: 423
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_15
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 2261
+        width: 24
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_16
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 1851
+        width: 680
+        height: 437
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1713
+        width: 677
+        height: 423
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_18
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1641
+        width: 48
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_19
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1659
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_20
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1103
+        width: 689
+        height: 572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_21
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1645
+        width: 35
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_22
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1655
+        width: 12
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1125
+        width: 677
+        height: 518
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 649
+        width: 685
+        height: 438
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Flame Loop_25
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 687
+        width: 688
+        height: 402
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
