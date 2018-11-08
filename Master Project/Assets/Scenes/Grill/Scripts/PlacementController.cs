@@ -2,15 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacementController : MonoBehaviour {
+namespace Grill
+{
+    public class PlacementController : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        [Header("Cook Object Prefab")]
+        public CookObjectController CookObject;
+
+        List<CookObjectController> Active;
+
+        Camera MainCamera;
+
+        // Use this for initialization
+        void Start()
+        {
+            MainCamera = Camera.main;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 mousePosition = Input.mousePosition;
+                Vector3 worldPosition = MainCamera.ScreenToWorldPoint(mousePosition);
+
+
+            }
+        }
+    }
 }
