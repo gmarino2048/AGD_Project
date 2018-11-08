@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39eac907f5e494d8bb3557e5cee26414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldSkipDialogue: 1
+  shouldSkipDialogue: 0
 --- !u!114 &1027985361
 MonoBehaviour:
   m_ObjectHideFlags: 0
