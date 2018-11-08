@@ -22,12 +22,23 @@ namespace Ingredients {
 
         public Vector3 originalPosition { get; private set; }
 
-        private bool isLockedToLocation = false;
+		private bool isLockedToLocation = false;
+
+		public IngredientsManager ingredientsManager;
+
+		public GameObject incorrectIngredientMark;
+
+		private IngredientType? chosenIngredientType;
+
+		private bool isFake = false;
 
         // Use this for initialization
         void Start()
         {
             originalPosition = this.transform.position;
+			incorrectIngredientMark = GameObject.Find ("RedX");
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
+			ingredientsManager = GameObject.Find ("IngredientsManager").GetComponent<IngredientsManager> ();
         }
 
 
@@ -41,6 +52,13 @@ namespace Ingredients {
                 return;
             }
 
+			if (ingredientsManager.IsIngredientTypeLegal (ingredientType)) {
+				isLockedToLocation = true;
+				isFake = true;
+				//print (isFake + ":isFake");
+				//print (isLockedToLocation + ":isLocked");
+			}
+
             travelDistance += Vector3.Distance(mousePosition, prevMousePosition);
             prevMousePosition = mousePosition;
         }
@@ -50,10 +68,13 @@ namespace Ingredients {
         /// </summary>
         void OnMousePressed()
         {
+			
             if (isLockedToLocation)
             {
                 return;
             }
+
+
 
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         }
@@ -63,8 +84,11 @@ namespace Ingredients {
         /// </summary>
         void OnMouseDrag()
         {
-            if (isLockedToLocation)
-            {
+			if (isLockedToLocation)
+			{
+				if (isFake) {
+					StartCoroutine (ShowRedX ());
+				}
                 return;
             }
 
@@ -92,5 +116,12 @@ namespace Ingredients {
         {
             transform.position = originalPosition;
         }
+
+		IEnumerator ShowRedX()
+		{
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = true;
+			yield return new WaitForSeconds(2);
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
+		}
     }
 }

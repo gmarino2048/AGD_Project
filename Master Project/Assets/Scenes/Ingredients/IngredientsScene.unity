@@ -309,14 +309,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.05, y: 4.37}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &113244379
 MonoBehaviour:
@@ -365,8 +365,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 4bbb5910474ea4f6ab99a97b54672bab, type: 3}
-  m_Color: {r: 0.11724138, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cdb17d83f5e60407b886b221b90f38e8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -382,8 +382,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 113244376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 2.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -6.91, y: -3.37, z: 0}
+  m_LocalScale: {x: 0.36737448, y: 0.36737448, z: 0.057522703}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 248700780}
   m_Layer: 0
   m_Name: WhippedCream
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +429,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1.2}
   m_EdgeRadius: 0
 --- !u!114 &248700781
 MonoBehaviour:
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 248700779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -495,8 +495,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 248700779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -4.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: 5.28, y: 0.11, z: 0}
+  m_LocalScale: {x: 1.3102849, y: 1.3102851, z: 0.20516162}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 23
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 317662618}
   m_Layer: 0
   m_Name: Cheese
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317662617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -721,8 +721,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317662617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 2.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -0.6, y: 2.4, z: 0}
+  m_LocalScale: {x: 0.92, y: 0.92, z: 0.14405161}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
@@ -761,14 +761,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.24, y: 3.6}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &653748789
 MonoBehaviour:
@@ -817,12 +817,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: a76c873ddcfcd47f19d540baf949e387, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3e316cded0064a92a1443e9e9a59b9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -834,8 +834,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653748786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.42, y: -0.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: 6.78, y: -0.1, z: 0}
+  m_LocalScale: {x: 0.33683446, y: 0.33683443, z: 0.052740812}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 799555137}
   m_Layer: 0
   m_Name: CannedMeat
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -874,14 +874,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.68, y: 1.52}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 10.31, y: 19.31}
+    newSize: {x: 10.31, y: 19.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 19}
   m_EdgeRadius: 0
 --- !u!114 &799555138
 MonoBehaviour:
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 799555136}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -930,12 +930,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 35d076b77d2a9406fa212e42bb6574e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c82fdf8001aad4124a246cd962818129, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.31, y: 19.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -948,7 +948,7 @@ Transform:
   m_GameObject: {fileID: 799555136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8, y: -3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalScale: {x: 0.08700007, y: 0.08700006, z: 0.013622281}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 985095487}
   m_Layer: 0
   m_Name: PeculiarPeppers
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985095486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -1394,7 +1394,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985095486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -3, z: 0}
+  m_LocalPosition: {x: -7.32, y: 4.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1518,7 +1518,7 @@ GameObject:
   - component: {fileID: 1061091342}
   m_Layer: 0
   m_Name: CrushedSouls
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1546,7 +1546,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &1061091343
 MonoBehaviour:
@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1061091341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -1665,14 +1665,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.24, y: 3.6}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 9.23, y: 10.02}
+    newSize: {x: 9.23, y: 10.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6, y: 8}
   m_EdgeRadius: 0
 --- !u!212 &1104937246
 SpriteRenderer:
@@ -1708,12 +1708,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 8b2907a6cf8e04c2db43fa1c1e33d706, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6465df36764d34d069c9bab12fabb9e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9.23, y: 10.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1725,8 +1725,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1104937242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.71, y: 2.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -3.59, y: -3.38, z: 0}
+  m_LocalScale: {x: 0.29741532, y: 0.29741508, z: 0.04656861}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1806,7 +1806,7 @@ GameObject:
   - component: {fileID: 1277655956}
   m_Layer: 0
   m_Name: GroundBeef
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277655955}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -1900,8 +1900,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277655955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -2.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -6.25, y: 0.2, z: 0}
+  m_LocalScale: {x: 0.87, y: 0.87, z: 0.13622272}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
@@ -1919,7 +1919,7 @@ GameObject:
   - component: {fileID: 1304117785}
   m_Layer: 0
   m_Name: Beans
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1940,14 +1940,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.68, y: 1.52}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 10.31, y: 19.31}
+    newSize: {x: 10.31, y: 19.31}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 16}
   m_EdgeRadius: 0
 --- !u!114 &1304117786
 MonoBehaviour:
@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304117784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -1996,12 +1996,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 208f759d8d0ec45b396400881ac68978, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55861d64a39ad486b9032efb225fad00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10.31, y: 19.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2014,7 +2014,7 @@ Transform:
   m_GameObject: {fileID: 1304117784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.4, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalScale: {x: 0.07958307, y: 0.07958309, z: 0.012460949}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -2127,7 +2127,7 @@ GameObject:
   - component: {fileID: 1410780412}
   m_Layer: 0
   m_Name: VoidGoo
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2155,7 +2155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &1410780413
 MonoBehaviour:
@@ -2163,7 +2163,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410780411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -2221,8 +2221,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1410780411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.6, y: 2.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: 7.63, y: 3.9, z: 0}
+  m_LocalScale: {x: 0.62957746, y: 0.6295775, z: 0.09857789}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
@@ -2240,7 +2240,7 @@ GameObject:
   - component: {fileID: 1518075643}
   m_Layer: 0
   m_Name: Onions
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2276,7 +2276,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518075642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -2637,7 +2637,7 @@ GameObject:
   - component: {fileID: 1732295241}
   m_Layer: 0
   m_Name: Steak
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2665,7 +2665,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &1732295242
 MonoBehaviour:
@@ -2673,7 +2673,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732295240}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -2731,8 +2731,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732295240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -7.44, y: 0.42, z: 0}
+  m_LocalScale: {x: 0.46153328, y: 0.46153337, z: 0.0722659}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -2750,7 +2750,7 @@ GameObject:
   - component: {fileID: 1738425641}
   m_Layer: 0
   m_Name: Bones
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2786,7 +2786,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1738425640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -2844,8 +2844,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1738425640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.7, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -3.57, y: 2.68, z: 0}
+  m_LocalScale: {x: 0.51575184, y: 0.5157518, z: 0.0807553}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -2863,7 +2863,7 @@ GameObject:
   - component: {fileID: 1895599931}
   m_Layer: 0
   m_Name: Eggs
-  m_TagString: Untagged
+  m_TagString: Fake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2899,7 +2899,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895599930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b88f776bfae64c63ac54c8cf4fdc47f, type: 3}
   m_Name: 
@@ -2957,8 +2957,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895599930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: -2.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.15657784}
+  m_LocalPosition: {x: -7.6, y: -0.9, z: 0}
+  m_LocalScale: {x: 0.66107076, y: 0.66107076, z: 0.10350903}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12

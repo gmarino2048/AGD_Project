@@ -14,6 +14,7 @@ namespace Ingredients
 
 		private MonsterData _MonsterData;
 		private List<IngredientType> _IngredientsAdded;
+		public bool isLegal = false;
 
 		void Start()
 		{

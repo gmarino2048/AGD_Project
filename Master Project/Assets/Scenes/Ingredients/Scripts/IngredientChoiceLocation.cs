@@ -53,9 +53,9 @@ namespace Ingredients
             }
             else
             {
-                ingredient.SendBackToOriginalPosition();
+                //ingredient.SendBackToOriginalPosition();
                 //TODO: Show an 'x' saying no!
-				StartCoroutine(ShowRedX());
+				//StartCoroutine(ShowRedX());
 
             }
         }
