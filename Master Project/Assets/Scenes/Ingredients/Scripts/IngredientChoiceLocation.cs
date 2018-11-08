@@ -34,8 +34,15 @@ namespace Ingredients
                 return;
             }
 
-            var overlapObject = overlap[0].gameObject;
-            var ingredient = overlapObject.GetComponent<DragIngredient>();
+            DragIngredient ingredient = null;
+            foreach (var overlapObject in overlap)
+            {
+                var dragIngredientComponent = overlapObject.gameObject.GetComponent<DragIngredient>();
+                if (dragIngredientComponent != null)
+                {
+                    ingredient = dragIngredientComponent;
+                }
+            }
             if (ingredient == null)
             {
                 return;

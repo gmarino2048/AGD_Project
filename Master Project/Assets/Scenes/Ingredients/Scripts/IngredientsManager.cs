@@ -42,7 +42,6 @@ namespace Ingredients
 		{
 			_IngredientsAdded.Add(ingredientType);
 
-			print(_IngredientsAdded.Count.ToString() + ", " + _MonsterData.DesiredIngredients.Count.ToString());
 			if (_IngredientsAdded.Count == _MonsterData.DesiredIngredients.Count)
 			{
 				_DishPreparationManager.StartPreparingDish(_NESSIE_GUID, _MonsterData.DesiredIngredients);
