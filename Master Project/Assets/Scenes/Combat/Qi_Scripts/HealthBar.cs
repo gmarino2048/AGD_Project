@@ -17,7 +17,7 @@ namespace Combat
 
         private void Awake()
         {
-            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
             currentHealth = 100;
             maxHealth = 100;
             healtnum.text = (healthFill.value * 100f).ToString();

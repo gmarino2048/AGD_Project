@@ -17,8 +17,8 @@ namespace Combat
         // Use this for initialization
         void Awake()
         {
-            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
-            currentManagerValue = 50;
+            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
+            currentManagerValue = 70;
             maxManagerValue = 100;
             baramount.value = (float)currentManagerValue / maxManagerValue;
             managernum.text = (baramount.value * 100f).ToString();
@@ -83,6 +83,11 @@ namespace Combat
         public void DisplayManagerNum()
         {
             managernum.text = (baramount.value * 100f).ToString();
+        }
+
+        public float GetCurrentBarValue()
+        {
+            return baramount.value * 100;
         }
     }
 }
