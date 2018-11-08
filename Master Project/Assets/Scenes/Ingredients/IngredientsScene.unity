@@ -193,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &96068171
 AudioSource:
@@ -331,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 2
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &113244380
 SpriteRenderer:
@@ -387,7 +388,7 @@ Transform:
   m_LocalScale: {x: 0.36737448, y: 0.36737448, z: 0.057522703}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248700779
 GameObject:
@@ -445,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 15
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &248700782
 SpriteRenderer:
@@ -501,7 +503,7 @@ Transform:
   m_LocalScale: {x: 1.3102849, y: 1.3102851, z: 0.20516162}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260845699
 GameObject:
@@ -533,7 +535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientsManager: {fileID: 957937424}
-  incorrectIngredientMark: {fileID: 0}
 --- !u!61 &260845701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -614,7 +615,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317662617
 GameObject:
@@ -672,6 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 14
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &317662620
 SpriteRenderer:
@@ -728,7 +730,7 @@ Transform:
   m_LocalScale: {x: 0.92, y: 0.92, z: 0.14405161}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653748786
 GameObject:
@@ -786,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 3
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &653748790
 SpriteRenderer:
@@ -842,7 +845,7 @@ Transform:
   m_LocalScale: {x: 0.33683446, y: 0.33683443, z: 0.052740812}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799555136
 GameObject:
@@ -900,6 +903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 7
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &799555139
 SpriteRenderer:
@@ -956,7 +960,7 @@ Transform:
   m_LocalScale: {x: 0.08700007, y: 0.08700006, z: 0.013622281}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915571528
 GameObject:
@@ -988,7 +992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientsManager: {fileID: 957937424}
-  incorrectIngredientMark: {fileID: 0}
 --- !u!61 &915571530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1069,7 +1072,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939852833
 GameObject:
@@ -1101,7 +1104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientsManager: {fileID: 957937424}
-  incorrectIngredientMark: {fileID: 0}
 --- !u!61 &939852835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1182,7 +1184,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &957937423
 GameObject:
@@ -1211,19 +1213,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ea9717bbea84998a7e14b1a5bd9c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLegal: 0
 --- !u!4 &957937425
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 957937423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6908202, y: -0.69354564, z: 0.03454598}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &979907547
 GameObject:
@@ -1349,6 +1350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 9
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &985095489
 SpriteRenderer:
@@ -1405,7 +1407,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994868913
 GameObject:
@@ -1505,7 +1507,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1568,6 +1570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 9
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1061091344
 SpriteRenderer:
@@ -1624,7 +1627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1104937242
 GameObject:
@@ -1657,6 +1660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 1
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!61 &1104937244
 BoxCollider2D:
@@ -1738,7 +1742,7 @@ Transform:
   m_LocalScale: {x: 0.29741532, y: 0.29741508, z: 0.04656861}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214695172
 GameObject:
@@ -1800,7 +1804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1277655955
 GameObject:
@@ -1858,6 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 11
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1277655958
 SpriteRenderer:
@@ -1914,7 +1919,7 @@ Transform:
   m_LocalScale: {x: 0.87, y: 0.87, z: 0.13622272}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304117784
 GameObject:
@@ -1972,6 +1977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 8
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1304117787
 SpriteRenderer:
@@ -2028,7 +2034,7 @@ Transform:
   m_LocalScale: {x: 0.07958307, y: 0.07958309, z: 0.012460949}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357486574
 GameObject:
@@ -2118,7 +2124,7 @@ RectTransform:
   - {fileID: 979907548}
   - {fileID: 1585103303}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2181,6 +2187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 11
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1410780414
 SpriteRenderer:
@@ -2237,7 +2244,7 @@ Transform:
   m_LocalScale: {x: 0.62957746, y: 0.6295775, z: 0.09857789}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518075642
 GameObject:
@@ -2295,6 +2302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 13
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1518075645
 SpriteRenderer:
@@ -2351,7 +2359,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1585103302
 GameObject:
@@ -2561,7 +2569,7 @@ Transform:
   m_LocalScale: {x: 0.9265245, y: 0.92616934, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1680823166
 GameObject:
@@ -2693,6 +2701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 5
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1732295243
 SpriteRenderer:
@@ -2749,7 +2758,7 @@ Transform:
   m_LocalScale: {x: 0.46153328, y: 0.46153337, z: 0.0722659}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1738425640
 GameObject:
@@ -2807,6 +2816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 6
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1738425643
 SpriteRenderer:
@@ -2863,7 +2873,7 @@ Transform:
   m_LocalScale: {x: 0.51575184, y: 0.5157518, z: 0.0807553}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895599930
 GameObject:
@@ -2921,6 +2931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 4
+  incorrectIngredientMark: {fileID: 2087535858}
   ingredientsManager: {fileID: 957937424}
 --- !u!212 &1895599933
 SpriteRenderer:
@@ -2977,7 +2988,7 @@ Transform:
   m_LocalScale: {x: 0.66107076, y: 0.66107076, z: 0.10350903}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2087535858
 GameObject:
@@ -3076,5 +3087,5 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.15657784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

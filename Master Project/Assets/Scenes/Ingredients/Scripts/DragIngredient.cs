@@ -18,27 +18,30 @@ namespace Ingredients {
         //how far the spoon traveled
         public float travelDistance = 0;
 
+        /// <summary>
+        /// The ingredient type for this ingredient
+        /// </summary>
         public IngredientType ingredientType;
 
         public Vector3 originalPosition { get; private set; }
 
+        /// <summary>
+        /// The red X to show
+        /// </summary>
+		public GameObject incorrectIngredientMark;
+
+        /// <summary>
+        /// The ingredients manager
+        /// </summary>
+        public IngredientsManager ingredientsManager;
+
 		private bool isLockedToLocation = false;
-
-		private IngredientsManager ingredientsManager;
-
-		private GameObject incorrectIngredientMark;
-
-		private IngredientType? chosenIngredientType;
-
-		private bool isFake = false;
 
         // Use this for initialization
         void Start()
         {
             originalPosition = this.transform.position;
-			incorrectIngredientMark = GameObject.Find ("RedX");
 			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
-			ingredientsManager = GameObject.Find ("IngredientsManager").GetComponent<IngredientsManager> ();
         }
 
 
@@ -47,17 +50,10 @@ namespace Ingredients {
         /// </summary>
         void Update()
         {
-            if (isLockedToLocation)
+            if (isLockedToLocation || !ingredientsManager.IsIngredientTypeLegal(ingredientType))
             {
                 return;
             }
-
-			if (!ingredientsManager.IsIngredientTypeLegal (ingredientType)) {
-				isLockedToLocation = true;
-				isFake = true;
-				//print (isFake + ":isFake");
-				//print (isLockedToLocation + ":isLocked");
-			}
 
             travelDistance += Vector3.Distance(mousePosition, prevMousePosition);
             prevMousePosition = mousePosition;
@@ -68,13 +64,10 @@ namespace Ingredients {
         /// </summary>
         void OnMousePressed()
         {
-			
-            if (isLockedToLocation)
+            if (isLockedToLocation || !ingredientsManager.IsIngredientTypeLegal(ingredientType))
             {
                 return;
             }
-
-
 
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         }
@@ -84,12 +77,12 @@ namespace Ingredients {
         /// </summary>
         void OnMouseDrag()
         {
-			print (ingredientsManager.IsIngredientTypeLegal (ingredientType));
 			if (isLockedToLocation)
 			{
-				if (isFake) {
-					StartCoroutine (ShowRedX ());
-				}
+                return;
+            }
+            if (!ingredientsManager.IsIngredientTypeLegal(ingredientType)) {
+                StartCoroutine(ShowRedX());
                 return;
             }
 
