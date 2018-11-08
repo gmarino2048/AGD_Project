@@ -24,9 +24,9 @@ namespace Ingredients {
 
 		private bool isLockedToLocation = false;
 
-		public IngredientsManager ingredientsManager;
+		private IngredientsManager ingredientsManager;
 
-		public GameObject incorrectIngredientMark;
+		private GameObject incorrectIngredientMark;
 
 		private IngredientType? chosenIngredientType;
 
@@ -52,7 +52,7 @@ namespace Ingredients {
                 return;
             }
 
-			if (ingredientsManager.IsIngredientTypeLegal (ingredientType)) {
+			if (!ingredientsManager.IsIngredientTypeLegal (ingredientType)) {
 				isLockedToLocation = true;
 				isFake = true;
 				//print (isFake + ":isFake");
@@ -84,6 +84,7 @@ namespace Ingredients {
         /// </summary>
         void OnMouseDrag()
         {
+			print (ingredientsManager.IsIngredientTypeLegal (ingredientType));
 			if (isLockedToLocation)
 			{
 				if (isFake) {

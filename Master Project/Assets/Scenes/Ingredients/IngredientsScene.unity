@@ -331,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 2
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &113244380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -401,7 +402,7 @@ GameObject:
   - component: {fileID: 248700780}
   m_Layer: 0
   m_Name: WhippedCream
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,7 +444,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 15
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &248700782
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -627,7 +629,7 @@ GameObject:
   - component: {fileID: 317662618}
   m_Layer: 0
   m_Name: Cheese
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -669,7 +671,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 14
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &317662620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -783,6 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 3
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &653748790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -853,7 +857,7 @@ GameObject:
   - component: {fileID: 799555137}
   m_Layer: 0
   m_Name: CannedMeat
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,7 +899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 7
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &799555139
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1206,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ea9717bbea84998a7e14b1a5bd9c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLegal: 0
 --- !u!4 &957937425
 Transform:
   m_ObjectHideFlags: 0
@@ -1300,7 +1306,7 @@ GameObject:
   - component: {fileID: 985095487}
   m_Layer: 0
   m_Name: PeculiarPeppers
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1342,7 +1348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 9
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &985095489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1518,7 +1525,7 @@ GameObject:
   - component: {fileID: 1061091342}
   m_Layer: 0
   m_Name: CrushedSouls
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1560,7 +1567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 9
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1061091344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1649,6 +1657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelDistance: 0
   ingredientType: 1
+  ingredientsManager: {fileID: 957937424}
 --- !u!61 &1104937244
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1806,7 +1815,7 @@ GameObject:
   - component: {fileID: 1277655956}
   m_Layer: 0
   m_Name: GroundBeef
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1848,7 +1857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 11
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1277655958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1919,7 +1929,7 @@ GameObject:
   - component: {fileID: 1304117785}
   m_Layer: 0
   m_Name: Beans
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1961,7 +1971,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 8
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1304117787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2127,7 +2138,7 @@ GameObject:
   - component: {fileID: 1410780412}
   m_Layer: 0
   m_Name: VoidGoo
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2169,7 +2180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 11
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1410780414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2240,7 +2252,7 @@ GameObject:
   - component: {fileID: 1518075643}
   m_Layer: 0
   m_Name: Onions
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2282,7 +2294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 13
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1518075645
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2637,7 +2650,7 @@ GameObject:
   - component: {fileID: 1732295241}
   m_Layer: 0
   m_Name: Steak
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2679,7 +2692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 5
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1732295243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2750,7 +2764,7 @@ GameObject:
   - component: {fileID: 1738425641}
   m_Layer: 0
   m_Name: Bones
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2792,7 +2806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 6
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1738425643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2863,7 +2878,7 @@ GameObject:
   - component: {fileID: 1895599931}
   m_Layer: 0
   m_Name: Eggs
-  m_TagString: Fake
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2905,7 +2920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   travelDistance: 0
-  ingredientType: 1
+  ingredientType: 4
+  ingredientsManager: {fileID: 957937424}
 --- !u!212 &1895599933
 SpriteRenderer:
   m_ObjectHideFlags: 0

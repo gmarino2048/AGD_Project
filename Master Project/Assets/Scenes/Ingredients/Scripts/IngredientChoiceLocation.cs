@@ -8,11 +8,9 @@ namespace Ingredients
 {
     public class IngredientChoiceLocation : MonoBehaviour
     {
-        public IngredientsManager ingredientsManager;
+		public IngredientsManager ingredientsManager;
 
         private IngredientType? chosenIngredientType;
-
-		public GameObject incorrectIngredientMark;
 
         BoxCollider2D boxCollider;
 
@@ -20,8 +18,6 @@ namespace Ingredients
         void Start ()
         {
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
-			incorrectIngredientMark = GameObject.Find ("RedX");
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
         }
 
 	
@@ -59,13 +55,5 @@ namespace Ingredients
 
             }
         }
-			
-
-		IEnumerator ShowRedX()
-		{
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = true;
-			yield return new WaitForSeconds(2);
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
-		}
     }
 }
