@@ -41,6 +41,7 @@ namespace Grill
         IEnumerator StartMinigame () {
             yield return FadeCanvas(Tutorial, 1, 1, 0);
             Main.gameObject.SetActive(true);
+            Tutorial.gameObject.SetActive(false);
             yield return new WaitForSeconds(0.5f);
             Timer.Activate();
         }
