@@ -157,7 +157,7 @@ namespace Combat
             {
                 damageholder = damagedice.Next(0, 5);
                 health.ChangeHealth(-15 - damageholder);
-                CombatMessage.text = CurrentMonster + " Used Normal Attack! Dealt " + (15 + damageholder).ToString() + " Damage!";
+                CombatMessage.text = CurrentMonster + " Used Attack! Dealt " + (15 + damageholder).ToString() + " Damage!";
                 Movement.SetTrigger("attack3");
 
             }

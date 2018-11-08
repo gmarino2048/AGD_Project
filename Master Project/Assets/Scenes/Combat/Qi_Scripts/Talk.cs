@@ -22,6 +22,7 @@ namespace Combat
             if ((bar.value >= 0.85) && (!beghandler.begshown))
             {
                 beg.SetActive(false);
+                beghandler.isActive = false;
             }
             else
             {

@@ -10,22 +10,27 @@ namespace Combat
         public ManagerBar bar;
         public GameObject BegHider;
         public bool begshown;
+        public bool isActive;
+
         private void Awake()
         {
-            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
+            BegHider = GameObject.Find("BegHider");
             BegHider.SetActive(true);
             begshown = false;
+            isActive = true;
         }
 
         public void Beg()
         {
-            if (!begshown)
+            if (!begshown && !isActive)
             {
                 ma.PlayerMoved = true;
+                bar.HandlePlayerCombatChoice(CombatChoice.Beg);
             }
-            bar.HandlePlayerCombatChoice(CombatChoice.Beg);
             begshown = true;
             BegHider.SetActive(true);
+            isActive = true;
         }
     }
 }

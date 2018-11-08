@@ -16,8 +16,9 @@ namespace Combat
 
         private void Awake()
         {
-            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
             healtime = 4;
+            HealHider = GameObject.Find("HealHider");
             HealHider.SetActive(false);
         }
         private void Update()
