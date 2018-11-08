@@ -8,21 +8,24 @@ namespace Combat
     {
         private MonsterAction ma;
         public ManagerBar bar;
-        public GameObject beg;
+        public GameObject BegHider;
         public bool begshown;
         private void Awake()
         {
             ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
-            beg.SetActive(false);
+            BegHider.SetActive(true);
             begshown = false;
         }
 
         public void Beg()
         {
+            if (!begshown)
+            {
+                ma.PlayerMoved = true;
+            }
             bar.HandlePlayerCombatChoice(CombatChoice.Beg);
             begshown = true;
-            beg.SetActive(false);
-            ma.PlayerMoved = true;
+            BegHider.SetActive(true);
         }
     }
 }

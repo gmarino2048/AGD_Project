@@ -84,5 +84,10 @@ namespace Combat
         {
             managernum.text = (baramount.value * 100f).ToString();
         }
+
+        public float GetCurrentBarValue()
+        {
+            return baramount.value * 100;
+        }
     }
 }
