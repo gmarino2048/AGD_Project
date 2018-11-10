@@ -48,7 +48,7 @@ namespace Stirring
         public float GetScore()
         {
             float distance = GameObject.Find("spoon").GetComponent<SpoonScript>().travelDistance;
-            return 1 / (distance + 1);
+            return 1 / ((distance/80 )+ 1);
         }
 
         /// <summary>

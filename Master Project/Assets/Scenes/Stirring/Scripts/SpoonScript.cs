@@ -7,7 +7,7 @@ namespace Stirring
     public class SpoonScript : MonoBehaviour
     {
         private const float _SPOON_Z_POS = 0f;
-        private const float _SPOON_MAX_RADIUS = 2f;
+        private const float _SPOON_MAX_RADIUS = 3f;
 
         //distance of the mouse from the center of the spoon
         private Vector3 _Offset;
@@ -68,7 +68,7 @@ namespace Stirring
                 var spoonX = Mathf.Cos(angle) * mouseRadius;
                 var spoonY = Mathf.Sin(angle) * mouseRadius;
 
-                transform.position = new Vector3(spoonX, spoonY, _SPOON_Z_POS);
+                transform.position = new Vector3(spoonX, spoonY, _SPOON_Z_POS) + new Vector3(-1, 0, 0);
             }
         }
     }
