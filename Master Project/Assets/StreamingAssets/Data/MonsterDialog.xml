@@ -3,7 +3,7 @@
     <!ELEMENT monster ANY>
     <!ATTLIST monster id ID #REQUIRED>
     <!ELEMENT prompt EMPTY>
-    <!ATTLIST prompt animState (Good|Neutral|Bad) #IMPLIED "Neutral">
+    <!ATTLIST prompt animState (Good|Neutral|Bad) "Neutral">
 ]>
 <monsters>
     <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" initialDialog="{9DAE5429-5CF9-41C1-9CED-6D612AC855EA}">

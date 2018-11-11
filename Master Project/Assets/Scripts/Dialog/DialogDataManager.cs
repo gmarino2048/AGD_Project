@@ -77,6 +77,11 @@ namespace Dialog
                     prompt.IsSaidByPlayer = true;
                 }
 
+                if (xmlNode.Attributes["animState"] != null )
+                {
+                    prompt.AnimState = (DialogAnimState) Enum.Parse(typeof(DialogAnimState), xmlNode.Attributes["animState"].Value);
+                }
+
                 dialogDataManager.Prompts[xmlNode.Attributes["id"].Value] = prompt;
             }
             
