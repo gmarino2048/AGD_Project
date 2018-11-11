@@ -18,7 +18,7 @@ namespace Combat
         void Awake()
         {
             ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
-            currentManagerValue = 70;
+            currentManagerValue = 20;
             maxManagerValue = 100;
             baramount.value = (float)currentManagerValue / maxManagerValue;
             managernum.text = (baramount.value * 100f).ToString();

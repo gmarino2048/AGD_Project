@@ -40,5 +40,9 @@ namespace Combat
         {
             healtnum.text = (healthFill.value * 100f).ToString();
         }
+        public float GetCurrentHealthValue()
+        {
+            return healthFill.value * 100;
+        }
     }
 }

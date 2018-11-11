@@ -20,6 +20,7 @@ namespace Combat
         private float LastBarValue;
         private GameObject Ih;
         private Talk Tk;
+        private AudioController Ad;
 
         public Animator Movement;
         public ManagerBar Bar;
@@ -48,6 +49,7 @@ namespace Combat
             newRound = true;
             Ih = GameObject.Find("InfoHider");
             Tk = GameObject.Find("Talk").GetComponent<Talk>();
+            Ad = GameObject.Find("Monster").GetComponent<AudioController>();
         }
         void Start()
         {
@@ -72,12 +74,20 @@ namespace Combat
                 CurrentMonster = new MonsterData("Nessie", 0, null, combatChoices);
             }
             StartCoroutine("CombatFunction");
+            
+        }
+        
+        void Update()
+        {
+            
         }
 
         IEnumerator CombatFunction()
         {
             while (Combat)
             {
+                Ad.MMC();
+                Ad.PlayerHPL();
                 if (newRound)
                 {
                     LastBarValue = Bar.GetCurrentBarValue();
@@ -127,27 +137,37 @@ namespace Combat
             if (!Win)
             {
                 CombatMessage.text = "Game Over!";
+                Ad.PHPHZ();
+                yield return new WaitForSeconds(1f);
+                Ad.MGO();
             }
             else
             {
                 CombatMessage.text = "Victory!";
+                Ad.MMHZ();
             }
 
         }
         IEnumerator Monsterdamamged()
         {
             CombatMessage.text = CurrentMonster + " Received Damage";
+            Ad.MH();
             Movement.SetTrigger("hit");
+            //Should we also play the ManagerMeterGoesDown clip after monster hit?
+            yield return new WaitForSeconds(0.5f);
+            Ad.MMGD();
             yield return null;
         }
         IEnumerator WrongChoice()
         {
             CombatMessage.text = "Crap! I Made a Wrong Chioce!";
+            Ad.MMGU();
             yield return null;
         }
         IEnumerator Playerheal()
         {
             CombatMessage.text = "You Feel Better";
+            Ad.PHPGU();
             yield return null;
         }
         IEnumerator MonsterAttack()
@@ -159,13 +179,16 @@ namespace Combat
                 health.ChangeHealth(-15 - damageholder);
                 CombatMessage.text = CurrentMonster + " Used Attack! Dealt " + (15 + damageholder).ToString() + " Damage!";
                 Movement.SetTrigger("attack3");
-
+                Ad.PH();
+                yield return new WaitForSeconds(0.5f);
+                Ad.PHPGD();
             }
             else if (monsteraction == 2 || monsteraction == 4)
             {
                 Bar.IncrementValue(10);
                 CombatMessage.text = CurrentMonster + " Used Healing! Raised Manager Meter By 10!";
                 Movement.SetTrigger("attack2");
+                Ad.MMGU();
             }
             else
             {
@@ -173,6 +196,9 @@ namespace Combat
                 health.ChangeHealth(-25 - damageholder);
                 CombatMessage.text = CurrentMonster + " Used Super Attack! Dealt " + (25 + damageholder).ToString() + " Damage!";
                 Movement.SetTrigger("attack1");
+                Ad.PH();
+                yield return new WaitForSeconds(0.5f);
+                Ad.PHPGD();
             }
             monstermoved = true;
             yield return null;
@@ -185,6 +211,7 @@ namespace Combat
             PlayerMoved = false;
             PlayerHealed = false;
             Bar.IncrementValue(5);
+            Ad.MMGU();
             newRound = true;
             Tk.showup = false;
             yield return null;
