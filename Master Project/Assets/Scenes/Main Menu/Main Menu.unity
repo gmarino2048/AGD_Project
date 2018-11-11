@@ -1493,7 +1493,7 @@ MonoBehaviour:
   optionsMenu: {fileID: 499234252}
   creditsMenu: {fileID: 1657136231}
   instructionsMenu: {fileID: 1189297405}
-  firstSceneName: DialogueScene
+  firstSceneName: NameEntry
 --- !u!4 &1172554264
 Transform:
   m_ObjectHideFlags: 0
