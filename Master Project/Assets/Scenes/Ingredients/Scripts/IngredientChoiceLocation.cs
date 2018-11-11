@@ -8,7 +8,7 @@ namespace Ingredients
 {
     public class IngredientChoiceLocation : MonoBehaviour
     {
-		public IngredientsManager ingredientsManager;
+        private IngredientsManager ingredientsManager;
 
         private IngredientType? chosenIngredientType;
 
@@ -17,6 +17,7 @@ namespace Ingredients
         // Use this for initialization
         void Start ()
         {
+            ingredientsManager = GameObject.FindObjectOfType<IngredientsManager>();
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
         }
 
