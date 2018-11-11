@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour {
     public GameObject continueButton;
 
     private DialogDataManager _DialogDataManager;
+    private GameSettings _GameSettings;
     private MonsterData _MonsterData;
     private Prompt _CurrentPrompt;
 
@@ -65,6 +66,12 @@ public class DialogueManager : MonoBehaviour {
         if (monsterFactory == null)
         {
             throw new Exception("MonsterFactory did not exist in scene");
+        }
+
+        _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+        if (_GameSettings == null)
+        {
+            throw new Exception("GameSettings did not exist in scene");
         }
 
         _MonsterData = monsterFactory.LoadMonster(monsterId);
@@ -150,7 +157,7 @@ public class DialogueManager : MonoBehaviour {
         responsesDisplay.SetActive(false);
         continueButton.SetActive(false);
 
-        var speakerName = _CurrentPrompt.IsSaidByPlayer ? "You" : _MonsterData.Name;
+        var speakerName = _CurrentPrompt.IsSaidByPlayer ? _GameSettings.PlayerName : _MonsterData.Name;
 
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(speakerName, _CurrentPrompt.Body));

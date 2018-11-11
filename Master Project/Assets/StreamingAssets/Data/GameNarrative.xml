@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE narrative [
+    <!ELEMENT stage ANY>
+]>
+<narrative>
+    <stage monster="{060F70EA-8A92-4117-AB65-75DE3458E407}">
+        <monologue>
+            <entry>Test</entry>
+            <entry>Hello, world!</entry>
+        </monologue>
+    </stage>
+    <stage monster="{AFF2D1F2-DDA4-4A57-84F8-A240B4A0476D}">
+        <monologue>
+            <entry>This</entry>
+            <entry>Is for Cerberus</entry>
+        </monologue>
+    </stage>
+    <stage monster="{40F4380C-7A27-42D6-8F69-E3D60A83CAB1}">
+        <monologue>
+            <entry>W*$#@#$^TW(#</entry>
+            <entry>[REDACTED]</entry>
+        </monologue>
+    </stage>
+</narrative>
