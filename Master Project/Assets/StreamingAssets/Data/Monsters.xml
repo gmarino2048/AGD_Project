@@ -16,4 +16,33 @@
         <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
         <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
     </monster>
+
+    <monster id="{AFF2D1F2-DDA4-4A57-84F8-A240B4A0476D}" name="Cerberus" fightThreshold="0.5">
+        <ingredient type="AlgaeSlime"/>
+        <ingredient type="IceCream"/>
+        <ingredient type="AquariumGravel"/>
+        <ingredient type="Eggs"/>
+
+        <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
+        <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
+        <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
+        <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
+        <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
+        <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
+    </monster>
+
+    <monster id="{40F4380C-7A27-42D6-8F69-E3D60A83CAB1}" name="[REDACTED]" fightThreshold="0.65">
+        <ingredient type="AlgaeSlime"/>
+        <ingredient type="IceCream"/>
+        <ingredient type="AquariumGravel"/>
+        <ingredient type="CrushedSouls"/>
+        <ingredient type="VoidGoo"/>
+
+        <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
+        <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
+        <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
+        <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
+        <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
+        <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
+    </monster>
 </monsters>
