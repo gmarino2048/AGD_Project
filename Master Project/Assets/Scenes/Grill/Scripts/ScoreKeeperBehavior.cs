@@ -48,7 +48,9 @@ namespace Grill
 
         float CalculateScore ()
         {
-            throw new System.NotImplementedException();
+            float scaler = Cooked / CookTarget;
+
+            return scaler > 1f ? AverageScore : AverageScore * scaler;
         }
 
         public void AddScore (CookObjectController cookObject)
