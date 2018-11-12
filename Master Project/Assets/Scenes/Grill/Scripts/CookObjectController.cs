@@ -26,6 +26,7 @@ namespace Grill
 
         [Header("Game Controls")]
         public TimerBehavior GameController;
+        public BoxCollider2D MainCollider;
 
         public float Score { get; private set; }
 
