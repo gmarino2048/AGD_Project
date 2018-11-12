@@ -16,6 +16,8 @@ namespace Stirring
         //whether the game is still going
         private bool _IsStillRunning;
 
+
+
         /// <summary>
         /// Start this instance.
         /// initializes variables
