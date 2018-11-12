@@ -8,38 +8,39 @@ namespace Combat
     public class Heal : MonoBehaviour
     {
         private MonsterAction ma;
-        public GameObject heal;
+        private Image col;
+        public GameObject HealHider;
         public HealthBar healthbar;
         private int healtime;
         public Text time;
 
         private void Awake()
         {
-            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
             healtime = 4;
+            HealHider = GameObject.Find("HealHider");
+            HealHider.SetActive(false);
         }
         private void Update()
         {
-            time.text = "Heal" + "(" + healtime.ToString() + ")";
+            time.text =  "(" + healtime.ToString() + ")";
         }
         public void HealHandler()
         {
             //Output this to console when the Button is clicked
-            Debug.Log("Heal");
             if (healtime >= 0)
             {
-                healthbar.ChangeHealth(25);
-                healtime--;
+                if(healtime > 0)
+                {
+                    ma.PlayerHealed = true;
+                    healthbar.ChangeHealth(25);
+                    healtime--;
+                }
                 if (healtime == 0)
                 {
-                    heal.SetActive(false);
+                    HealHider.SetActive(true);
                 }
             }
-            else
-            {
-                heal.SetActive(false);
-            }
-            ma.PlayerHealed = true;
         }
     }
 }

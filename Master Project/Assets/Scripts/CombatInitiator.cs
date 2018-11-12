@@ -21,6 +21,6 @@ public class CombatInitiator : MonoBehaviour
     {
         MonsterID = monsterId;
         InitialManagerMeterValue = initialManagerMeterValue;
-        SceneManager.LoadScene(_COMBAT_SCENE_NAME);
+        SceneManager.LoadScene(_COMBAT_SCENE_NAME, LoadSceneMode.Single);
     }
 }

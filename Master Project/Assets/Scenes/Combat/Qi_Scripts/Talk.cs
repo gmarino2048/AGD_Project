@@ -13,7 +13,7 @@ namespace Combat
         public Slider bar;
         public bool showup;
 
-        private void Awake()
+        void Awake()
         {
             showup = false;
         }
@@ -21,19 +21,18 @@ namespace Combat
         {
             if ((bar.value >= 0.85) && (!beghandler.begshown))
             {
-                //Debug.Log(bar.value);
-                beg.SetActive(true);
+                beg.SetActive(false);
+                beghandler.isActive = false;
             }
             else
             {
-                beg.SetActive(false);
+                beg.SetActive(true);
             }
         }
         //Make sure to attach these Buttons in the Inspector
         public void TalkHandler()
         {
-            showup = true;
-            Info.SetActive(true);
+            Info.SetActive(false);
         }
     }
 }

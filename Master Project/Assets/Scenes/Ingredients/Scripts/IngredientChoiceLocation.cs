@@ -8,20 +8,17 @@ namespace Ingredients
 {
     public class IngredientChoiceLocation : MonoBehaviour
     {
-        public IngredientsManager ingredientsManager;
+        private IngredientsManager ingredientsManager;
 
         private IngredientType? chosenIngredientType;
-
-		public GameObject incorrectIngredientMark;
 
         BoxCollider2D boxCollider;
 
         // Use this for initialization
         void Start ()
         {
+            ingredientsManager = GameObject.FindObjectOfType<IngredientsManager>();
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
-			incorrectIngredientMark = GameObject.Find ("RedX");
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
         }
 
 	
@@ -38,8 +35,15 @@ namespace Ingredients
                 return;
             }
 
-            var overlapObject = overlap[0].gameObject;
-            var ingredient = overlapObject.GetComponent<DragIngredient>();
+            DragIngredient ingredient = null;
+            foreach (var overlapObject in overlap)
+            {
+                var dragIngredientComponent = overlapObject.gameObject.GetComponent<DragIngredient>();
+                if (dragIngredientComponent != null)
+                {
+                    ingredient = dragIngredientComponent;
+                }
+            }
             if (ingredient == null)
             {
                 return;
@@ -53,19 +57,11 @@ namespace Ingredients
             }
             else
             {
-                ingredient.SendBackToOriginalPosition();
+                //ingredient.SendBackToOriginalPosition();
                 //TODO: Show an 'x' saying no!
-				StartCoroutine(ShowRedX());
+				//StartCoroutine(ShowRedX());
 
             }
         }
-			
-
-		IEnumerator ShowRedX()
-		{
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = true;
-			yield return new WaitForSeconds(2);
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
-		}
     }
 }

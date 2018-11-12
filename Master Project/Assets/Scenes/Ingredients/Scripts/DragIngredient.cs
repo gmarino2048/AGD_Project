@@ -18,16 +18,30 @@ namespace Ingredients {
         //how far the spoon traveled
         public float travelDistance = 0;
 
+        /// <summary>
+        /// The ingredient type for this ingredient
+        /// </summary>
         public IngredientType ingredientType;
 
         public Vector3 originalPosition { get; private set; }
 
-        private bool isLockedToLocation = false;
+        /// <summary>
+        /// The red X to show
+        /// </summary>
+		public GameObject incorrectIngredientMark;
+
+        /// <summary>
+        /// The ingredients manager
+        /// </summary>
+        public IngredientsManager ingredientsManager;
+
+		private bool isLockedToLocation = false;
 
         // Use this for initialization
         void Start()
         {
             originalPosition = this.transform.position;
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
         }
 
 
@@ -36,7 +50,7 @@ namespace Ingredients {
         /// </summary>
         void Update()
         {
-            if (isLockedToLocation)
+            if (isLockedToLocation || !ingredientsManager.IsIngredientTypeLegal(ingredientType))
             {
                 return;
             }
@@ -50,7 +64,7 @@ namespace Ingredients {
         /// </summary>
         void OnMousePressed()
         {
-            if (isLockedToLocation)
+            if (isLockedToLocation || !ingredientsManager.IsIngredientTypeLegal(ingredientType))
             {
                 return;
             }
@@ -63,8 +77,12 @@ namespace Ingredients {
         /// </summary>
         void OnMouseDrag()
         {
-            if (isLockedToLocation)
-            {
+			if (isLockedToLocation)
+			{
+                return;
+            }
+            if (!ingredientsManager.IsIngredientTypeLegal(ingredientType)) {
+                StartCoroutine(ShowRedX());
                 return;
             }
 
@@ -92,5 +110,12 @@ namespace Ingredients {
         {
             transform.position = originalPosition;
         }
+
+		IEnumerator ShowRedX()
+		{
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = true;
+			yield return new WaitForSeconds(2);
+			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
+		}
     }
 }

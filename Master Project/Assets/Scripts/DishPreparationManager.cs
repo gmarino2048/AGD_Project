@@ -10,7 +10,9 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DishPreparationManager : MonoBehaviour
 {
-    private readonly string _SUCCESSFUL_SCENE_NAME = "ScenePicker";
+    private readonly string _NEXT_STAGE_SCENE_NAME = "Monologue";
+    private readonly string _GAME_WON_SCENE_NAME = "FinalChoice";
+    private readonly string _GAME_OVER_SCENE_NAME = "GameOver"; //TODO: Make this
 
     private const string _CHOPPING_SCENE_NAME = "Chopping";
     private const string _GRILLING_SCENE_NAME = "Grill";
@@ -26,6 +28,7 @@ public class DishPreparationManager : MonoBehaviour
 
     private CombatInitiator _CombatInitiator;
     private DishScoreManager _DishScoreManager;
+    private GameNarrativeManager _GameNarrativeManager;
     private MonsterFactory _MonsterFactory;
 
     private Guid _MonsterID;
@@ -51,6 +54,12 @@ public class DishPreparationManager : MonoBehaviour
         if (_DishScoreManager == null)
         {
             throw new Exception("DishScoreManager does not exist on object");
+        }
+
+        _GameNarrativeManager = GetComponent<GameNarrativeManager>();
+        if (_GameNarrativeManager == null)
+        {
+            throw new Exception("GameNarrativeManager does not exist on object");
         }
 
         _MonsterFactory = GetComponent<MonsterFactory>();
@@ -93,13 +102,27 @@ public class DishPreparationManager : MonoBehaviour
             
             monster.UpdateAffectionFromDishScore(dishScore);
 
-            if (monster.AffectionValue <= monster.FightThreshold)
+            if (monster.AffectionValue <= monster.FightThreshold) // Not good enough! FIGHT! FIGHT!! FIGHT!!!
             {
                 _CombatInitiator.InitiateCombat(_MonsterID, 1 - monster.AffectionValue);
             }
             else
             {
-                SceneManager.LoadScene(_SUCCESSFUL_SCENE_NAME);
+                if (!_GameNarrativeManager.AnyStagesLeft()) // No more monsters - onto the end
+                {
+                    if (_GameNarrativeManager.DateableMonsterIDs.Any()) // The player won!
+                    {
+                        SceneManager.LoadScene(_GAME_WON_SCENE_NAME, LoadSceneMode.Single);
+                    }
+                    else // Loser.
+                    {
+                        SceneManager.LoadScene(_GAME_OVER_SCENE_NAME, LoadSceneMode.Single);
+                    }
+                }
+                else // Onto the next monster
+                {
+                    SceneManager.LoadScene(_NEXT_STAGE_SCENE_NAME, LoadSceneMode.Single);
+                }
             }
             return;
         }

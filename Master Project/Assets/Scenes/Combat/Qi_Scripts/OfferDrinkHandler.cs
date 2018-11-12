@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Combat
 {
@@ -10,7 +11,7 @@ namespace Combat
         public ManagerBar bar;
         private void Awake()
         {
-            ma = GameObject.Find("Rogue_06").GetComponent<MonsterAction>();
+            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
         }
         public void OfferDrink()
         {
