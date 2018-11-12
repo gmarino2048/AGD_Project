@@ -19,7 +19,7 @@ namespace Stirring
         private Vector3 _PrevMousePosition;
 
         //where the center is
-        private Vector3 _Center;
+        public Vector3 _Center;
 
         //how far the spoon traveled
         public float travelDistance = 0;
