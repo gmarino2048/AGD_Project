@@ -48,9 +48,9 @@ namespace Microwave
 
         public void StartGame()
         {
-            _Counter = 10;
+            _Counter = 1000;
             //every second call countdown method (starts after a second)
-            InvokeRepeating("Countdown", 1, 1);
+            InvokeRepeating("Countdown", 1, .01f);
             UpdateTimerText();
             _IsStillRunning = true;
         }
@@ -99,7 +99,7 @@ namespace Microwave
         /// </summary>
         private void UpdateTimerText()
         {
-            timerText.text = "00:" + _Counter.ToString("D2");
+            timerText.text = "00:" + Mathf.RoundToInt(_Counter/100).ToString("D2")+ ":" + _Counter%100;
         }
 
         /// <summary>
