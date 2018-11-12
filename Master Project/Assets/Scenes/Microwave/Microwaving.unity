@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dfde727842e43c0a43f2176b3e641c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _DishPreparationManager: {fileID: 0}
+  _DishScoreManager: {fileID: 0}
   FinalScoreText: {fileID: 810869344}
   ScoreDisplay: {fileID: 667543099}
 --- !u!4 &262515651
@@ -875,7 +877,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1601117989}
   anim: {fileID: 0}
-  scorekeeper: {fileID: 262515649}
+  ScoreDisplay: {fileID: 667543099}
+  FinalScoreText: {fileID: 810869344}
 --- !u!1 &1633435041
 GameObject:
   m_ObjectHideFlags: 0
