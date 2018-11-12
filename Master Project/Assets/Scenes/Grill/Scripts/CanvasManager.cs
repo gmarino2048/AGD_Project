@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Grill
 {
@@ -11,6 +12,9 @@ namespace Grill
         public CanvasGroup Tutorial;
         public CanvasGroup Main;
         public CanvasGroup ScoreDisplay;
+
+        [Header("Score Text")]
+        public Text ScoreValue;
 
         [Header("Game Controller")]
         public TimerBehavior Timer;
@@ -44,6 +48,15 @@ namespace Grill
             Tutorial.gameObject.SetActive(false);
             yield return new WaitForSeconds(0.5f);
             Timer.Activate();
+        }
+
+        public IEnumerator ShowScore (float scoreValue)
+        {
+            int score = Mathf.RoundToInt(1000f * (1f - scoreValue));
+            ScoreValue.text = score.ToString() + "/1000";
+            Main.gameObject.SetActive(false);
+            ScoreDisplay.gameObject.SetActive(true);
+            yield return FadeCanvas(ScoreDisplay, 0, 1, 1);
         }
 
         /// <summary>

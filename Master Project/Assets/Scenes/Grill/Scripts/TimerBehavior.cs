@@ -16,6 +16,9 @@ namespace Grill
         public int InitialTime = 30;
         public float TimeRemaining { get; private set; }
 
+        [Header("Game Controls")]
+        public ScoreKeeperBehavior ScoreKeeper;
+
         public bool GameActive { get; private set; }
         public bool GameOver { get; private set; }
 
@@ -42,6 +45,8 @@ namespace Grill
             {
                 GameActive = false;
                 GameOver = true;
+
+                ScoreKeeper.EndGame();
             }
         }
 

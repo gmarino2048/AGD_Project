@@ -15,13 +15,13 @@ namespace Grill
 
         [Header("UI Stuff")]
         public CanvasManager Manager;
-        public CanvasGroup ScoreDisplay;
 
         public uint Cooked { get; private set; }
         float AverageScore;
 
         public float Score { get; private set; }
 
+        bool ScoreDone = false;
 
         // Use this for initialization
         void Start()
@@ -33,7 +33,22 @@ namespace Grill
         // Update is called once per frame
         void Update()
         {
+            if (Timer.GameOver && !ScoreDone)
+            {
+                Score = CalculateScore();
+                ScoreDone = true;
+            }
+        }
 
+        public void EndGame()
+        {
+            Score = CalculateScore();
+            StartCoroutine(Manager.ShowScore(Score));
+        }
+
+        float CalculateScore ()
+        {
+            throw new System.NotImplementedException();
         }
 
         public void AddScore (CookObjectController cookObject)

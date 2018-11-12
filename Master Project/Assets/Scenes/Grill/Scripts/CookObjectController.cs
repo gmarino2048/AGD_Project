@@ -26,6 +26,7 @@ namespace Grill
 
         [Header("Game Controls")]
         public TimerBehavior GameController;
+        public ScoreKeeperBehavior ScoreKeeper;
         public BoxCollider2D MainCollider;
         public Camera MainCamera;
         
@@ -94,6 +95,9 @@ namespace Grill
 
         void RemovePatty () {
             Score = CalculateScore();
+            ScoreKeeper.AddScore(this);
+            // TODO: Implement Flip animation
+            DestroyImmediate(gameObject);
         }
 
         float CalculateScore () {
