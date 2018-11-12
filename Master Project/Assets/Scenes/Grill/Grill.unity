@@ -389,6 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413725024}
   - component: {fileID: 413725025}
+  - component: {fileID: 413725026}
   m_Layer: 0
   m_Name: Beef Prefab
   m_TagString: Untagged
@@ -428,6 +429,31 @@ MonoBehaviour:
   CookingStateName: Beef Cook
   BurningStateName: Beef Burn
   GameController: {fileID: 195419928}
+--- !u!61 &413725026
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413725023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &541263380
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +727,94 @@ MonoBehaviour:
   Main: {fileID: 1679392171}
   ScoreDisplay: {fileID: 1887413910}
   Timer: {fileID: 195419928}
+--- !u!1 &838945595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 838945596}
+  - component: {fileID: 838945598}
+  - component: {fileID: 838945597}
+  m_Layer: 0
+  m_Name: PlacementHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &838945596
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838945595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1945094255}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &838945597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838945595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc227a87d04494f25a9b132af8c07993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodObject: {fileID: 21300000, guid: f503cc358c4c142378e9decd7b2820d7, type: 3}
+  Renderer: {fileID: 838945598}
+  ZIndex: -2
+--- !u!212 &838945598
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 838945595}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f503cc358c4c142378e9decd7b2820d7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.547}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.57, y: 1.6899999}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &847073108
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +983,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 944407315}
+  - component: {fileID: 944407316}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -889,6 +1004,23 @@ Transform:
   m_Father: {fileID: 413725024}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &944407316
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 944407314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a40f01e98b284c24a2c60e340d722e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &994277636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8ae1370865843a391d4ab4e9d94f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CookObject: {fileID: 0}
+  CookObject: {fileID: 413725025}
+  ZIndex: -1
+  GameController: {fileID: 195419928}
 --- !u!1 &1105659332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729443555}
   - component: {fileID: 1729443556}
+  - component: {fileID: 1729443557}
   m_Layer: 0
   m_Name: Steak Prefab
   m_TagString: Untagged
@@ -1581,6 +1716,31 @@ MonoBehaviour:
   CookingStateName: Steak Cook
   BurningStateName: Steak Burn
   GameController: {fileID: 195419928}
+--- !u!61 &1729443557
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1729443554}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1835039411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1749,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1835039412}
+  - component: {fileID: 1835039413}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -1609,6 +1770,23 @@ Transform:
   m_Father: {fileID: 1729443555}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1835039413
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835039411}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a40f01e98b284c24a2c60e340d722e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1887413908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1922,7 @@ Transform:
   m_Children:
   - {fileID: 555827069}
   - {fileID: 1546913680}
+  - {fileID: 838945596}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
