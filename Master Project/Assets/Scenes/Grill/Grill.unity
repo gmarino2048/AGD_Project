@@ -704,7 +704,7 @@ MonoBehaviour:
   Tutorial: {fileID: 39919683}
   Main: {fileID: 1679392171}
   ScoreDisplay: {fileID: 1887413910}
-  ScoreValue: {fileID: 0}
+  ScoreValue: {fileID: 930197844}
   Timer: {fileID: 195419928}
 --- !u!1 &838945595
 GameObject:
