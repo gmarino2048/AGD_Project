@@ -61,6 +61,7 @@ namespace Shaking
             ShakerScore.text = 0.ToString();
 
             ScoreDisplay.alpha = 0f;
+            ScoreDisplay.gameObject.SetActive(false);
             FinalScoreText.text = "";
         }
 
@@ -76,16 +77,23 @@ namespace Shaking
             }
             else if (!Finished)
             {
-                ShakerLabel.text = ShakerFinal;
-                float score = GetScore();
-                Debug.Log(score);
-
-                FinalScoreText.text = GetScoreText(score);
-                StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
-
-                Finished = true;
-                StartCoroutine(EndMiniGame());
+                EndGame();
             }
+        }
+
+        void EndGame()
+        {
+            ScoreDisplay.gameObject.SetActive(true);
+
+            ShakerLabel.text = ShakerFinal;
+            float score = GetScore();
+            Debug.Log(score);
+
+            FinalScoreText.text = GetScoreText(score);
+            StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
+
+            Finished = true;
+            StartCoroutine(EndMiniGame());
         }
 
         /// <summary>
