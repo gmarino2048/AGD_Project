@@ -951,7 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Timer: {fileID: 1163841236}
   ShakeAnimator: {fileID: 304548159}
-  StartTrigger: GravelTrigger
+  StartTrigger: SoulsTrigger
   RepeatTrigger: RepeatTrigger
   TopBound: {fileID: 381521534}
   BottomBound: {fileID: 1507643723}
