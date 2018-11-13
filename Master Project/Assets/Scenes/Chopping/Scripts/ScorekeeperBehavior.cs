@@ -13,14 +13,7 @@ namespace Chopping
         [Header("Scorekeeping Info")]
         [SerializeField]
         public ChopManager ChopManager; // The chop manager with a record of all the valid chops.
-
-        public float TimeInSeconds = 30f; // The amount of time to start the countdown with. Default is 30 seconds.
-
-        public Text TimerText; // The text object used to display time remaining.
-
-        float CurrentTime; // The current time on the countdown
-        public bool TimerActive { get; private set; } // Is the timer currently active and counting down?
-        public bool TimerDone { get; private set; } // Has the timer finished counting down?
+        public TimerBehavior Timer;
 
         public float ScoreScaler = 2;
         public float Score { get; private set; } // The score for this minigame
@@ -42,10 +35,6 @@ namespace Chopping
         /// </summary>
         void Start()
         {
-            CurrentTime = TimeInSeconds;
-            TimerActive = true;
-            TimerDone = false;
-
             FinalScoreDisplay.alpha = 0;
             FinalScoreDisplay.gameObject.SetActive(false);
         }
@@ -58,22 +47,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if (CurrentTime > 0 && TimerActive)
-            {
-                CurrentTime -= Time.deltaTime;
-            }
-            else if (TimerActive)
-            {
-                TimerDone = true;
-                TimerActive = false;
-            }
-            if (TimerDone)
-            {
-                EndGame();
-                TimerDone = false;
-            }
 
-            TimerText.text = ((int)CurrentTime).ToString();
         }
 
         #endregion

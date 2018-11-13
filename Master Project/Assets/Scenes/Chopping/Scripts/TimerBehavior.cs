@@ -33,6 +33,13 @@ namespace Chopping
 
                 RemainingTime -= Time.deltaTime;
             }
+            else if (GameActive) 
+            {
+                GameComplete = true;
+                GameActive = false;
+
+                EndGame();
+            }
         }
 
         public void Activate () 
