@@ -13,6 +13,11 @@ namespace Shaking
         [Header("Timer Object")]
         public TimerBehavior Timer; // The timer object for the scene.
 
+        [Header("Animation Preferences")]
+        public Animator ShakeAnimator;
+        public string StartTrigger = "GravelTrigger";
+        public string RepeatTrigger = "RepeatTrigger";
+
         [Header("Bounding Zones")]
         [SerializeField]
         public BoxCollider2D TopBound; // The top bound that the shaker must enter.
@@ -52,6 +57,8 @@ namespace Shaking
             Shakes = 0;
             Offset = new Vector2(0, 0);
             GetBounds();
+
+            ShakeAnimator.SetTrigger(StartTrigger);
         }
 
         /// <summary>
@@ -71,6 +78,8 @@ namespace Shaking
             {
                 LastPosition = Position.Bottom;
                 Debug.Log("Bottom Entered");
+
+                ShakeAnimator.SetTrigger(RepeatTrigger);
             }
         }
 
