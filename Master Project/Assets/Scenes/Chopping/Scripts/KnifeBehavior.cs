@@ -75,7 +75,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if (Timer && !Paused)
+            if (Timer.GameActive && !Paused)
             {
                 // Get the current values of the knife
                 float currentX = transform.position.x;

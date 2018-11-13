@@ -21,6 +21,7 @@ namespace Chopping
         // Use this for initialization
         void Start()
         {
+            GameActive = false;
             RemainingTime = GameTime;
         }
 
