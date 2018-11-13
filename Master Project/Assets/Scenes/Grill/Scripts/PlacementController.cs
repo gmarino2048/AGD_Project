@@ -16,6 +16,7 @@ namespace Grill
 
         [Header("Game Controller")]
         public TimerBehavior GameController;
+        public ScoreKeeperBehavior Scorekeeper;
 
         public List<CookObjectController> Active { get; private set; }
 
@@ -50,6 +51,12 @@ namespace Grill
                     worldPosition.z = ZIndex;
 
                     CookObjectController instantiated = Instantiate(CookObject);
+
+                    instantiated.GameController = GameController;
+                    instantiated.ScoreKeeper = Scorekeeper;
+
+                    instantiated.ActiveList = this;
+                    instantiated.MainCamera = Camera.main;
 
                     instantiated.gameObject.transform.position = worldPosition;
 
