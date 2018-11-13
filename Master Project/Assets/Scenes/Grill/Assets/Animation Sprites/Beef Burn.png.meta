@@ -1,0 +1,971 @@
+fileFormatVersion: 2
+guid: eec96eac624a24b3ea3f09361639538b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Beef Burn_0
+    21300002: Beef Burn_1
+    21300004: Beef Burn_2
+    21300006: Beef Burn_3
+    21300008: Beef Burn_4
+    21300010: Beef Burn_5
+    21300012: Beef Burn_6
+    21300014: Beef Burn_7
+    21300016: Beef Burn_8
+    21300018: Beef Burn_9
+    21300020: Beef Burn_10
+    21300022: Beef Burn_11
+    21300024: Beef Burn_12
+    21300026: Beef Burn_13
+    21300028: Beef Burn_14
+    21300030: Beef Burn_15
+    21300032: Beef Burn_16
+    21300034: Beef Burn_17
+    21300036: Beef Burn_18
+    21300038: Beef Burn_19
+    21300040: Beef Burn_20
+    21300042: Beef Burn_21
+    21300044: Beef Burn_22
+    21300046: Beef Burn_23
+    21300048: Beef Burn_24
+    21300050: Beef Burn_25
+    21300052: Beef Burn_26
+    21300054: Beef Burn_27
+    21300056: Beef Burn_28
+    21300058: Beef Burn_29
+    21300060: Beef Burn_30
+    21300062: Beef Burn_31
+    21300064: Beef Burn_32
+    21300066: Beef Burn_33
+    21300068: Beef Burn_34
+    21300070: Beef Burn_35
+    21300072: Beef Burn_36
+    21300074: Beef Burn_37
+    21300076: Beef Burn_38
+    21300078: Beef Burn_39
+    21300080: Beef Burn_40
+    21300082: Beef Burn_41
+    21300084: Beef Burn_42
+    21300086: Beef Burn_43
+    21300088: Beef Burn_44
+    21300090: Beef Burn_45
+    21300092: Beef Burn_46
+    21300094: Beef Burn_47
+    21300096: Beef Burn_48
+    21300098: Beef Burn_49
+    21300100: Beef Burn_50
+    21300102: Beef Burn_51
+    21300104: Beef Burn_52
+    21300106: Beef Burn_53
+    21300108: Beef Burn_54
+    21300110: Beef Burn_55
+    21300112: Beef Burn_56
+    21300114: Beef Burn_57
+    21300116: Beef Burn_58
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Beef Burn_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 3878
+        width: 259
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_1
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 3878
+        width: 265
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_2
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 3877
+        width: 260
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_3
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 3877
+        width: 259
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_4
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 3877
+        width: 264
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 3608
+        width: 259
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 3608
+        width: 264
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_7
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 3611
+        width: 258
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_8
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 3608
+        width: 260
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_9
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 3608
+        width: 264
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_10
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 3344
+        width: 260
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_11
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 3344
+        width: 265
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_12
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 3344
+        width: 260
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_13
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 3344
+        width: 260
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_14
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 3344
+        width: 265
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_15
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 3079
+        width: 260
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 3079
+        width: 264
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_17
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 3079
+        width: 260
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_18
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 3079
+        width: 259
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_19
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 3079
+        width: 261
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_20
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 2813
+        width: 260
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2813
+        width: 264
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_22
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 2813
+        width: 260
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_23
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 2814
+        width: 259
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_24
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 2815
+        width: 264
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2549
+        width: 257
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_26
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 2551
+        width: 254
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_27
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 2551
+        width: 253
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_28
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 2551
+        width: 256
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_29
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 2551
+        width: 250
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_30
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 2287
+        width: 248
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_31
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 2287
+        width: 250
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_32
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 2289
+        width: 249
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_33
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 2288
+        width: 244
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_34
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 2288
+        width: 248
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_35
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2024
+        width: 242
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_36
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 2024
+        width: 240
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_37
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 2024
+        width: 241
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_38
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 2029
+        width: 238
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_39
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 2029
+        width: 236
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_40
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1760
+        width: 237
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_41
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1765
+        width: 233
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_42
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1765
+        width: 232
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_43
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1767
+        width: 230
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_44
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 1767
+        width: 233
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_45
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1503
+        width: 228
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_46
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1503
+        width: 233
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_47
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1503
+        width: 226
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_48
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1504
+        width: 227
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_49
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 1504
+        width: 226
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1240
+        width: 227
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_51
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1240
+        width: 227
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_52
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1239
+        width: 224
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_53
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1240
+        width: 223
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_54
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1240
+        width: 226
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_55
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 976
+        width: 227
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_56
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 975
+        width: 227
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_57
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 976
+        width: 224
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beef Burn_58
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 976
+        width: 227
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

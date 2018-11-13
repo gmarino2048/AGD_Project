@@ -3,40 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerBehavior : MonoBehaviour {
+namespace Grill
+{
+    public class TimerBehavior : MonoBehaviour
+    {
 
-    public float InitialTime = 30f; // Set timer for 30s by default.
+        [Header("Timer Text")]
+        public string Message = "Time Remaining:";
+        public Text TimerText;
 
-    public float CurrentTime { get; private set; } // The current time of the countdown.
-    Text Text; // The timer's text.
+        [Header("Initial Time")]
+        public int InitialTime = 30;
+        public float TimeRemaining { get; private set; }
 
-    private bool isFinished = false;
+        [Header("Game Controls")]
+        public ScoreKeeperBehavior ScoreKeeper;
 
-    public Text FinalScoreText; // The text used to display the user's final score.
+        public bool GameActive { get; private set; }
+        public bool GameOver { get; private set; }
 
-    public CanvasGroup ScoreDisplay;
-
-	/// <summary>
-    /// Runs on start of the scene.
-    /// </summary>
-	void Start () {
-        CurrentTime = InitialTime;
-        Text = GetComponentInChildren<Text>();
-	}
-	
-	/// <summary>
-    /// Runs Once per frame
-    /// </summary>
-	void Update () {
-        if (CurrentTime > 0) {
-            Text.text = ((int)CurrentTime).ToString();
-            CurrentTime = CurrentTime - Time.deltaTime;
+        // Use this for initialization
+        void Start()
+        {
+            TimeRemaining = InitialTime;
+            GameActive = false;
+            GameOver = false;
         }
-        else if (!isFinished){
-            isFinished = true;
-            FinalScoreText.text = GameObject.Find("Scorekeeper").GetComponent<GrillScorekeeper>().GetScoreText();
-            StartCoroutine(GameObject.Find("Scorekeeper").GetComponent<GrillScorekeeper>().FadeCanvas(ScoreDisplay, 0, 2f, 1f));
 
+        // Update is called once per frame
+        void Update()
+        {
+            if (GameActive && TimeRemaining > 0)
+            {
+                TimeRemaining -= Time.deltaTime;
+                int currentTime = Mathf.RoundToInt(TimeRemaining);
+                string toDisplay = Message + " " + currentTime.ToString();
+
+                TimerText.text = toDisplay;
+            }
+            else if (!GameOver && GameActive)
+            {
+                GameActive = false;
+                GameOver = true;
+
+                ScoreKeeper.EndGame();
+            }
         }
-	}
+
+        public void Activate () {
+            GameActive = true;
+        }
+    }
 }

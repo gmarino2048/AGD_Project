@@ -1,0 +1,746 @@
+fileFormatVersion: 2
+guid: ccb85e8adbb974a53b52d3815d6946ed
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Steak Cook_0
+    21300002: Steak Cook_1
+    21300004: Steak Cook_2
+    21300006: Steak Cook_3
+    21300008: Steak Cook_4
+    21300010: Steak Cook_5
+    21300012: Steak Cook_6
+    21300014: Steak Cook_7
+    21300016: Steak Cook_8
+    21300018: Steak Cook_9
+    21300020: Steak Cook_10
+    21300022: Steak Cook_11
+    21300024: Steak Cook_12
+    21300026: Steak Cook_13
+    21300028: Steak Cook_14
+    21300030: Steak Cook_15
+    21300032: Steak Cook_16
+    21300034: Steak Cook_17
+    21300036: Steak Cook_18
+    21300038: Steak Cook_19
+    21300040: Steak Cook_20
+    21300042: Steak Cook_21
+    21300044: Steak Cook_22
+    21300046: Steak Cook_23
+    21300048: Steak Cook_24
+    21300050: Steak Cook_25
+    21300052: Steak Cook_26
+    21300054: Steak Cook_27
+    21300056: Steak Cook_28
+    21300058: Steak Cook_29
+    21300060: Steak Cook_30
+    21300062: Steak Cook_31
+    21300064: Steak Cook_32
+    21300066: Steak Cook_33
+    21300068: Steak Cook_34
+    21300070: Steak Cook_35
+    21300072: Steak Cook_36
+    21300074: Steak Cook_37
+    21300076: Steak Cook_38
+    21300078: Steak Cook_39
+    21300080: Steak Cook_40
+    21300082: Steak Cook_41
+    21300084: Steak Cook_42
+    21300086: Steak Cook_43
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Steak Cook_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 3062
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 3062
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_2
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 3062
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2847
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2847
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_5
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2847
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2631
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2631
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_8
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2631
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2414
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2414
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_11
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2414
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2198
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2198
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_14
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2198
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_15
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1982
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1982
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_17
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1982
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_18
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1766
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_19
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1766
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_20
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1766
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_21
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1550
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_22
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1550
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_23
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1550
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1335
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_25
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1335
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_26
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1335
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_27
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1119
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_28
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1119
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_29
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 1119
+        width: 266
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_30
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 902
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_31
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 902
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_32
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 902
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_33
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 686
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_34
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 686
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_35
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 686
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_36
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 470
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_37
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 470
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_38
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 470
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_39
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 254
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_40
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 254
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_41
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 254
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_42
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 38
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Steak Cook_43
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 38
+        width: 266
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
