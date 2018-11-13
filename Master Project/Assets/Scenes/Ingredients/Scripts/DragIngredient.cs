@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Monsters;
 
 namespace Ingredients {
     public class DragIngredient : MonoBehaviour
@@ -81,11 +82,19 @@ namespace Ingredients {
 			{
                 return;
             }
-            if (!ingredientsManager.IsIngredientTypeLegal(ingredientType)) {
-                StartCoroutine(ShowRedX());
-                return;
-            }
-
+			if (!ingredientsManager.IsIngredientTypeLegal(ingredientType)) {
+				var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+				var monsterFactory = GameObject.FindObjectOfType<MonsterFactory> ();
+				var monsterData = monsterFactory.LoadMonster (gameNarrativeManager.CurrentStage.MonsterID);
+				monsterData.UpdateAffectionFromIngredientSelection (ingredientType);
+				//
+				if (monsterData.AffectionValue <= monsterData.FightThreshold) {
+					var combatInitiator = GameObject.FindObjectOfType<CombatInitiator>();
+					combatInitiator.InitiateCombat (gameNarrativeManager.CurrentStage.MonsterID, 1 - monsterData.AffectionValue);
+				}
+				StartCoroutine(ShowRedX());
+				return;
+			}
             Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
             mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
             transform.position = mousePosition;
