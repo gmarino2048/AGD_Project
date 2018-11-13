@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetShakes: 30
-  UIManager: {fileID: 0}
+  UIManager: {fileID: 1935620276}
   Shaker: {fileID: 459468225}
   Timer: {fileID: 1163841236}
   ShakerLabel: {fileID: 1715404690}
