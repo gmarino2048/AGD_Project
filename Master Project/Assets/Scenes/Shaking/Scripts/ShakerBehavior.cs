@@ -15,7 +15,7 @@ namespace Shaking
 
         [Header("Animation Preferences")]
         public Animator ShakeAnimator;
-        public string StartTrigger = "GravelTrigger";
+        public string StartTrigger = "SoulsTrigger";
         public string RepeatTrigger = "RepeatTrigger";
 
         [Header("Bounding Zones")]
