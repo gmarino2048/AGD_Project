@@ -430,6 +430,7 @@ MonoBehaviour:
   BurningStateName: Beef Burn
   GameController: {fileID: 195419928}
   ScoreKeeper: {fileID: 1949140214}
+  ActiveList: {fileID: 1027220785}
   MainCollider: {fileID: 1105659336}
   MainCamera: {fileID: 0}
 --- !u!1 &541263380
@@ -1661,6 +1662,7 @@ MonoBehaviour:
   BurningStateName: Steak Burn
   GameController: {fileID: 195419928}
   ScoreKeeper: {fileID: 1949140214}
+  ActiveList: {fileID: 1027220785}
   MainCollider: {fileID: 407782731}
   MainCamera: {fileID: 0}
 --- !u!1 &1835039411

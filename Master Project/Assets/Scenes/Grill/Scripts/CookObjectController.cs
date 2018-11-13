@@ -27,6 +27,7 @@ namespace Grill
         [Header("Game Controls")]
         public TimerBehavior GameController;
         public ScoreKeeperBehavior ScoreKeeper;
+        public PlacementController ActiveList;
         public BoxCollider2D MainCollider;
         public Camera MainCamera;
         
@@ -47,6 +48,20 @@ namespace Grill
             InternalTimer = 0f;
         }
 
+        public void CheckIfRemoved()
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            Vector3 worldPosition = MainCamera.ScreenToWorldPoint(mousePosition);
+
+            Vector3 scaled = new Vector3(worldPosition.x, worldPosition.y, MainCollider.transform.position.z);
+
+            if (MainCollider.bounds.Contains(scaled))
+            {
+                RemovePatty();
+                ActiveList.AnyRemoved = true;
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -55,14 +70,6 @@ namespace Grill
             if (GameController.GameActive)
             {
                 UpdateAnimation(info);
-
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Vector3 mousePosition = Input.mousePosition;
-                    Vector3 worldPosition = MainCamera.ScreenToWorldPoint(mousePosition);
-
-                    if (MainCollider.bounds.Contains((Vector2)worldPosition)) RemovePatty();
-                }
 
                 InternalTimer += Time.deltaTime;
             }
@@ -97,6 +104,7 @@ namespace Grill
             Score = CalculateScore();
             ScoreKeeper.AddScore(this);
             // TODO: Implement Flip animation
+            ActiveList.Active.Remove(this);
             DestroyImmediate(gameObject);
         }
 

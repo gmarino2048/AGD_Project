@@ -21,13 +21,14 @@ namespace Grill
 
         Camera MainCamera;
 
-        bool ValidPosition;
+        public bool AnyRemoved { get; set; }
 
         // Use this for initialization
         void Start()
         {
             MainCamera = Camera.main;
             Active = new List<CookObjectController>();
+            AnyRemoved = false;
         }
 
         // Update is called once per frame
@@ -35,19 +36,30 @@ namespace Grill
         {
             if (GameController.GameActive && Input.GetMouseButtonDown(0))
             {
-                Vector3 mousePosition = Input.mousePosition;
-                Vector3 worldPosition = MainCamera.ScreenToWorldPoint(mousePosition);
-                worldPosition.z = ZIndex;
+                List<CookObjectController> activeCopy = new List<CookObjectController>(Active);
 
-                CookObjectController instantiated = Instantiate(CookObject);
+                foreach (CookObjectController cookObject in activeCopy)
+                {
+                    cookObject.CheckIfRemoved();
+                }
 
-                instantiated.gameObject.transform.position = worldPosition;
+                if (!AnyRemoved)
+                {
+                    Vector3 mousePosition = Input.mousePosition;
+                    Vector3 worldPosition = MainCamera.ScreenToWorldPoint(mousePosition);
+                    worldPosition.z = ZIndex;
 
-                bool within = WithinBounds(instantiated, GrillCollider);
-                bool touching = IsTouching(instantiated, Active);
+                    CookObjectController instantiated = Instantiate(CookObject);
 
-                if (within && !touching) Active.Add(instantiated);
-                else DestroyImmediate(instantiated.gameObject);
+                    instantiated.gameObject.transform.position = worldPosition;
+
+                    bool within = WithinBounds(instantiated, GrillCollider);
+                    bool touching = IsTouching(instantiated, Active);
+
+                    if (within && !touching) Active.Add(instantiated);
+                    else DestroyImmediate(instantiated.gameObject);
+                }
+                else AnyRemoved = false;
             }
         }
 
