@@ -23,6 +23,7 @@ namespace Shaking
 
         [Header("Scoring Settings")]
         public uint TargetShakes; // The target number of shakes for the scene.
+        public UIController UIManager;
 
         [Header("Scene Objects")]
         [SerializeField]
@@ -45,6 +46,7 @@ namespace Shaking
         public Text FinalScoreText; // The text used to display the user's final score.
 
         public float FinalScore { get; private set; } // The final score of the minigame.
+        private bool SetEnd;
         private bool Finished; // Tells whether this minigame scoring has finished.
 
         /// <summary>
@@ -71,26 +73,20 @@ namespace Shaking
         /// </summary>
         void Update()
         {
-            if (!Timer.Finished)
+            if (Timer.GameActive)
             {
                 ShakerScore.text = Shaker.Shakes.ToString();
             }
-            else if (!Finished)
-            {
-                EndGame();
-            }
         }
 
-        void EndGame()
+        public void EndGame()
         {
-            ScoreDisplay.gameObject.SetActive(true);
-
             ShakerLabel.text = ShakerFinal;
             float score = GetScore();
             Debug.Log(score);
 
             FinalScoreText.text = GetScoreText(score);
-            StartCoroutine(FadeCanvas(ScoreDisplay, 0, 2f, 1f));
+            UIManager.EndGame();
 
             Finished = true;
             StartCoroutine(EndMiniGame());

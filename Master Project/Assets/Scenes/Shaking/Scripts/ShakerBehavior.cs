@@ -128,7 +128,7 @@ namespace Shaking
         private void OnMouseDrag()
         {
             // Only move if the timer is not done yet
-            if (!Timer.Finished)
+            if (Timer.GameActive)
             {
                 Vector3 relativePosition = MouseToWorldPoint() + Offset;
                 relativePosition.z = 0;

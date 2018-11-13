@@ -7,6 +7,8 @@ namespace Shaking
 {
     public class TimerBehavior : MonoBehaviour
     {
+        [Header("Scorekeeper")]
+        public ScorekeeperBehavior Scorekeeper;
 
         [Header("Text Options")]
         [SerializeField]
@@ -19,6 +21,8 @@ namespace Shaking
         [Header("Initial Value")]
         public float TotalTime = 30f; // The total time to count for.
 
+        public bool GameActive { get; private set; }
+
         public float CurrentTime { get; private set; } // The current value for the time remaining.
         public bool Finished { get; private set; } // Set to True when the timer has finished.
 
@@ -28,6 +32,7 @@ namespace Shaking
         void Start()
         {
             CurrentTime = TotalTime;
+            GameActive = false;
             Finished = false;
         }
 
@@ -38,17 +43,30 @@ namespace Shaking
         /// </summary>
         void Update()
         {
-            if (CurrentTime > 0)
+            if (GameActive)
             {
-                TimerText.text = Mathf.RoundToInt(CurrentTime).ToString();
-                CurrentTime -= Time.deltaTime;
+                if (CurrentTime > 0)
+                {
+                    TimerText.text = Mathf.RoundToInt(CurrentTime).ToString();
+                    CurrentTime -= Time.deltaTime;
+                }
+                else if (Finished == false)
+                {
+                    EndGame();
+                    GameActive = false;
+                    HeaderText.text = CompleteValue;
+                    TimerText.text = "";
+                }
             }
-            else if (Finished == false)
-            {
-                Finished = true;
-                HeaderText.text = CompleteValue;
-                TimerText.text = "";
-            }
+        }
+
+        public void StartGame() {
+            GameActive = true;
+        }
+
+        public void EndGame () {
+            Scorekeeper.EndGame();
+            Finished = true;
         }
     }
 }
