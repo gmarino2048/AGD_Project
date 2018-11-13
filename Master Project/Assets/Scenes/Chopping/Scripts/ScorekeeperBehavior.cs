@@ -17,7 +17,6 @@ namespace Chopping
         public float TimeInSeconds = 30f; // The amount of time to start the countdown with. Default is 30 seconds.
 
         public Text TimerText; // The text object used to display time remaining.
-        public Button FinishButton; // The button used to finish and exit this minigame early.
 
         float CurrentTime; // The current time on the countdown
         public bool TimerActive { get; private set; } // Is the timer currently active and counting down?
@@ -46,8 +45,6 @@ namespace Chopping
             CurrentTime = TimeInSeconds;
             TimerActive = true;
             TimerDone = false;
-
-            FinishButton.onClick.AddListener(OnFinishButtonPressed);
 
             FinalScoreDisplay.alpha = 0;
             FinalScoreDisplay.gameObject.SetActive(false);
@@ -155,15 +152,6 @@ namespace Chopping
         #endregion
 
         #region UI
-
-        /// <summary>
-        /// The function which defines what should happen once the finish button is pressed.
-        /// </summary>
-        void OnFinishButtonPressed()
-        {
-            TimerDone = true;
-            TimerActive = false;
-        }
 
         /// <summary>
         /// Ends this minigame by setting each of the different components to their finished

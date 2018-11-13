@@ -9,7 +9,9 @@ namespace Chopping
 
         [Header("Chop Sprite")]
         [SerializeField]
-        public Sprite KnifeCut;
+        public GameObject KnifeCut;
+        SpriteRenderer Renderer;
+        public Sprite CutSprite;
 
         [Header("Reference Object")]
         [SerializeField]
@@ -27,11 +29,14 @@ namespace Chopping
 
         public void DrawChop ()
         {
-            GameObject child = new GameObject();
+            GameObject child = Instantiate(KnifeCut);
+            Renderer = child.GetComponent<SpriteRenderer>();
+
             child.transform.parent = gameObject.transform;
 
-            SpriteRenderer cutRenderer = child.AddComponent<SpriteRenderer>();
-            cutRenderer.sprite = KnifeCut;
+            Renderer.sprite = CutSprite;
+
+            Renderer.color = new Color(255, 255, 255, 1);
 
             Vector3 position = PositionReference.transform.position;
             position.z = ZPosition;
