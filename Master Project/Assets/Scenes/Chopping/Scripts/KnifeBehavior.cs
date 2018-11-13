@@ -14,6 +14,7 @@ namespace Chopping
         public float ZIndex; // The action item's Z position in the scene
 
         public ScorekeeperBehavior Scorekeeper; // The scorekeeper object for the scene
+        public TimerBehavior Timer;
         public ChopManager InputSource;
 
         [Header("Scene References")]
@@ -74,7 +75,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if (Scorekeeper.TimerActive && !Paused)
+            if (Timer && !Paused)
             {
                 // Get the current values of the knife
                 float currentX = transform.position.x;

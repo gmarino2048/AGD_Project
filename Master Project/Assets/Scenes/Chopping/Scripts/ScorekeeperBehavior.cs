@@ -135,10 +135,6 @@ namespace Chopping
         {
             FinalScoreDisplay.gameObject.SetActive(true);
 
-            CurrentTime = 0f;
-            TimerActive = false;
-            TimerDone = true;
-
             CalculateScore();
 
             float scaledScore = (1 - Score) * 1000;
