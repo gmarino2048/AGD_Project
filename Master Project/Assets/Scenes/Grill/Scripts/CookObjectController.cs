@@ -14,12 +14,16 @@ namespace Grill
         float CookTime;
         float BurnTime;
 
-        [Header("Animation Controller")]
-        public Animator Controller;
+        bool FlameRunning;
+
+        [Header("Animation Controllers")]
+        public Animator MainController;
+        public Animator FlameController;
 
         [Header("Animation State Names")]
         public string CookingStateName;
         public string BurningStateName;
+        public string FlameStart = "Start";
 
         string PreviousState;
         float OriginalSpeed;
@@ -43,9 +47,11 @@ namespace Grill
             BurnTime = TimeToBurn;
 
             PreviousState = "";
-            OriginalSpeed = Controller.speed;
+            OriginalSpeed = MainController.speed;
 
             InternalTimer = 0f;
+            
+            FlameRunning = false;
         }
 
         public void CheckIfRemoved()
@@ -65,16 +71,23 @@ namespace Grill
         // Update is called once per frame
         void Update()
         {
-            AnimatorStateInfo info = Controller.GetCurrentAnimatorStateInfo(0);
+            AnimatorStateInfo info = MainController.GetCurrentAnimatorStateInfo(0);
 
             if (GameController.GameActive)
             {
                 UpdateAnimation(info);
 
                 InternalTimer += Time.deltaTime;
+
+                if (InternalTimer > CookTime + BurnTime && !FlameRunning)
+                {
+                    FlameController.SetTrigger(FlameStart);
+
+                    FlameRunning = true;
+                }
             }
             else {
-                Controller.speed = 0;
+                MainController.speed = 0;
                 PreviousState = "";
             }
         }
@@ -83,18 +96,18 @@ namespace Grill
         {
             if (info.IsName(CookingStateName) && PreviousState != CookingStateName)
             {
-                Controller.speed = OriginalSpeed;
-                float newSpeed = Controller.speed / CookTime;
-                Controller.speed = newSpeed;
+                MainController.speed = OriginalSpeed;
+                float newSpeed = MainController.speed / CookTime;
+                MainController.speed = newSpeed;
 
                 PreviousState = CookingStateName;
             }
 
             if (info.IsName(BurningStateName) && PreviousState != BurningStateName)
             {
-                Controller.speed = OriginalSpeed;
-                float newSpeed = Controller.speed / BurnTime;
-                Controller.speed = newSpeed;
+                MainController.speed = OriginalSpeed;
+                float newSpeed = MainController.speed / BurnTime;
+                MainController.speed = newSpeed;
 
                 PreviousState = BurningStateName;
             }
