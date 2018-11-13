@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Grill
 {
@@ -12,6 +13,8 @@ namespace Grill
 
         [Header("Score Settings")]
         public uint CookTarget;
+        public Text PattiesCooked;
+        public string Message = "Patties Cooked: ";
 
         [Header("UI Stuff")]
         public CanvasManager Manager;
@@ -28,6 +31,9 @@ namespace Grill
         {
             Score = 1f;
             AverageScore = -1f;
+            Cooked = 0;
+
+            PattiesCooked.text = Message + Cooked.ToString();
         }
 
         // Update is called once per frame
@@ -38,6 +44,8 @@ namespace Grill
                 Score = CalculateScore();
                 ScoreDone = true;
             }
+
+            PattiesCooked.text = Message + Cooked.ToString();
         }
 
         public void EndGame()
