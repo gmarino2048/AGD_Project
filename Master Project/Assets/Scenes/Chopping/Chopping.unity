@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 337079248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1753153034}
@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 1931811779}
   - component: {fileID: 1931811780}
   m_Layer: 0
-  m_Name: Cucumber-Temporary
+  m_Name: ChopObjectSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1362,8 +1362,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931811777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.567064, y: 0.54004353, z: 1}
+  m_LocalPosition: {x: 0.02, y: -2.49, z: 0}
+  m_LocalScale: {x: 1.4221505, y: 1.3718319, z: 1}
   m_Children: []
   m_Father: {fileID: 1127444285}
   m_RootOrder: 0
@@ -1402,7 +1402,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b63eef899c12c4558bfe3f8394d2b2d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34c50686c230e42c0a972e29e1749b16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1424,18 +1424,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1289683}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.2, y: 7.36}
+    oldSize: {x: 6.43, y: 4.29}
     newSize: {x: 20.2, y: 7.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.2, y: 7.36}
+  m_Size: {x: 6.43, y: 2.0717573}
   m_EdgeRadius: 0
 --- !u!1 &1957609875
 GameObject:
