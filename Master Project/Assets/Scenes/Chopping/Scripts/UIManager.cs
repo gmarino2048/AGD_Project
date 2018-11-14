@@ -26,6 +26,9 @@ namespace Chopping
             Tutorial.alpha = 1f;
             Tutorial.gameObject.SetActive(true);
 
+            MainDisplay.gameObject.SetActive(false);
+            FinalScore.gameObject.SetActive(false);
+
             NextButton.onClick.AddListener(() => StartCoroutine(StartGame()));
         }
 
@@ -49,7 +52,10 @@ namespace Chopping
 
         public IEnumerator EndGame() 
         {
-            throw new System.Exception("Not Implemented");
+            FinalScore.alpha = 0;
+            FinalScore.gameObject.SetActive(true);
+
+            yield return FadeCanvas(FinalScore, 0, 1, 1);
         }
 
         /// <summary>

@@ -294,7 +294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &468947055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -341,10 +341,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -537,7 +537,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 69c515960e8284912ba6be0b035b5574, type: 3}
     m_FontSize: 120
     m_FontStyle: 0
     m_BestFit: 0
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KnifeCut: {fileID: 1726052001}
-  CutSprite: {fileID: 21300000, guid: 7522a18185f7b45539dbd10c05d70d46, type: 3}
+  CutSprite: {fileID: 21300000, guid: 417d6066346034648a1ae9d248ac3728, type: 3}
   PositionReference: {fileID: 1726052001}
   ZPosition: 0
   ChopSprites: []
@@ -756,7 +756,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 69c515960e8284912ba6be0b035b5574, type: 3}
     m_FontSize: 120
     m_FontStyle: 0
     m_BestFit: 0
@@ -807,8 +807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -87, y: -41}
-  m_SizeDelta: {x: 437.90002, y: 189.70001}
+  m_AnchoredPosition: {x: -850, y: -301}
+  m_SizeDelta: {x: 1409.6, y: 472.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910442933
 MonoBehaviour:
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -830,19 +830,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 72
+    m_Font: {fileID: 12800000, guid: 69c515960e8284912ba6be0b035b5574, type: 3}
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
-    m_Alignment: 4
+    m_MaxSize: 140
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Time Remaining:'
 --- !u!222 &910442934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1165807647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1590,8 +1590,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1726052001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -0.266, z: 0}
-  m_LocalScale: {x: 1.1934261, y: 1.3778986, z: 1}
+  m_LocalPosition: {x: -1.2, y: -0.264, z: 0}
+  m_LocalScale: {x: 1.1934261, y: 1.3170667, z: 1}
   m_Children: []
   m_Father: {fileID: 337079249}
   m_RootOrder: 1
@@ -1630,7 +1630,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7522a18185f7b45539dbd10c05d70d46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 417d6066346034648a1ae9d248ac3728, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.43137255}
   m_FlipX: 0
   m_FlipY: 0
@@ -1860,7 +1860,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5a29e4fe9e1cd4e2984378070f1ada93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34c50686c230e42c0a972e29e1749b16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2008,5 +2008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844c825c65e2144e9846f13bd2f4ad3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameTime: 30
+  Message: 'Time Remaining: '
+  GameTime: 20
   TimerText: {fileID: 910442933}
+  Scorekeeper: {fileID: 1152476654}
+  Manager: {fileID: 518853308}

@@ -131,44 +131,13 @@ namespace Chopping
         /// Ends this minigame by setting each of the different components to their finished
         /// state. 
         /// </summary>
-        void EndGame () 
+        public void EndGame () 
         {
-            FinalScoreDisplay.gameObject.SetActive(true);
-
             CalculateScore();
 
             float scaledScore = (1 - Score) * 1000;
 
             FinalScore.text = Mathf.RoundToInt(scaledScore).ToString() + "/1000";
-            StartCoroutine(FadeCanvas(FinalScoreDisplay, 0, 5, 1));
-        }
-
-        /// <summary>
-        /// Fades in the canvas group containing the final score display once
-        /// the minigame has finished. 
-        /// </summary>
-        /// <returns>An IEnumerator used to enable the coroutine.</returns>
-        /// <param name="canvas">The Canvas Group to fade in.</param>
-        /// <param name="startAlpha">The starting opacity of the canvas.</param>
-        /// <param name="duration">The duration of the fade effect.</param>
-        /// <param name="endAlpha">The final opacity of the Canvas Group.</param>
-        IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha)
-        {
-            float startTime = Time.time;
-
-            float change = (endAlpha - startAlpha) / duration;
-
-            while (Time.time - startTime <= duration)
-            {
-                float currentTime = Time.time - startTime;
-                canvas.alpha = startAlpha + (change * currentTime);
-
-                yield return new WaitForEndOfFrame();
-            }
-        }
-
-        float ScoreGame () {
-            return 0f;
         }
 
         #endregion
