@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 69c515960e8284912ba6be0b035b5574
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Love
+  fontNames:
+  - Love
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 80b97720f4e562d4396f99b3db645d9e, type: 3}
+  - {fileID: 12800000, guid: ba304e633eef8414f82fe10da77538ae, type: 3}
+  - {fileID: 12800000, guid: 4631b02e393b74042a84875eea88eb27, type: 3}
+  - {fileID: 12800000, guid: 0b79d7ee929474d7ca6b27b057b749a0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

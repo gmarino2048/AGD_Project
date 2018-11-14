@@ -11,11 +11,10 @@ namespace Chopping
         [Header("Screen Information")]
         [SerializeField]
         public Camera SceneCamera; // The main camera within the scene
-        public float XOffset; // The action item's X offset from the center of the camera
-        public float YOffset; // The action item's Y offset from the center of the camera
         public float ZIndex; // The action item's Z position in the scene
 
         public ScorekeeperBehavior Scorekeeper; // The scorekeeper object for the scene
+        public TimerBehavior Timer;
         public ChopManager InputSource;
 
         [Header("Scene References")]
@@ -58,8 +57,8 @@ namespace Chopping
         void Start()
         {
             // Set the inital position of the knife
-            float initialX = SceneCamera.transform.position.x + XOffset;
-            float initialY = SceneCamera.transform.position.y + YOffset;
+            float initialX = transform.position.x;
+            float initialY = transform.position.y;
 
             Paused = false;
 
@@ -76,7 +75,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if (Scorekeeper.TimerActive && !Paused)
+            if (Timer.GameActive && !Paused)
             {
                 // Get the current values of the knife
                 float currentX = transform.position.x;

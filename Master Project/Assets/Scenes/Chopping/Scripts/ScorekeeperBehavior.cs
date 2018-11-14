@@ -13,15 +13,7 @@ namespace Chopping
         [Header("Scorekeeping Info")]
         [SerializeField]
         public ChopManager ChopManager; // The chop manager with a record of all the valid chops.
-
-        public float TimeInSeconds = 30f; // The amount of time to start the countdown with. Default is 30 seconds.
-
-        public Text TimerText; // The text object used to display time remaining.
-        public Button FinishButton; // The button used to finish and exit this minigame early.
-
-        float CurrentTime; // The current time on the countdown
-        public bool TimerActive { get; private set; } // Is the timer currently active and counting down?
-        public bool TimerDone { get; private set; } // Has the timer finished counting down?
+        public TimerBehavior Timer;
 
         public float ScoreScaler = 2;
         public float Score { get; private set; } // The score for this minigame
@@ -43,12 +35,6 @@ namespace Chopping
         /// </summary>
         void Start()
         {
-            CurrentTime = TimeInSeconds;
-            TimerActive = true;
-            TimerDone = false;
-
-            FinishButton.onClick.AddListener(OnFinishButtonPressed);
-
             FinalScoreDisplay.alpha = 0;
             FinalScoreDisplay.gameObject.SetActive(false);
         }
@@ -61,22 +47,7 @@ namespace Chopping
         /// </summary>
         void Update()
         {
-            if (CurrentTime > 0 && TimerActive)
-            {
-                CurrentTime -= Time.deltaTime;
-            }
-            else if (TimerActive)
-            {
-                TimerDone = true;
-                TimerActive = false;
-            }
-            if (TimerDone)
-            {
-                EndGame();
-                TimerDone = false;
-            }
 
-            TimerText.text = ((int)CurrentTime).ToString();
         }
 
         #endregion
@@ -157,60 +128,16 @@ namespace Chopping
         #region UI
 
         /// <summary>
-        /// The function which defines what should happen once the finish button is pressed.
-        /// </summary>
-        void OnFinishButtonPressed()
-        {
-            TimerDone = true;
-            TimerActive = false;
-        }
-
-        /// <summary>
         /// Ends this minigame by setting each of the different components to their finished
         /// state. 
         /// </summary>
-        void EndGame () 
+        public void EndGame () 
         {
-            FinalScoreDisplay.gameObject.SetActive(true);
-
-            CurrentTime = 0f;
-            TimerActive = false;
-            TimerDone = true;
-
             CalculateScore();
 
             float scaledScore = (1 - Score) * 1000;
 
             FinalScore.text = Mathf.RoundToInt(scaledScore).ToString() + "/1000";
-            StartCoroutine(FadeCanvas(FinalScoreDisplay, 0, 5, 1));
-        }
-
-        /// <summary>
-        /// Fades in the canvas group containing the final score display once
-        /// the minigame has finished. 
-        /// </summary>
-        /// <returns>An IEnumerator used to enable the coroutine.</returns>
-        /// <param name="canvas">The Canvas Group to fade in.</param>
-        /// <param name="startAlpha">The starting opacity of the canvas.</param>
-        /// <param name="duration">The duration of the fade effect.</param>
-        /// <param name="endAlpha">The final opacity of the Canvas Group.</param>
-        IEnumerator FadeCanvas(CanvasGroup canvas, float startAlpha, float duration, float endAlpha)
-        {
-            float startTime = Time.time;
-
-            float change = (endAlpha - startAlpha) / duration;
-
-            while (Time.time - startTime <= duration)
-            {
-                float currentTime = Time.time - startTime;
-                canvas.alpha = startAlpha + (change * currentTime);
-
-                yield return new WaitForEndOfFrame();
-            }
-        }
-
-        float ScoreGame () {
-            return 0f;
         }
 
         #endregion
