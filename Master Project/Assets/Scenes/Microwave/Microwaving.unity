@@ -157,6 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261506196}
   - component: {fileID: 261506197}
+  - component: {fileID: 261506198}
   m_Layer: 0
   m_Name: Microwave
   m_TagString: Untagged
@@ -221,6 +222,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &261506198
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261506195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cca859c559702452793414f370efeef0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &262515649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,7 +1390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 2.02}
+  m_AnchoredPosition: {x: 4.03, y: 2.02}
   m_SizeDelta: {x: 1920.0233, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!102 &2028525662
