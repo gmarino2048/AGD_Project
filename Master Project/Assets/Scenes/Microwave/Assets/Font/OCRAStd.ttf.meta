@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 74b74094cc5d8414cb6b482b7d551718
+guid: b4470305dfa444b799a832ab4850e87e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,8 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: 
-  fontNames: []
+  fontName: OCR A Std
+  fontNames:
+  - OCR A Std
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
