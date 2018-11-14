@@ -14,6 +14,7 @@ namespace Ingredients
 
         BoxCollider2D boxCollider;
 
+
         // Use this for initialization
         void Start ()
         {
@@ -21,8 +22,6 @@ namespace Ingredients
             boxCollider = gameObject.GetComponent<BoxCollider2D>();
         }
 
-	
-        
         // Update is called once per frame
 		void Update ()
         {
