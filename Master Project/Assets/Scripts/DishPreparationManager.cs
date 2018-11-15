@@ -67,6 +67,8 @@ public class DishPreparationManager : MonoBehaviour
         {
             throw new Exception("MonsterFactory does not exist on object");
         }
+        
+        _IngredientsQueue = null;
     }
 
     /// <summary>
@@ -95,8 +97,15 @@ public class DishPreparationManager : MonoBehaviour
             throw new Exception("No dish in progress.");
         }
 
-        if (!_IngredientsQueue.Any()) // The dish is completed
+        if (_IngredientsQueue.Any()) // The dish is not completed
         {
+            currentIngredient = _IngredientsQueue.Dequeue();
+            SceneManager.LoadScene(_INGREDIENT_SCENES[currentIngredient]);
+        }
+        else
+        {
+            _IngredientsQueue = null;
+            
             var dishScore = _DishScoreManager.ScoreDish(_MonsterID);
             var monster = _MonsterFactory.LoadMonster(_MonsterID);
             
@@ -124,10 +133,6 @@ public class DishPreparationManager : MonoBehaviour
                     SceneManager.LoadScene(_NEXT_STAGE_SCENE_NAME, LoadSceneMode.Single);
                 }
             }
-            return;
         }
-        
-        currentIngredient = _IngredientsQueue.Dequeue();
-        SceneManager.LoadScene(_INGREDIENT_SCENES[currentIngredient]);
     }
 }
