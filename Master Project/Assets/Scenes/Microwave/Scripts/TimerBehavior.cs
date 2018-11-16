@@ -23,9 +23,6 @@ namespace Microwave
             TimeRemaining = GameTime;
 
             TextMesh.text = Format(TimeRemaining);
-
-            //Remove this
-            GameActive = true;
         }
 
         // Update is called once per frame
