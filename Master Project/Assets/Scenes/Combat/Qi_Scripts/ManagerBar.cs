@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Monsters;
 
 namespace Combat
 {
@@ -17,8 +18,8 @@ namespace Combat
         // Use this for initialization
         void Awake()
         {
-            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
-            currentManagerValue = 20;
+            ma = GameObject.Find("Monster").GetComponent<MonsterAction>();
+            currentManagerValue = 80;
             maxManagerValue = 100;
             baramount.value = (float)currentManagerValue / maxManagerValue;
             managernum.text = (baramount.value * 100f).ToString();
@@ -71,10 +72,14 @@ namespace Combat
                 IncrementValue(-10);
                 return;
             }
-
-            var combatChoiceStatus = ma.CurrentMonster.CombatChoices[combatChoice];
-            IncrementValue(-1 * combatChoiceStatus.Power);
-            combatChoiceStatus.UpdatePower();
+            foreach(KeyValuePair<CombatChoice, CombatChoiceStatus> option in ma.CurrentMonster.CombatChoices)
+            {
+                if(option.Key == combatChoice)
+                {
+                    IncrementValue(-1 * option.Value.Power);
+                }
+                option.Value.UpdatePower(option.Key == combatChoice);
+            }
         }
 
         /// <summary>

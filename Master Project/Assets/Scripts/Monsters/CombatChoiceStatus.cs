@@ -6,6 +6,7 @@ namespace Monsters
     {
         private readonly int _MinPower;
         private readonly float _DecayRate;
+        private readonly float _StartPower;
 
         /// <summary>
         /// The amount of power this combat choice will have on the manager meter
@@ -20,6 +21,7 @@ namespace Monsters
         /// <param name="minPower">The minimum power level for this attack</param>
         public CombatChoiceStatus(int startPower, float decayRate, int minPower)
         {
+            _StartPower = startPower;
             _MinPower = minPower;
             _DecayRate = decayRate;
             Power = startPower;
@@ -28,9 +30,16 @@ namespace Monsters
         /// <summary>
         /// Updates the power for the attack according to its decay rate and minimum value
         /// </summary>
-        public void UpdatePower()
+        public void UpdatePower(bool wasUsed)
         {
-            Power = Mathf.CeilToInt(Mathf.Max(Power * _DecayRate, _MinPower));
+            if (wasUsed)
+            {
+                Power = Mathf.CeilToInt(Mathf.Max(Power * _DecayRate, _MinPower));
+            }
+            else
+            {
+                Power = Mathf.CeilToInt(Mathf.Min(Power + (_StartPower - Power) * 0.1f, _StartPower));
+            }
         }
     }
 }

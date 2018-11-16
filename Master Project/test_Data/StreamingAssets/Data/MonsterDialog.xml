@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE monsters [
+    <!ELEMENT monster ANY>
+    <!ATTLIST monster id ID #REQUIRED>
+]>
+<monsters>
+    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" initialDialog="{9DAE5429-5CF9-41C1-9CED-6D612AC855EA}">
+      <prompt id="{9DAE5429-5CF9-41C1-9CED-6D612AC855EA}" nextPrompt="{C0B6B913-D394-4B0D-A5FA-EF44ED86019E}" isSaidByPlayer="true">
+        Hi, welcome to the Qave by Qennies™.
+      </prompt>
+
+      <prompt id="{C0B6B913-D394-4B0D-A5FA-EF44ED86019E}" responseSet="{C8476166-3CDA-4660-8C22-C21C62A15560}">
+        Uhh... I’m sorry, how do you even pronounce that?
+      </prompt>
+
+      <responseSet id="{C8476166-3CDA-4660-8C22-C21C62A15560}">
+        <response value="1" nextPrompt="{6C180124-339D-42B5-9D0A-BCFBB127AA6A}">
+          It's not "Kwayve" it's "Cave" and it's not "Kwenny's" it's "Kenny's." Yeah, it's pretty weird.
+        </response>
+        <response value="0" nextPrompt="{924CCAF7-479D-456A-ACB5-C20683D78BCC}">
+          Don't worry about it.
+        </response>
+        <response value="-1" nextPrompt="{D4508667-2F22-418D-A1E6-436276377424}">
+          "Qave by Qennies." I literally just said it.
+        </response>
+      </responseSet>
+
+      <prompt id="{6C180124-339D-42B5-9D0A-BCFBB127AA6A}" nextPrompt="{F6F032DF-7E98-47FE-BB6C-F9BB33079BAC}">
+        Ohhh! Ok thank you!
+      </prompt>
+      <prompt id="{F6F032DF-7E98-47FE-BB6C-F9BB33079BAC}" nextPrompt="{A75D90F7-F97F-4F29-8D0A-0C7FD24AFBB8}">
+        That had me so puzzled as I swam up here.
+      </prompt>
+
+      <prompt id="{924CCAF7-479D-456A-ACB5-C20683D78BCC}" nextPrompt="{A75D90F7-F97F-4F29-8D0A-0C7FD24AFBB8}">
+        ... You know, that's probably best.
+      </prompt>
+
+      <prompt id="{D4508667-2F22-418D-A1E6-436276377424}" nextPrompt="{A75D90F7-F97F-4F29-8D0A-0C7FD24AFBB8}">
+        How rude!
+      </prompt>
+
+      <prompt id="{A75D90F7-F97F-4F29-8D0A-0C7FD24AFBB8}" nextPrompt="{55BF0EF5-9352-4822-A14E-3A9FA015DAF4}" isSaidByPlayer="true">
+        Yeah. What can I get for you?
+      </prompt>
+
+      <prompt id="{55BF0EF5-9352-4822-A14E-3A9FA015DAF4}" nextPrompt="{55BF0EF5-9352-4822-A14E-3A9FA015DAF4}-2">
+        Can I have a Lakebed Shake?
+      </prompt>
+      <prompt id="{55BF0EF5-9352-4822-A14E-3A9FA015DAF4}-2" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}">
+        You guys sell those, right?
+      </prompt>
+
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-2" isSaidByPlayer="true">
+        (internal monologue) Looking at the "the customer is always right" sign on the wall,
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-2" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-3" isSaidByPlayer="true">
+        (internal monologue) I remember my manager threatened to fire me if I ever said no to a customer again.
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-3" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-4" isSaidByPlayer="true">
+        (internal monologue) Also, looking at this cute monster,
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-4" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-5" isSaidByPlayer="true">
+        (internal monologue) how could I ever say no to that face?
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-5" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-6" isSaidByPlayer="true">
+        (internal monologue) Sure, she flooded my restaurant,
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-6" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-7" isSaidByPlayer="true">
+        (internal monologue) but she also swept away my heart.
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-7" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-8" isSaidByPlayer="true">
+        (internal monologue) Maybe I just gotta play my cards right...
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-8" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-9" isSaidByPlayer="true">
+        We definitely do, I just totally lost the recipe!
+      </prompt>
+      <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-9" nextPrompt="{B21A65D6-8FCF-495A-BB84-D62D05057313}" isSaidByPlayer="true">
+        Could you maybe tell me what goes in it?
+      </prompt>
+      
+      <prompt id="{B21A65D6-8FCF-495A-BB84-D62D05057313}" responseSet="{BECE7E94-11D8-41E6-B66F-38408DA8A41A}">
+        Well, I don't know the exact ingredients since I'm just the monster ordering them...
+      </prompt>
+      <responseSet id="{BECE7E94-11D8-41E6-B66F-38408DA8A41A}">
+        <response value="0" nextPrompt="{4B7E284F-64D4-46DE-9867-1952F6738D74}">
+          What is the taste?
+        </response>
+        <response value="0" nextPrompt="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}">
+          What is the texture?
+        </response>
+        <response value="0" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}">
+          What does it look like?
+        </response>
+      </responseSet>
+
+      <prompt id="{4B7E284F-64D4-46DE-9867-1952F6738D74}" nextPrompt="{4B7E284F-64D4-46DE-9867-1952F6738D74}-2">
+        It tastes sweet and briny.
+      </prompt>
+      <prompt id="{4B7E284F-64D4-46DE-9867-1952F6738D74}-2" nextPrompt="{4B7E284F-64D4-46DE-9867-1952F6738D74}-3">
+        I love the combination of vanilla sugar and soggy greens!
+      </prompt>
+      <prompt id="{4B7E284F-64D4-46DE-9867-1952F6738D74}-3" nextPrompt="{4B7E284F-64D4-46DE-9867-1952F6738D74}-4">
+        I don't head out a lot since the paparazzi nowadays are too intense and I like my privacy,
+      </prompt>
+      <prompt id="{4B7E284F-64D4-46DE-9867-1952F6738D74}-4" nextPrompt="{4B7E284F-64D4-46DE-9867-1952F6738D74}-5">
+        but when I do eventually go out, I make sure to eat something nice!
+      </prompt>
+      <prompt id="{4B7E284F-64D4-46DE-9867-1952F6738D74}-5" nextPrompt="{91D8BA8C-09F2-4385-8709-BF4249C159B0}">
+        Don't tell anyone I'm here, please.
+      </prompt>
+      <prompt id="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}" nextPrompt="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-2">
+        Well, it's a shake so it's obviously creamy, but it's also slimy and slippery
+      </prompt>
+      <prompt id="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-2" nextPrompt="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-3">
+        and it has a nice gritty crunch surprise to it!
+      </prompt>
+      <prompt id="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-3" nextPrompt="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-4">
+        I love foods with a good crunch to it.
+      </prompt>
+      <prompt id="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-4" nextPrompt="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-5">
+        It's been proven that a half a cup of pebbles a day helps with your digestion!
+      </prompt>
+      <prompt id="{4EF9CB03-1009-4C38-B61B-3D05B9D493FC}-5" nextPrompt="{91D8BA8C-09F2-4385-8709-BF4249C159B0}">
+        A lot of my friends don't believe me...
+      </prompt>
+
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-2">
+        Let's see, they're usually light green with swirls of darker green
+      </prompt>
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-2" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-3">
+        and a crumbly - sometimes colorful - topping on top.
+      </prompt>
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-3" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-4">
+        The swirls remind me of home,
+      </prompt>
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-4" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-5">
+        and how I can swim and swirl carefree in open, cool waters!
+      </prompt>
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-5" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-6">
+        You haven't had a swim until you've had a deep water exploration adventure in a lake on a foggy day.
+      </prompt>
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-6" nextPrompt="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-7">
+        Your restaurant is a little shallow for my tastes.
+      </prompt>
+      <prompt id="{B98A808A-46F7-4F6E-9C24-74086A4A312A}-7" nextPrompt="{91D8BA8C-09F2-4385-8709-BF4249C159B0}">
+        This place normally has more water... right?
+      </prompt>
+
+      <prompt id="{91D8BA8C-09F2-4385-8709-BF4249C159B0}" nextPrompt="{91D8BA8C-09F2-4385-8709-BF4249C159B0}-2" isSaidByPlayer="true">
+        Okay, I think I've got it!
+      </prompt>
+      <prompt id="{91D8BA8C-09F2-4385-8709-BF4249C159B0}-2" isSaidByPlayer="true">
+        One Lakebed Shake coming right up!
+      </prompt>
+    </monster>
+</monsters>
