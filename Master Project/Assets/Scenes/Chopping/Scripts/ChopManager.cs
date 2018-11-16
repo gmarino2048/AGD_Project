@@ -9,6 +9,9 @@ namespace Chopping
 
         #region Parameters
 
+        [Header("Game Controllers")]
+        public TimerBehavior Timer;
+
         [Header("Chop configurations")]
         public float ChopWidth = 0.25f; // The width of the chop stroke for calculating whether there's a knife collision
 
@@ -72,7 +75,7 @@ namespace Chopping
         void Update()
         {
             // Listen for space bar input
-            if (Input.GetKeyDown(InputKey))
+            if (Timer.GameActive && Input.GetKeyDown(InputKey))
             {
                 Debug.Log(ReferencePosition.transform.position.x);
                 InsertChop(ReferencePosition.transform.position.x);
