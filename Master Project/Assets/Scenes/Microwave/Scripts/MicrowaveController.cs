@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MicrowaveController : MonoBehaviour {
+namespace Microwave
+{
+    public class MicrowaveController : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        [Header("Microwave Animation Controller")]
+        public Animator MicrowaveAnimator;
+        public float CriticalTime;
+
+        [Header("Animation Parameters")]
+        public string Continue = "Continue";
+        public string Opened = "Opened";
+
+        // Use this for initialization
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+    }
 }
