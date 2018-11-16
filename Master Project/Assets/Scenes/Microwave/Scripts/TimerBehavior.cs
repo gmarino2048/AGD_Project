@@ -44,8 +44,14 @@ namespace Microwave
             }
         }
 
-        public void Activate () {
+        public void Activate () 
+        {
             GameActive = true;
+        }
+
+        public void Stop () 
+        {
+
         }
 
         string Format(float timeRemaining) 
