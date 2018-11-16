@@ -33,6 +33,7 @@ namespace Microwave
         IEnumerator StartMinigame () 
         {
             yield return FadeCanvas(Tutorial, 1, 1, 0);
+            Tutorial.gameObject.SetActive(false);
             yield return new WaitForSeconds(1);
 
             GameTimer.Activate();

@@ -15,6 +15,15 @@ namespace Microwave
         public string Continue = "Continue";
         public string Opened = "Opened";
 
+        public enum MicrowaveState
+        {
+            Stopped,
+            Loop,
+            Erratic,
+            Opened
+        }
+
+        public MicrowaveState CurrentState { get; private set; }
 
         // Use this for initialization
         void Start()
@@ -24,6 +33,11 @@ namespace Microwave
 
         // Update is called once per frame
         void Update()
+        {
+
+        }
+
+        public void StartAnimation () 
         {
 
         }
