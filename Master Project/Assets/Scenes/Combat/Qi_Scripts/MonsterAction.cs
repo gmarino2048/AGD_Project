@@ -24,6 +24,7 @@ namespace Combat
         private GameObject Nessie;
         private GameObject Cerberus;
         private GameObject REDACTED;
+        private MonsterNames Names = new MonsterNames();
 
         public Animator Movement;
         public ManagerBar Bar;
@@ -38,9 +39,7 @@ namespace Combat
         private CombatInitiator _CombatInitiator;
         public MonsterData CurrentMonster;
 
-        //private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
-       
-
+      
         void Awake()
         {
             monstermoved = false;
@@ -52,30 +51,30 @@ namespace Combat
             Ih = GameObject.Find("InfoHider");
             Tk = GameObject.Find("Talk").GetComponent<Talk>();
             Ad = GameObject.Find("Monster").GetComponent<AudioController>();
-            if (GameObject.Find("Nessie"))
+            if (GameObject.Find(Names._NESSIE_NAME))
             {
-                Nessie = GameObject.Find("Nessie");
+                Nessie = GameObject.Find(Names._NESSIE_NAME);
             }
             else
             {
-                Debug.Log("Cant Find Nessie");
+                Debug.Log("Cant Find " + Names._NESSIE_NAME);  
             }
 
-            if (GameObject.Find("Cerberus"))
+            if (GameObject.Find(Names._CERBERUS_NAME))
             {
-                Cerberus = GameObject.Find("Cerberus");
+                Cerberus = GameObject.Find(Names._CERBERUS_NAME);
             }
             else
             {
-                Debug.Log("Cant Find Cerberus");
+                Debug.Log("Cant Find " + Names._NESSIE_NAME);
             }
-            if (GameObject.Find("REDACTED"))
+            if (GameObject.Find(Names._REDACTED_NAME))
             {
-                REDACTED = GameObject.Find("REDACTED");
+                REDACTED = GameObject.Find(Names._REDACTED_NAME);
             }
             else
             {
-                Debug.Log("Cant Find REDACTED");
+                Debug.Log("Cant Find " + Names._REDACTED_NAME);
             }
         }
         void Start()
@@ -85,19 +84,19 @@ namespace Combat
             {
                 var monsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
                 CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
-                if(CurrentMonster.ToString() == "Nessie")
+                if(CurrentMonster.ToString() == Names._NESSIE_NAME)
                 {
                     Nessie.SetActive(true);
                     Cerberus.SetActive(false);
                     REDACTED.SetActive(false);
                 }
-                else if (CurrentMonster.ToString() == "Cerberus")
+                else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
                 {
                     Nessie.SetActive(false);
                     Cerberus.SetActive(true);
                     REDACTED.SetActive(false);
                 }
-                else if (CurrentMonster.ToString() == "REDACTED")
+                else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
                 {
                     Nessie.SetActive(false);
                     Cerberus.SetActive(false);
@@ -117,21 +116,21 @@ namespace Combat
                 combatChoices.Add(CombatChoice.OfferDrink, new CombatChoiceStatus(25, 0.80f, 10));
                 combatChoices.Add(CombatChoice.Reason, new CombatChoiceStatus(10, 0.9f, 2));
                 // Just default, other values are not necessary for this scene.
-                CurrentMonster = new MonsterData("REDACTED", 0, null, combatChoices);
-                Debug.Log(CurrentMonster.ToString());
-                if (CurrentMonster.ToString() == "Nessie")
+                CurrentMonster = new MonsterData("Cerberus", 0, null, combatChoices);
+                //Debug.Log(CurrentMonster.ToString());
+                if (CurrentMonster.ToString() == Names._NESSIE_NAME)
                 {
                     Nessie.SetActive(true);
                     Cerberus.SetActive(false);
                     REDACTED.SetActive(false);
                 }
-                if (CurrentMonster.ToString() == "Cerberus")
+                if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
                 {
                     Nessie.SetActive(false);
                     Cerberus.SetActive(true);
                     REDACTED.SetActive(false);
                 }
-                if (CurrentMonster.ToString() == "REDACTED")
+                if (CurrentMonster.ToString() == Names._REDACTED_NAME)
                 {
                     Nessie.SetActive(false);
                     Cerberus.SetActive(false);
