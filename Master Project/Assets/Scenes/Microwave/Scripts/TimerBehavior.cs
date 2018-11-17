@@ -14,6 +14,9 @@ namespace Microwave
         [Header("Time Display")]
         public TextMesh TextMesh;
 
+        [Header("Game Objects")]
+        public MicrowaveController Microwave;
+
         public bool GameActive { get; private set; }
         public bool GameComplete { get; private set; }
 
@@ -43,6 +46,7 @@ namespace Microwave
 
         public void Activate () 
         {
+            Microwave.Play();
             GameActive = true;
         }
 

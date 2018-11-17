@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 261506196}
   - component: {fileID: 261506197}
   - component: {fileID: 261506198}
+  - component: {fileID: 261506199}
   m_Layer: 0
   m_Name: Microwave
   m_TagString: Untagged
@@ -174,9 +175,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.25, y: 1.19, z: 0}
   m_LocalScale: {x: 1.3726956, y: 1.330242, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2028525661}
+  - {fileID: 656430603}
   m_Father: {fileID: 1505775719}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &261506197
 SpriteRenderer:
@@ -239,6 +242,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &261506199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261506195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3fed649f08044649b642fd3ccc1509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartImage: {fileID: 21300000, guid: 2f0dee01ee248494d8eca24e78e533ed, type: 3}
+  MicrowaveAnimator: {fileID: 261506198}
+  CriticalTime: 4
+  StartTrigger: Beans
+  Continue: Continue
+  Opened: Opened
+  Timer: {fileID: 1827442848}
+  MainCamera: {fileID: 1633435044}
+  MicrowaveButton: {fileID: 656430604}
 --- !u!1 &262515649
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +270,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 262515651}
-  - component: {fileID: 262515650}
   - component: {fileID: 262515652}
   m_Layer: 0
   m_Name: Scorekeeper
@@ -256,17 +278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &262515650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 262515649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7dfde727842e43c0a43f2176b3e641c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &262515651
 Transform:
   m_ObjectHideFlags: 0
@@ -363,16 +374,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 656430602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7284937, y: 0.7517429, z: 1}
   m_Children: []
-  m_Father: {fileID: 1505775719}
-  m_RootOrder: 2
+  m_Father: {fileID: 261506196}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.05, y: -1.21}
+  m_AnchoredPosition: {x: 2.7682762, y: -1.804183}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &656430604
@@ -860,9 +871,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2028525661}
   - {fileID: 261506196}
-  - {fileID: 656430603}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1212,6 +1221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameTime: 10
   TextMesh: {fileID: 2028525662}
+  Microwave: {fileID: 261506199}
 --- !u!1 &1950575519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,16 +1495,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2028525660}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.07284937, y: 0.075174294, z: 1}
   m_Children: []
-  m_Father: {fileID: 1505775719}
+  m_Father: {fileID: 261506196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.91, y: 2.62}
+  m_AnchoredPosition: {x: 2.6662867, y: 1.0749922}
   m_SizeDelta: {x: 1920.0233, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!102 &2028525662
