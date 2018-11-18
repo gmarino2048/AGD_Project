@@ -37,7 +37,7 @@ namespace Microwave
             catch (Exception ex)
             {
                 Debug.Log(ex.Message);
-                Debug.Log("Microwave Not Running in Scene");
+                Debug.Log("Microwave Not Running in Game");
             }
 
             Tutorial.alpha = 1;
