@@ -9,10 +9,12 @@ namespace Microwave
 
         [Header("Microwave Animation Controller")]
         public Sprite StartImage;
+        public Sprite ClosedImage;
+        public Sprite OpenImage;
+        public SpriteRenderer Overlay;
+        public string FinishedState = "Finished";
         public Animator MicrowaveAnimator;
         public float CriticalTime;
-
-        SpriteRenderer Renderer;
 
         [Header("Animation Parameters")]
         public string StartTrigger;
@@ -29,15 +31,22 @@ namespace Microwave
         // Use this for initialization
         void Start()
         {
-            Renderer = GetComponent<SpriteRenderer>();
-            Renderer.sprite = StartImage;
+            Overlay.gameObject.SetActive(true);
+            Overlay.sprite = StartImage;
 
             CriticalPlayed = false;
         }
 
         public void Play ()
         {
+            Overlay.gameObject.SetActive(false);
             MicrowaveAnimator.SetTrigger(StartTrigger);
+        }
+
+        public void Finish ()
+        {
+            Overlay.sprite = Timer.NotOpened ? ClosedImage : OpenImage;
+            Overlay.gameObject.SetActive(true);
         }
 
         // Update is called once per frame
@@ -52,6 +61,7 @@ namespace Microwave
                 if (MicrowaveButton.bounds.Contains(worldPosition))
                 {
                     MicrowaveAnimator.SetTrigger(Opened);
+                    Timer.NotOpened = false;
                     Timer.Stop();
                     CriticalPlayed = true;
                 }

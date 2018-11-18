@@ -38,6 +38,15 @@ namespace Microwave
             GameTimer.Activate();
         }
 
+        public IEnumerator EndGame ()
+        {
+            Scorekeeper.SetScore();
+            ScoreDisplay.alpha = 0;
+            ScoreDisplay.gameObject.SetActive(true);
+            yield return FadeCanvas(ScoreDisplay, 0, 1, 1);
+            ScoreDisplay.alpha = 1;
+        }
+
         /// <summary>
         /// Fades in the canvas group containing the final score display once
         /// the minigame has finished. 
