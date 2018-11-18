@@ -825,6 +825,7 @@ GameObject:
   - component: {fileID: 1508102584}
   - component: {fileID: 1508102583}
   - component: {fileID: 1508102582}
+  - component: {fileID: 1508102585}
   m_Layer: 0
   m_Name: Tutorial
   m_TagString: Untagged
@@ -907,6 +908,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1508102585
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508102580}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1511491051
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1004,7 @@ GameObject:
   - component: {fileID: 1539754221}
   - component: {fileID: 1539754220}
   - component: {fileID: 1539754219}
+  - component: {fileID: 1539754222}
   m_Layer: 0
   m_Name: Main Info
   m_TagString: Untagged
@@ -1074,6 +1087,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1539754222
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539754217}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1635397913
 GameObject:
   m_ObjectHideFlags: 0
