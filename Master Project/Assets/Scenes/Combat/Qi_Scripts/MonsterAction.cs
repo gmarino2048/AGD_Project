@@ -21,6 +21,9 @@ namespace Combat
         private GameObject Ih;
         private Talk Tk;
         private AudioController Ad;
+        private GameObject Nessie;
+        private GameObject Cerberus;
+        private GameObject REDACTED;
 
         public Animator Movement;
         public ManagerBar Bar;
@@ -40,7 +43,6 @@ namespace Combat
 
         void Awake()
         {
-            Movement = GetComponent<Animator>();
             monstermoved = false;
             PlayerMoved = false;
             PlayerHealed = false;
@@ -50,6 +52,31 @@ namespace Combat
             Ih = GameObject.Find("InfoHider");
             Tk = GameObject.Find("Talk").GetComponent<Talk>();
             Ad = GameObject.Find("Monster").GetComponent<AudioController>();
+            if (GameObject.Find("Nessie"))
+            {
+                Nessie = GameObject.Find("Nessie");
+            }
+            else
+            {
+                Debug.Log("Cant Find Nessie");
+            }
+
+            if (GameObject.Find("Cerberus"))
+            {
+                Cerberus = GameObject.Find("Cerberus");
+            }
+            else
+            {
+                Debug.Log("Cant Find Cerberus");
+            }
+            if (GameObject.Find("REDACTED"))
+            {
+                REDACTED = GameObject.Find("REDACTED");
+            }
+            else
+            {
+                Debug.Log("Cant Find REDACTED");
+            }
         }
         void Start()
         {
@@ -58,6 +85,25 @@ namespace Combat
             {
                 var monsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
                 CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
+                if(CurrentMonster.ToString() == "Nessie")
+                {
+                    Nessie.SetActive(true);
+                    Cerberus.SetActive(false);
+                    REDACTED.SetActive(false);
+                }
+                else if (CurrentMonster.ToString() == "Cerberus")
+                {
+                    Nessie.SetActive(false);
+                    Cerberus.SetActive(true);
+                    REDACTED.SetActive(false);
+                }
+                else if (CurrentMonster.ToString() == "REDACTED")
+                {
+                    Nessie.SetActive(false);
+                    Cerberus.SetActive(false);
+                    REDACTED.SetActive(true);
+                }
+                Movement = GameObject.Find(CurrentMonster.ToString()).GetComponent<Animator>();
                 Bar.SetValue((int)Mathf.Ceil(_CombatInitiator.InitialManagerMeterValue * Bar.maxManagerValue));
             }
             else
@@ -71,7 +117,27 @@ namespace Combat
                 combatChoices.Add(CombatChoice.OfferDrink, new CombatChoiceStatus(25, 0.80f, 10));
                 combatChoices.Add(CombatChoice.Reason, new CombatChoiceStatus(10, 0.9f, 2));
                 // Just default, other values are not necessary for this scene.
-                CurrentMonster = new MonsterData("Nessie", 0, null, combatChoices);
+                CurrentMonster = new MonsterData("REDACTED", 0, null, combatChoices);
+                Debug.Log(CurrentMonster.ToString());
+                if (CurrentMonster.ToString() == "Nessie")
+                {
+                    Nessie.SetActive(true);
+                    Cerberus.SetActive(false);
+                    REDACTED.SetActive(false);
+                }
+                if (CurrentMonster.ToString() == "Cerberus")
+                {
+                    Nessie.SetActive(false);
+                    Cerberus.SetActive(true);
+                    REDACTED.SetActive(false);
+                }
+                if (CurrentMonster.ToString() == "REDACTED")
+                {
+                    Nessie.SetActive(false);
+                    Cerberus.SetActive(false);
+                    REDACTED.SetActive(true);
+                }
+                Movement = GameObject.Find(CurrentMonster.ToString()).GetComponent<Animator>();
             }
             StartCoroutine("CombatFunction");
             
