@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3d39843677d4bbfb05eb1ecfea2a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SPOON_MAX_RADIUS: 6
+  _SPOON_MAX_RADIUS: 8
   _Center: {x: -1, y: 0, z: 0}
   travelDistance: 0
   isTimerDone: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.19215687, g: 0.16078432, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
