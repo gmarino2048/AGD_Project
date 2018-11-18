@@ -26,19 +26,20 @@ namespace Microwave
         {
             StartGame.onClick.AddListener(() => StartCoroutine(StartMinigame()));
 
-            try
+            NextScene.onClick.AddListener(() =>
             {
-                NextScene.onClick.AddListener(() =>
+                try
                 {
                     DishPreparationManager dishPreparation = FindObjectOfType<DishPreparationManager>();
                     dishPreparation.GoToNextScene();
-                });
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(ex.Message);
-                Debug.Log("Microwave Not Running in Game");
-            }
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Microwave Not Running in Game");
+                }
+            });
+
 
             Tutorial.alpha = 1;
             Tutorial.gameObject.SetActive(true);
