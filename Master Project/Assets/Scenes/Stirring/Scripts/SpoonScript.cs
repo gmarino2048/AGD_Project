@@ -7,7 +7,7 @@ namespace Stirring
     public class SpoonScript : MonoBehaviour
     {
         private const float _SPOON_Z_POS = 0f;
-        private const float _SPOON_MAX_RADIUS = 2f;
+        public float _SPOON_MAX_RADIUS = 2f;
 
         //distance of the mouse from the center of the spoon
         private Vector3 _Offset;
