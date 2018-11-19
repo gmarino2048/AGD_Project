@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -33,6 +34,19 @@ namespace Stirring
             ScoreDisplay.gameObject.SetActive(false);
 
             StartButton.onClick.AddListener(() => StartCoroutine(StartGame()));
+            NextScene.onClick.AddListener(() =>
+            {
+                try 
+                {
+                    DishPreparationManager sceneChanger = FindObjectOfType<DishPreparationManager>();
+                    sceneChanger.GoToNextScene();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Stirring Scene not Playing in Game");
+                }
+            });
         }
 
         // Update is called once per frame
@@ -51,8 +65,22 @@ namespace Stirring
             MainDisplay.alpha = 0;
             MainDisplay.gameObject.SetActive(true);
             yield return FadeCanvas(MainDisplay, 0, 1, 1);
+            MainDisplay.alpha = 1;
 
             Timer.Activate();
+        }
+
+        IEnumerator EndGame () 
+        {
+            yield return FadeCanvas(MainDisplay, 1, 1, 0);
+            MainDisplay.gameObject.SetActive(false);
+
+            yield return new WaitForSeconds(1);
+
+            ScoreDisplay.alpha = 0;
+            ScoreDisplay.gameObject.SetActive(true);
+            yield return FadeCanvas(ScoreDisplay, 0, 1, 1);
+            ScoreDisplay.alpha = 1;
         }
 
         /// <summary>
