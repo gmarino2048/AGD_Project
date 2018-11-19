@@ -41,16 +41,14 @@ namespace Stirring
             }
             else if (GameActive)
             {
-                GameActive = false;
-                GameComplete = true;
-
                 EndGame();
             }
         }
 
         public void EndGame()
         {
-
+            GameActive = false;
+            GameComplete = true;
         }
 
         public void Activate()
