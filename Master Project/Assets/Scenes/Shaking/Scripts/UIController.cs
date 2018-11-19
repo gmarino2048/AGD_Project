@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Shaking
 {
@@ -15,6 +17,10 @@ namespace Shaking
         public CanvasGroup MainInfo;
         public CanvasGroup FinalScore;
 
+        [Header("Buttons")]
+        public Button GameStart;
+        public Button NextButton;
+
         // Use this for initialization
         void Start()
         {
@@ -23,6 +29,20 @@ namespace Shaking
             Tutorial.gameObject.SetActive(true);
             MainInfo.gameObject.SetActive(false);
             FinalScore.gameObject.SetActive(false);
+
+            NextButton.onClick.AddListener(() =>
+            {
+                try
+                {
+                    DishPreparationManager dishPreparation = FindObjectOfType<DishPreparationManager>();
+                    dishPreparation.GoToNextScene();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Microwave Not Running in Game");
+                }
+            });
         }
 
         void Update()

@@ -86,6 +86,22 @@ namespace Shaking
             Debug.Log(score);
 
             FinalScoreText.text = GetScoreText(score);
+            try
+            {
+                DishPreparationManager preparationManager = FindObjectOfType<DishPreparationManager>();
+                GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
+                DishScoreManager scoreManager = FindObjectOfType<DishScoreManager>();
+
+                Guid monsterID = narrativeManager.CurrentStage.MonsterID;
+                IngredientType currentIngredient = preparationManager.currentIngredient;
+                scoreManager.AddIngredientToDish(monsterID, currentIngredient, score);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message);
+                Debug.Log("Microwave Scene not Running in Game");
+            }
+
             UIManager.EndGame();
 
             Finished = true;
