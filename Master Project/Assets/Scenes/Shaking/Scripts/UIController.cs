@@ -40,7 +40,7 @@ namespace Shaking
                 catch (Exception ex)
                 {
                     Debug.Log(ex.Message);
-                    Debug.Log("Microwave Not Running in Game");
+                    Debug.Log("Shaking Not Running in Game");
                 }
             });
         }

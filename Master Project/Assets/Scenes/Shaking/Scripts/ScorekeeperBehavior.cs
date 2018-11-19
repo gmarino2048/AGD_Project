@@ -99,7 +99,7 @@ namespace Shaking
             catch (Exception ex)
             {
                 Debug.Log(ex.Message);
-                Debug.Log("Microwave Scene not Running in Game");
+                Debug.Log("Shaking Scene not Running in Game");
             }
 
             UIManager.EndGame();
