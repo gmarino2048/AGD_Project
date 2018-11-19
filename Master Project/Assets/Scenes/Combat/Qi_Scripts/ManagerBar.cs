@@ -22,7 +22,7 @@ namespace Combat
             currentManagerValue = 80;
             maxManagerValue = 100;
             baramount.value = (float)currentManagerValue / maxManagerValue;
-            managernum.text = (baramount.value * 100f).ToString();
+            managernum.text = "Manager Meter: " + (baramount.value * 100f).ToString();
         }
 
         // Update is called once per frame
@@ -87,7 +87,7 @@ namespace Combat
         /// </summary>
         public void DisplayManagerNum()
         {
-            managernum.text = (baramount.value * 100f).ToString();
+            managernum.text = "Manager Meter: " + (baramount.value * 100f).ToString();
         }
 
         public float GetCurrentBarValue()
