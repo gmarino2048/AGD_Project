@@ -657,6 +657,8 @@ MonoBehaviour:
   Tutorial: {fileID: 39919683}
   Main: {fileID: 1679392171}
   ScoreDisplay: {fileID: 0}
+  StartGame: {fileID: 774522510}
+  NextScene: {fileID: 0}
   ScoreValue: {fileID: 0}
   Timer: {fileID: 195419928}
 --- !u!1 &774522508
@@ -714,9 +716,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.19607843}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.5882353}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
