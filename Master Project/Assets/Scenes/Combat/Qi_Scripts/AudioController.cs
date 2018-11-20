@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour {
 
     private ManagerBar Mb;
     private HealthBar Hb;
+    private MonsterNames Names = new MonsterNames();
     public AudioSource Source;
     public AudioSource LoopSource;
     public AudioSource LoopSource1;
@@ -43,19 +44,19 @@ public class AudioController : MonoBehaviour {
         {
             var monsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
             CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
-            if (CurrentMonster.ToString() == "Nessie")
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
             {
                 Nessie_BGM.Play();
                 Cerberus_BGM.Stop();
                 REDACTED_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "Cerberus")
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
             {
                 Nessie_BGM.Stop();
                 Cerberus_BGM.Play();
                 REDACTED_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "REDACTED")
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
             {
                 Nessie_BGM.Stop();
                 Cerberus_BGM.Stop();
@@ -64,20 +65,20 @@ public class AudioController : MonoBehaviour {
         }
         else
         {
-            CurrentMonster = new MonsterData("REDACTED", 0, null, null);
-            if (CurrentMonster.ToString() == "Nessie")
+            CurrentMonster = new MonsterData("Nessie", 0, null, null);
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
             {
                 Nessie_BGM.Play();
                 Cerberus_BGM.Stop();
                 REDACTED_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "Cerberus")
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
             {
                 Nessie_BGM.Stop();
                 Cerberus_BGM.Play();
                 REDACTED_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "REDACTED")
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
             {
                 Nessie_BGM.Stop();
                 Cerberus_BGM.Stop();
@@ -91,15 +92,15 @@ public class AudioController : MonoBehaviour {
         {
             LoopSource.Stop();
             LoopSource1.Stop();
-            if (CurrentMonster.ToString() == "Nessie")
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
             {
                 Nessie_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "Cerberus")
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
             {
                 Cerberus_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "REDACTED")
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
             {
                 REDACTED_BGM.Stop();
             }
@@ -108,15 +109,15 @@ public class AudioController : MonoBehaviour {
         {
             LoopSource.Stop();
             LoopSource1.Stop();
-            if (CurrentMonster.ToString() == "Nessie")
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
             {
                 Nessie_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "Cerberus")
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
             {
                 Cerberus_BGM.Stop();
             }
-            else if (CurrentMonster.ToString() == "REDACTED")
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
             {
                 REDACTED_BGM.Stop();
             }

@@ -20,7 +20,7 @@ namespace Combat
             ma = GameObject.Find("Monster").GetComponent<MonsterAction>();
             currentHealth = 100;
             maxHealth = 100;
-            healtnum.text = (healthFill.value * 100f).ToString();
+            healtnum.text = "Health: " + (healthFill.value * 100f).ToString();
             healthFill.value = (float)currentHealth / maxHealth;
         }
         public void Update()
@@ -38,7 +38,7 @@ namespace Combat
         }
         public void DisplayHealthNum()
         {
-            healtnum.text = (healthFill.value * 100f).ToString();
+            healtnum.text = "Health: " + (healthFill.value * 100f).ToString();
         }
         public float GetCurrentHealthValue()
         {
