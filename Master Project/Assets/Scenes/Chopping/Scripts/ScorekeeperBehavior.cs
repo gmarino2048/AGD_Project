@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,17 +38,6 @@ namespace Chopping
         {
             FinalScoreDisplay.alpha = 0;
             FinalScoreDisplay.gameObject.SetActive(false);
-        }
-
-
-        /// <summary>
-        /// Run once per frame update. This function manages the time remaining on the counter
-        /// and calculates the score once the finish button is pressed or the time remaining on the
-        /// timer runs out.
-        /// </summary>
-        void Update()
-        {
-
         }
 
         #endregion
@@ -134,6 +124,22 @@ namespace Chopping
         public void EndGame () 
         {
             CalculateScore();
+
+            try
+            {
+                DishPreparationManager preparationManager = FindObjectOfType<DishPreparationManager>();
+                GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
+                DishScoreManager scoreManager = FindObjectOfType<DishScoreManager>();
+
+                Guid monsterID = narrativeManager.CurrentStage.MonsterID;
+                IngredientType currentIngredient = preparationManager.currentIngredient;
+                scoreManager.AddIngredientToDish(monsterID, currentIngredient, Score);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message);
+                Debug.Log("Chopping Scene not Running in Game");
+            }
 
             float scaledScore = (1 - Score) * 1000;
 
