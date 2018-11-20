@@ -34,6 +34,7 @@ namespace Stirring
             BowlAnimator.SetTrigger(IngredientSelector);
 
             TransitionDone = false;
+            Overlay.gameObject.SetActive(true);
         }
 
         // Update is called once per frame
