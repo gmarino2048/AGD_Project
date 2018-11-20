@@ -30,6 +30,8 @@ namespace Shaking
             MainInfo.gameObject.SetActive(false);
             FinalScore.gameObject.SetActive(false);
 
+            GameStart.onClick.AddListener(() => StartCoroutine(StartGame()));
+
             NextButton.onClick.AddListener(() =>
             {
                 try
@@ -80,14 +82,15 @@ namespace Shaking
             }
         }
 
-        public void StartGame () {
-            StartCoroutine(FadeTutorial());
-        }
-
-        IEnumerator FadeTutorial () {
+        IEnumerator StartGame () {
             yield return FadeCanvas(Tutorial, 1, 1, 0);
             Tutorial.gameObject.SetActive(false);
+
+            MainInfo.alpha = 0;
             MainInfo.gameObject.SetActive(true);
+            yield return FadeCanvas(MainInfo, 0, 1, 1);
+            MainInfo.alpha = 1;
+            
             GameController.StartGame();
         }
 

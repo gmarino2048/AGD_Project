@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19215687, g: 0.16078432, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19215687, g: 0.16078432, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1079,7 +1079,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1172185929208308, guid: 8cd7c20a687b9294883c7d89656a47df, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd7c20a687b9294883c7d89656a47df, type: 2}
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19215687, g: 0.16078432, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1261,6 +1261,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 765691045}
+--- !u!114 &932737482 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114875964949460990, guid: 8cd7c20a687b9294883c7d89656a47df,
+    type: 2}
+  m_PrefabInternal: {fileID: 531347654}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &940710275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1353,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &988055195 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114321369224182164, guid: 8cd7c20a687b9294883c7d89656a47df,
+    type: 2}
+  m_PrefabInternal: {fileID: 531347654}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1048729686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,8 +1514,8 @@ MonoBehaviour:
   ShakerInitial: 'Shakes:'
   ShakerFinal: 'Final Count:'
   ShakerScore: {fileID: 113411313}
-  ScoreDisplay: {fileID: 0}
-  FinalScoreText: {fileID: 0}
+  ScoreDisplay: {fileID: 1521451170}
+  FinalScoreText: {fileID: 988055195}
 --- !u!1 &1163841234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1896,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!225 &1521451170 stripped
+CanvasGroup:
+  m_PrefabParentObject: {fileID: 225111752781767322, guid: 8cd7c20a687b9294883c7d89656a47df,
+    type: 2}
+  m_PrefabInternal: {fileID: 531347654}
 --- !u!1 &1616728339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19215687, g: 0.16078432, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2143,9 +2160,9 @@ MonoBehaviour:
   GameController: {fileID: 1163841236}
   Tutorial: {fileID: 69478325}
   MainInfo: {fileID: 1048729691}
-  FinalScore: {fileID: 0}
-  GameStart: {fileID: 0}
-  NextButton: {fileID: 0}
+  FinalScore: {fileID: 1521451170}
+  GameStart: {fileID: 1323233418}
+  NextButton: {fileID: 932737482}
 --- !u!1 &2026604669
 GameObject:
   m_ObjectHideFlags: 0

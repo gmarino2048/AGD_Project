@@ -9,17 +9,6 @@ namespace Shaking
 {
     public class ScorekeeperBehavior : MonoBehaviour, IDishScoreKeeper
     {
-        /// <summary>
-        /// The dish preparation manager
-        /// </summary>
-        private DishPreparationManager _DishPreparationManager;
-
-        /// <summary>
-        /// The dish score manager
-        /// </summary>
-        private DishScoreManager _DishScoreManager;
-
-        private GameNarrativeManager _GameNarrativeManager;
 
         [Header("Scoring Settings")]
         public uint TargetShakes; // The target number of shakes for the scene.
@@ -55,10 +44,6 @@ namespace Shaking
         /// </summary>
         void Start()
         {
-            _DishPreparationManager = GameObject.FindObjectOfType<DishPreparationManager>();
-            _DishScoreManager = GameObject.FindObjectOfType<DishScoreManager>();
-            _GameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
-
             ShakerLabel.text = ShakerInitial;
             ShakerScore.text = 0.ToString();
 
@@ -105,7 +90,6 @@ namespace Shaking
             UIManager.EndGame();
 
             Finished = true;
-            StartCoroutine(EndMiniGame());
         }
 
         /// <summary>
@@ -148,24 +132,6 @@ namespace Shaking
                 canvas.alpha = startAlpha + (change * currentTime);
 
                 yield return new WaitForEndOfFrame();
-            }
-        }
-
-        /// <summary>
-        /// Sends the score and goes to the next scene
-        /// </summary>
-        private IEnumerator EndMiniGame()
-        {
-            yield return new WaitForSeconds(10);
-
-            if (_DishPreparationManager != null)
-            {
-                if (_DishScoreManager != null)
-                {
-                    _DishScoreManager.AddIngredientToDish(_GameNarrativeManager.CurrentStage.MonsterID, _DishPreparationManager.currentIngredient, GetScore());
-                }
-
-                _DishPreparationManager.GoToNextScene();
             }
         }
     }
