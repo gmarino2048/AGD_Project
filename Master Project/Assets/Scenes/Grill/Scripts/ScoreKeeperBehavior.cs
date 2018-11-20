@@ -66,7 +66,7 @@ namespace Grill
             catch (Exception ex)
             {
                 Debug.Log(ex.Message);
-                Debug.Log("Shaking Scene not Running in Game");
+                Debug.Log("Grill Scene not Running in Game");
             }
 
             StartCoroutine(Manager.ShowScore(Score));
