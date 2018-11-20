@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,21 @@ namespace Microwave
         {
             StartGame.onClick.AddListener(() => StartCoroutine(StartMinigame()));
 
+            NextScene.onClick.AddListener(() =>
+            {
+                try
+                {
+                    DishPreparationManager dishPreparation = FindObjectOfType<DishPreparationManager>();
+                    dishPreparation.GoToNextScene();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Microwave Not Running in Game");
+                }
+            });
+
+
             Tutorial.alpha = 1;
             Tutorial.gameObject.SetActive(true);
             ScoreDisplay.gameObject.SetActive(false);
@@ -33,6 +49,7 @@ namespace Microwave
         IEnumerator StartMinigame () 
         {
             yield return FadeCanvas(Tutorial, 1, 1, 0);
+            Tutorial.gameObject.SetActive(false);
             yield return new WaitForSeconds(1);
 
             GameTimer.Activate();

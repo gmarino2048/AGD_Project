@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -71,6 +71,11 @@ namespace Microwave
                 MicrowaveAnimator.SetBool(Continue, true);
                 CriticalPlayed = true;
             }
+        }
+
+        public void StartAnimation () 
+        {
+
         }
     }
 }
