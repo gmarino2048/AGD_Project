@@ -187,6 +187,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 30925904}
+--- !u!225 &46250255 stripped
+CanvasGroup:
+  m_PrefabParentObject: {fileID: 225111752781767322, guid: 8cd7c20a687b9294883c7d89656a47df,
+    type: 2}
+  m_PrefabInternal: {fileID: 2072576300}
 --- !u!1 &357881105
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +484,12 @@ MonoBehaviour:
   Radius: 6
   SpoonCollider: {fileID: 928140979}
   MainCamera: {fileID: 1792149161}
+--- !u!114 &1017834650 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114875964949460990, guid: 8cd7c20a687b9294883c7d89656a47df,
+    type: 2}
+  m_PrefabInternal: {fileID: 2072576300}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1039840558
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +683,7 @@ MonoBehaviour:
   Spoon: {fileID: 928140981}
   Overlay: {fileID: 1687492049}
   Scaler: 2.25
-  IngredientSelector: Eggs
+  IngredientSelector: Chili
   TransitionTrigger: Transition
   TransitionTime: 15
   Acceleration: 0.25
@@ -855,9 +866,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tutorial: {fileID: 1508102585}
   MainDisplay: {fileID: 1539754222}
-  ScoreDisplay: {fileID: 0}
+  ScoreDisplay: {fileID: 46250255}
   StartButton: {fileID: 1749732627}
-  NextScene: {fileID: 0}
+  NextScene: {fileID: 1017834650}
   Timer: {fileID: 1393232277}
 --- !u!1 &1444356852
 GameObject:
@@ -1360,7 +1371,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1772729458}
-  - component: {fileID: 1772729457}
   m_Layer: 0
   m_Name: Scorekeeper
   m_TagString: Untagged
@@ -1368,19 +1378,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1772729457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1772729456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b14f0d0217a413dacf50d2f3f1f34e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FinalScoreText: {fileID: 2072576302}
-  ScoreDisplay: {fileID: 0}
 --- !u!4 &1772729458
 Transform:
   m_ObjectHideFlags: 0
@@ -1650,6 +1647,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1172185929208308, guid: 8cd7c20a687b9294883c7d89656a47df, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd7c20a687b9294883c7d89656a47df, type: 2}
   m_IsPrefabParent: 0
@@ -1658,9 +1659,3 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224362960002800694, guid: 8cd7c20a687b9294883c7d89656a47df,
     type: 2}
   m_PrefabInternal: {fileID: 2072576300}
---- !u!114 &2072576302 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114321369224182164, guid: 8cd7c20a687b9294883c7d89656a47df,
-    type: 2}
-  m_PrefabInternal: {fileID: 2072576300}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
