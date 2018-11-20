@@ -10,6 +10,7 @@ namespace Stirring
         public TimerBehavior Timer;
         public Animator BowlAnimator;
         public SpoonBehavior Spoon;
+        public SpriteRenderer Overlay;
 
         [Header("Bowl Settings")]
         public float Scaler = 2.25f;
@@ -17,7 +18,10 @@ namespace Stirring
 
         [Header("Animator Parameters")]
         public string IngredientSelector;
-        public string TransitionTrigger;
+        public string TransitionTrigger = "Transition";
+
+        public float TransitionTime = 15f;
+        bool TransitionDone;
 
         public float Acceleration = 0.25f;
         float Speed;
@@ -27,10 +31,26 @@ namespace Stirring
         void Start()
         {
             Speed = 0f;
+            BowlAnimator.SetTrigger(IngredientSelector);
+
+            TransitionDone = false;
         }
 
         // Update is called once per frame
         void Update()
+        {
+            if (Timer.GameActive && Overlay.gameObject.activeSelf) Overlay.gameObject.SetActive(false);
+
+            UpdateAnimator();
+
+            if (Timer.TimeRemaining < TransitionTime && ! TransitionDone)
+            {
+                BowlAnimator.SetTrigger(TransitionTrigger);
+                TransitionDone = true;
+            }
+        }
+
+        void UpdateAnimator ()
         {
             // Set animator speed
             if (Speed >= 0) Speed += Spoon.Dragging ?
@@ -42,18 +62,16 @@ namespace Stirring
 
             Speed = Mathf.Clamp(Speed, -1 * MaxSpeed, MaxSpeed);
 
-            DirectionMultiplier = Speed >= 0 ? 1 : -1;
+            DirectionMultiplier = Speed >= 0.01 ? 1 : DirectionMultiplier;
+            DirectionMultiplier = Speed <= -0.01 ? -1 : DirectionMultiplier;
 
             float animSpeed = Mathf.Abs(Speed);
 
             BowlAnimator.speed = animSpeed;
 
             float xScale = Scaler * DirectionMultiplier;
-            float yScale = xScale;
 
-            gameObject.transform.localScale = new Vector3(xScale, yScale, 1);
-
-
+            gameObject.transform.localScale = new Vector3(xScale, gameObject.transform.localScale.y, 1);
         }
     }
 }

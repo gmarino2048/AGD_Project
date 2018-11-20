@@ -10,7 +10,7 @@ namespace Stirring
 
         [Header("Time Controls")]
         public int GameTime;
-        float TimeRemaining;
+        public float TimeRemaining { get; private set; }
 
         public bool GameActive { get; private set; }
         public bool GameComplete { get; private set; }
