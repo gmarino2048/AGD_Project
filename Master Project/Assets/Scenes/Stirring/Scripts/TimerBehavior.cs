@@ -9,6 +9,8 @@ namespace Stirring
     {
 
         [Header("Time Controls")]
+        public ScoreKeeperBehavior ScoreKeeper;
+        public UIManager UIManager;
         public int GameTime;
         public float TimeRemaining { get; private set; }
 
@@ -49,6 +51,9 @@ namespace Stirring
         {
             GameActive = false;
             GameComplete = true;
+
+            ScoreKeeper.ScoreGame();
+            StartCoroutine(UIManager.EndGame());
         }
 
         public void Activate()

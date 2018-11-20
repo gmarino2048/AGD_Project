@@ -786,6 +786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f18580a2d19a4e1480f9ce79f3b5e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreKeeper: {fileID: 1772729457}
+  UIManager: {fileID: 1429831707}
   GameTime: 30
   TimerText: {fileID: 1039840560}
   Message: 'Time Remaining: '
@@ -1195,7 +1197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1687492048
 Transform:
   m_ObjectHideFlags: 0
@@ -1371,6 +1373,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1772729458}
+  - component: {fileID: 1772729457}
   m_Layer: 0
   m_Name: Scorekeeper
   m_TagString: Untagged
@@ -1378,6 +1381,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1772729457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1772729456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a7d3dd0044ac24b9ad58dbc08da4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: {fileID: 1393232277}
+  Spoon: {fileID: 928140981}
+  ScoreText: {fileID: 2072576302}
 --- !u!4 &1772729458
 Transform:
   m_ObjectHideFlags: 0
@@ -1659,3 +1676,9 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224362960002800694, guid: 8cd7c20a687b9294883c7d89656a47df,
     type: 2}
   m_PrefabInternal: {fileID: 2072576300}
+--- !u!114 &2072576302 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114321369224182164, guid: 8cd7c20a687b9294883c7d89656a47df,
+    type: 2}
+  m_PrefabInternal: {fileID: 2072576300}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}

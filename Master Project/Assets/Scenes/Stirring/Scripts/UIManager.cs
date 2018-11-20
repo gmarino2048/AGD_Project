@@ -70,7 +70,7 @@ namespace Stirring
             Timer.Activate();
         }
 
-        IEnumerator EndGame () 
+        public IEnumerator EndGame () 
         {
             yield return FadeCanvas(MainDisplay, 1, 1, 0);
             MainDisplay.gameObject.SetActive(false);

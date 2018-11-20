@@ -69,7 +69,6 @@ namespace Stirring
                 float zPosition = gameObject.transform.position.z;
 
                 Direction = angle < LastAngle;
-                Debug.Log(Direction);
                 LastAngle = angle;
 
                 float objectRadius = Mathf.Min(Radius, Vector3.Distance(objectPosition, Center));
