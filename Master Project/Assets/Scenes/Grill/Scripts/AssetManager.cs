@@ -16,7 +16,7 @@ namespace Grill
         public CookObjectController SteakPrefab;
 
         [Header("Scene Objects")]
-        public SpriteRenderer GrillPlacementHelper;
+        public PlacementHelper GrillPlacementHelper;
         public PlacementController GrillPlacementController;
 
         void Awake()
@@ -46,13 +46,13 @@ namespace Grill
             catch (Exception ex)
             {
                 Debug.LogError(ex.Message + " -- defaulting to beef");
-                SetParameters(UncookedSteak, SteakPrefab);
+                SetParameters(UncookedPatty, BeefPrefab);
             }
         }
 
         void SetParameters(Sprite PlacementHelper, CookObjectController Prefab)
         {
-            GrillPlacementHelper.sprite = PlacementHelper;
+            GrillPlacementHelper.FoodObject = PlacementHelper;
             GrillPlacementController.CookObject = Prefab;
         }
     }
