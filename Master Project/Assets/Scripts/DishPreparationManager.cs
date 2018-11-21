@@ -23,7 +23,16 @@ public class DishPreparationManager : MonoBehaviour
     private readonly Dictionary<IngredientType, string> _INGREDIENT_SCENES = new Dictionary<IngredientType, string>() {
         {IngredientType.IceCream, _STIRRING_SCENE_NAME},
         {IngredientType.AlgaeSlime, _MICROWAVE_SCENE_NAME},
-        {IngredientType.AquariumGravel, _SHAKING_SCENE_NAME}
+        {IngredientType.AquariumGravel, _SHAKING_SCENE_NAME},
+        {IngredientType.Eggs, _STIRRING_SCENE_NAME},
+        {IngredientType.Steak, _GRILLING_SCENE_NAME},
+        {IngredientType.Bones, _CHOPPING_SCENE_NAME},
+        {IngredientType.CannedMeat, _MICROWAVE_SCENE_NAME},
+        {IngredientType.Beans, _MICROWAVE_SCENE_NAME},
+        {IngredientType.PeculiarPeppers, _CHOPPING_SCENE_NAME},
+        {IngredientType.CrushedSouls, _SHAKING_SCENE_NAME},
+        {IngredientType.VoidGoo, _STIRRING_SCENE_NAME},
+        {IngredientType.GroundBeef, _GRILLING_SCENE_NAME}
     };
 
     private CombatInitiator _CombatInitiator;

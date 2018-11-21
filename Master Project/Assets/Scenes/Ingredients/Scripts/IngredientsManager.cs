@@ -8,8 +8,6 @@ namespace Ingredients
 {
 	public class IngredientsManager : MonoBehaviour
 	{
-    	private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
-
 		private DishPreparationManager _DishPreparationManager;
 
 		private MonsterData _MonsterData;
@@ -19,7 +17,7 @@ namespace Ingredients
 
 		private CombatInitiator _CombatInitiator;
 
-		//private GameNarrativeManager _GameNarrativeManager;
+		private GameNarrativeManager _GameNarrativeManager;
 
 		void Start()
         {
@@ -35,7 +33,13 @@ namespace Ingredients
 				throw new Exception("DishPreparationManager did not exist in scene");
 			}
 
-            _MonsterData = monsterFactory.LoadMonster(_NESSIE_GUID);
+        	_GameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+			if (_GameNarrativeManager == null)
+			{
+				throw new Exception("GameNarrativeManager did not exist in scene");
+			}
+
+            _MonsterData = monsterFactory.LoadMonster(_GameNarrativeManager.CurrentStage.MonsterID);
             _IngredientsAdded = new List<IngredientType>();
             InstantiateIngredientChoice();
         }
@@ -51,7 +55,10 @@ namespace Ingredients
 
 			if (_IngredientsAdded.Count == _MonsterData.DesiredIngredients.Count)
 			{
-				_DishPreparationManager.StartPreparingDish(_NESSIE_GUID, _MonsterData.DesiredIngredients);
+				_DishPreparationManager.StartPreparingDish(
+					_GameNarrativeManager.CurrentStage.MonsterID,
+					_MonsterData.DesiredIngredients
+				);
 				_DishPreparationManager.GoToNextScene();
 			}
 		}
