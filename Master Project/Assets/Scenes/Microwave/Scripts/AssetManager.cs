@@ -10,18 +10,23 @@ namespace Microwave
 
         [Header("Slime Assets")]
         public string SlimeTrigger = "Slime";
-        public Sprite SlimeOverlay;
+        public Sprite SlimeStart;
+        public Sprite SlimeClosed;
+        public Sprite SlimeOpen;
 
         [Header("Meat Assets")]
         public string MeatTrigger = "Meat";
-        public Sprite MeatOverlay;
+        public Sprite MeatStart;
+        public Sprite MeatClosed;
+        public Sprite MeatOpen;
 
         [Header("Beans Assets")]
         public string BeansTrigger = "Beans";
-        public Sprite BeansOverlay;
+        public Sprite BeansStart;
+        public Sprite BeansClosed;
+        public Sprite BeansOpen;
 
         [Header("Microwave Assets")]
-        public SpriteRenderer MicrowaveOverlay;
         public MicrowaveController MicrowaveController;
 
 
@@ -36,33 +41,35 @@ namespace Microwave
                 switch (ingredient)
                 {
                     case IngredientType.AlgaeSlime:
-                        SetParameters(SlimeTrigger, SlimeOverlay);
+                        SetParameters(SlimeTrigger, SlimeStart, SlimeClosed, SlimeOpen);
                         break;
 
                     case IngredientType.CannedMeat:
-                        SetParameters(MeatTrigger, MeatOverlay);
+                        SetParameters(MeatTrigger, MeatStart, MeatClosed, MeatOpen);
                         break;
 
                     case IngredientType.Beans:
-                        SetParameters(BeansTrigger, BeansOverlay);
+                        SetParameters(BeansTrigger, BeansStart, BeansClosed, BeansOpen);
                         break;
 
                     default:
                         Debug.LogError("Unexpected Ingredient -- Defaulting to slime");
-                        SetParameters(SlimeTrigger, SlimeOverlay);
+                        SetParameters(SlimeTrigger, SlimeStart, SlimeClosed, SlimeOpen);
                         break;
                 }
             }
             catch (Exception ex) 
             {
                 Debug.LogError(ex.Message + " -- Defaulting to Slime");
-                SetParameters(SlimeTrigger, SlimeOverlay);
+                SetParameters(SlimeTrigger, SlimeStart, SlimeClosed, SlimeOpen);
             }
         }
 
-        void SetParameters (string TriggerName, Sprite Overlay)
+        void SetParameters (string TriggerName, Sprite OverlayStart, Sprite OverlayClosed, Sprite OverlayOpen)
         {
-            MicrowaveOverlay.sprite = Overlay;
+            MicrowaveController.StartImage = OverlayStart;
+            MicrowaveController.ClosedImage = OverlayClosed;
+            MicrowaveController.OpenImage = OverlayOpen;
             MicrowaveController.StartTrigger = TriggerName;
         }
     }
