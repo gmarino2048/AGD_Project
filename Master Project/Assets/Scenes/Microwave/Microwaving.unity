@@ -655,9 +655,9 @@ MonoBehaviour:
   MeatClosed: {fileID: 21300000, guid: e289a6c7dbf654efb8fb6f88715128e5, type: 3}
   MeatOpen: {fileID: 21300000, guid: 1689ec1a7ecf34349b91e5ea9ee1fd68, type: 3}
   BeansTrigger: Beans
-  BeansStart: {fileID: 0}
-  BeansClosed: {fileID: 0}
-  BeansOpen: {fileID: 0}
+  BeansStart: {fileID: 21300000, guid: 2f0dee01ee248494d8eca24e78e533ed, type: 3}
+  BeansClosed: {fileID: 21300000, guid: 58ca89c06d7e2444a93d4c36502ed135, type: 3}
+  BeansOpen: {fileID: 21300000, guid: 2bd67e2d090b9432ca1a8bbc00fbb52c, type: 3}
   MicrowaveController: {fileID: 261506199}
 --- !u!1 &810869341
 GameObject:
