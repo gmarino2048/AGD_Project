@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlimeTrigger: Slime
-  SlimeStart: {fileID: 21300000, guid: 2f0dee01ee248494d8eca24e78e533ed, type: 3}
+  SlimeStart: {fileID: 21300000, guid: 28cb4614e7e614f8086f7b20df265e1e, type: 3}
   SlimeClosed: {fileID: 21300000, guid: 857386dfafdd64c7ea5ddd2d28ac2e81, type: 3}
   SlimeOpen: {fileID: 21300000, guid: d35b0931648e34fc8ae311ff8b7b5e3a, type: 3}
   MeatTrigger: Meat
