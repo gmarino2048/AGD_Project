@@ -54,8 +54,6 @@ public class DialogueManager : MonoBehaviour {
     private int _ResponsesScore = 0;
     private int _TotalPossibleResponseScore = 0;
 
-    private readonly Guid _NESSIE_ID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
-
     /// <summary>
     /// Starts and displays the dialogue for each sentence in the list of sentences
     /// </summary>
@@ -225,6 +223,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void Start()
     {
-        StartDialogue(_NESSIE_ID);
+        var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+        StartDialogue(gameNarrativeManager.CurrentStage.MonsterID);
     }
 }
