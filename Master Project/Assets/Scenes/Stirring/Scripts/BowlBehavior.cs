@@ -10,7 +10,6 @@ namespace Stirring
         public TimerBehavior Timer;
         public Animator BowlAnimator;
         public SpoonBehavior Spoon;
-        public SpriteRenderer Overlay;
 
         [Header("Bowl Settings")]
         public float Scaler = 2.25f;
@@ -34,13 +33,11 @@ namespace Stirring
             BowlAnimator.SetTrigger(IngredientSelector);
 
             TransitionDone = false;
-            Overlay.gameObject.SetActive(true);
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Timer.GameActive && Overlay.gameObject.activeSelf) Overlay.gameObject.SetActive(false);
 
             UpdateAnimator();
 
