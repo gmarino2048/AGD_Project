@@ -43,6 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Overlay
+    uniqueID: 1766293533
+    locked: 0
+  - name: Animation
+    uniqueID: 4160927305
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
