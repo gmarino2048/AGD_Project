@@ -9,10 +9,12 @@ namespace Shaking
         [Header("Gravel Assets")]
         public string GravelTrigger = "GravelTrigger";
         public Sprite GravelShaker;
+        public Sprite LakebedSprite;
 
         [Header("Souls Assets")]
         public string SoulsTrigger = "SoulsTrigger";
         public Sprite SoulsShaker;
+        public Sprite ChiliSprite;
 
         [Header("Scene Objects")]
         public SpriteRenderer ShakerSprite;
