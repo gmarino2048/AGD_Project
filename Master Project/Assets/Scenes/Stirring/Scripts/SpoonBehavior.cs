@@ -10,6 +10,9 @@ namespace Stirring
         [Header("Game Controls")]
         public TimerBehavior Timer;
 
+        public Sprite OverlaySprite;
+        public SpriteRenderer Overlay;
+
         [Header("Spoon Behavior Settings")]
         public float Radius;
         public BoxCollider2D SpoonCollider;
@@ -30,6 +33,9 @@ namespace Stirring
         {
             Center = gameObject.transform.position;
             Dragging = false;
+
+            Overlay.sprite = OverlaySprite;
+            Overlay.gameObject.SetActive(true);
         }
 
         void OnMouseDown()
@@ -56,7 +62,9 @@ namespace Stirring
 
         void OnMouseDrag()
         {
-            if (Dragging && Timer.GameActive)
+            if (Timer.GameActive && Overlay.gameObject.activeSelf) StartCoroutine(SmoothTransition());
+
+                if (Dragging && Timer.GameActive)
             {
                 // Get the new position
                 Vector3 mousePosition = Input.mousePosition;
@@ -84,5 +92,12 @@ namespace Stirring
         }
 
         void OnMouseUp() { Dragging = false; }
+
+        IEnumerator SmoothTransition () 
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+            Overlay.gameObject.SetActive(false);
+        }
     }
 }
