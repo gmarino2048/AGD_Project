@@ -65,7 +65,7 @@ namespace Microwave
             catch (Exception ex) 
             {
                 Debug.LogError(ex.Message + " -- Defaulting to Slime");
-                SetParameters(SlimeTrigger, SlimeStart, SlimeClosed, SlimeOpen, SlimeBubble);
+                SetParameters(SlimeTrigger, SlimeStart, SlimeClosed, SlimeOpen, SlimeBubble );
             }
         }
 
