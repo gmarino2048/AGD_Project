@@ -35,6 +35,7 @@ namespace Grill
         public BoxCollider2D MainCollider;
         public Camera MainCamera;
         public SFXController SFX;
+        public AudioSource PlatingSound;
         
         public float InternalTimer { get; private set; }
         public float Score { get; private set; }
@@ -83,7 +84,7 @@ namespace Grill
                 if (InternalTimer > CookTime + BurnTime && !FlameRunning)
                 {
                     FlameController.SetTrigger(FlameStart);
-
+                    SFX.PlayFire();
                     FlameRunning = true;
                 }
             }
@@ -117,10 +118,10 @@ namespace Grill
         void RemovePatty () {
             Score = CalculateScore();
             ScoreKeeper.AddScore(this);
-            // TODO: Implement Flip animation
             ActiveList.Active.Remove(this);
+
+            PlatingSound.PlayOneShot(SFX.Spatula, SFX.SFXScaler);
             DestroyImmediate(gameObject);
-            SFX.PlaySpatula();
         }
 
         float CalculateScore () {

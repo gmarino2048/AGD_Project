@@ -14,6 +14,7 @@ namespace Grill
         [Header("Sound Effect Clips")]
         public AudioClip Sizzle;
         public AudioClip Spatula;
+        public AudioClip Fire;
 
 
         public void PlaySizzle()
@@ -21,9 +22,11 @@ namespace Grill
             SFXPlayer.PlayOneShot(Sizzle, SFXScaler);
         }
 
-        public void PlaySpatula()
+        public void PlayFire()
         {
-            SFXPlayer.PlayOneShot(Spatula, SFXScaler);
+            SFXPlayer.clip = Fire;
+            SFXPlayer.loop = true;
+            SFXPlayer.Play();
         }
     }
 }
