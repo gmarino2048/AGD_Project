@@ -8,6 +8,7 @@ namespace Microwave
     {
 
         [Header("Audio Controls")]
+        public AudioSource MicrowaveBackground;
         public AudioSource SFXPlayer;
         public float SFXScaler;
 
@@ -20,11 +21,13 @@ namespace Microwave
 
         public void PlayStart () 
         {
-            SFXPlayer.PlayOneShot(MicrowaveStart, SFXScaler);
+            MicrowaveBackground.PlayOneShot(MicrowaveStart, SFXScaler);
         }
 
         public void PlayOpen () 
         {
+            MicrowaveBackground.Stop();
+            SFXPlayer.Stop();
             SFXPlayer.PlayOneShot(MicrowaveOpen, SFXScaler);
         }
 
@@ -38,6 +41,9 @@ namespace Microwave
 
         public void PlayBeep ()
         {
+            MicrowaveBackground.Stop();
+            SFXPlayer.Stop();
+
             SFXPlayer.clip = MicrowaveBeep;
             SFXPlayer.loop = true;
 
