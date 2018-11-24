@@ -1153,6 +1153,7 @@ MonoBehaviour:
   GameController: {fileID: 195419928}
   Scorekeeper: {fileID: 1949140214}
   PlatingSound: {fileID: 506497442}
+  Meat: {fileID: 8300000, guid: 482d3ab5b97b8441893e99c343b7cb76, type: 3}
   Sizzle: {fileID: 8300000, guid: 0e0848cc521e548cbbe405bd74eec646, type: 3}
   Spatula: {fileID: 8300000, guid: 44f593cf8e7a146f18ff93df511b609c, type: 3}
   Fire: {fileID: 8300000, guid: d6951dfd3dcee4180bc2dd6f789aece2, type: 3}

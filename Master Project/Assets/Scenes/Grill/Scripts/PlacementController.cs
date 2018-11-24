@@ -20,6 +20,7 @@ namespace Grill
 
         [Header("Audio Clips")]
         public AudioSource PlatingSound;
+        public AudioClip Meat;
         public AudioClip Sizzle;
         public AudioClip Spatula;
         public AudioClip Fire;
@@ -65,6 +66,7 @@ namespace Grill
                     SFX.SFXPlayer = SFXPlayer;
                     SFX.SFXScaler = SFXScaler;
 
+                    SFX.Meat = Meat;
                     SFX.Sizzle = Sizzle;
                     SFX.Spatula = Spatula;
                     SFX.Fire = Fire;
@@ -77,6 +79,7 @@ namespace Grill
 
                     instantiated.PlatingSound = PlatingSound;
                     instantiated.SFX = SFX;
+                    instantiated.SFX.PlayMeat();
                     instantiated.SFX.PlaySizzle();
 
                     instantiated.gameObject.transform.position = worldPosition;

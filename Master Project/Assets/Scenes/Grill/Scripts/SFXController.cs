@@ -12,10 +12,16 @@ namespace Grill
         public float SFXScaler;
 
         [Header("Sound Effect Clips")]
+        public AudioClip Meat;
         public AudioClip Sizzle;
         public AudioClip Spatula;
         public AudioClip Fire;
 
+
+        public void PlayMeat ()
+        {
+            SFXPlayer.PlayOneShot(Meat, SFXScaler);
+        }
 
         public void PlaySizzle()
         {
