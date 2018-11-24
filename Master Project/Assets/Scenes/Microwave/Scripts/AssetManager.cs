@@ -13,21 +13,25 @@ namespace Microwave
         public Sprite SlimeStart;
         public Sprite SlimeClosed;
         public Sprite SlimeOpen;
+        public AudioClip SlimeBubble;
 
         [Header("Meat Assets")]
         public string MeatTrigger = "Meat";
         public Sprite MeatStart;
         public Sprite MeatClosed;
         public Sprite MeatOpen;
+        public AudioClip MeatBang;
 
         [Header("Beans Assets")]
         public string BeansTrigger = "Beans";
         public Sprite BeansStart;
         public Sprite BeansClosed;
         public Sprite BeansOpen;
+        public AudioClip BeansBang;
 
         [Header("Microwave Assets")]
         public MicrowaveController MicrowaveController;
+        public SFXController SFX;
 
 
         void Awake()
