@@ -11,6 +11,7 @@ namespace Stirring
         [Header("Game Controls")]
         public TimerBehavior Timer;
         public SpoonBehavior Spoon;
+        public float ScoreScaler = 300f;
 
         [Header("UI Elements")]
         public Text ScoreText;
@@ -41,7 +42,7 @@ namespace Stirring
 
         void CalculateScore ()
         {
-            Score = 1 / ((Spoon.Distance / 80) + 1);
+            Score = 1 / ((Spoon.Distance / ScoreScaler) + 1);
         }
 
         void SetScore ()
