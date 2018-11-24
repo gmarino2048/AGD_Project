@@ -25,6 +25,7 @@ namespace Microwave
         public TimerBehavior Timer;
         public Camera MainCamera;
         public BoxCollider2D MicrowaveButton;
+        public SFXController SFX;
 
         bool CriticalPlayed;
 
@@ -39,13 +40,20 @@ namespace Microwave
 
         public void Play ()
         {
+            SFX.PlayStart();
             Overlay.gameObject.SetActive(false);
             MicrowaveAnimator.SetTrigger(StartTrigger);
         }
 
         public void Finish ()
         {
-            Overlay.sprite = Timer.NotOpened ? ClosedImage : OpenImage;
+            if (Timer.NotOpened)
+            {
+                Overlay.sprite = ClosedImage;
+                SFX.PlayBeep();
+            }
+            else Overlay.sprite = OpenImage;
+
             Overlay.gameObject.SetActive(true);
         }
 
@@ -61,6 +69,7 @@ namespace Microwave
                 if (MicrowaveButton.bounds.Contains(worldPosition))
                 {
                     MicrowaveAnimator.SetTrigger(Opened);
+                    SFX.PlayOpen();
                     Timer.NotOpened = false;
                     Timer.Stop();
                     CriticalPlayed = true;
@@ -68,14 +77,10 @@ namespace Microwave
             }
             if (Timer.GameActive && Timer.TimeRemaining <= CriticalTime && !CriticalPlayed)
             {
+                SFX.PlayExtra();
                 MicrowaveAnimator.SetBool(Continue, true);
                 CriticalPlayed = true;
             }
-        }
-
-        public void StartAnimation () 
-        {
-
         }
     }
 }

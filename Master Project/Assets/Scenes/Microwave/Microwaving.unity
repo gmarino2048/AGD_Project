@@ -268,6 +268,7 @@ MonoBehaviour:
   Timer: {fileID: 1827442848}
   MainCamera: {fileID: 1633435044}
   MicrowaveButton: {fileID: 656430604}
+  SFX: {fileID: 1638819944}
 --- !u!1 &262515649
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,15 +651,19 @@ MonoBehaviour:
   SlimeStart: {fileID: 21300000, guid: 28cb4614e7e614f8086f7b20df265e1e, type: 3}
   SlimeClosed: {fileID: 21300000, guid: 857386dfafdd64c7ea5ddd2d28ac2e81, type: 3}
   SlimeOpen: {fileID: 21300000, guid: d35b0931648e34fc8ae311ff8b7b5e3a, type: 3}
+  SlimeBubble: {fileID: 8300000, guid: 2c687176f915b48d28dff56e30eb3aa9, type: 3}
   MeatTrigger: Meat
   MeatStart: {fileID: 21300000, guid: 0a47ed0c690784ef98336608a29b7801, type: 3}
   MeatClosed: {fileID: 21300000, guid: e289a6c7dbf654efb8fb6f88715128e5, type: 3}
   MeatOpen: {fileID: 21300000, guid: 1689ec1a7ecf34349b91e5ea9ee1fd68, type: 3}
+  MeatBang: {fileID: 8300000, guid: 0ecf714c8e10b4eae8930404a1d42168, type: 3}
   BeansTrigger: Beans
   BeansStart: {fileID: 21300000, guid: 2f0dee01ee248494d8eca24e78e533ed, type: 3}
   BeansClosed: {fileID: 21300000, guid: 58ca89c06d7e2444a93d4c36502ed135, type: 3}
   BeansOpen: {fileID: 21300000, guid: 2bd67e2d090b9432ca1a8bbc00fbb52c, type: 3}
+  BeansBang: {fileID: 8300000, guid: 0ecf714c8e10b4eae8930404a1d42168, type: 3}
   MicrowaveController: {fileID: 261506199}
+  SFX: {fileID: 1638819944}
 --- !u!1 &810869341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1017,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 261506196}
+  - {fileID: 1638819943}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1187,6 +1193,215 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1638819942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1638819943}
+  - component: {fileID: 1638819945}
+  - component: {fileID: 1638819946}
+  - component: {fileID: 1638819944}
+  m_Layer: 0
+  m_Name: SFXController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1638819943
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638819942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1505775719}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638819944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638819942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a190c80bd90ab4d64ae827ef4ab4c339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MicrowaveBackground: {fileID: 1638819945}
+  SFXPlayer: {fileID: 1638819946}
+  SFXScaler: 0.75
+  MicrowaveStart: {fileID: 8300000, guid: 09ff4071b99aa483599ab3352ea81b73, type: 3}
+  MicrowaveOpen: {fileID: 8300000, guid: 5543c87fc4a7a434eb173c74dcfa0aa1, type: 3}
+  MicrowaveBeep: {fileID: 8300000, guid: 8de19dd62874d4cb982cfd87c0065281, type: 3}
+  MicrowaveExtra: {fileID: 8300000, guid: 2c687176f915b48d28dff56e30eb3aa9, type: 3}
+--- !u!82 &1638819945
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638819942}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &1638819946
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638819942}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1766047239
 GameObject:
   m_ObjectHideFlags: 0
