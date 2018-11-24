@@ -1,21 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class IngredientText : MonoBehaviour {
+namespace Ingredients
+{
+	public class IngredientText : MonoBehaviour
+	{
+		private DishPreparationManager _DishPreparationManager;
+		private DragIngredient _IngredientInfo;
+		private Text _ToolTipText;
 
-	public GameObject textForIngredient;
+		// Use this for initialization
+		void Awake()
+		{
+			_DishPreparationManager = GameObject.FindObjectOfType<DishPreparationManager>();
+			_IngredientInfo = this.gameObject.GetComponent<DragIngredient>();
+			_ToolTipText = GameObject.FindGameObjectWithTag("ToolTip").GetComponent<Text>();
+		}
+		
+		// Update is called once per frame
+		void OnMouseEnter()
+		{
+			_ToolTipText.text = _DishPreparationManager.GetIngredientDisplayName(_IngredientInfo.ingredientType);
+			_ToolTipText.transform.position = Input.mousePosition;
+			_ToolTipText.enabled = true;
+		}
 
-	// Use this for initialization
-	void Start () {
-		textForIngredient.SetActive (false);
-	}
-	
-	// Update is called once per frame
-	void OnMouseEnter() {
-		textForIngredient.SetActive (true);
-	}
-	void OnMouseExit() {
-		textForIngredient.SetActive (false);
+		void OnMouseExit()
+		{
+			_ToolTipText.enabled = false;
+		}
 	}
 }

@@ -8,7 +8,7 @@ namespace Monsters
     {
         private const float _CONVERSATION_WEIGHT = 0.3f;
         private const float _DISH_WEIGHT = 0.7f;
-        private const float _WRONG_INGREDIENT_CHOSEN_AFFECT_CONSTANT = 0.001f;
+        private const float _WRONG_INGREDIENT_CHOSEN_AFFECT_CONSTANT = 0.01f;
 
         private int _WrongIngredientsCount = 0;
 

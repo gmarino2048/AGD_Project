@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61806879155715156}
   - component: {fileID: 114149347254199528}
   m_Layer: 0
-  m_Name: IngredientChoice
+  m_Name: IngredientChoiceLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

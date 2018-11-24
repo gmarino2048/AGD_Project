@@ -9,6 +9,8 @@ TagManager:
   - ItemThree
   - ItemFour
   - Fake
+  - RedX
+  - ToolTip
   layers:
   - Default
   - TransparentFX
