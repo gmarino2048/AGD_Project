@@ -17,6 +17,7 @@ namespace Grill
         [Header("Game Controller")]
         public TimerBehavior GameController;
         public ScoreKeeperBehavior Scorekeeper;
+        public SFXController SFX;
 
         public List<CookObjectController> Active { get; private set; }
 
@@ -51,12 +52,15 @@ namespace Grill
                     worldPosition.z = ZIndex;
 
                     CookObjectController instantiated = Instantiate(CookObject);
+                    SFX.PlaySizzle();
 
                     instantiated.GameController = GameController;
                     instantiated.ScoreKeeper = Scorekeeper;
 
                     instantiated.ActiveList = this;
                     instantiated.MainCamera = Camera.main;
+
+                    instantiated.SFX = SFX;
 
                     instantiated.gameObject.transform.position = worldPosition;
 

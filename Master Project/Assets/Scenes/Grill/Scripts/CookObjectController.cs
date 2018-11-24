@@ -34,6 +34,7 @@ namespace Grill
         public PlacementController ActiveList;
         public BoxCollider2D MainCollider;
         public Camera MainCamera;
+        public SFXController SFX;
         
         public float InternalTimer { get; private set; }
         public float Score { get; private set; }
@@ -119,6 +120,7 @@ namespace Grill
             // TODO: Implement Flip animation
             ActiveList.Active.Remove(this);
             DestroyImmediate(gameObject);
+            SFX.PlaySpatula();
         }
 
         float CalculateScore () {

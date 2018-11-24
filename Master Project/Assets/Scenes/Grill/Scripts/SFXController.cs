@@ -23,7 +23,7 @@ namespace Grill
 
         public void PlaySpatula()
         {
-
+            SFXPlayer.PlayOneShot(Spatula, SFXScaler);
         }
     }
 }
