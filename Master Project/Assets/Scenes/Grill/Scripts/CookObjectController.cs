@@ -127,14 +127,14 @@ namespace Grill
         float CalculateScore () {
             if (InternalTimer <= CookTime)
             {
-                return 1f - (InternalTimer / CookTime);
+                return InternalTimer / CookTime;
             }
             if (InternalTimer > CookTime && InternalTimer <= CookTime + BurnTime)
             {
                 float scaledTime = InternalTimer - CookTime;
-                return scaledTime / BurnTime;
+                return 1 - (scaledTime / BurnTime);
             }
-            return 1f;
+            return 0f;
         }
     }
 }

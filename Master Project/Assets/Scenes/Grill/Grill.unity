@@ -1676,7 +1676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 195419928}
-  CookTarget: 10
+  CookTarget: 20
   PattiesCooked: {fileID: 431700296}
   Message: 'Cooked: '
   Manager: {fileID: 678514225}
