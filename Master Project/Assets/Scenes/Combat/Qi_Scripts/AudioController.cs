@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Combat;
+using Monsters;
 
 public class AudioController : MonoBehaviour {
 
     private ManagerBar Mb;
     private HealthBar Hb;
+    private MonsterNames Names = new MonsterNames();
     public AudioSource Source;
     public AudioSource LoopSource;
     public AudioSource LoopSource1;
-    public AudioSource NessieBGM;
+    public AudioSource Nessie_BGM;
+    public AudioSource Cerberus_BGM;
+    public AudioSource REDACTED_BGM;
     public AudioClip ManagerMeterCritical;
     //public AudioClip ManagerMeterCriticalLowerPitch;
     public AudioClip ManagerMeterGoesDown;
@@ -23,6 +27,8 @@ public class AudioController : MonoBehaviour {
     public AudioClip PlayerHPGoesUp;
     public AudioClip PlayerHPHitsZero;
     public AudioClip PlayerHPLow;
+    private CombatInitiator _CombatInitiator;
+    public MonsterData CurrentMonster;
     // Use this for initialization
     void Awake () {
         //Source = GetComponent<AudioSource>();
@@ -31,19 +37,90 @@ public class AudioController : MonoBehaviour {
         Hb = GameObject.Find("HealthBar").GetComponent<HealthBar>();
     }
 	
+    void Start()
+    {
+        _CombatInitiator = GameObject.FindObjectOfType<CombatInitiator>();
+        if (_CombatInitiator != null)
+        {
+            var monsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+            CurrentMonster = monsterFactory.LoadMonster(_CombatInitiator.MonsterID);
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
+            {
+                Nessie_BGM.Play();
+                Cerberus_BGM.Stop();
+                REDACTED_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
+            {
+                Nessie_BGM.Stop();
+                Cerberus_BGM.Play();
+                REDACTED_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
+            {
+                Nessie_BGM.Stop();
+                Cerberus_BGM.Stop();
+                REDACTED_BGM.Play();
+            }
+        }
+        else
+        {
+            CurrentMonster = new MonsterData("Nessie", 0, null, null);
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
+            {
+                Nessie_BGM.Play();
+                Cerberus_BGM.Stop();
+                REDACTED_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
+            {
+                Nessie_BGM.Stop();
+                Cerberus_BGM.Play();
+                REDACTED_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
+            {
+                Nessie_BGM.Stop();
+                Cerberus_BGM.Stop();
+                REDACTED_BGM.Play();
+            }
+        }
+    }
 	// Update is called once per frame
 	void Update () {
 		if(Mb.GetCurrentBarValue() == 100 || Mb.GetCurrentBarValue() == 0)
         {
             LoopSource.Stop();
             LoopSource1.Stop();
-            NessieBGM.Stop();
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
+            {
+                Nessie_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
+            {
+                Cerberus_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
+            {
+                REDACTED_BGM.Stop();
+            }
         }
         if (Hb.GetCurrentHealthValue() == 0)
         {
             LoopSource.Stop();
             LoopSource1.Stop();
-            NessieBGM.Stop();
+            if (CurrentMonster.ToString() == Names._NESSIE_NAME)
+            {
+                Nessie_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._CERBERUS_NAME)
+            {
+                Cerberus_BGM.Stop();
+            }
+            else if (CurrentMonster.ToString() == Names._REDACTED_NAME)
+            {
+                REDACTED_BGM.Stop();
+            }
         }
     }
 

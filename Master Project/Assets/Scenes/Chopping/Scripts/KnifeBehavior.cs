@@ -11,6 +11,7 @@ namespace Chopping
         [Header("Screen Information")]
         [SerializeField]
         public Camera SceneCamera; // The main camera within the scene
+        public SFXController SFX;
         public float ZIndex; // The action item's Z position in the scene
 
         public ScorekeeperBehavior Scorekeeper; // The scorekeeper object for the scene
@@ -104,7 +105,11 @@ namespace Chopping
         {
             Paused = true;
             KnifeAnimator.SetTrigger(PerformChop);
-            yield return new WaitForSeconds(seconds);
+
+            yield return new WaitForSeconds(seconds/3f);
+            SFX.PlayCut();
+            yield return new WaitForSeconds(seconds*2f/3f);
+
             Paused = false;
         }
 

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Shaking
 {
@@ -15,6 +17,10 @@ namespace Shaking
         public CanvasGroup MainInfo;
         public CanvasGroup FinalScore;
 
+        [Header("Buttons")]
+        public Button GameStart;
+        public Button NextButton;
+
         // Use this for initialization
         void Start()
         {
@@ -23,6 +29,22 @@ namespace Shaking
             Tutorial.gameObject.SetActive(true);
             MainInfo.gameObject.SetActive(false);
             FinalScore.gameObject.SetActive(false);
+
+            GameStart.onClick.AddListener(() => StartCoroutine(StartGame()));
+
+            NextButton.onClick.AddListener(() =>
+            {
+                try
+                {
+                    DishPreparationManager dishPreparation = FindObjectOfType<DishPreparationManager>();
+                    dishPreparation.GoToNextScene();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Shaking Not Running in Game");
+                }
+            });
         }
 
         void Update()
@@ -60,14 +82,15 @@ namespace Shaking
             }
         }
 
-        public void StartGame () {
-            StartCoroutine(FadeTutorial());
-        }
-
-        IEnumerator FadeTutorial () {
+        IEnumerator StartGame () {
             yield return FadeCanvas(Tutorial, 1, 1, 0);
             Tutorial.gameObject.SetActive(false);
+
+            MainInfo.alpha = 0;
             MainInfo.gameObject.SetActive(true);
+            yield return FadeCanvas(MainInfo, 0, 1, 1);
+            MainInfo.alpha = 1;
+            
             GameController.StartGame();
         }
 

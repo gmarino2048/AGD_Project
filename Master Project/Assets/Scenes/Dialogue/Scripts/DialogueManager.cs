@@ -54,8 +54,6 @@ public class DialogueManager : MonoBehaviour {
     private int _ResponsesScore = 0;
     private int _TotalPossibleResponseScore = 0;
 
-    private readonly Guid _NESSIE_ID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
-
     /// <summary>
     /// Starts and displays the dialogue for each sentence in the list of sentences
     /// </summary>
@@ -134,6 +132,7 @@ public class DialogueManager : MonoBehaviour {
     {
         _MonsterData.UpdateAffectionFromConversationScore(GetConversationScore());
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+        GameObject.FindObjectOfType<PatronAnimationController>().End();
     }
 
     /// <summary>
@@ -195,6 +194,20 @@ public class DialogueManager : MonoBehaviour {
             if (response.Value > maxResponseScore)
                 maxResponseScore = response.Value;
 
+            if(response.Value == 0 /*is positive*/){
+                GameObject.FindObjectOfType<PatronAnimationController>().Happy();
+            }
+
+            if (response.Value == 0 /*is neutral*/)
+            {
+                GameObject.FindObjectOfType<PatronAnimationController>().Neutral();
+            }
+
+            if (response.Value == 0 /*is bad*/)
+            {
+                GameObject.FindObjectOfType<PatronAnimationController>().Sad();
+            }
+
             responseButton.GetComponentInChildren<Text>().text = response.Body;
             responseButton.onClick.AddListener(() => GoToNextPrompt(response));
         }
@@ -225,6 +238,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void Start()
     {
-        StartDialogue(_NESSIE_ID);
+        var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+        StartDialogue(gameNarrativeManager.CurrentStage.MonsterID);
     }
 }

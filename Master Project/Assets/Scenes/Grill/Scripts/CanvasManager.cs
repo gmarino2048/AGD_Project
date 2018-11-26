@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,10 @@ namespace Grill
         public CanvasGroup Main;
         public CanvasGroup ScoreDisplay;
 
+        [Header("Buttons")]
+        public Button StartGame;
+        public Button NextScene;
+
         [Header("Score Text")]
         public Text ScoreValue;
 
@@ -25,36 +30,51 @@ namespace Grill
             Tutorial.alpha = 1;
             Tutorial.gameObject.SetActive(true);
 
+            Main.alpha = 0;
+            Main.gameObject.SetActive(false);
+
             ScoreDisplay.alpha = 0;
             ScoreDisplay.gameObject.SetActive(false);
 
-            Main.gameObject.SetActive(false);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (Input.GetMouseButtonDown(0))
+            StartGame.onClick.AddListener(() => StartCoroutine(StartMinigame()));
+            NextScene.onClick.AddListener(() =>
             {
-                if (!Timer.GameActive && !Timer.GameOver)
-                    StartCoroutine(StartMinigame());
-
-            }
+                try
+                {
+                    DishPreparationManager sceneChanger = FindObjectOfType<DishPreparationManager>();
+                    sceneChanger.GoToNextScene();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Grill Scene not Playing in Game");
+                }
+            });
         }
 
         IEnumerator StartMinigame () {
             yield return FadeCanvas(Tutorial, 1, 1, 0);
-            Main.gameObject.SetActive(true);
             Tutorial.gameObject.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+
+            yield return new WaitForSeconds(1);
+
+            Main.gameObject.SetActive(true);
+            yield return FadeCanvas(Main, 0, 1, 1);
+            Main.alpha = 1;
+
             Timer.Activate();
         }
 
         public IEnumerator ShowScore (float scoreValue)
         {
+            yield return FadeCanvas(Main, 1, 0, 0);
+            Main.gameObject.SetActive(false);
+
+            yield return new WaitForSeconds(1);
+
             int score = Mathf.RoundToInt(1000f * (1f - scoreValue));
             ScoreValue.text = score.ToString() + "/1000";
-            Main.gameObject.SetActive(false);
+
             ScoreDisplay.gameObject.SetActive(true);
             yield return FadeCanvas(ScoreDisplay, 0, 1, 1);
         }

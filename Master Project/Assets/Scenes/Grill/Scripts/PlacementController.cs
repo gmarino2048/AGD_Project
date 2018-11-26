@@ -18,6 +18,14 @@ namespace Grill
         public TimerBehavior GameController;
         public ScoreKeeperBehavior Scorekeeper;
 
+        [Header("Audio Clips")]
+        public AudioSource PlatingSound;
+        public AudioClip Meat;
+        public AudioClip Sizzle;
+        public AudioClip Spatula;
+        public AudioClip Fire;
+        public float SFXScaler;
+
         public List<CookObjectController> Active { get; private set; }
 
         Camera MainCamera;
@@ -52,11 +60,27 @@ namespace Grill
 
                     CookObjectController instantiated = Instantiate(CookObject);
 
+                    AudioSource SFXPlayer = instantiated.gameObject.AddComponent<AudioSource>();
+                    SFXController SFX = instantiated.gameObject.AddComponent<SFXController>();
+
+                    SFX.SFXPlayer = SFXPlayer;
+                    SFX.SFXScaler = SFXScaler;
+
+                    SFX.Meat = Meat;
+                    SFX.Sizzle = Sizzle;
+                    SFX.Spatula = Spatula;
+                    SFX.Fire = Fire;
+
                     instantiated.GameController = GameController;
                     instantiated.ScoreKeeper = Scorekeeper;
 
                     instantiated.ActiveList = this;
                     instantiated.MainCamera = Camera.main;
+
+                    instantiated.PlatingSound = PlatingSound;
+                    instantiated.SFX = SFX;
+                    instantiated.SFX.PlayMeat();
+                    instantiated.SFX.PlaySizzle();
 
                     instantiated.gameObject.transform.position = worldPosition;
 

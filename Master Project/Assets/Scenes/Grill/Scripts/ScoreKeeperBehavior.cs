@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,14 +52,31 @@ namespace Grill
         public void EndGame()
         {
             Score = CalculateScore();
+
+            try
+            {
+                DishPreparationManager preparationManager = FindObjectOfType<DishPreparationManager>();
+                GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
+                DishScoreManager scoreManager = FindObjectOfType<DishScoreManager>();
+
+                Guid monsterID = narrativeManager.CurrentStage.MonsterID;
+                IngredientType currentIngredient = preparationManager.currentIngredient;
+                scoreManager.AddIngredientToDish(monsterID, currentIngredient, Score);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message);
+                Debug.Log("Grill Scene not Running in Game");
+            }
+
             StartCoroutine(Manager.ShowScore(Score));
         }
 
         float CalculateScore ()
         {
-            float scaler = Cooked / CookTarget;
+            float scaler = ((float)Cooked) / ((float)CookTarget);
 
-            return scaler > 1f ? AverageScore : AverageScore * scaler;
+            return scaler >= 1f ? (1 - AverageScore) : (1 - (AverageScore * scaler));
         }
 
         public void AddScore (CookObjectController cookObject)

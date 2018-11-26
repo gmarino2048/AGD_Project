@@ -23,7 +23,16 @@ public class DishPreparationManager : MonoBehaviour
     private readonly Dictionary<IngredientType, string> _INGREDIENT_SCENES = new Dictionary<IngredientType, string>() {
         {IngredientType.IceCream, _STIRRING_SCENE_NAME},
         {IngredientType.AlgaeSlime, _MICROWAVE_SCENE_NAME},
-        {IngredientType.AquariumGravel, _SHAKING_SCENE_NAME}
+        {IngredientType.AquariumGravel, _SHAKING_SCENE_NAME},
+        {IngredientType.Eggs, _STIRRING_SCENE_NAME},
+        {IngredientType.Steak, _GRILLING_SCENE_NAME},
+        {IngredientType.Bones, _CHOPPING_SCENE_NAME},
+        {IngredientType.CannedMeat, _MICROWAVE_SCENE_NAME},
+        {IngredientType.Beans, _MICROWAVE_SCENE_NAME},
+        {IngredientType.PeculiarPeppers, _CHOPPING_SCENE_NAME},
+        {IngredientType.CrushedSouls, _SHAKING_SCENE_NAME},
+        {IngredientType.VoidGoo, _STIRRING_SCENE_NAME},
+        {IngredientType.GroundBeef, _GRILLING_SCENE_NAME}
     };
 
     private CombatInitiator _CombatInitiator;
@@ -67,6 +76,8 @@ public class DishPreparationManager : MonoBehaviour
         {
             throw new Exception("MonsterFactory does not exist on object");
         }
+        
+        _IngredientsQueue = null;
     }
 
     /// <summary>
@@ -95,8 +106,15 @@ public class DishPreparationManager : MonoBehaviour
             throw new Exception("No dish in progress.");
         }
 
-        if (!_IngredientsQueue.Any()) // The dish is completed
+        if (_IngredientsQueue.Any()) // The dish is not completed
         {
+            currentIngredient = _IngredientsQueue.Dequeue();
+            SceneManager.LoadScene(_INGREDIENT_SCENES[currentIngredient]);
+        }
+        else
+        {
+            _IngredientsQueue = null;
+            
             var dishScore = _DishScoreManager.ScoreDish(_MonsterID);
             var monster = _MonsterFactory.LoadMonster(_MonsterID);
             
@@ -124,10 +142,6 @@ public class DishPreparationManager : MonoBehaviour
                     SceneManager.LoadScene(_NEXT_STAGE_SCENE_NAME, LoadSceneMode.Single);
                 }
             }
-            return;
         }
-        
-        currentIngredient = _IngredientsQueue.Dequeue();
-        SceneManager.LoadScene(_INGREDIENT_SCENES[currentIngredient]);
     }
 }

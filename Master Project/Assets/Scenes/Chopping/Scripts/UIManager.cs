@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,8 @@ namespace Chopping
         public TimerBehavior Timer;
 
         [Header("Start Button")]
-        public Button NextButton;
+        public Button GameStart;
+        public Button NextScene;
 
         // Use this for initialization
         void Start()
@@ -29,13 +31,20 @@ namespace Chopping
             MainDisplay.gameObject.SetActive(false);
             FinalScore.gameObject.SetActive(false);
 
-            NextButton.onClick.AddListener(() => StartCoroutine(StartGame()));
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            GameStart.onClick.AddListener(() => StartCoroutine(StartGame()));
+            NextScene.onClick.AddListener(() =>
+            {
+                try
+                {
+                    DishPreparationManager sceneChanger = FindObjectOfType<DishPreparationManager>();
+                    sceneChanger.GoToNextScene();
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                    Debug.Log("Chopping Scene not Playing in Game");
+                }
+            });
         }
 
         IEnumerator StartGame()

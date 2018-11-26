@@ -11,7 +11,7 @@ namespace Combat
         public ManagerBar bar;
         private void Awake()
         {
-            ma = GameObject.Find("Nessie").GetComponent<MonsterAction>();
+            ma = GameObject.Find("Monster").GetComponent<MonsterAction>();
         }
         public void OfferDrink()
         {

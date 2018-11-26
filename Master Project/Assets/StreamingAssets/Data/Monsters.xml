@@ -18,10 +18,10 @@
     </monster>
 
     <monster id="{AFF2D1F2-DDA4-4A57-84F8-A240B4A0476D}" name="Cerberus" fightThreshold="0.5">
-        <ingredient type="AlgaeSlime"/>
-        <ingredient type="IceCream"/>
-        <ingredient type="AquariumGravel"/>
         <ingredient type="Eggs"/>
+        <ingredient type="Bones"/>
+        <ingredient type="CannedMeat"/>
+        <ingredient type="Steak"/>
 
         <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
         <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
@@ -32,11 +32,11 @@
     </monster>
 
     <monster id="{40F4380C-7A27-42D6-8F69-E3D60A83CAB1}" name="[REDACTED]" fightThreshold="0.65">
-        <ingredient type="AlgaeSlime"/>
-        <ingredient type="IceCream"/>
-        <ingredient type="AquariumGravel"/>
-        <ingredient type="CrushedSouls"/>
+        <ingredient type="PeculiarPeppers"/>
+        <ingredient type="Beans"/>
+        <ingredient type="GroundBeef"/>
         <ingredient type="VoidGoo"/>
+        <ingredient type="CrushedSouls"/>
 
         <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
         <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
