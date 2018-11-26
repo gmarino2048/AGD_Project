@@ -132,6 +132,7 @@ public class DialogueManager : MonoBehaviour {
     {
         _MonsterData.UpdateAffectionFromConversationScore(GetConversationScore());
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+        GameObject.FindObjectOfType<PatronAnimationController>().End();
     }
 
     /// <summary>
@@ -192,6 +193,20 @@ public class DialogueManager : MonoBehaviour {
 
             if (response.Value > maxResponseScore)
                 maxResponseScore = response.Value;
+
+            if(response.Value == 0 /*is positive*/){
+                GameObject.FindObjectOfType<PatronAnimationController>().Happy();
+            }
+
+            if (response.Value == 0 /*is neutral*/)
+            {
+                GameObject.FindObjectOfType<PatronAnimationController>().Neutral();
+            }
+
+            if (response.Value == 0 /*is bad*/)
+            {
+                GameObject.FindObjectOfType<PatronAnimationController>().Sad();
+            }
 
             responseButton.GetComponentInChildren<Text>().text = response.Body;
             responseButton.onClick.AddListener(() => GoToNextPrompt(response));

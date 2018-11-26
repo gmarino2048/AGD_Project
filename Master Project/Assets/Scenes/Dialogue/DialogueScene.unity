@@ -445,6 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7464a302498a4d95a0cdbb9e1f6e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterType: 
+  patronAnimator: {fileID: 179843696}
 --- !u!95 &179843696
 Animator:
   serializedVersion: 3
