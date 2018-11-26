@@ -21,8 +21,12 @@ namespace FinalChoice
 
 		private MonsterFactory _MonsterFactory;
 
-		// Use this for initialization
-		void Start() {
+        public Sprite Nessie;
+        public Sprite Cerberus;
+        public Sprite Redacted;
+
+        // Use this for initialization
+        void Start() {
 			_MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
 
 			CreateChoiceButtons();
@@ -39,7 +43,19 @@ namespace FinalChoice
 
 				button.GetComponentInChildren<Text>().text = monsterData.Name;
 				button.onClick.AddListener(() => ChooseMonster(monsterID));
-			}
+
+                if(monsterData.ToString()== "Nessie"){
+                    button.GetComponent<Image>().sprite = Nessie;
+                }
+                if (monsterData.ToString() == "Cerberus")
+                {
+                    button.GetComponent<Image>().sprite = Cerberus;
+                }
+                if (monsterData.ToString() == "Redacted")
+                {
+                    button.GetComponent<Image>().sprite = Redacted;
+                }
+            }
 		}
 
 		private void ChooseMonster(Guid monsterID)
