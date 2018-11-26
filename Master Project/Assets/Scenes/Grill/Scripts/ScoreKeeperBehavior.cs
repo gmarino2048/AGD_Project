@@ -74,9 +74,9 @@ namespace Grill
 
         float CalculateScore ()
         {
-            float scaler = Cooked / CookTarget;
+            float scaler = ((float)Cooked) / ((float)CookTarget);
 
-            return scaler > 1f ? AverageScore : AverageScore * scaler;
+            return scaler >= 1f ? (1 - AverageScore) : (1 - (AverageScore * scaler));
         }
 
         public void AddScore (CookObjectController cookObject)

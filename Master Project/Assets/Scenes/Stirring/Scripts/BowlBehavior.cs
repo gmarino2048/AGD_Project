@@ -10,7 +10,6 @@ namespace Stirring
         public TimerBehavior Timer;
         public Animator BowlAnimator;
         public SpoonBehavior Spoon;
-        public SpriteRenderer Overlay;
 
         [Header("Bowl Settings")]
         public float Scaler = 2.25f;
@@ -19,6 +18,11 @@ namespace Stirring
         [Header("Animator Parameters")]
         public string IngredientSelector;
         public string TransitionTrigger = "Transition";
+
+        [Header("SFX Player")]
+        public SFXManager SFX;
+
+        [Header("Bowl Settings")]
 
         public float TransitionTime = 15f;
         bool TransitionDone;
@@ -34,21 +38,39 @@ namespace Stirring
             BowlAnimator.SetTrigger(IngredientSelector);
 
             TransitionDone = false;
-            Overlay.gameObject.SetActive(true);
+            Playing = false;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Timer.GameActive && Overlay.gameObject.activeSelf) Overlay.gameObject.SetActive(false);
 
             UpdateAnimator();
+
+            UpdateSFX();
 
             if (Timer.TimeRemaining < TransitionTime && ! TransitionDone)
             {
                 BowlAnimator.SetTrigger(TransitionTrigger);
                 TransitionDone = true;
             }
+        }
+
+        bool Playing;
+        void UpdateSFX () 
+        {
+            if (Mathf.Abs(Speed) >= 0.2f && !Playing)
+            {
+                SFX.PlayClip();
+                Playing = true;
+            }
+            else if (Mathf.Abs(Speed) <= 0.1f && Playing) 
+            {
+                SFX.StopClip();
+                Playing = false;
+            }
+
+            SFX.SFXPlayer.volume = Mathf.Abs(Speed) * SFX.SFXScaler;
         }
 
         void UpdateAnimator ()
