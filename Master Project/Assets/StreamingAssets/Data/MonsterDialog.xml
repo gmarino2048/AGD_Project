@@ -249,7 +249,7 @@
             HUMAN, HOW DID YOU KNOW THAT CERBERUS LOVES BACON? YOU MUST BE SUPERNATURAL.
         </prompt>
         <prompt id="{8CE33184-2DF8-4B53-84DB-55E17483EF03}" nextPrompt="{8CE33184-2DF8-4B53-84DB-55E17483EF03}" animState="Bad">
-            YOU SAID “DOG” AND “BAD IN THE SAME SENTENCE. YOU THINK CERBERUS IS A BAD DOG, DON’T YOU?
+            YOU SAID “DOG” AND “BAD" IN THE SAME SENTENCE. YOU THINK CERBERUS IS A BAD DOG, DON’T YOU?
         </prompt>
         <prompt id="{99D779B4-7669-4894-B78D-1FD1774597FD}" nextPrompt="{99D779B4-7669-4894-B78D-1FD1774597FD}_2">
             CERBERUS HAS DECIDED THAT CERBERUS WOULD ALSO LIKE MEAT IN CERBERUS’ FOOD.
@@ -286,7 +286,7 @@
             *cough* Hi, welcome to the *cough* the Qave by Qennies™, what can I get for you today?
         </prompt>
         <prompt id="{3D2DB224-2604-4021-B7C4-716D86D1920D}" responseSet="{E4F29418-A5C6-441A-8CCD-D2D025935CD1}">
-            D O  Y O U  H A V E  A N Y  H U M A N  C A R C A S S E S  T O D A Y ?
+            D O  Y O U  H A V E  A N Y  H U M A N  C A R C A S S E S  T O D A Y ?
         </prompt>
 
         <responseSet id="{E4F29418-A5C6-441A-8CCD-D2D025935CD1}">
@@ -304,8 +304,11 @@
         <prompt id="{D3369C48-DB55-469C-A74B-63A9CAA038F6}" nextPrompt="{8C8E9C0C-DC7E-4A18-ADA2-1ED4DF8FFAAB}" animState="Good">
             Oh ha ha sorry! I forget that humans need to breathe air.
         </prompt>
-        <prompt id="{8B21EFE3-5C09-44A2-BF4B-8321E1DFCFD7}" nextPrompt="{8C8E9C0C-DC7E-4A18-ADA2-1ED4DF8FFAAB}" animState="Bad">
-            I ' L L  M A K E  Y O U  A  C A R C A S S  I F  Y O U  D O N ' T  B E  C A R E F U L  W I T H  Y O U R  W O R D S  Y O U  P L E B I A N.
+        <prompt id="{8B21EFE3-5C09-44A2-BF4B-8321E1DFCFD7}" nextPrompt="{8B21EFE3-5C09-44A2-BF4B-8321E1DFCFD7}_2" animState="Bad">
+            I ' L L  M A K E  Y O U  A  C A R C A S S
+        </prompt>
+        <prompt id="{8B21EFE3-5C09-44A2-BF4B-8321E1DFCFD7}_2" nextPrompt="{8C8E9C0C-DC7E-4A18-ADA2-1ED4DF8FFAAB}" animState="Bad">
+            I F  Y O U  D O N ' T  B E  C A R E F U L  W I T H  Y O U R  W O R D S  Y O U  P L E B I A N.
         </prompt>
         <prompt id="{8C8E9C0C-DC7E-4A18-ADA2-1ED4DF8FFAAB}" responseSet="{E1A907CD-2EB2-4BE9-A26F-4AA40BF8FEDD}">
             Well, if you don't have any carcasses, then I'll take the Spicy Soul Chilli. You can do that, right?
@@ -336,12 +339,12 @@
             Though there are limits. Odd vegetables are a yes, but beans...
         </prompt>
         <prompt id="{F65CA2C6-859C-4B03-94F2-399DFD0FEF71}_3" responseSet="{48114EC6-7EF9-456C-A7B7-D91E7F477016}" animState="Bad">
-            S H O U L D  B E  L E F T  A L O N E.
+            S H O U L D  B E  L E F T  A L O N E.
         </prompt>
 
         <responseSet id="{48114EC6-7EF9-456C-A7B7-D91E7F477016}">
             <response value="1" nextPrompt="{9AB46858-6356-45EC-AC1F-603CA6F50B68}">
-                Cool, cool. So I know you asked for human earlier,b ut since we don't have that, what would you like instead?
+                Cool, cool. So I know you asked for human earlier, but since we don't have that, what would you like instead?
             </response>
             <response value="0" nextPrompt="{DF0FAA0A-B8E1-4A0B-9CF8-452904A10F98}">
                 Alrighty! What's your protein of choice?
@@ -355,7 +358,7 @@
             To be honest, it was in jest. Human is technically off of the market these days...
         </prompt>
         <prompt id="{119E78CB-D5AF-45EF-94C8-4A8A92B8DF99}" nextPrompt="{DF0FAA0A-B8E1-4A0B-9CF8-452904A10F98}" animState="Bad">
-            I  H A V E  N O  H E A R T
+            I  H A V E  N O  H E A R T
         </prompt>
         <prompt id="{DF0FAA0A-B8E1-4A0B-9CF8-452904A10F98}" responseSet="{4E9211AC-DFBB-4AFD-B24A-8519C02CACF5}">
             Cows are good, and sheep, and dog. But only separate. I don't mix my meat.
@@ -383,7 +386,7 @@
             You know tomatoes don't go in soul chilli, right? It's got a more gooey consistency,
         </prompt>
         <prompt id="{B07BEAF7-FA30-41F3-8734-2943CC73CA99}_2" responseSet="{40D8231C-2D41-438A-AFF6-E260573E11E4}">
-            and it S C R E A M S from an aesthetic standpoint.
+            and it S C R E A M S from an aesthetic standpoint.
         </prompt>
 
         <responseSet id="{40D8231C-2D41-438A-AFF6-E260573E11E4}">
@@ -402,7 +405,7 @@
             Yes it is, thank you for asking.
         </prompt>
         <prompt id="{1F879B98-14B7-438F-B6A0-2CB988DFA552}" nextPrompt="{D854072B-ABB5-49F9-A221-A6B3B6BDACC5}" animState="Bad">
-            Y O U ' R E  L U C K Y  T H A T  I T  I S  Y O U  F O O L
+            Y O U ' R E  L U C K Y  T H A T  I T  I S  Y O U  F O O L
         </prompt>
         <prompt id="{D854072B-ABB5-49F9-A221-A6B3B6BDACC5}">
             I'll be waiting for your return.
