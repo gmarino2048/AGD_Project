@@ -15,7 +15,7 @@ public class GameNarrativeManager : MonoBehaviour
     /// <summary>
     /// The monsters that were satisfied during their visit
     /// </summary>
-    public IEnumerable<Guid> DateableMonsterIDs { get; private set; }
+    public List<Guid> DateableMonsterIDs { get; private set; }
 
     /// <summary>
     /// The current stage
