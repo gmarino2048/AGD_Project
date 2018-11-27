@@ -139,6 +139,7 @@ public class DishPreparationManager : MonoBehaviour
                 }
                 else // Onto the next monster
                 {
+                    _GameNarrativeManager.DateableMonsterIDs.Add(_MonsterID);
                     SceneManager.LoadScene(_NEXT_STAGE_SCENE_NAME, LoadSceneMode.Single);
                 }
             }
