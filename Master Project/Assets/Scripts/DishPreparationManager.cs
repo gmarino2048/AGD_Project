@@ -12,7 +12,7 @@ public class DishPreparationManager : MonoBehaviour
 {
     private readonly string _NEXT_STAGE_SCENE_NAME = "Monologue";
     private readonly string _GAME_WON_SCENE_NAME = "FinalChoice";
-    private readonly string _GAME_OVER_SCENE_NAME = "GameOver"; //TODO: Make this
+    private readonly string _GAME_OVER_SCENE_NAME = "Game OVer";
 
     private const string _CHOPPING_SCENE_NAME = "Chopping";
     private const string _GRILLING_SCENE_NAME = "Grill";
