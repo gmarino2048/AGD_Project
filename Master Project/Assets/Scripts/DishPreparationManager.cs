@@ -35,6 +35,24 @@ public class DishPreparationManager : MonoBehaviour
         {IngredientType.GroundBeef, _GRILLING_SCENE_NAME}
     };
 
+    private readonly Dictionary<IngredientType, string> _INGREDIENT_NAMES = new Dictionary<IngredientType, string>() {
+        {IngredientType.IceCream, "Ice cream"},
+        {IngredientType.AlgaeSlime, "Algae slime"},
+        {IngredientType.AquariumGravel, "Aquarium gravel"},
+        {IngredientType.Eggs, "Eggs"},
+        {IngredientType.Steak, "Weird steak"},
+        {IngredientType.Bones, "Bones"},
+        {IngredientType.CannedMeat, "Canned meat"},
+        {IngredientType.Beans, "Beans"},
+        {IngredientType.PeculiarPeppers, "Peculiar peppers"},
+        {IngredientType.CrushedSouls, "Crushed souls"},
+        {IngredientType.VoidGoo, "Void goo"},
+        {IngredientType.GroundBeef, "Ground beef"},
+        {IngredientType.Onions, "Onions"},
+        {IngredientType.Cheese, "Cheese"},
+        {IngredientType.WhippedCream, "Whipped cream"}
+    };
+
     private CombatInitiator _CombatInitiator;
     private DishScoreManager _DishScoreManager;
     private GameNarrativeManager _GameNarrativeManager;
@@ -94,6 +112,16 @@ public class DishPreparationManager : MonoBehaviour
 
         _MonsterID = monsterId;
         _IngredientsQueue = new Queue<IngredientType>(ingredientsList);
+    }
+
+    /// <summary>
+    /// Gets the display name of an ingredient
+    /// </summary>
+    /// <param name="ingredientType"></param>
+    /// <returns></returns>
+    public string GetIngredientDisplayName(IngredientType ingredientType)
+    {
+        return _INGREDIENT_NAMES[ingredientType];
     }
 
     /// <summary>

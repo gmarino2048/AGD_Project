@@ -1,103 +1,69 @@
-﻿using System.Collections;
+﻿using Monsters;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Monsters;
+using UnityEngine.UI;
 
-namespace Ingredients {
+namespace Ingredients
+{
     public class DragIngredient : MonoBehaviour
     {
-
-        //distance of the mouse from the center of the spoon
-        private Vector3 offset;
-
-        //where mouse is
-        private Vector3 mousePosition;
-
-        //where mouse was last frame
-        private Vector3 prevMousePosition;
-
-        //how far the spoon traveled
-        public float travelDistance = 0;
-
         /// <summary>
         /// The ingredient type for this ingredient
         /// </summary>
         public IngredientType ingredientType;
-
-        public Vector3 originalPosition { get; private set; }
-
-        /// <summary>
-        /// The red X to show
-        /// </summary>
-		public GameObject incorrectIngredientMark;
-
-        /// <summary>
-        /// The ingredients manager
-        /// </summary>
-        public IngredientsManager ingredientsManager;
+        
+        private BoxCollider2D _Collider;
+        private GameNarrativeManager _GameNarrativeManager;
+        private Image _IncorrectIngredientMarker;
+        private IngredientsManager _IngredientsManager;
+        private MonsterFactory _MonsterFactory;
+        private Vector3 _Offset;
 
 		private bool isLockedToLocation = false;
 
         // Use this for initialization
-        void Start()
+        void Awake()
         {
-            originalPosition = this.transform.position;
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
+            _Collider = this.gameObject.GetComponent<BoxCollider2D>();
+            _GameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+            _IncorrectIngredientMarker = GameObject.FindGameObjectWithTag("RedX").GetComponent<Image>();
+            _IngredientsManager = GameObject.FindObjectOfType<IngredientsManager>();
+            _MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
         }
 
-
-        /// <summary>
-        /// keeps track of distance traveled
-        /// </summary>
-        void Update()
+        void OnMouseDown()
         {
-            if (isLockedToLocation || !ingredientsManager.IsIngredientTypeLegal(ingredientType))
+            if (isLockedToLocation || _IncorrectIngredientMarker.enabled)
             {
                 return;
             }
+            
+			if (!_IngredientsManager.IsIngredientTypeLegal(ingredientType)) {
+                var monsterData = _MonsterFactory.LoadMonster(_GameNarrativeManager.CurrentStage.MonsterID);
+                monsterData.UpdateAffectionFromIngredientSelection(ingredientType);
 
-            travelDistance += Vector3.Distance(mousePosition, prevMousePosition);
-            prevMousePosition = mousePosition;
-        }
+                if (monsterData.AffectionValue <= monsterData.FightThreshold) {
+                    var combatInitiator = GameObject.FindObjectOfType<CombatInitiator>();
+                    combatInitiator.InitiateCombat(_GameNarrativeManager.CurrentStage.MonsterID, 1 - monsterData.AffectionValue);
+                    return;
+                }
 
-        /// <summary>
-        /// keeps the spoon for auto-centering on the mouse making it look disconnected from the previous frame
-        /// </summary>
-        void OnMousePressed()
-        {
-            if (isLockedToLocation || !ingredientsManager.IsIngredientTypeLegal(ingredientType))
-            {
+                StartCoroutine(ShowRedX());
                 return;
-            }
+			}
 
-            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
+            _Offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         }
-			
-        /// <summary>
-        /// moves the spoon
-        /// </summary>
+
         void OnMouseDrag()
         {
-			if (isLockedToLocation)
-			{
+            if (isLockedToLocation || !_IngredientsManager.IsIngredientTypeLegal(ingredientType) || _IncorrectIngredientMarker.enabled) {
                 return;
             }
-			if (!ingredientsManager.IsIngredientTypeLegal(ingredientType)) {
-				var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
-				var monsterFactory = GameObject.FindObjectOfType<MonsterFactory> ();
-				var monsterData = monsterFactory.LoadMonster (gameNarrativeManager.CurrentStage.MonsterID);
-				monsterData.UpdateAffectionFromIngredientSelection (ingredientType);
-				//
-				if (monsterData.AffectionValue <= monsterData.FightThreshold) {
-					var combatInitiator = GameObject.FindObjectOfType<CombatInitiator>();
-					combatInitiator.InitiateCombat (gameNarrativeManager.CurrentStage.MonsterID, 1 - monsterData.AffectionValue);
-				}
-				StartCoroutine(ShowRedX());
-				return;
-			}
+
             Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
-            mousePosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
-            transform.position = mousePosition;
+            transform.position = Camera.main.ScreenToWorldPoint(cursorPoint) + _Offset;
         }
 
         /// <summary>
@@ -112,19 +78,16 @@ namespace Ingredients {
             }
 
             isLockedToLocation = true;
-            transform.position = choiceLocation.transform.position;
-        }    
-
-        public void SendBackToOriginalPosition()
-        {
-            transform.position = originalPosition;
+            transform.position = choiceLocation.transform.position + (Vector3.up * (_Collider.bounds.size.y/2));
         }
 
 		IEnumerator ShowRedX()
 		{
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = true;
+            var screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+            _IncorrectIngredientMarker.transform.position = screenPosition;
+			_IncorrectIngredientMarker.enabled = true;
 			yield return new WaitForSeconds(2);
-			incorrectIngredientMark.GetComponent<SpriteRenderer> ().enabled = false;
+			_IncorrectIngredientMarker.enabled = false;
 		}
     }
 }

@@ -21,16 +21,25 @@ namespace FinalChoice
 
 		private MonsterFactory _MonsterFactory;
 
+        public Image resultScreen;
+
         public Sprite Nessie;
         public Sprite Cerberus;
         public Sprite Redacted;
 
+        public Sprite NessieSplash;
+        public Sprite CerberusSplash;
+        public Sprite RedactedSplash;
+
         // Use this for initialization
         void Start() {
-			_MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+            resultScreen.enabled = false;
 
-			CreateChoiceButtons();
-		}
+            _MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+
+            CreateChoiceButtons();
+
+        }
 
 		private void CreateChoiceButtons()
 		{
@@ -58,11 +67,27 @@ namespace FinalChoice
             }
 		}
 
+
 		private void ChooseMonster(Guid monsterID)
 		{
 			var monsterData = _MonsterFactory.LoadMonster(monsterID);
 			Debug.Log(monsterData.Name + " was chosen");
-			//TODO: Honestly I have no idea what to do here.
-		}
+
+            if (monsterData.ToString() == "Nessie")
+            {
+                resultScreen.sprite = NessieSplash;
+            }
+            if (monsterData.ToString() == "Cerberus")
+            {
+                resultScreen.sprite = CerberusSplash;
+            }
+            if (monsterData.ToString() == "Redacted")
+            {
+                resultScreen.sprite = RedactedSplash;
+            }
+
+
+            resultScreen.enabled = false;
+        }
 	}
 }
