@@ -239,6 +239,13 @@ public class DialogueManager : MonoBehaviour {
     public void Start()
     {
         var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
-        StartDialogue(gameNarrativeManager.CurrentStage.MonsterID);
+        try
+        {
+            StartDialogue(gameNarrativeManager.CurrentStage.MonsterID);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning(ex.Message + " -- Scene Not Running in Game");
+        }
     }
 }
