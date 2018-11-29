@@ -265,7 +265,7 @@
             <response value="1" nextPrompt="{8C69FD6E-B6FD-4A64-A241-E0F202CBACDE}">
                 I’ll go ahead and fetch that for you, would you like anything else?
             </response>
-            <response value="0" nextPrompt="{99D779B4-7669-4894-B78D-1FD1774597FD}">
+            <response value="0" nextPrompt="{B5CDDB3E-2A71-48F7-BD56-97FB4FB14B1C}">
                 Sure thing.
             </response>
         </responseSet>
