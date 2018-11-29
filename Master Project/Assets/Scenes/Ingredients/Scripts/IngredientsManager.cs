@@ -8,16 +8,13 @@ namespace Ingredients
 {
 	public class IngredientsManager : MonoBehaviour
 	{
-		private DishPreparationManager _DishPreparationManager;
-
-		private MonsterData _MonsterData;
-		private List<IngredientType> _IngredientsAdded;
-
-        public GameObject ingredientChoice;
-
 		private CombatInitiator _CombatInitiator;
-
+		private DishPreparationManager _DishPreparationManager;
 		private GameNarrativeManager _GameNarrativeManager;
+		private List<IngredientType> _IngredientsAdded;
+		private MonsterData _MonsterData;
+
+        public GameObject ingredientChoiceLocationPrefab;
 
 		void Start()
         {
@@ -41,7 +38,8 @@ namespace Ingredients
 
             _MonsterData = monsterFactory.LoadMonster(_GameNarrativeManager.CurrentStage.MonsterID);
             _IngredientsAdded = new List<IngredientType>();
-            InstantiateIngredientChoice();
+
+            InstantiateIngredientChoiceLocations();
         }
 
 		public bool IsIngredientTypeLegal(IngredientType ingredientType)
@@ -63,12 +61,12 @@ namespace Ingredients
 			}
 		}
 
-		public void InstantiateIngredientChoice() {
+		public void InstantiateIngredientChoiceLocations() {
 			int n = _MonsterData.DesiredIngredients.Count;
 			if (n == 3) {
-				GameObject choice1 = Instantiate(ingredientChoice, new Vector3((float)-2.5,(float)-1.08,0), Quaternion.identity) as GameObject;
-				GameObject choice2 = Instantiate(ingredientChoice, new Vector3(0,(float)-1.08,0), Quaternion.identity) as GameObject;
-				GameObject choice3 = Instantiate(ingredientChoice, new Vector3((float)2.5,(float)-1.08,0), Quaternion.identity) as GameObject;
+				GameObject choice1 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)-2.5,(float)-1.08,0), Quaternion.identity) as GameObject;
+				GameObject choice2 = Instantiate(ingredientChoiceLocationPrefab, new Vector3(0,(float)-1.08,0), Quaternion.identity) as GameObject;
+				GameObject choice3 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)2.5,(float)-1.08,0), Quaternion.identity) as GameObject;
                 choice1.SetActive(true);
                 choice2.SetActive(true);
                 choice3.SetActive(true);
@@ -77,10 +75,10 @@ namespace Ingredients
 				choice3.transform.localScale = new Vector3((float)1.5, (float)1.5, 0);
 			}
 			if (n == 4) {
-				GameObject choice1 = Instantiate(ingredientChoice, new Vector3((float)-3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice2 = Instantiate(ingredientChoice, new Vector3((float)-1,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice3 = Instantiate(ingredientChoice, new Vector3((float)1,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice4 = Instantiate(ingredientChoice, new Vector3((float)3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice1 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)-3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice2 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)-1,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice3 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)1,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice4 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
                 choice1.SetActive(true);
                 choice2.SetActive(true);
                 choice3.SetActive(true);
@@ -91,11 +89,11 @@ namespace Ingredients
 				choice4.transform.localScale = new Vector3((float)1.2, (float)1.5, (float)0);
 			}
 			if (n == 5) {
-				GameObject choice1 = Instantiate(ingredientChoice, new Vector3((float)-3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice2 = Instantiate(ingredientChoice, new Vector3((float)-1.5,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice3 = Instantiate(ingredientChoice, new Vector3((float)0,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice4 = Instantiate(ingredientChoice, new Vector3((float)1.5,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
-				GameObject choice5 = Instantiate(ingredientChoice, new Vector3((float)3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice1 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)-3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice2 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)-1.5,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice3 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)0,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice4 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)1.5,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
+				GameObject choice5 = Instantiate(ingredientChoiceLocationPrefab, new Vector3((float)3,(float)-1.08,(float)0), Quaternion.identity) as GameObject;
                 choice1.SetActive(true);
                 choice2.SetActive(true);
                 choice3.SetActive(true);

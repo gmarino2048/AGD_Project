@@ -21,12 +21,25 @@ namespace FinalChoice
 
 		private MonsterFactory _MonsterFactory;
 
-		// Use this for initialization
-		void Start() {
-			_MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+        public Image resultScreen;
 
-			CreateChoiceButtons();
-		}
+        public Sprite Nessie;
+        public Sprite Cerberus;
+        public Sprite Redacted;
+
+        public Sprite NessieSplash;
+        public Sprite CerberusSplash;
+        public Sprite RedactedSplash;
+
+        // Use this for initialization
+        void Start() {
+            resultScreen.enabled = false;
+
+            _MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+
+            CreateChoiceButtons();
+
+        }
 
 		private void CreateChoiceButtons()
 		{
@@ -39,14 +52,42 @@ namespace FinalChoice
 
 				button.GetComponentInChildren<Text>().text = monsterData.Name;
 				button.onClick.AddListener(() => ChooseMonster(monsterID));
-			}
+
+                if(monsterData.ToString()== "Nessie"){
+                    button.GetComponent<Image>().sprite = Nessie;
+                }
+                if (monsterData.ToString() == "Cerberus")
+                {
+                    button.GetComponent<Image>().sprite = Cerberus;
+                }
+                if (monsterData.ToString() == "Redacted")
+                {
+                    button.GetComponent<Image>().sprite = Redacted;
+                }
+            }
 		}
+
 
 		private void ChooseMonster(Guid monsterID)
 		{
 			var monsterData = _MonsterFactory.LoadMonster(monsterID);
 			Debug.Log(monsterData.Name + " was chosen");
-			//TODO: Honestly I have no idea what to do here.
-		}
+
+            if (monsterData.ToString() == "Nessie")
+            {
+                resultScreen.sprite = NessieSplash;
+            }
+            if (monsterData.ToString() == "Cerberus")
+            {
+                resultScreen.sprite = CerberusSplash;
+            }
+            if (monsterData.ToString() == "Redacted")
+            {
+                resultScreen.sprite = RedactedSplash;
+            }
+
+
+            resultScreen.enabled = false;
+        }
 	}
 }

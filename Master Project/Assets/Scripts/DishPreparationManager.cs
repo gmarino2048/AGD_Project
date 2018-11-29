@@ -12,7 +12,7 @@ public class DishPreparationManager : MonoBehaviour
 {
     private readonly string _NEXT_STAGE_SCENE_NAME = "Monologue";
     private readonly string _GAME_WON_SCENE_NAME = "FinalChoice";
-    private readonly string _GAME_OVER_SCENE_NAME = "GameOver"; //TODO: Make this
+    private readonly string _GAME_OVER_SCENE_NAME = "Game OVer";
 
     private const string _CHOPPING_SCENE_NAME = "Chopping";
     private const string _GRILLING_SCENE_NAME = "Grill";
@@ -33,6 +33,24 @@ public class DishPreparationManager : MonoBehaviour
         {IngredientType.CrushedSouls, _SHAKING_SCENE_NAME},
         {IngredientType.VoidGoo, _STIRRING_SCENE_NAME},
         {IngredientType.GroundBeef, _GRILLING_SCENE_NAME}
+    };
+
+    private readonly Dictionary<IngredientType, string> _INGREDIENT_NAMES = new Dictionary<IngredientType, string>() {
+        {IngredientType.IceCream, "Ice cream"},
+        {IngredientType.AlgaeSlime, "Algae slime"},
+        {IngredientType.AquariumGravel, "Aquarium gravel"},
+        {IngredientType.Eggs, "Eggs"},
+        {IngredientType.Steak, "Weird steak"},
+        {IngredientType.Bones, "Bones"},
+        {IngredientType.CannedMeat, "Canned meat"},
+        {IngredientType.Beans, "Beans"},
+        {IngredientType.PeculiarPeppers, "Peculiar peppers"},
+        {IngredientType.CrushedSouls, "Crushed souls"},
+        {IngredientType.VoidGoo, "Void goo"},
+        {IngredientType.GroundBeef, "Ground beef"},
+        {IngredientType.Onions, "Onions"},
+        {IngredientType.Cheese, "Cheese"},
+        {IngredientType.WhippedCream, "Whipped cream"}
     };
 
     private CombatInitiator _CombatInitiator;
@@ -97,6 +115,16 @@ public class DishPreparationManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Gets the display name of an ingredient
+    /// </summary>
+    /// <param name="ingredientType"></param>
+    /// <returns></returns>
+    public string GetIngredientDisplayName(IngredientType ingredientType)
+    {
+        return _INGREDIENT_NAMES[ingredientType];
+    }
+
+    /// <summary>
     /// Goes to the next scene - whatever that may be!
     /// </summary>
     public void GoToNextScene()
@@ -139,6 +167,7 @@ public class DishPreparationManager : MonoBehaviour
                 }
                 else // Onto the next monster
                 {
+                    _GameNarrativeManager.DateableMonsterIDs.Add(_MonsterID);
                     SceneManager.LoadScene(_NEXT_STAGE_SCENE_NAME, LoadSceneMode.Single);
                 }
             }
