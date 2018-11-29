@@ -118,7 +118,7 @@ namespace Combat
                 combatChoices.Add(CombatChoice.OfferDrink, new CombatChoiceStatus(25, 0.80f, 10));
                 combatChoices.Add(CombatChoice.Reason, new CombatChoiceStatus(10, 0.9f, 2));
                 // Just default, other values are not necessary for this scene.
-                CurrentMonster = new MonsterData("Nessie", 0, null, combatChoices);
+                CurrentMonster = new MonsterData("[REDACTED]", 0, null, combatChoices);
                 Debug.Log(CurrentMonster.ToString());
                 if (CurrentMonster.ToString() == Names._NESSIE_NAME)
                 {
@@ -206,14 +206,14 @@ namespace Combat
                 CombatMessage.text = "Game Over!";
                 Ad.PHPHZ();
                 yield return new WaitForSeconds(1f);
-                Ad.MGO();
+                //Ad.MGO();
             }
             else
             {
                 CombatMessage.text = "Victory!";
                 Ad.MMHZ();
+                yield return new WaitForSeconds(1f);
             }
-
         }
         IEnumerator Monsterdamamged()
         {
@@ -244,7 +244,7 @@ namespace Combat
             {
                 damageholder = damagedice.Next(0, 5);
                 health.ChangeHealth(-15 - damageholder);
-                CombatMessage.text = CurrentMonster + " Used Attack! Dealt " + (15 + damageholder).ToString() + " Damage!";
+                CombatMessage.text = CurrentMonster + "'s Attack! Dealt " + (15 + damageholder).ToString() + " Damage!";
                 Movement.SetTrigger("attack3");
                 Ad.PH();
                 yield return new WaitForSeconds(0.5f);
@@ -253,7 +253,7 @@ namespace Combat
             else if (monsteraction == 2 || monsteraction == 4)
             {
                 Bar.IncrementValue(10);
-                CombatMessage.text = CurrentMonster + " Used Healing! Raised Manager Meter By 10!";
+                CombatMessage.text = CurrentMonster + "used Healing! Manager Meter increased 10!";
                 Movement.SetTrigger("attack2");
                 Ad.MMGU();
             }
@@ -261,7 +261,7 @@ namespace Combat
             {
                 damageholder = damagedice.Next(0, 10);
                 health.ChangeHealth(-25 - damageholder);
-                CombatMessage.text = CurrentMonster + " Used Super Attack! Dealt " + (25 + damageholder).ToString() + " Damage!";
+                CombatMessage.text ="Critical! " + CurrentMonster + " Dealt " + (25 + damageholder).ToString() + " Damage!";
                 Movement.SetTrigger("attack1");
                 Ad.PH();
                 yield return new WaitForSeconds(0.5f);

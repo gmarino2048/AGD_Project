@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Monsters;
+using System;
 
 namespace Combat
 {
     public class ManagerBar : MonoBehaviour
     {
         private MonsterAction ma;
+        private float LastManagerBar;
+        private float Manager;
+        private float t;
+        private bool Changed;
         public Transform managerbar;
         public Slider baramount;
         public int currentManagerValue;
@@ -19,10 +24,11 @@ namespace Combat
         void Awake()
         {
             ma = GameObject.Find("Monster").GetComponent<MonsterAction>();
-            currentManagerValue = 80;
+            currentManagerValue = 40;
             maxManagerValue = 100;
             baramount.value = (float)currentManagerValue / maxManagerValue;
             managernum.text = "Manager Meter: " + (baramount.value * 100f).ToString();
+            Changed = false;
         }
 
         // Update is called once per frame
@@ -36,6 +42,18 @@ namespace Combat
             {
                 ma.Combat = false;
                 ma.Win = true;
+            }
+            if (Changed)
+            {
+                Manager = Mathf.Lerp(LastManagerBar, currentManagerValue, t);
+                Manager = (float)Math.Round(Manager, 0);
+                Debug.Log(Manager);
+                baramount.value = Manager/ maxManagerValue;
+                t += 0.1f;
+            }
+            if (Manager == currentManagerValue)
+            {
+                Changed = false;
             }
 
         }
@@ -55,9 +73,12 @@ namespace Combat
         /// <param name="offset">The amount to add to the current manager bar value</param>
         public void IncrementValue(int offset)
         {
+            LastManagerBar = currentManagerValue;
             currentManagerValue += offset;
             currentManagerValue = Mathf.Clamp(currentManagerValue, 0, maxManagerValue);
-            baramount.value = (float)currentManagerValue / maxManagerValue;
+            //baramount.value = (float)currentManagerValue / maxManagerValue;
+            t = 0f;
+            Changed = true;
         }
 
         /// <summary>
@@ -92,7 +113,7 @@ namespace Combat
 
         public float GetCurrentBarValue()
         {
-            return baramount.value * 100;
+            return currentManagerValue;
         }
     }
 }
