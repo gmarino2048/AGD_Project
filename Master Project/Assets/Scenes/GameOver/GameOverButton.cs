@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverButton : MonoBehaviour {
 
@@ -10,14 +11,13 @@ public class GameOverButton : MonoBehaviour {
     /// </summary>
     public string nextSceneName;
 
-    // Update is called once per frame
-    void OnMouseDown()
+    public void Awake()
     {
-        Debug.Log("grrrr");
-        SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
+        var button = gameObject.GetComponent<Button>();
+        button.onClick.AddListener(OnButtonClicked);
     }
 
-    public void MyButtonClick()
+    public void OnButtonClicked()
     {
         Debug.Log("grrrr");
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
