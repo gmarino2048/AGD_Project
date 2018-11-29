@@ -1005,13 +1005,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 766707673}
+  - component: {fileID: 766707674}
   m_Layer: 0
   m_Name: '[REDACTED]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &766707673
 Transform:
   m_ObjectHideFlags: 0
@@ -1026,6 +1027,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &766707674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766707672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5314f2010f3804b99571d0b6c5e5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animation: {fileID: 837709014}
+  GoodTrigger: Good
+  BadTrigger: Bad
 --- !u!1 &781734753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837709012}
   - component: {fileID: 837709013}
+  - component: {fileID: 837709014}
   m_Layer: 0
   m_Name: '[REDACTED] Sprite'
   m_TagString: Untagged
@@ -1289,6 +1305,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &837709014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837709011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84fd71614f4515544882333be4aad6c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1004597302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,7 +2346,7 @@ MonoBehaviour:
   promptDisplay: {fileID: 1018509861}
   responsesDisplay: {fileID: 1187174031}
   continueButton: {fileID: 1027985358}
-  Patron: {fileID: 1894952707}
+  Patron: {fileID: 766707674}
 --- !u!4 &1592996416
 Transform:
   m_ObjectHideFlags: 0
@@ -2564,7 +2597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1894952706
 Transform:
   m_ObjectHideFlags: 0
