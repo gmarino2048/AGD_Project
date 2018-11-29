@@ -49,6 +49,8 @@ namespace Dialogue
         /// </summary>
         public GameObject continueButton;
 
+        public MonsterController Patron;
+
         private DialogDataManager _DialogDataManager;
         private GameSettings _GameSettings;
         private MonsterData _MonsterData;
@@ -106,6 +108,16 @@ namespace Dialogue
         public void GoToNextPrompt(Response chosenResponse)
         {
             ResetResponseButtonEventHandlers();
+
+            switch (chosenResponse.Value)
+            {
+                case -1:
+                    Patron.TriggerBad();
+                    break;
+                case 1:
+                    Patron.TriggerGood();
+                    break;
+            }
 
             _ResponsesScore += chosenResponse.Value;
 
@@ -195,18 +207,6 @@ namespace Dialogue
 
                 if (response.Value > maxResponseScore)
                     maxResponseScore = response.Value;
-
-                if (response.Value == 0 /*is positive*/)
-                {
-                }
-
-                if (response.Value == 0 /*is neutral*/)
-                {
-                }
-
-                if (response.Value == 0 /*is bad*/)
-                {
-                }
 
                 responseButton.GetComponentInChildren<Text>().text = response.Body;
                 responseButton.onClick.AddListener(() => GoToNextPrompt(response));
