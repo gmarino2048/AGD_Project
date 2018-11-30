@@ -10,13 +10,17 @@ namespace Shaking
         [Header("Gravel Assets")]
         public string GravelTrigger = "GravelTrigger";
         public Sprite GravelShaker;
-        public Sprite LakebedSprite;
+        public GameObject LakebedShake;
+        public AudioClip GravelSound;
+        public AudioClip GravelBackground;
         public List<Sprite> GravelAccumulation;
 
         [Header("Souls Assets")]
         public string SoulsTrigger = "SoulsTrigger";
         public Sprite SoulsShaker;
-        public Sprite ChiliSprite;
+        public GameObject Chili;
+        public AudioClip SoulShaker;
+        public AudioClip SoulsGroaning;
         public List<Sprite> SoulsAccumulation;
 
         [Header("Scene Objects")]
@@ -24,9 +28,12 @@ namespace Shaking
         public ShakerBehavior Shaker;
         public SpriteRenderer Dish;
         public AccumulationManager Accumulation;
+        public SFXManager SFX;
 
         void Awake()
         {
+            LakebedShake.SetActive(false);
+            Chili.SetActive(false);
             DishPreparationManager dishManager = FindObjectOfType<DishPreparationManager>();
 
             try 
@@ -36,32 +43,34 @@ namespace Shaking
                 switch (ingredient)
                 {
                     case IngredientType.AquariumGravel:
-                        SetParameters(GravelTrigger, GravelShaker, LakebedSprite, GravelAccumulation);
+                        SetParameters(GravelTrigger, GravelShaker, LakebedShake, GravelSound, GravelBackground, GravelAccumulation);
                         break;
 
                     case IngredientType.CrushedSouls:
-                        SetParameters(SoulsTrigger, SoulsShaker, ChiliSprite, SoulsAccumulation);
+                        SetParameters(SoulsTrigger, SoulsShaker, Chili, SoulShaker, SoulsGroaning, SoulsAccumulation);
                         break;
 
                     default:
                         Debug.LogError("Ingredient not found -- defaulting to Gravel");
-                        SetParameters(GravelTrigger, GravelShaker, LakebedSprite, GravelAccumulation);
+                        SetParameters(GravelTrigger, GravelShaker, LakebedShake, GravelSound, GravelBackground, GravelAccumulation);
                         break;
                 }
             }
             catch (Exception ex) 
             {
                 Debug.LogError(ex.Message + " -- defaulting to Gravel");
-                SetParameters(GravelTrigger, GravelShaker, LakebedSprite, GravelAccumulation);
+                SetParameters(GravelTrigger, GravelShaker, LakebedShake, GravelSound, GravelBackground, GravelAccumulation);
             }
         }
 
-        void SetParameters (string TriggerName, Sprite ShakerSet, Sprite DishSprite, List<Sprite> AccumulationSprites) 
+        void SetParameters(string TriggerName, Sprite ShakerSet, GameObject DishObject, AudioClip Sound, AudioClip Background, List<Sprite> AccumulationSprites) 
         {
             ShakerSprite.sprite = ShakerSet;
             Shaker.StartTrigger = TriggerName;
-            Dish.sprite = DishSprite;
+            DishObject.SetActive(true);
             Accumulation.Accumulation = AccumulationSprites;
+            SFX.ShakerSound = Sound;
+            SFX.BackgroundSound = Background;
         }
     }
 }
