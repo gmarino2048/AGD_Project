@@ -956,6 +956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 1163841236}
+  SFX: {fileID: 1579935596}
   ShakeAnimator: {fileID: 304548159}
   StartTrigger: SoulsTrigger
   RepeatTrigger: RepeatTrigger
@@ -2071,6 +2072,213 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 225111752781767322, guid: 8cd7c20a687b9294883c7d89656a47df,
     type: 2}
   m_PrefabInternal: {fileID: 531347654}
+--- !u!1 &1579935594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1579935595}
+  - component: {fileID: 1579935596}
+  - component: {fileID: 1579935598}
+  - component: {fileID: 1579935597}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579935595
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579935594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1796427914}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1579935596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579935594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f0d591083ba4ff2b26e5b6bbe7a3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFX: {fileID: 1579935598}
+  ShakerSound: {fileID: 0}
+  Background: {fileID: 1579935597}
+  BackgroundSound: {fileID: 0}
+  SFXScaler: 1
+--- !u!82 &1579935597
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579935594}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &1579935598
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1579935594}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1616728339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2503,8 @@ MonoBehaviour:
   GravelTrigger: GravelTrigger
   GravelShaker: {fileID: 21300000, guid: 5369a8b7d8e63470fbc7a8e8cc1076a8, type: 3}
   LakebedShake: {fileID: 2036796676}
+  GravelSound: {fileID: 8300000, guid: 264e510b7d15a48a38c152d994088c81, type: 3}
+  GravelBackground: {fileID: 0}
   GravelAccumulation:
   - {fileID: 21300000, guid: f4bf4db183816478bb5def42bc9bce8c, type: 3}
   - {fileID: 21300000, guid: 64a99bf0894824a2794679ad3da9bcd8, type: 3}
@@ -2305,6 +2515,8 @@ MonoBehaviour:
   SoulsTrigger: SoulsTrigger
   SoulsShaker: {fileID: 21300000, guid: bd29070f68e654fb085a11b777254305, type: 3}
   Chili: {fileID: 101966579}
+  SoulShaker: {fileID: 8300000, guid: b31a8ff33d8304269b52418960dfb3e7, type: 3}
+  SoulsGroaning: {fileID: 8300000, guid: 53e49ce266024433ab3a53ff82921427, type: 3}
   SoulsAccumulation:
   - {fileID: 21300000, guid: b1ee488c62a334c75868d7655a622cb5, type: 3}
   - {fileID: 21300000, guid: c252664c5556247b8a3b3a88b9311b87, type: 3}
@@ -2316,6 +2528,7 @@ MonoBehaviour:
   Shaker: {fileID: 459468225}
   Dish: {fileID: 2036796677}
   Accumulation: {fileID: 1136686896}
+  SFX: {fileID: 1579935596}
 --- !u!1 &1796427913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2557,7 @@ Transform:
   - {fileID: 1722949254}
   - {fileID: 1163841235}
   - {fileID: 1139802666}
+  - {fileID: 1579935595}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

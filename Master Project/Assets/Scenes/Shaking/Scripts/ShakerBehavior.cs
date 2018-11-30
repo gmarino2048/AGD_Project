@@ -10,8 +10,9 @@ namespace Shaking
         public int Shakes { get; private set; } // The number of shakes completed by this object.
         public BoxCollider2D Collider { get; private set; }
 
-        [Header("Timer Object")]
+        [Header("Scene Objects")]
         public TimerBehavior Timer; // The timer object for the scene.
+        public SFXManager SFX;
 
         [Header("Animation Preferences")]
         public Animator ShakeAnimator;
@@ -80,6 +81,7 @@ namespace Shaking
                 Debug.Log("Bottom Entered");
 
                 ShakeAnimator.SetTrigger(RepeatTrigger);
+                SFX.Shake();
             }
         }
 
