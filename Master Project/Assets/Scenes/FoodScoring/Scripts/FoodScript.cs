@@ -20,8 +20,9 @@ public class FoodScript : MonoBehaviour {
         var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
         var monsterData = _MonsterFactory.LoadMonster(gameNarrativeManager.CurrentStage.MonsterID);
 
-        if (monsterData.ToString() == "Nessie")
+        //if (monsterData.ToString() == "Nessie")
         {
+            Debug.Log("grrrr");
             FoodSprite.GetComponent<Image>().sprite = Nessie;
         }
         if (monsterData.ToString() == "Cerberus")
