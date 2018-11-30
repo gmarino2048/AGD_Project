@@ -155,11 +155,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoneSprite: {fileID: 21300000, guid: 34c50686c230e42c0a972e29e1749b16, type: 3}
   BoneCut: {fileID: 21300000, guid: 417d6066346034648a1ae9d248ac3728, type: 3}
+  BoneSound: {fileID: 8300000, guid: a765ec10a5a2b479c934de449be7c340, type: 3}
   PepperSprite: {fileID: 21300000, guid: 5a29e4fe9e1cd4e2984378070f1ada93, type: 3}
   PepperCut: {fileID: 21300000, guid: 7522a18185f7b45539dbd10c05d70d46, type: 3}
+  PepperSound: {fileID: 8300000, guid: 76a613b83dde94d45b41a410d4043cc3, type: 3}
   ChopObject: {fileID: 1931811779}
   ChopHelper: {fileID: 1726052003}
   SpriteController: {fileID: 892903094}
+  SFX: {fileID: 208061168}
 --- !u!1 &118504858
 GameObject:
   m_ObjectHideFlags: 0
