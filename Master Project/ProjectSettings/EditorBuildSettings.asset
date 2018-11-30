@@ -44,3 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalChoice/FinalChoice.unity
     guid: bb1d6b923d45944b8848eea9e2a5f44d
+  - enabled: 1
+    path: Assets/Scenes/GameOver/Game OVer.unity
+    guid: 3b93035fb3f8840db862b8a7c76b7f77
