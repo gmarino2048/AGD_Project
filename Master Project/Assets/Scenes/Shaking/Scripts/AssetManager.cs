@@ -10,13 +10,13 @@ namespace Shaking
         [Header("Gravel Assets")]
         public string GravelTrigger = "GravelTrigger";
         public Sprite GravelShaker;
-        public Sprite LakebedSprite;
+        public GameObject LakebedShake;
         public List<Sprite> GravelAccumulation;
 
         [Header("Souls Assets")]
         public string SoulsTrigger = "SoulsTrigger";
         public Sprite SoulsShaker;
-        public Sprite ChiliSprite;
+        public GameObject Chili;
         public List<Sprite> SoulsAccumulation;
 
         [Header("Scene Objects")]
@@ -27,6 +27,8 @@ namespace Shaking
 
         void Awake()
         {
+            LakebedShake.SetActive(false);
+            Chili.SetActive(false);
             DishPreparationManager dishManager = FindObjectOfType<DishPreparationManager>();
 
             try 
@@ -36,31 +38,31 @@ namespace Shaking
                 switch (ingredient)
                 {
                     case IngredientType.AquariumGravel:
-                        SetParameters(GravelTrigger, GravelShaker, LakebedSprite, GravelAccumulation);
+                        SetParameters(GravelTrigger, GravelShaker, LakebedShake, GravelAccumulation);
                         break;
 
                     case IngredientType.CrushedSouls:
-                        SetParameters(SoulsTrigger, SoulsShaker, ChiliSprite, SoulsAccumulation);
+                        SetParameters(SoulsTrigger, SoulsShaker, Chili, SoulsAccumulation);
                         break;
 
                     default:
                         Debug.LogError("Ingredient not found -- defaulting to Gravel");
-                        SetParameters(GravelTrigger, GravelShaker, LakebedSprite, GravelAccumulation);
+                        SetParameters(GravelTrigger, GravelShaker, LakebedShake, GravelAccumulation);
                         break;
                 }
             }
             catch (Exception ex) 
             {
                 Debug.LogError(ex.Message + " -- defaulting to Gravel");
-                SetParameters(GravelTrigger, GravelShaker, LakebedSprite, GravelAccumulation);
+                SetParameters(GravelTrigger, GravelShaker, LakebedShake, GravelAccumulation);
             }
         }
 
-        void SetParameters (string TriggerName, Sprite ShakerSet, Sprite DishSprite, List<Sprite> AccumulationSprites) 
+        void SetParameters (string TriggerName, Sprite ShakerSet, GameObject DishObject, List<Sprite> AccumulationSprites) 
         {
             ShakerSprite.sprite = ShakerSet;
             Shaker.StartTrigger = TriggerName;
-            Dish.sprite = DishSprite;
+            DishObject.SetActive(true);
             Accumulation.Accumulation = AccumulationSprites;
         }
     }
