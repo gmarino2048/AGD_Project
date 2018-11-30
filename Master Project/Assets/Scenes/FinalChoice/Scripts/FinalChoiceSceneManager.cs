@@ -32,10 +32,27 @@ namespace FinalChoice
         public Sprite RedactedSplash;
 
         // Use this for initialization
-        void Start() {
+        void Awake() {
+
             resultScreen.enabled = false;
 
-            _MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+
+            if (GameObject.Find("GameData") == null)
+            {
+                _MonsterFactory = gameObject.AddComponent(typeof(MonsterFactory)) as MonsterFactory;
+
+                var gameNarrativeManager = gameObject.AddComponent(typeof(GameNarrativeManager)) as GameNarrativeManager;
+                gameNarrativeManager.Start();
+                while (gameNarrativeManager.AnyStagesLeft())
+                {
+                    gameNarrativeManager.StartNextStage();
+                    gameNarrativeManager.DateableMonsterIDs.Add(gameNarrativeManager.CurrentStage.MonsterID);
+                }
+            }
+            else
+            {
+                _MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+            }
 
             CreateChoiceButtons();
 
@@ -45,49 +62,60 @@ namespace FinalChoice
 		{
 			var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
 
-			foreach (var monsterID in gameNarrativeManager.DateableMonsterIDs)
+            foreach (var monsterID in gameNarrativeManager.DateableMonsterIDs)
 			{
 				var monsterData = _MonsterFactory.LoadMonster(monsterID);
 				var button = (Button) Instantiate(choiceButtonPrefab, choicesParent);
 
-				button.GetComponentInChildren<Text>().text = monsterData.Name;
+                Debug.Log(monsterData.Name);
+
+
+
+                button.GetComponentInChildren<Text>().text = "";
 				button.onClick.AddListener(() => ChooseMonster(monsterID));
 
-                if(monsterData.ToString()== "Nessie"){
+                if(monsterData.Name == "Nessie"){
                     button.GetComponent<Image>().sprite = Nessie;
                 }
-                if (monsterData.ToString() == "Cerberus")
+                if (monsterData.Name == "Cerberus")
                 {
                     button.GetComponent<Image>().sprite = Cerberus;
                 }
-                if (monsterData.ToString() == "Redacted")
+                if (monsterData.Name == "[REDACTED]")
                 {
                     button.GetComponent<Image>().sprite = Redacted;
                 }
             }
-		}
+            //resultScreen.enabled = true;
+        }
 
 
-		private void ChooseMonster(Guid monsterID)
+		public void ChooseMonster(Guid monsterID)
 		{
 			var monsterData = _MonsterFactory.LoadMonster(monsterID);
 			Debug.Log(monsterData.Name + " was chosen");
 
-            if (monsterData.ToString() == "Nessie")
+            if (monsterData.Name == "Nessie")
             {
                 resultScreen.sprite = NessieSplash;
+                //background.GetComponent<Image>().enabled = false;
+                resultScreen.enabled = true;
             }
-            if (monsterData.ToString() == "Cerberus")
+            if (monsterData.Name == "Cerberus")
             {
                 resultScreen.sprite = CerberusSplash;
+               //background.GetComponent<Image>().enabled = false;
+                resultScreen.enabled = true;
             }
-            if (monsterData.ToString() == "Redacted")
+            if (monsterData.Name == "Redacted")
             {
                 resultScreen.sprite = RedactedSplash;
+                //background.GetComponent<Image>().enabled = false;
+                resultScreen.enabled = true;
             }
 
 
-            resultScreen.enabled = false;
+
         }
 	}
 }
