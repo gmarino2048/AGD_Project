@@ -259,13 +259,13 @@
         </prompt>
 
         <responseSet id="{48451EE9-2943-4C00-9843-E43C6C36DF51}">
-            <response value="-1" nextPrompt="{8CE33184-2DF8-4B53-84DB-55E17483EF03}">
+            <response value="-1" nextPrompt="{330CE793-5F5B-4F39-AF69-0B3BFF5D8573}">
                 Cool. Hey, do you always speak in the third person?
             </response>
             <response value="1" nextPrompt="{8C69FD6E-B6FD-4A64-A241-E0F202CBACDE}">
                 I’ll go ahead and fetch that for you, would you like anything else?
             </response>
-            <response value="0" nextPrompt="{99D779B4-7669-4894-B78D-1FD1774597FD}">
+            <response value="0" nextPrompt="{B5CDDB3E-2A71-48F7-BD56-97FB4FB14B1C}">
                 Sure thing.
             </response>
         </responseSet>

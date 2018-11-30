@@ -65,7 +65,7 @@ public class AudioController : MonoBehaviour {
         }
         else
         {
-            CurrentMonster = new MonsterData("Nessie", 0, null, null);
+            CurrentMonster = new MonsterData("[REDACTED]", 0, null, null);
             if (CurrentMonster.ToString() == Names._NESSIE_NAME)
             {
                 Nessie_BGM.Play();

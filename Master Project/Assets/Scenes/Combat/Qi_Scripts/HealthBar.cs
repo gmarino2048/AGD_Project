@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace Combat
 {
     public class HealthBar : MonoBehaviour
     {
         private MonsterAction ma;
-
+        private float LastHealth;
+        private float Health;
+        private float t;
+        private bool Changed;
         public Transform healthbar;
         public Slider healthFill;
         public Text healtnum;
         public int currentHealth;
         public int maxHealth;
+
 
         private void Awake()
         {
@@ -22,6 +27,7 @@ namespace Combat
             maxHealth = 100;
             healtnum.text = "Health: " + (healthFill.value * 100f).ToString();
             healthFill.value = (float)currentHealth / maxHealth;
+            Changed = false;
         }
         public void Update()
         {
@@ -29,12 +35,26 @@ namespace Combat
             {
                 ma.Combat = false;
             }
+            if (Changed)
+            {
+                Health = Mathf.Lerp(LastHealth, currentHealth, t);
+                Health = (float)Math.Round(Health, 0);
+                //Debug.Log(Health);
+                healthFill.value = Health / maxHealth;
+                t += Time.deltaTime * 2f;
+            }
+            if(Health == currentHealth)
+            {
+                Changed = false;
+            }
         }
         public void ChangeHealth(int amount)
         {
+            LastHealth = currentHealth;
             currentHealth += amount;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-            healthFill.value = (float)currentHealth / maxHealth;
+            t = 0f;
+            Changed = true;
         }
         public void DisplayHealthNum()
         {
