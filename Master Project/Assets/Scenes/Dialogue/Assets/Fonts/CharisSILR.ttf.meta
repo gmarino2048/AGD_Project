@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7bc325ef01248a4a9363f27fcfbf5aa
+guid: 64b43a79b73dd43d39135b64e8c14257
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Comfortaa
+  fontName: Charis SIL
   fontNames:
-  - Comfortaa
+  - Charis SIL
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
