@@ -27,7 +27,7 @@ public class GameNarrativeManager : MonoBehaviour
     /// </summary>
     private Queue<Stage> _StagesQueue { get; set; }
 
-    void Start()
+    public void Start()
     {
         _StagesQueue = new Queue<Stage>(LoadNarrative().Stages);
         DateableMonsterIDs = new List<Guid>();

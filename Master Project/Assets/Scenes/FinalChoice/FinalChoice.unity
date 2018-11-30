@@ -291,12 +291,12 @@ MonoBehaviour:
     type: 2}
   choicesParent: {fileID: 1300006324}
   resultScreen: {fileID: 1356599557}
-  Nessie: {fileID: 21300000, guid: a0ac77f629a7240158d0cef835654e06, type: 3}
-  Cerberus: {fileID: 21300000, guid: 4733a681deb8f41a98490e0b67df5dca, type: 3}
-  Redacted: {fileID: 21300000, guid: 9a4fe60dd2378464b8f947eaa9e77ace, type: 3}
-  NessieSplash: {fileID: 0}
-  CerberusSplash: {fileID: 0}
-  RedactedSplash: {fileID: 0}
+  Nessie: {fileID: 21300000, guid: cbee661e8b86a4456b5ddaefec61a880, type: 3}
+  Cerberus: {fileID: 21300000, guid: 5595d04665e094dc89b922549ff97af2, type: 3}
+  Redacted: {fileID: 21300000, guid: 80810da010c124628a3849dd4b09cadf, type: 3}
+  NessieSplash: {fileID: 21300000, guid: ef98774545d84473b88a332c36137530, type: 3}
+  CerberusSplash: {fileID: 21300000, guid: 4e3eb5c68e47c44e98314f7f68b89d8b, type: 3}
+  RedactedSplash: {fileID: 21300000, guid: 8515e2d4abd8a4a6aa8f9396c174c45d, type: 3}
 --- !u!222 &1175562689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 46a2bdefef7794ea88c8d12639bdac24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
