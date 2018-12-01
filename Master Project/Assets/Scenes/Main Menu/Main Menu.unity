@@ -1400,7 +1400,7 @@ GameObject:
   - component: {fileID: 1129837194}
   - component: {fileID: 1129837195}
   m_Layer: 0
-  m_Name: Mazur_MainMenu_Background_1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
