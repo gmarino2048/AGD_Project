@@ -21,7 +21,6 @@ namespace Ingredients
         public List<PlateController> Plates;
         public BoxCollider2D SceneBorder;
 
-
         bool Dragging;
         bool MouseInside;
         Vector3 Offset;

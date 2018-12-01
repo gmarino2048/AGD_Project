@@ -11,6 +11,7 @@ namespace Ingredients
     {
         [Header("Settings")]
         public float Space = 0.25f;
+        public UIManager UI;
 
         public bool GameActive { get; private set; }
 
@@ -79,6 +80,7 @@ namespace Ingredients
                 Debug.Log("Scene Complete");
                 Ingredients.ForEach((ingredient) => ingredient.Active = false);
                 GameActive = false;
+                StartCoroutine(UI.EndGame());
             }
         }
 
