@@ -53,7 +53,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4343283758948408}
-  - component: {fileID: 114870162572311910}
   - component: {fileID: 212575111822921958}
   m_Layer: 0
   m_Name: IngredientLabel
@@ -146,17 +145,6 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   Plates: []
   SceneBorder: {fileID: 0}
---- !u!114 &114870162572311910
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1765644537784070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212289308896210724
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -190,7 +178,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7534b7b699ddf49ca87161b26572d3b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
