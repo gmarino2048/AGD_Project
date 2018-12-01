@@ -111,7 +111,7 @@ namespace Combat
             {
                 //intial conbatchoice and its decay rates
                 var combatChoices = new Dictionary<CombatChoice, CombatChoiceStatus>();
-                combatChoices.Add(CombatChoice.Beg, new CombatChoiceStatus(35, 0f, 0));
+                combatChoices.Add(CombatChoice.Beg, new CombatChoiceStatus(35, 0f, 35));
                 combatChoices.Add(CombatChoice.Coupon, new CombatChoiceStatus(15, 0.85f, 5));
                 combatChoices.Add(CombatChoice.Flatter, new CombatChoiceStatus(-5, 1.5f, -15));
                 combatChoices.Add(CombatChoice.FreeFood, new CombatChoiceStatus(10, 0.75f, 3));

@@ -24,7 +24,7 @@ namespace Combat
         void Awake()
         {
             ma = GameObject.Find("Monster").GetComponent<MonsterAction>();
-            currentManagerValue = 40;
+            //currentManagerValue = 75;
             maxManagerValue = 100;
             baramount.value = (float)currentManagerValue / maxManagerValue;
             managernum.text = "Manager Meter: " + (baramount.value * 100f).ToString();
@@ -47,7 +47,7 @@ namespace Combat
             {
                 Manager = Mathf.Lerp(LastManagerBar, currentManagerValue, t);
                 Manager = (float)Math.Round(Manager, 0);
-                Debug.Log(Manager);
+                //Debug.Log(Manager);
                 baramount.value = Manager/ maxManagerValue;
                 t += 0.1f;
             }
