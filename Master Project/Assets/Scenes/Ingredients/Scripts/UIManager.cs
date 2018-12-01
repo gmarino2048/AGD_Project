@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Monsters;
 
 namespace Ingredients
 {
@@ -35,6 +36,14 @@ namespace Ingredients
                 try
                 {
                     DishPreparationManager dishPreparation = FindObjectOfType<DishPreparationManager>();
+                    GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
+                    MonsterFactory monsterFactory = FindObjectOfType<MonsterFactory>();
+
+                    MonsterData data = monsterFactory.LoadMonster(narrativeManager.CurrentStage.MonsterID);
+                    dishPreparation.StartPreparingDish(
+                        narrativeManager.CurrentStage.MonsterID,
+                        data.DesiredIngredients
+                    );
                     dishPreparation.GoToNextScene();
                 }
                 catch (Exception ex)
