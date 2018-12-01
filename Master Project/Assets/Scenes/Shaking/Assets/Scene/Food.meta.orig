@@ -1,8 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 545129b56623d446f850685e34433d15
+folderAsset: yes
+=======
+guid: c8737371f7276e9439eea6b754377347
 folderAsset: yes
 timeCreated: 1543699377
 licenseType: Free
+>>>>>>> origin/Mazur_Update
 DefaultImporter:
   externalObjects: {}
   userData: 
