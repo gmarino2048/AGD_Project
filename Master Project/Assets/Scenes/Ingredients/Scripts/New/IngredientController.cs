@@ -20,18 +20,25 @@ namespace Ingredients
         public List<Collider2D> Plates;
         public BoxCollider2D SceneBorder;
 
+        bool Dragging;
         bool MouseInside;
+        Vector3 Offset;
            
 
         void Start()
         {
             MainCamera = Camera.main;
+            Dragging = false;
             MouseInside = false;
+            CorrectIngredient = true;
+
+            Label.SetActive(false);
+            IncorrectMarker.SetActive(false);
         }
 
         void OnMouseEnter()
         {
-            Label.SetActive(true);
+            if (!Dragging) Label.SetActive(true);
             MouseInside = true;
         }
 
@@ -43,10 +50,31 @@ namespace Ingredients
 
         void OnMouseDown()
         {
-            if (MouseInside && !CorrectIngredient)
+            if (MouseInside)
             {
-                StartCoroutine(ShowX());
+                if (CorrectIngredient)
+                {
+                    Label.SetActive(false);
+                    Offset = gameObject.transform.position - MouseToWorldPoint();
+                }
+                else StartCoroutine(ShowX());
             }
+        }
+
+        private void OnMouseDrag()
+        {
+            Dragging = true;
+            if (CorrectIngredient)
+            {
+                Vector3 newPosition = MouseToWorldPoint() + Offset;
+                gameObject.transform.position = newPosition;
+                Offset = gameObject.transform.position - MouseToWorldPoint();
+            }
+        }
+
+        private void OnMouseUp()
+        {
+            Dragging = false;
         }
 
         IEnumerator ShowX ()
@@ -56,10 +84,10 @@ namespace Ingredients
             IncorrectMarker.SetActive(false);
         }
 
-        Vector3 MouseToWorldPoint (Vector3 mousePosition)
+        Vector3 MouseToWorldPoint ()
         {
-            Vector3 worldPoint = MainCamera.ScreenToWorldPoint(mousePosition);
-            return mousePosition;
+            Vector3 worldPoint = MainCamera.ScreenToWorldPoint(Input.mousePosition);
+            return worldPoint;
         }
     }
 }
