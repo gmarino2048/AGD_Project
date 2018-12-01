@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Monsters;
 
 namespace Ingredients
 {
@@ -19,7 +21,6 @@ namespace Ingredients
         [Header("Scene Objects")]
         public Camera MainCamera;
         public List<PlateController> Plates;
-        public BoxCollider2D SceneBorder;
 
         bool Dragging;
         bool MouseInside;
@@ -69,6 +70,7 @@ namespace Ingredients
             if (Active)
             {
                 Dragging = true;
+                Cursor.lockState = CursorLockMode.Confined;
                 if (InRecipe)
                 {
                     foreach (PlateController plate in Plates)
@@ -79,6 +81,7 @@ namespace Ingredients
                         if (touching && !used)
                         {
                             Vector3 reference = plate.Reference.transform.position;
+
                             gameObject.transform.position = new Vector3(reference.x, reference.y, reference.z);
                             plate.SetFood();
                             Active = false;
@@ -97,10 +100,29 @@ namespace Ingredients
         private void OnMouseUp()
         {
             Dragging = false;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         IEnumerator ShowX ()
         {
+            MonsterFactory monsterFactory = FindObjectOfType<MonsterFactory>();
+            GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
+            try
+            {
+                var monsterData = monsterFactory.LoadMonster(narrativeManager.CurrentStage.MonsterID);
+                monsterData.UpdateAffectionFromIngredientSelection(Type);
+
+                if (monsterData.AffectionValue <= monsterData.FightThreshold)
+                {
+                    var combatInitiator = FindObjectOfType<CombatInitiator>();
+                    combatInitiator.InitiateCombat(narrativeManager.CurrentStage.MonsterID, 1 - monsterData.AffectionValue);
+                }
+            }
+            catch (Exception)
+            {
+                Debug.LogWarning("Scene Not Running in Game");
+            }
+
             IncorrectMarker.SetActive(true);
             yield return new WaitForSeconds(1);
             IncorrectMarker.SetActive(false);
