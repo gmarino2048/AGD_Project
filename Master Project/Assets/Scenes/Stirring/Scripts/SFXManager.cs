@@ -14,6 +14,18 @@ namespace Stirring
         [Header("Audio Clip")]
         public AudioClip StirringAudio;
 
+        private GameSettings _GameSettings;
+
+        void Awake()
+        {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
+        }
+
         public void PlayClip() 
         {
             SFXPlayer.clip = StirringAudio;
@@ -24,5 +36,10 @@ namespace Stirring
         }
 
         public void StopClip() { SFXPlayer.Stop(); }
+
+        private void OnGameSettingsChanged()
+        {
+            SFXPlayer.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+        }
     }
 }

@@ -27,9 +27,17 @@ namespace Monologue
         private string _NextSceneName;
         private GameSettings _GameSettings;
 
+        private GameSettings _GameSettings;
+
         // Use this for initialization
         void Start()
         {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings == null)
+            {
+                throw new Exception("GameSettings did not exist in scene");
+            }
+
             var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
             var monologue = gameNarrativeManager.GetAppropriateMonologue();
 
@@ -102,7 +110,9 @@ namespace Monologue
                 {
                     yield return new WaitForSecondsRealtime(Time.deltaTime * _GameSettings.FramesPerCharacter);
                 }
+                yield return null;
             }
+            
             _IsTypingText = false;
         }
     }
