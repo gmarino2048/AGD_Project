@@ -24,9 +24,17 @@ namespace Monologue
         private bool _WasKeyDown = false;
         private string _NextSceneName;
 
+        private GameSettings _GameSettings;
+
         // Use this for initialization
         void Start()
         {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings == null)
+            {
+                throw new Exception("GameSettings did not exist in scene");
+            }
+
             var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
             var monologue = gameNarrativeManager.GetAppropriateMonologue();
 
@@ -89,6 +97,10 @@ namespace Monologue
                 }
 
                 textDisplay.text += letter;
+                for (var i = 0; i < _GameSettings.FramesPerCharacter; i++)
+                {
+                    yield return new WaitForEndOfFrame();
+                }
                 yield return null;
             }
 
