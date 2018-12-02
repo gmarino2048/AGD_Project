@@ -15,7 +15,7 @@ namespace Combat
         public string StartQuip2 = "I'd better talk her down.";
 
         [Header("Intro Animation")]
-        public Animator Monster;
+        public Animator MonsterAnimator;
         public string StartTrigger = "start";
         public string ContinueTrigger = "continue";
 
@@ -24,14 +24,16 @@ namespace Combat
 
         [Header("Music Controller")]
         public MusicController GameMusic;
+        public SFXController SFX;
 
         [Header("Health Bars")]
         public GameObject HealthMeters;
         public InfoBarController Health;
         public InfoBarController Manager;
 
-        [Header("User Controller")]
+        [Header("Combatant Controllers")]
         public UserController User;
+        public MonsterController Monster;
 
         private void Awake()
         {
@@ -50,10 +52,15 @@ namespace Combat
         {
             yield return Overlay.HideColor(3);
             yield return RunIntro();
+            SFX.Activate();
 
             do
             {
                 yield return User.UserTurn();
+
+                if (!(Health.Percentage > 0 && Manager.Percentage < 100 && Manager.Percentage > 0)) break;
+
+                yield return Monster.MonsterTurn();
             }
             while (Health.Percentage > 0 && Manager.Percentage < 100 && Manager.Percentage > 0);
         }
@@ -70,14 +77,14 @@ namespace Combat
             yield return PlayByPlay.Display(StartQuip2);
 
             yield return new WaitForSeconds(1);
-            Monster.SetTrigger(StartTrigger);
+            MonsterAnimator.SetTrigger(StartTrigger);
 
             yield return new WaitForSeconds(0.3f);
             yield return Overlay.ShowColor(Color.white,0.2f);
             yield return new WaitForSeconds(0.2f);
             GameMusic.PlayMusic();
             HealthMeters.SetActive(true);
-            Monster.SetTrigger(ContinueTrigger);
+            MonsterAnimator.SetTrigger(ContinueTrigger);
             PlayByPlay.Clear();
             yield return Overlay.HideColor(0.2f);
 

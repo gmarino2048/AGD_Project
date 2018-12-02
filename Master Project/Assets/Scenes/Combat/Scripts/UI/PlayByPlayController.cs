@@ -23,9 +23,48 @@ namespace Combat
         public List<string> Beg;
         public List<string> Heal;
 
+        [Header("Monster Responses")]
+        public string MissResponse = "Nessie's Attack Missed!";
+        public List<string> MissOptions;
+        public string AttackDefault = "Nessie Attacks";
+        public List<string> AttackOptions;
+        public string HealDefault = "Nessie Heals";
+        public List<string> HealOptions;
+
         public void Clear ()
         {
             PlayByPlayText.text = string.Empty;
+        }
+
+        public IEnumerator DisplayMonsterAction (MonsterController.MonsterActions action)
+        {
+            string response = "Monster makes a move";
+            List<string> options = new List<string>();
+
+            switch (action)
+            {
+                case MonsterController.MonsterActions.Hit:
+                    response = AttackDefault;
+                    options = AttackOptions;
+                    break;
+                case MonsterController.MonsterActions.Miss:
+                    response = MissResponse;
+                    options = MissOptions;
+                    break;
+                case MonsterController.MonsterActions.Heal:
+                    response = HealDefault;
+                    options = HealOptions;
+                    break;
+            }
+
+            if (options.Count > 0)
+            {
+                int item = Mathf.FloorToInt(Random.Range(0f, options.Count - 0.0001f));
+                string message = options[item];
+
+                yield return Display(message);
+            }
+            else yield return Display(response);
         }
 
         public IEnumerator DisplayUserAction(UserActions.UserActionChoice choice)

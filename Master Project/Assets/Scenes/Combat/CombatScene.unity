@@ -541,6 +541,12 @@ MonoBehaviour:
   - '"Please... I have so much to live for."'
   Heal:
   - Now where was that first aid kit again?
+  MissResponse: Nessie's Attack Missed!
+  MissOptions: []
+  AttackDefault: Nessie Attacks
+  AttackOptions: []
+  HealDefault: Nessie Heals
+  HealOptions: []
 --- !u!1 &120968442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1121,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1139,7 +1145,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &334569976
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1195,7 +1201,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1219,7 +1225,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &334569977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,6 +1240,7 @@ MonoBehaviour:
   Regular: {fileID: 334569973}
   ManagerCritical: {fileID: 334569976}
   HealthCritical: {fileID: 334569975}
+  SFXVolume: 0.5
   ManagerMeterDown: {fileID: 8300000, guid: bb0c48e59dcb5b241aa76eea20a5494c, type: 3}
   ManagerMeterUp: {fileID: 8300000, guid: ba527d6912396e548aad7da719a8db54, type: 3}
   ManagerMeterCritical: {fileID: 8300000, guid: 4a34fd91e2d1dd946aebfdd2cd776303,
@@ -3572,6 +3579,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1193526263}
+  - component: {fileID: 1193526264}
   m_Layer: 0
   m_Name: MonsterController
   m_TagString: Untagged
@@ -3592,6 +3600,22 @@ Transform:
   m_Father: {fileID: 1858288104}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193526264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193526262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de788453bc614b10b32caf2598c4d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: 0.8333333
+  Miss: 0.125
+  HealValue: 10
+  Controller: {fileID: 1858288105}
+  PlayByPlay: {fileID: 117079874}
 --- !u!1 &1195268324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,7 +3889,7 @@ Transform:
   - {fileID: 1517145013}
   - {fileID: 1620152992}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258892659
 GameObject:
@@ -6396,7 +6420,7 @@ Transform:
   - {fileID: 1410905155}
   - {fileID: 19976602}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858288103
 GameObject:
@@ -6432,7 +6456,7 @@ Transform:
   - {fileID: 90622027}
   - {fileID: 334569974}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1858288105
 MonoBehaviour:
@@ -6448,6 +6472,7 @@ MonoBehaviour:
   HealthBar: {fileID: 1462598488}
   ManagerBar: {fileID: 56665937}
   PlayByPlay: {fileID: 117079874}
+  SFX: {fileID: 334569977}
   Monster: {fileID: 2083706993}
   AttackTrigger: attack1
   DamageTrigger: hit
@@ -6465,15 +6490,17 @@ MonoBehaviour:
   PlayByPlay: {fileID: 117079874}
   StartQuip1: Shit... I messed up...
   StartQuip2: I'd better talk her down.
-  Monster: {fileID: 2083706993}
+  MonsterAnimator: {fileID: 2083706993}
   StartTrigger: start
   ContinueTrigger: continue
   Overlay: {fileID: 1620152993}
   GameMusic: {fileID: 90622028}
+  SFX: {fileID: 334569977}
   HealthMeters: {fileID: 955509099}
   Health: {fileID: 1462598488}
   Manager: {fileID: 56665937}
   User: {fileID: 1644279112}
+  Monster: {fileID: 1193526264}
 --- !u!1 &1866171028
 GameObject:
   m_ObjectHideFlags: 0
