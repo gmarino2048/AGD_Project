@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -9,5 +10,8 @@ namespace GameNarrative
     {
         [XmlAttribute("monster")]
         public Guid MonsterID;
+
+        [XmlIgnore]
+        public List<string> DialogueHistory = new List<string>();
     }
 }
