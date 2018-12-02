@@ -9,7 +9,7 @@
         <ingredient type="IceCream"/>
         <ingredient type="AquariumGravel"/>
 
-        <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
+        <combatchoice name="Beg" start="35" decayrate="0" min="35"/>
         <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
         <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
         <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
@@ -23,7 +23,7 @@
         <ingredient type="AquariumGravel"/>
         <ingredient type="Eggs"/>
 
-        <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
+        <combatchoice name="Beg" start="35" decayrate="0" min="35"/>
         <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
         <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
         <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
@@ -38,7 +38,7 @@
         <ingredient type="CrushedSouls"/>
         <ingredient type="VoidGoo"/>
 
-        <combatchoice name="Beg" start="35" decayrate="0" min="0"/>
+        <combatchoice name="Beg" start="35" decayrate="0" min="35"/>
         <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
         <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
         <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
