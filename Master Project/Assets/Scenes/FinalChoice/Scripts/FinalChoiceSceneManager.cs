@@ -107,7 +107,7 @@ namespace FinalChoice
                //background.GetComponent<Image>().enabled = false;
                 resultScreen.enabled = true;
             }
-            if (monsterData.Name == "Redacted")
+            if (monsterData.Name == "[REDACTED]")
             {
                 resultScreen.sprite = RedactedSplash;
                 //background.GetComponent<Image>().enabled = false;
