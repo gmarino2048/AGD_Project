@@ -27,35 +27,41 @@ namespace Combat
         public Button Flatter;
         public Button OfferCoupon;
 
-        public Button Beg;
+        public Button BegButton;
 
-        public Button Back;
+        public Button BackButton;
 
         // Use this for initialization
         void Start()
         {
-            UnopenedMenu.gameObject.SetActive(false);
-            OpenedMenu.gameObject.SetActive(true);
+            UnopenedMenu.gameObject.SetActive(true);
+            OpenedMenu.gameObject.SetActive(false);
+
+            TalkButton.onClick.AddListener(OpenTalk);
+            BackButton.onClick.AddListener(GoBack);
+            PauseButton.onClick.AddListener(Pause);
+
 
             FreeFood.onClick.AddListener(Actions.FoodAction);
             OfferDrink.onClick.AddListener(Actions.DrinkAction);
             Reason.onClick.AddListener(Actions.ReasonAction);
             Flatter.onClick.AddListener(Actions.FlatterAction);
             OfferCoupon.onClick.AddListener(Actions.CouponAction);
+
             HealButton.onClick.AddListener(Actions.HealAction);
-            Beg.onClick.AddListener(Actions.BegAction);
+            BegButton.onClick.AddListener(Actions.BegAction);
         }
 
         void OpenTalk ()
         {
-            OpenedMenu.gameObject.SetActive(true);
             UnopenedMenu.gameObject.SetActive(false);
+            OpenedMenu.gameObject.SetActive(true);
         }
 
         void GoBack ()
         {
-            UnopenedMenu.gameObject.SetActive(false);
-            OpenedMenu.gameObject.SetActive(true);
+            UnopenedMenu.gameObject.SetActive(true);
+            OpenedMenu.gameObject.SetActive(false);
         }
 
         void Pause ()

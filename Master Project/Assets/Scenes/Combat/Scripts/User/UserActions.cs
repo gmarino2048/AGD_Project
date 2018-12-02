@@ -33,7 +33,7 @@ namespace Combat
 
         private void Start()
         {
-            ReductionCounter = new List<int>(7);
+            ReductionCounter = new List<int>(new int[] { 0, 0, 0, 0, 0, 0, 0 });
             HealText.text = "(4)";
         }
 
