@@ -1,25 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace PauseMenu
 {
-	public class ClosePauseMenuButton : MonoBehaviour
+	public class OpenPauseButton : MonoBehaviour
 	{
-		public GameObject pauseMenu;
+		public GameObject pauseMenuPrefab;
 
 		void Start ()
 		{
-			Time.timeScale = 0;
 			gameObject.GetComponent<Button>().onClick.AddListener(OnClick);
 		}
 
 		private void OnClick()
 		{
-			Time.timeScale = 1;
-			GameObject.Destroy(pauseMenu);
+			if (pauseMenuPrefab == null)
+			{
+				Debug.Log("No prefab for pause menu");
+			}
+
+			Instantiate(pauseMenuPrefab);
 		}
 	}
 }
