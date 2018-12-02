@@ -64,7 +64,6 @@ namespace Grill
                     SFXController SFX = instantiated.gameObject.AddComponent<SFXController>();
 
                     SFX.SFXPlayer = SFXPlayer;
-                    SFX.SFXScaler = SFXScaler;
 
                     SFX.Meat = Meat;
                     SFX.Sizzle = Sizzle;
