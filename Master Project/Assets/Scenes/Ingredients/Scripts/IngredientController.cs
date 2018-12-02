@@ -62,7 +62,6 @@ namespace Ingredients
 					Offset = gameObject.transform.position - MouseToWorldPoint ();
 				} else {
 					StartCoroutine(ShowX());
-					SFX.playForIncorrectIngredient ();
 				}
             }
         }
@@ -75,7 +74,6 @@ namespace Ingredients
                 Cursor.lockState = CursorLockMode.Confined;
                 if (InRecipe)
                 {
-					SFX.playForCorrectIngredient ();
                     foreach (PlateController plate in Plates)
                     {
                         bool touching = IsTouching(Collider, plate.Collider);
@@ -84,6 +82,7 @@ namespace Ingredients
                         if (touching && !used)
                         {
                             Vector3 reference = plate.Reference.transform.position;
+                            SFX.playForCorrectIngredient();
 
                             gameObject.transform.position = new Vector3(reference.x, reference.y, reference.z);
                             plate.SetFood();
@@ -108,6 +107,7 @@ namespace Ingredients
 
         IEnumerator ShowX ()
         {
+            SFX.playForIncorrectIngredient();
             MonsterFactory monsterFactory = FindObjectOfType<MonsterFactory>();
             GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
             try
