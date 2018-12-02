@@ -13,20 +13,36 @@ namespace Shaking
         public AudioSource Background;
         public AudioClip BackgroundSound;
 
-        public float SFXScaler = 1;
+        private GameSettings _GameSettings;
+
+        void Awake()
+        {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
+        }
 
 
         public void Shake ()
         {
             if (!SFX.isPlaying)
             {
-                SFX.PlayOneShot(ShakerSound, SFXScaler);
+                SFX.PlayOneShot(ShakerSound);
             }
 
             if (!Background.isPlaying && BackgroundSound != null)
             {
-                Background.PlayOneShot(BackgroundSound, SFXScaler);
+                Background.PlayOneShot(BackgroundSound);
             }
+        }
+
+        private void OnGameSettingsChanged()
+        {
+            SFX.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+            Background.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
         }
     }
 }
