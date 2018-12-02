@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 56665936}
   - component: {fileID: 56665935}
   - component: {fileID: 56665937}
+  - component: {fileID: 56665938}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -359,6 +360,26 @@ MonoBehaviour:
   MaximumValueUI: 35
   Duration: 2
   StartPercentage: 50
+--- !u!223 &56665938
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56665933}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &90622026
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +670,7 @@ GameObject:
   - component: {fileID: 199036615}
   - component: {fileID: 199036617}
   - component: {fileID: 199036616}
+  - component: {fileID: 199036618}
   m_Layer: 0
   m_Name: Meter
   m_TagString: Untagged
@@ -707,6 +729,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 199036614}
+--- !u!223 &199036618
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 199036614}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &209167786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2351,7 @@ GameObject:
   - component: {fileID: 871767212}
   - component: {fileID: 871767214}
   - component: {fileID: 871767213}
+  - component: {fileID: 871767215}
   m_Layer: 0
   m_Name: ClearOverlay
   m_TagString: Untagged
@@ -2367,6 +2410,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871767211}
+--- !u!223 &871767215
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 871767211}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
 --- !u!1 &886513017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3281,7 @@ GameObject:
   - component: {fileID: 1099705508}
   - component: {fileID: 1099705510}
   - component: {fileID: 1099705509}
+  - component: {fileID: 1099705511}
   m_Layer: 0
   m_Name: Meter
   m_TagString: Untagged
@@ -3262,7 +3326,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 32ce62e81903c6c468460c4805bcdeb0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3276,6 +3340,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099705507}
+--- !u!223 &1099705511
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099705507}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &1105954779
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4759,7 @@ GameObject:
   - component: {fileID: 1459618239}
   - component: {fileID: 1459618241}
   - component: {fileID: 1459618240}
+  - component: {fileID: 1459618242}
   m_Layer: 0
   m_Name: ClearOverlay
   m_TagString: Untagged
@@ -4733,6 +4818,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1459618238}
+--- !u!223 &1459618242
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459618238}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
 --- !u!1 &1462598484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,6 +4849,7 @@ GameObject:
   - component: {fileID: 1462598487}
   - component: {fileID: 1462598486}
   - component: {fileID: 1462598488}
+  - component: {fileID: 1462598489}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -4820,6 +4926,26 @@ MonoBehaviour:
   MaximumValueUI: 30
   Duration: 2
   StartPercentage: 100
+--- !u!223 &1462598489
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462598484}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1465970062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,7 +5622,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
