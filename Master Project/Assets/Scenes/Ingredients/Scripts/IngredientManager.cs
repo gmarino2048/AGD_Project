@@ -23,7 +23,7 @@ namespace Ingredients
         public List<PlateController> Plates { get; private set; }
         public List<IngredientController> Ingredients { get; private set; }
 
-        void Start()
+        void Awake()
         {
             GameActive = false;
             Ingredients = new List<IngredientController>(FindObjectsOfType<IngredientController>());

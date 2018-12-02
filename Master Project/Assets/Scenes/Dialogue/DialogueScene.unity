@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ba304e633eef8414f82fe10da77538ae, type: 3}
+    m_Font: {fileID: 12800000, guid: 401cfdfa745e74c24be3fe7fca856355, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -2280,6 +2280,8 @@ MonoBehaviour:
   responsesDisplay: {fileID: 1187174031}
   continueButton: {fileID: 1027985358}
   Patron: {fileID: 766707674}
+  standardFont: {fileID: 12800000, guid: 401cfdfa745e74c24be3fe7fca856355, type: 3}
+  internalFont: {fileID: 12800000, guid: 3707f8bb4ce054e7596ac657288a8752, type: 3}
 --- !u!4 &1592996416
 Transform:
   m_ObjectHideFlags: 0

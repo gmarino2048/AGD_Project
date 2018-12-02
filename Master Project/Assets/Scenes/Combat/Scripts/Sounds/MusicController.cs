@@ -28,6 +28,11 @@ namespace Combat
             MusicPlayer.Play();
         }
 
+        public void StopMusic ()
+        {
+            MusicPlayer.Stop();
+        }
+
         public void AdjustVolume(float newVolume)
         {
             MusicPlayer.volume = newVolume;

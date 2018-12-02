@@ -19,7 +19,6 @@ public class GameOverButton : MonoBehaviour {
 
     public void OnButtonClicked()
     {
-        Debug.Log("grrrr");
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
     }
 }

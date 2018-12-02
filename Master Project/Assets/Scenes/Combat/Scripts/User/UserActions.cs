@@ -105,7 +105,8 @@ namespace Combat
             Controller.DamageMonster(Beg);
             ReductionCounter[5]++;
 
-            Controller.SetBegActive(false);
+            Controller.SetBegActive(false, false);
+
             UserChoiceMade = true;
             Choice = UserActionChoice.Beg;
         }

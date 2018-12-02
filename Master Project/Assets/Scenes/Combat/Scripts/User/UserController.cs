@@ -16,6 +16,7 @@ namespace Combat
         public Button Talk;
         public Button Heal;
         public ButtonManager ButtonManager;
+        public GameController GameController;
 
         [Header("User Actions")]
         public UserActions Actions;
@@ -34,7 +35,7 @@ namespace Combat
             yield return PlayByPlay.Display(SelectionPhrase);
 
             Talk.gameObject.SetActive(true);
-            Heal.gameObject.SetActive(true);
+            GameController.SetHealActive(true);
 
             yield return new WaitUntil(() => Actions.UserChoiceMade);
 

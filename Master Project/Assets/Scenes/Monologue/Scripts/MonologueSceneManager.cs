@@ -15,81 +15,64 @@ namespace Monologue
         /// </summary>
         public Text textDisplay;
 
-        /// <summary>
-        /// The scene to go to after the monologue is over.
-        /// </summary>
-        public string nextSceneName;
+        private readonly string _WIN_SCENE_NAME = "FinalChoice";
+        private readonly string _LOSE_SCENE_NAME = "Game OVer";
+        private readonly string _DIALOGUE_SCENE_NAME = "DialogueScene";
 
         private Queue<string> _MonologueEntries;
         private bool _IsTypingText = false;
         private bool _WasKeyDown = false;
+        private string _NextSceneName;
 
         // Use this for initialization
         void Start()
         {
             var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
-            try
+            var monologue = gameNarrativeManager.GetAppropriateMonologue();
+
+            if (monologue.IsForEnd)
             {
+                if (monologue.IsForWin) _NextSceneName = _WIN_SCENE_NAME;
+                else _NextSceneName = _LOSE_SCENE_NAME;
+            }
+            else
+            {
+                _NextSceneName = _DIALOGUE_SCENE_NAME;
                 gameNarrativeManager.StartNextStage();
-                _MonologueEntries = new Queue<string>(gameNarrativeManager.CurrentStage.Monologue.Entries);
             }
-            catch (Exception)
-            {
-                Debug.LogWarning("Scene not running in game");
-            }
+
+            _MonologueEntries = new Queue<string>(monologue.Entries);
 
             ShowNextEntry();
         }
 
-        // Update is called once per frame
-        void Update()
+        public bool ShowNextEntry(bool shouldStopTyping = false)
         {
-            if (Input.anyKey)
+            if (!_MonologueEntries.Any())
             {
-                if (_WasKeyDown)
-                {
-                    return;
-                }
-                _WasKeyDown = true;
+                return false;
+            }
 
-                if (_IsTypingText)
+            if (_IsTypingText)
+            {
+                if (shouldStopTyping)
                 {
                     _IsTypingText = false;
-                    return;
+                    StopAllCoroutines();
                 }
-                try
+                else
                 {
-                    if (!_MonologueEntries.Any())
-                    {
-                        SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
-                        return;
-                    }
+                    return true;
                 }
-                catch (Exception)
-                {
-                    Debug.LogWarning("Scene not running in game");
-                }
+            }
 
-                ShowNextEntry();
-            }
-            else
-            {
-                _WasKeyDown = false;
-            }
+            StartCoroutine(TypeText(_MonologueEntries.Dequeue()));
+            return true;
         }
 
-        private void ShowNextEntry()
+        public void EndScene()
         {
-            try
-            {
-                StopAllCoroutines();
-                StartCoroutine(TypeText(_MonologueEntries.Dequeue()));
-            }
-            catch (Exception)
-            {
-                StopAllCoroutines();
-                StartCoroutine(TypeText("Scene not running in game"));
-            }
+            SceneManager.LoadScene(_NextSceneName, LoadSceneMode.Single);
         }
 
         private IEnumerator TypeText(string textToType)

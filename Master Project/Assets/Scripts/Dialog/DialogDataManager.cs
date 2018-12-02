@@ -77,6 +77,11 @@ namespace Dialog
                     prompt.IsSaidByPlayer = true;
                 }
 
+                if (xmlNode.Attributes["isInternalMonologue"] != null && bool.Parse(xmlNode.Attributes["isInternalMonologue"].Value))
+                {
+                    prompt.IsInternalMonologue = true;
+                }
+
                 if (xmlNode.Attributes["animState"] != null )
                 {
                     prompt.AnimState = (DialogAnimState) Enum.Parse(typeof(DialogAnimState), xmlNode.Attributes["animState"].Value);

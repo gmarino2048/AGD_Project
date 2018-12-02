@@ -25,7 +25,7 @@ namespace Combat
         Coroutine Changing;
 
         // Use this for initialization
-        void Start()
+        void OnEnable()
         {
             Percentage = 0;
             UpdateBarFill(Percentage);

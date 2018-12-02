@@ -12,8 +12,8 @@ TrueTypeFontImporter:
   fontNames:
   - Comfortaa
   fallbackFontReferences:
-  - {fileID: 12800000, guid: c868f50e8c2747340b072f296bbd45c8, type: 3}
-  - {fileID: 12800000, guid: c7bc325ef01248a4a9363f27fcfbf5aa, type: 3}
+  - {fileID: 12800000, guid: 401cfdfa745e74c24be3fe7fca856355, type: 3}
+  - {fileID: 12800000, guid: 3707f8bb4ce054e7596ac657288a8752, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

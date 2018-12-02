@@ -3,13 +3,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Combat
 {
     public class MonsterAction : MonoBehaviour
     {
-
         System.Random monsterdice = new System.Random();
         System.Random damagedice = new System.Random();
         private int monsteraction;
@@ -39,8 +39,9 @@ namespace Combat
         private CombatInitiator _CombatInitiator;
         public MonsterData CurrentMonster;
 
-        //private readonly Guid _NESSIE_GUID = new Guid("{060F70EA-8A92-4117-AB65-75DE3458E407}");
-       
+        private string _GAME_OVER_SCENE_NAME = "Game OVer";
+        private string _DIALOGUE_SCENE_NAME = "DialogueScene";
+        private string _MONOLOGUE_SCENE_NAME = "Monologue";
 
         void Awake()
         {
@@ -201,18 +202,29 @@ namespace Combat
                 }
                 yield return null;
             }
-            if (!Win)
-            {
-                CombatMessage.text = "Game Over!";
-                Ad.PHPHZ();
-                yield return new WaitForSeconds(1f);
-                //Ad.MGO();
-            }
-            else
+
+            if (Win)
             {
                 CombatMessage.text = "Victory!";
                 Ad.MMHZ();
                 yield return new WaitForSeconds(1f);
+                var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+                if (gameNarrativeManager == null)
+                {
+                    SceneManager.LoadScene(_DIALOGUE_SCENE_NAME);
+                }
+
+                if (gameNarrativeManager.AnyStagesLeft())
+                {
+                    SceneManager.LoadScene(_DIALOGUE_SCENE_NAME, LoadSceneMode.Single);
+                }
+                else {
+                    SceneManager.LoadScene(_MONOLOGUE_SCENE_NAME, LoadSceneMode.Single);
+                }
+            }
+            else
+            {
+                SceneManager.LoadScene(_GAME_OVER_SCENE_NAME, LoadSceneMode.Single);
             }
         }
         IEnumerator Monsterdamamged()
