@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e26fd21ec8434e34cb49160eeac8a7e5
+guid: 3707f8bb4ce054e7596ac657288a8752
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,8 +12,7 @@ TrueTypeFontImporter:
   fontNames:
   - Comfortaa
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 401cfdfa745e74c24be3fe7fca856355, type: 3}
-  - {fileID: 12800000, guid: 3707f8bb4ce054e7596ac657288a8752, type: 3}
+  - {fileID: 12800000, guid: e26fd21ec8434e34cb49160eeac8a7e5, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

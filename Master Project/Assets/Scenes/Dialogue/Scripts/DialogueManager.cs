@@ -51,6 +51,9 @@ namespace Dialogue
 
         public MonsterController Patron;
 
+        public Font standardFont;
+        public Font internalFont;
+
         private DialogDataManager _DialogDataManager;
         private GameSettings _GameSettings;
         private MonsterData _MonsterData;
@@ -170,7 +173,21 @@ namespace Dialogue
             responsesDisplay.SetActive(false);
             continueButton.SetActive(false);
 
-            var speakerName = _CurrentPrompt.IsSaidByPlayer ? _GameSettings.PlayerName : _MonsterData.Name;
+            var speakerName = _MonsterData.Name;
+            dialogueText.font = standardFont;
+
+            if (_CurrentPrompt.IsSaidByPlayer)
+            {
+                if (_CurrentPrompt.IsInternalMonologue)
+                {
+                    speakerName = "Internal";
+                    dialogueText.font = internalFont;
+                }
+                else
+                {
+                    speakerName = _GameSettings.PlayerName;
+                }
+            }
 
             StopAllCoroutines();
             StartCoroutine(TypeSentence(speakerName, _CurrentPrompt.Body));

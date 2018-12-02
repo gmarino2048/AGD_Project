@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -232,10 +232,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 330701697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39eac907f5e494d8bb3557e5cee26414, type: 3}
+  m_Script: {fileID: 11500000, guid: 19140c4d3683d4e37b66b3bf3450e818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldSkipDialogue: 0
+  shouldStopTyping: 0
 --- !u!114 &330701700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1139632760}
-  nextSceneName: DialogueScene
 --- !u!4 &867434911
 Transform:
   m_ObjectHideFlags: 0
@@ -862,18 +861,18 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4631b02e393b74042a84875eea88eb27, type: 3}
-    m_FontSize: 45
+    m_Font: {fileID: 12800000, guid: 3707f8bb4ce054e7596ac657288a8752, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 45
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.17
+    m_LineSpacing: 1.1
   m_Text: 'Testing
 
     How Low
@@ -930,10 +929,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183265980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39eac907f5e494d8bb3557e5cee26414, type: 3}
+  m_Script: {fileID: 11500000, guid: 19140c4d3683d4e37b66b3bf3450e818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldSkipDialogue: 0
+  shouldStopTyping: 1
 --- !u!114 &1183265983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,18 +971,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1183265984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1183265982}
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1183265984

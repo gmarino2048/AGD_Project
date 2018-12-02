@@ -30,17 +30,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Stirring/Stirring.unity
     guid: 5164d78bdf6334368803c29d48ddc96a
   - enabled: 1
-    path: Assets/Scenes/Combat/CombatScene.unity
-    guid: c3534fcd3fa644bb4b61fb1efa8a5a02
-  - enabled: 1
-    path: Assets/Scenes/ScenePicker/ScenePicker.unity
-    guid: 64d68d94cc801bf498b20ddf9bb5ca5e
-  - enabled: 1
     path: Assets/Scenes/Chopping/Chopping.unity
     guid: 5483dd7ca4ee7427ca1f82c3cb07dc4d
   - enabled: 1
     path: Assets/Scenes/Grill/Grill.unity
     guid: 20bcaff4a6c81453a9e442f3964b3392
+  - enabled: 1
+    path: Assets/Scenes/FoodScoring/FoodScoreScene.unity
+    guid: 940fae48752454997ba9cf210e99ddab
+  - enabled: 1
+    path: Assets/Scenes/Combat/CombatScene.unity
+    guid: c3534fcd3fa644bb4b61fb1efa8a5a02
   - enabled: 1
     path: Assets/Scenes/FinalChoice/FinalChoice.unity
     guid: bb1d6b923d45944b8848eea9e2a5f44d

@@ -23,13 +23,19 @@ public class GameNarrativeManager : MonoBehaviour
     public Stage CurrentStage { get; private set; }
 
     /// <summary>
+    /// The overall narrative
+    /// </summary>
+    private Narrative _Narrative { get; set; }
+
+    /// <summary>
     /// The stages of the narrative in a queue
     /// </summary>
     private Queue<Stage> _StagesQueue { get; set; }
 
     public void Start()
     {
-        _StagesQueue = new Queue<Stage>(LoadNarrative().Stages);
+        _Narrative = LoadNarrative();
+        _StagesQueue = new Queue<Stage>(_Narrative.Stages);
         DateableMonsterIDs = new List<Guid>();
     }
 
@@ -53,6 +59,23 @@ public class GameNarrativeManager : MonoBehaviour
         }
 
         CurrentStage = _StagesQueue.Dequeue();
+    }
+
+    /// <summary>
+    /// Gets the appropriate monologue and returns its entries
+    /// </summary>
+    /// <returns>A list of strings, each being one entry</returns>
+    public GameNarrative.Monologue GetAppropriateMonologue()
+    {
+        foreach (var monologue in _Narrative.Monologues)
+        {
+            if (monologue.IsForEnd == !AnyStagesLeft() && (AnyStagesLeft() || monologue.IsForWin == DateableMonsterIDs.Any()))
+            {
+                return monologue;
+            }
+        }
+
+        return null; // Shouldn't ever get here
     }
 
     private Narrative LoadNarrative()
