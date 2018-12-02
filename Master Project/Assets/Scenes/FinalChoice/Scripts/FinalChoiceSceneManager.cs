@@ -98,7 +98,7 @@ namespace FinalChoice
             Group.gameObject.SetActive(true);
             PurpleStuff.gameObject.SetActive(true);
             var monsterData = _MonsterFactory.LoadMonster(monsterID);
-			Debug.Log(monsterData.Name + " was chosen");
+			//Debug.Log(monsterData.Name + " was chosen");
 
             if (monsterData.Name == "Nessie")
             {

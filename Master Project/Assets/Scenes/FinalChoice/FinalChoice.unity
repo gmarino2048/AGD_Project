@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 183492199}
   - component: {fileID: 183492198}
   m_Layer: 5
-  m_Name: PurplePic
+  m_Name: PurplePicGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 376579911}
   - component: {fileID: 376579910}
   m_Layer: 5
-  m_Name: ResultPic
+  m_Name: PurplePic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
