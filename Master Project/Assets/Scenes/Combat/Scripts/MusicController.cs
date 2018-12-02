@@ -17,7 +17,10 @@ namespace Combat
         {
             List<AudioSource> sources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
             sources.ForEach((source) => source.Stop());
+        }
 
+        public void PlayMusic ()
+        {
             MusicPlayer.clip = Music;
             MusicPlayer.loop = true;
             MusicPlayer.volume = Volume;

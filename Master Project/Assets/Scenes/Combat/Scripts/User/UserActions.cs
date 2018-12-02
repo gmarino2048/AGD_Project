@@ -18,6 +18,7 @@ namespace Combat
 
         List<int> ReductionCounter;
         public float ReductionScaler;
+        public bool UserChoiceMade { get; set; }
 
         [Header("Game Contoller")]
         public GameController Controller;
@@ -30,6 +31,19 @@ namespace Combat
         public Image BegCover;
         public Button BegButton;
 
+        public enum UserActionChoice
+        {
+            Food,
+            Drink,
+            Reason,
+            Flatter,
+            Coupon,
+            Beg,
+            Heal
+        }
+
+        public UserActionChoice Choice { get; private set; }
+
         private void Start()
         {
             ReductionCounter = new List<int>(new int[] { 0, 0, 0, 0, 0, 0, 0 });
@@ -41,6 +55,9 @@ namespace Combat
             Controller.DamageMonster(FreeFood, GameController.LastEvent.UserAttack);
             FreeFood *= ReductionCounter[0] < 5 ? ReductionScaler : 1;
             ReductionCounter[0]++;
+
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Food;
         }
 
         public void DrinkAction ()
@@ -48,6 +65,9 @@ namespace Combat
             Controller.DamageMonster(OfferDrink, GameController.LastEvent.UserAttack);
             FreeFood *= ReductionCounter[1] < 5 ? ReductionScaler : 1;
             ReductionCounter[1]++;
+
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Drink;
         }
 
         public void ReasonAction()
@@ -55,6 +75,9 @@ namespace Combat
             Controller.DamageMonster(Reason, GameController.LastEvent.UserAttack);
             FreeFood *= ReductionCounter[2] < 5 ? ReductionScaler : 1;
             ReductionCounter[2]++;
+
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Reason;
         }
 
         public void FlatterAction()
@@ -62,6 +85,9 @@ namespace Combat
             Controller.DamageMonster(Flatter, GameController.LastEvent.UserAttack);
             FreeFood *= ReductionCounter[3] < 5 ? ReductionScaler : 1;
             ReductionCounter[3]++;
+
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Flatter;
         }
 
         public void CouponAction()
@@ -69,6 +95,9 @@ namespace Combat
             Controller.DamageMonster(OfferCoupon, GameController.LastEvent.UserAttack);
             FreeFood *= ReductionCounter[4] < 5 ? ReductionScaler : 1;
             ReductionCounter[4]++;
+
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Coupon;
         }
 
         public void BegAction()
@@ -77,21 +106,31 @@ namespace Combat
             ReductionCounter[5]++;
 
             Controller.SetBegActive(false);
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Beg;
         }
 
         public void HealAction ()
         {
-            if (ReductionCounter[6] < 4)
+            if (ReductionCounter[6] < 3)
             {
                 Controller.HealPlayer(Heal, GameController.LastEvent.UserHeal);
                 ReductionCounter[6]++;
 
                 HealText.text = "(" + (4 - ReductionCounter[6]).ToString() + ")";
             }
-            else
+            else if (ReductionCounter[6] == 3)
             {
+                Controller.HealPlayer(Heal, GameController.LastEvent.UserHeal);
+                ReductionCounter[6]++;
+
+                HealText.text = "(" + (4 - ReductionCounter[6]).ToString() + ")";
+
                 Controller.SetHealActive(false);
             }
+
+            UserChoiceMade = true;
+            Choice = UserActionChoice.Heal;
         }
     }
 }

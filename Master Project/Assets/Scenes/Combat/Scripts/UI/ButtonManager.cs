@@ -52,19 +52,19 @@ namespace Combat
             BegButton.onClick.AddListener(Actions.BegAction);
         }
 
-        void OpenTalk ()
+        public void OpenTalk ()
         {
             UnopenedMenu.gameObject.SetActive(false);
             OpenedMenu.gameObject.SetActive(true);
         }
 
-        void GoBack ()
+        public void GoBack ()
         {
             UnopenedMenu.gameObject.SetActive(true);
             OpenedMenu.gameObject.SetActive(false);
         }
 
-        void Pause ()
+        public void Pause ()
         {
             //TODO: Put pause information here
         }
