@@ -120,7 +120,7 @@ namespace Grill
             ScoreKeeper.AddScore(this);
             ActiveList.Active.Remove(this);
 
-            PlatingSound.PlayOneShot(SFX.Spatula, SFX.SFXScaler);
+            PlatingSound.PlayOneShot(SFX.Spatula);
             DestroyImmediate(gameObject);
         }
 
