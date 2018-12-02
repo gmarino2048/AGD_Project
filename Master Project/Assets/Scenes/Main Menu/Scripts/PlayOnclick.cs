@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class stores methods that are called when the cooresponding main menu buttons are clicked
@@ -10,11 +11,16 @@ public class PlayOnclick : MonoBehaviour
 {
     private bool _AreOptionsActive = false;
     private bool _AreCreditsActive = false;
-    private bool _AreInstructionsActive = false;
+    private bool _AreInstructions1Active = false;
+    private bool _AreInstructions2Active = false;
 
     public GameObject optionsMenu;
     public GameObject creditsMenu;
     public GameObject instructionsMenu;
+    public GameObject instructions2Menu;
+    public Slider textSpeedSlider;
+    
+
     public string firstSceneName;
 
     public void whenClickedPlay()
@@ -25,8 +31,8 @@ public class PlayOnclick : MonoBehaviour
     public void whenClickedInstructions()
     {
         Debug.Log("Instructions button was clicked");
-        _AreInstructionsActive = !_AreInstructionsActive;
-        instructionsMenu.SetActive(_AreInstructionsActive);
+        _AreInstructions1Active = !_AreInstructions1Active;
+        instructionsMenu.SetActive(_AreInstructions1Active);
     }
 
     public void whenClickedCredits()
@@ -61,10 +67,26 @@ public class PlayOnclick : MonoBehaviour
         creditsMenu.SetActive(_AreCreditsActive);
     }
 
-    public void whenInstructionsClickedBack()
+    public void whenInstructions1ClickedBack()
     {
-        _AreInstructionsActive = false;
-        instructionsMenu.SetActive(_AreInstructionsActive);
+        _AreInstructions1Active = false;
+        _AreInstructions2Active = true;
+        instructionsMenu.SetActive(_AreInstructions1Active);
+        instructions2Menu.SetActive(_AreInstructions2Active);
     }
+
+    public void whenInstructions2ClickedBack()
+    {
+        _AreInstructions2Active = false;
+        instructions2Menu.SetActive(_AreInstructions2Active);
+    }
+
+    public void whenTextSliderChanged()
+    {
+        GameSettings gameSettings = GameObject.FindObjectOfType<GameSettings>();
+        gameSettings.FramesPerCharacter = (int)Mathf.Clamp((1 - textSpeedSlider.value) * 10, 1, 10);
+        Debug.Log(gameSettings.FramesPerCharacter.ToString());
+    }
+
 
 }
