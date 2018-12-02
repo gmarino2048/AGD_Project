@@ -84,7 +84,7 @@ public class PlayOnclick : MonoBehaviour
     public void whenTextSliderChanged()
     {
         GameSettings gameSettings = GameObject.FindObjectOfType<GameSettings>();
-        gameSettings.FramesPerCharacter = (int)Mathf.Clamp((1 - textSpeedSlider.value) * 10, 1, 10);
+        gameSettings.FramesPerCharacter = (int)Mathf.Clamp((1 - textSpeedSlider.value) * 5, 1, 5);
         Debug.Log(gameSettings.FramesPerCharacter.ToString());
     }
 
