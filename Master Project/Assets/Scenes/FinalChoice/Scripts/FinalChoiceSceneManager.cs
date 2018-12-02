@@ -34,6 +34,11 @@ namespace FinalChoice
         public CanvasGroup Group;
         public CanvasGroup PurpleStuff;
 
+        public AudioSource Phone;
+
+        public AudioSource InitialMusic;
+
+        public AudioSource FinalMusic;
 
         // Use this for initialization
         void Awake() {
@@ -56,6 +61,11 @@ namespace FinalChoice
             else
             {
                 _MonsterFactory = GameObject.FindObjectOfType<MonsterFactory>();
+                var GameSettings = GameObject.FindObjectOfType<GameSettings>();
+                InitialMusic.volume = GameSettings.MusicVolume * GameSettings.MasterVolume;
+                FinalMusic.volume = GameSettings.MusicVolume * GameSettings.MasterVolume;
+
+                Phone.volume = GameSettings.SfxVolume * GameSettings.MasterVolume;
             }
 
             CreateChoiceButtons();
@@ -98,19 +108,25 @@ namespace FinalChoice
             Group.gameObject.SetActive(true);
             PurpleStuff.gameObject.SetActive(true);
             var monsterData = _MonsterFactory.LoadMonster(monsterID);
-			//Debug.Log(monsterData.Name + " was chosen");
+            InitialMusic.Stop();
+            //Debug.Log(monsterData.Name + " was chosen");
+
+            Phone.Play();
 
             if (monsterData.Name == "Nessie")
             {
                 resultScreen.sprite = NessieSplash;
-                yield return FadeCanvas(PurpleStuff, 0, 1, 1);
+                yield return FadeCanvas(PurpleStuff, 0, 3.5f, 1);
+                //FinalMusic.clip = FinalChoiceMusic;
+                FinalMusic.Play();
                 yield return FadeCanvas(Group, 0, 1, 1);
 
             }
             if (monsterData.Name == "Cerberus")
             {
                 resultScreen.sprite = CerberusSplash;
-                yield return FadeCanvas(PurpleStuff, 0, 1, 1);
+                yield return FadeCanvas(PurpleStuff, 0, 3.5f, 1);
+                FinalMusic.Play();
                 yield return FadeCanvas(Group, 0, 1, 1);
 
             }
@@ -118,7 +134,8 @@ namespace FinalChoice
             {
                 resultScreen.sprite = RedactedSplash;
                 //background.GetComponent<Image>().enabled = false;
-                yield return FadeCanvas(PurpleStuff, 0, 1, 1);
+                yield return FadeCanvas(PurpleStuff, 0, 3.5f, 1);
+                FinalMusic.Play();
                 yield return FadeCanvas(Group, 0, 1, 1);
             }
 
