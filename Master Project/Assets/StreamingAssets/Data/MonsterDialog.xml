@@ -40,31 +40,25 @@
             M'kay anyways can I have a Lakebed Shake? YOu guys do sell those, right?
         </prompt>
 
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-2" isSaidByPlayer="true">
-            (internal monologue) Looking at the "the customer is always right" sign on the wall,
+        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-2" isSaidByPlayer="true" isInternalMonologue="true">
+            Looking at the "the customer is always right" sign on the wall,
         </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-2" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-3" isSaidByPlayer="true">
-            (internal monologue) I remember my manager threatened to fire me if I ever said no to a customer again.
+        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-2" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-3" isSaidByPlayer="true" isInternalMonologue="true">
+            I remember my manager threatened to fire me if I ever said no to a customer again.
         </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-3" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-4" isSaidByPlayer="true">
-            (internal monologue) Also, looking at this cute monster,
+        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-3" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-4" isSaidByPlayer="true" isInternalMonologue="true">
+            Also, looking at this cute monster, how could I ever say no to that face?
         </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-4" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-5" isSaidByPlayer="true">
-            (internal monologue) how could I ever say no to that face?
+        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-4" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-5" isSaidByPlayer="true" isInternalMonologue="true">
+            Sure, she flooded my restaurant, but she also swept away my heart.
         </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-5" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-6" isSaidByPlayer="true">
-            (internal monologue) Sure, she flooded my restaurant,
+        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-5" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-6" isSaidByPlayer="true" isInternalMonologue="true">
+            Maybe I just gotta play my cards right...
         </prompt>
         <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-6" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-7" isSaidByPlayer="true">
-            (internal monologue) but she also swept away my heart.
-        </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-7" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-8" isSaidByPlayer="true">
-            (internal monologue) Maybe I just gotta play my cards right...
-        </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-8" nextPrompt="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-9" isSaidByPlayer="true">
             We definitely do, I just totally lost the recipe!
         </prompt>
-        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-9" nextPrompt="{B21A65D6-8FCF-495A-BB84-D62D05057313}" isSaidByPlayer="true">
+        <prompt id="{76A32D2B-CAC9-400C-BD2F-44827CA4A2DE}-7" nextPrompt="{B21A65D6-8FCF-495A-BB84-D62D05057313}" isSaidByPlayer="true">
             Could you maybe tell me what goes in it?
         </prompt>
 
@@ -297,7 +291,7 @@
                 *cough* Not today. Also, our restaurant has a no smoking policy. *cough* *cough* Sorry.
             </response>
             <response value="-1" nextPrompt="{8B21EFE3-5C09-44A2-BF4B-8321E1DFCFD7}">
-                *cough* *cough* Not right now, though could you please town down the smoke? Or we will have one available.
+                Not right now, though could you please town down the smoke? Or we will have one available.
             </response>
         </responseSet>
 
@@ -322,7 +316,7 @@
                 Yeah sure miss, what's in it again?
             </response>
             <response value="1" nextPrompt="{71BDC507-3436-4880-87D1-CB9B05BDFF4C}">
-                That... We should be able to do. Although, it has been a while since I've made it. It has varying ingredients, right?
+                We should be able to do. It has varying ingredients, right?
             </response>
         </responseSet>
 
@@ -344,7 +338,7 @@
 
         <responseSet id="{48114EC6-7EF9-456C-A7B7-D91E7F477016}">
             <response value="1" nextPrompt="{9AB46858-6356-45EC-AC1F-603CA6F50B68}">
-                Cool, cool. So I know you asked for human earlier, but since we don't have that, what would you like instead?
+                So I know you asked for human earlier, but what would you like instead?
             </response>
             <response value="0" nextPrompt="{DF0FAA0A-B8E1-4A0B-9CF8-452904A10F98}">
                 Alrighty! What's your protein of choice?

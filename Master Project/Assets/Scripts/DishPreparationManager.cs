@@ -10,9 +10,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DishPreparationManager : MonoBehaviour
 {
-    private readonly string _NEXT_STAGE_SCENE_NAME = "Monologue";
-    private readonly string _GAME_WON_SCENE_NAME = "FinalChoice";
-    private readonly string _GAME_OVER_SCENE_NAME = "Game OVer";
+    private readonly string _DISH_COMPLETE_SCENE_NAME = "FoodScoreScene";
 
     private const string _CHOPPING_SCENE_NAME = "Chopping";
     private const string _GRILLING_SCENE_NAME = "Grill";
@@ -148,29 +146,7 @@ public class DishPreparationManager : MonoBehaviour
             
             monster.UpdateAffectionFromDishScore(dishScore);
 
-            if (monster.AffectionValue <= monster.FightThreshold) // Not good enough! FIGHT! FIGHT!! FIGHT!!!
-            {
-                _CombatInitiator.InitiateCombat(_MonsterID, 1 - monster.AffectionValue);
-            }
-            else
-            {
-                if (!_GameNarrativeManager.AnyStagesLeft()) // No more monsters - onto the end
-                {
-                    if (_GameNarrativeManager.DateableMonsterIDs.Any()) // The player won!
-                    {
-                        SceneManager.LoadScene(_GAME_WON_SCENE_NAME, LoadSceneMode.Single);
-                    }
-                    else // Loser.
-                    {
-                        SceneManager.LoadScene(_GAME_OVER_SCENE_NAME, LoadSceneMode.Single);
-                    }
-                }
-                else // Onto the next monster
-                {
-                    _GameNarrativeManager.DateableMonsterIDs.Add(_MonsterID);
-                    SceneManager.LoadScene(_NEXT_STAGE_SCENE_NAME, LoadSceneMode.Single);
-                }
-            }
+            SceneManager.LoadScene(_DISH_COMPLETE_SCENE_NAME, LoadSceneMode.Single);
         }
     }
 }

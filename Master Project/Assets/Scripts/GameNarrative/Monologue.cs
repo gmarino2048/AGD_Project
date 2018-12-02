@@ -8,6 +8,12 @@ namespace GameNarrative
     [XmlType("monologue")]
     public class Monologue
     {
+        [XmlAttribute("end")]
+        public bool IsForEnd;
+
+        [XmlAttribute("win")]
+        public bool IsForWin;
+
         [XmlElement("entry")]
         public List<string> Entries;
     }

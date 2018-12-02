@@ -10,5 +10,8 @@ namespace GameNarrative
     {
         [XmlElement("stage")]
         public List<Stage> Stages;
+
+        [XmlElement("monologue")]
+        public List<Monologue> Monologues;
     }
 }

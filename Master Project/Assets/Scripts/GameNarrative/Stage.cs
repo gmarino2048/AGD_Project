@@ -9,8 +9,5 @@ namespace GameNarrative
     {
         [XmlAttribute("monster")]
         public Guid MonsterID;
-
-        [XmlElement("monologue")]
-        public Monologue Monologue;
     }
 }
