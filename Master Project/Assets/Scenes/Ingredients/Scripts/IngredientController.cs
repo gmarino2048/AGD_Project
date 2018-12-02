@@ -12,6 +12,7 @@ namespace Ingredients
         [Header("Components")]
         public IngredientType Type;
         public BoxCollider2D Collider;
+		public SFXController SFX;
 
         public GameObject Label;
         public GameObject IncorrectMarker;
@@ -56,12 +57,13 @@ namespace Ingredients
         {
             if (MouseInside && Active)
             {
-                if (InRecipe)
-                {
-                    Label.SetActive(false);
-                    Offset = gameObject.transform.position - MouseToWorldPoint();
-                }
-                else StartCoroutine(ShowX());
+				if (InRecipe) {
+					Label.SetActive (false);
+					Offset = gameObject.transform.position - MouseToWorldPoint ();
+				} else {
+					StartCoroutine(ShowX());
+					SFX.playForIncorrectIngredient ();
+				}
             }
         }
 
@@ -73,6 +75,7 @@ namespace Ingredients
                 Cursor.lockState = CursorLockMode.Confined;
                 if (InRecipe)
                 {
+					SFX.playForCorrectIngredient ();
                     foreach (PlateController plate in Plates)
                     {
                         bool touching = IsTouching(Collider, plate.Collider);
