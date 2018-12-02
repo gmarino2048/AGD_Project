@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
 	public AudioSource cookingAudio;
 
 	private HashSet<string> _DIALOGUE_AND_MONOLOGUE_SCENE_NAMES = new HashSet<string> {
-        "Monologue", "DialogueScene", "FinalChoice", "NameEntry", "FoodScoreScene", "Main Menu"
+        "Monologue", "DialogueScene", "NameEntry", "FoodScoreScene", "Main Menu"
     };
 	private HashSet<string> _COOKING_SCENE_NAMES = new HashSet<string> {
 		"Chopping", "Grill", "IngredientsScene", "Microwaving", "Shaking", "Stirring"
