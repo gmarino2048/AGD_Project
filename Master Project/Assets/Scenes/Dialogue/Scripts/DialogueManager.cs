@@ -260,10 +260,9 @@ namespace Dialogue
             {
                 dialogueText.text += letter;
                 for (var i = 0; i < _GameSettings.FramesPerCharacter; i++) {
-                    yield return new WaitForEndOfFrame();
+                    yield return new WaitForSecondsRealtime(Time.deltaTime * _GameSettings.FramesPerCharacter);
                 }
             }
-
             continueButton.SetActive(true);
         }
 

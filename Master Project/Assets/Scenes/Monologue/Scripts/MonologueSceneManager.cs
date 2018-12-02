@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Dialog;
+using Monsters;
 
 namespace Monologue
 {
@@ -23,6 +25,7 @@ namespace Monologue
         private bool _IsTypingText = false;
         private bool _WasKeyDown = false;
         private string _NextSceneName;
+        private GameSettings _GameSettings;
 
         // Use this for initialization
         void Start()
@@ -39,6 +42,12 @@ namespace Monologue
             {
                 _NextSceneName = _DIALOGUE_SCENE_NAME;
                 gameNarrativeManager.StartNextStage();
+            }
+
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings == null)
+            {
+                throw new Exception("GameSettings did not exist in scene");
             }
 
             _MonologueEntries = new Queue<string>(monologue.Entries);
@@ -89,9 +98,11 @@ namespace Monologue
                 }
 
                 textDisplay.text += letter;
-                yield return null;
+                for (var i = 0; i < _GameSettings.FramesPerCharacter; i++)
+                {
+                    yield return new WaitForSecondsRealtime(Time.deltaTime * _GameSettings.FramesPerCharacter);
+                }
             }
-
             _IsTypingText = false;
         }
     }
