@@ -14,9 +14,26 @@ namespace Chopping
         [Header("Audio Clips")]
         public AudioClip KnifeCut;
 
+        private GameSettings _GameSettings;
+
+        void Awake()
+        {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
+        }
+
         public void PlayCut()
         {
             SFXPlayer.PlayOneShot(KnifeCut, SFXScale);
+        }
+
+        private void OnGameSettingsChanged()
+        {
+            SFXPlayer.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
         }
     }
 }

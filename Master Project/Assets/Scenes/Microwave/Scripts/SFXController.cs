@@ -10,7 +10,6 @@ namespace Microwave
         [Header("Audio Controls")]
         public AudioSource MicrowaveBackground;
         public AudioSource SFXPlayer;
-        public float SFXScaler;
 
         [Header("Audio Clips")]
         public AudioClip MicrowaveStart;
@@ -19,16 +18,28 @@ namespace Microwave
 
         public AudioClip MicrowaveExtra;
 
+        private GameSettings _GameSettings;
+
+        void Awake()
+        {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
+        }
+
         public void PlayStart () 
         {
-            MicrowaveBackground.PlayOneShot(MicrowaveStart, SFXScaler);
+            MicrowaveBackground.PlayOneShot(MicrowaveStart);
         }
 
         public void PlayOpen () 
         {
             MicrowaveBackground.Stop();
             SFXPlayer.Stop();
-            SFXPlayer.PlayOneShot(MicrowaveOpen, SFXScaler);
+            SFXPlayer.PlayOneShot(MicrowaveOpen);
         }
 
         public void PlayExtra () 
@@ -48,6 +59,12 @@ namespace Microwave
             SFXPlayer.loop = true;
 
             SFXPlayer.Play();
+        }
+
+        private void OnGameSettingsChanged()
+        {
+            MicrowaveBackground.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+            SFXPlayer.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
         }
     }
 }
