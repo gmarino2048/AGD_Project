@@ -2306,6 +2306,7 @@ GameObject:
   - component: {fileID: 1897476973}
   - component: {fileID: 1897476972}
   - component: {fileID: 1897476971}
+  - component: {fileID: 1897476974}
   m_Layer: 0
   m_Name: Pause Button
   m_TagString: Untagged
@@ -2405,6 +2406,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1897476969}
+--- !u!114 &1897476974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1897476969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b86152f8cd34700a9483e3a8b93def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPrefab: {fileID: 1099195396560014, guid: 9cb27b40f092b4511a8d33e4346d2d64,
+    type: 2}
 --- !u!1001 &1904941740
 Prefab:
   m_ObjectHideFlags: 0

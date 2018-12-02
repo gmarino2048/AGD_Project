@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073993, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 208695842}
   - component: {fileID: 208695841}
   - component: {fileID: 208695840}
+  - component: {fileID: 208695843}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -570,6 +571,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &208695843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208695838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b86152f8cd34700a9483e3a8b93def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPrefab: {fileID: 1099195396560014, guid: 9cb27b40f092b4511a8d33e4346d2d64,
+    type: 2}
 --- !u!1 &223140922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,6 +1455,7 @@ GameObject:
   - component: {fileID: 893603823}
   - component: {fileID: 893603822}
   - component: {fileID: 893603824}
+  - component: {fileID: 893603825}
   m_Layer: 0
   m_Name: Pause Button
   m_TagString: Untagged
@@ -1540,6 +1555,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &893603825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 893603820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b86152f8cd34700a9483e3a8b93def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPrefab: {fileID: 1099195396560014, guid: 9cb27b40f092b4511a8d33e4346d2d64,
+    type: 2}
 --- !u!114 &932737482 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114875964949460990, guid: 8cd7c20a687b9294883c7d89656a47df,
