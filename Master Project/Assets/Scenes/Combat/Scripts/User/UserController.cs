@@ -38,8 +38,13 @@ namespace Combat
 
             yield return new WaitUntil(() => Actions.UserChoiceMade);
 
+            Talk.gameObject.SetActive(false);
+            Heal.gameObject.SetActive(false);
             ButtonManager.GoBack();
-            Debug.Log(Actions.Choice);
+
+            yield return PlayByPlay.DisplayUserAction(Actions.Choice);
+
+            yield return new WaitForSeconds(1.5f);
         }
     }
 }

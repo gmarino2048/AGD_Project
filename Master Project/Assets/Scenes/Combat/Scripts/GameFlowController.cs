@@ -33,6 +33,12 @@ namespace Combat
         [Header("User Controller")]
         public UserController User;
 
+        private void Awake()
+        {
+            Overlay.FlatColor.gameObject.SetActive(true);
+            Overlay.ColorCanvas.alpha = 1;
+            PlayByPlay.Clear();
+        }
 
         void Start()
         {
@@ -42,6 +48,7 @@ namespace Combat
 
         IEnumerator RunGame ()
         {
+            yield return Overlay.HideColor(3);
             yield return RunIntro();
 
             do
@@ -54,7 +61,7 @@ namespace Combat
         IEnumerator RunIntro ()
         {
             PlayByPlay.Clear();
-            PlayByPlay.DelayFrames = 5;
+            PlayByPlay.DelayFrames = 4;
 
             yield return new WaitForSeconds(2);
             yield return PlayByPlay.Display(StartQuip1);
@@ -65,8 +72,9 @@ namespace Combat
             yield return new WaitForSeconds(1);
             Monster.SetTrigger(StartTrigger);
 
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.3f);
             yield return Overlay.ShowColor(Color.white,0.2f);
+            yield return new WaitForSeconds(0.2f);
             GameMusic.PlayMusic();
             HealthMeters.SetActive(true);
             Monster.SetTrigger(ContinueTrigger);

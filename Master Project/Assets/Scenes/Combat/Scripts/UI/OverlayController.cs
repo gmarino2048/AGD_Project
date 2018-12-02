@@ -11,11 +11,6 @@ namespace Combat
         public CanvasGroup ColorCanvas;
         public Image FlatColor;
 
-        void Start()
-        {
-            FlatColor.gameObject.SetActive(false);
-        }
-
         public IEnumerator ShowColor(Color color, float duration)
         {
             FlatColor.color = color;

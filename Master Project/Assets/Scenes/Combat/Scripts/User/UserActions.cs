@@ -52,7 +52,7 @@ namespace Combat
 
         public void FoodAction ()
         {
-            Controller.DamageMonster(FreeFood, GameController.LastEvent.UserAttack);
+            Controller.DamageMonster(FreeFood);
             FreeFood *= ReductionCounter[0] < 5 ? ReductionScaler : 1;
             ReductionCounter[0]++;
 
@@ -62,8 +62,8 @@ namespace Combat
 
         public void DrinkAction ()
         {
-            Controller.DamageMonster(OfferDrink, GameController.LastEvent.UserAttack);
-            FreeFood *= ReductionCounter[1] < 5 ? ReductionScaler : 1;
+            Controller.DamageMonster(OfferDrink);
+            OfferDrink *= ReductionCounter[1] < 5 ? ReductionScaler : 1;
             ReductionCounter[1]++;
 
             UserChoiceMade = true;
@@ -72,8 +72,8 @@ namespace Combat
 
         public void ReasonAction()
         {
-            Controller.DamageMonster(Reason, GameController.LastEvent.UserAttack);
-            FreeFood *= ReductionCounter[2] < 5 ? ReductionScaler : 1;
+            Controller.DamageMonster(Reason);
+            Reason *= ReductionCounter[2] < 5 ? ReductionScaler : 1;
             ReductionCounter[2]++;
 
             UserChoiceMade = true;
@@ -82,8 +82,8 @@ namespace Combat
 
         public void FlatterAction()
         {
-            Controller.DamageMonster(Flatter, GameController.LastEvent.UserAttack);
-            FreeFood *= ReductionCounter[3] < 5 ? ReductionScaler : 1;
+            Controller.DamageMonster(Flatter);
+            Flatter *= ReductionCounter[3] < 5 ? ReductionScaler : 1;
             ReductionCounter[3]++;
 
             UserChoiceMade = true;
@@ -92,8 +92,8 @@ namespace Combat
 
         public void CouponAction()
         {
-            Controller.DamageMonster(OfferCoupon, GameController.LastEvent.UserAttack);
-            FreeFood *= ReductionCounter[4] < 5 ? ReductionScaler : 1;
+            Controller.DamageMonster(OfferCoupon);
+            OfferCoupon *= ReductionCounter[4] < 5 ? ReductionScaler : 1;
             ReductionCounter[4]++;
 
             UserChoiceMade = true;
@@ -102,7 +102,7 @@ namespace Combat
 
         public void BegAction()
         {
-            Controller.DamageMonster(Beg, GameController.LastEvent.UserAttack);
+            Controller.DamageMonster(Beg);
             ReductionCounter[5]++;
 
             Controller.SetBegActive(false);
@@ -114,14 +114,14 @@ namespace Combat
         {
             if (ReductionCounter[6] < 3)
             {
-                Controller.HealPlayer(Heal, GameController.LastEvent.UserHeal);
+                Controller.HealPlayer(Heal);
                 ReductionCounter[6]++;
 
                 HealText.text = "(" + (4 - ReductionCounter[6]).ToString() + ")";
             }
             else if (ReductionCounter[6] == 3)
             {
-                Controller.HealPlayer(Heal, GameController.LastEvent.UserHeal);
+                Controller.HealPlayer(Heal);
                 ReductionCounter[6]++;
 
                 HealText.text = "(" + (4 - ReductionCounter[6]).ToString() + ")";
