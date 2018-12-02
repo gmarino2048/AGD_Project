@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserController : MonoBehaviour {
+namespace Combat
+{
+    public class UserController : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        [Header("Game Controller")]
+        public GameController Controller;
+
+        public void StartTurn()
+        {
+
+        }
+    }
 }
