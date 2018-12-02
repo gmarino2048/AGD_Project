@@ -27,8 +27,6 @@ namespace Monologue
         private string _NextSceneName;
         private GameSettings _GameSettings;
 
-        private GameSettings _GameSettings;
-
         // Use this for initialization
         void Start()
         {
