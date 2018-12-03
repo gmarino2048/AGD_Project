@@ -78,6 +78,19 @@ public class GameNarrativeManager : MonoBehaviour
         return null; // Shouldn't ever get here
     }
 
+    /// <summary>
+    /// Logs a string to the current stage's dialogue history
+    /// </summary>
+    public void LogDialogue(string dialogueLine)
+    {
+        if (CurrentStage == null)
+        {
+            return;
+        }
+
+        CurrentStage.DialogueHistory.Add(dialogueLine);
+    }
+
     private Narrative LoadNarrative()
     {
         var xmlFilePath = Path.Combine(Application.streamingAssetsPath, _GAME_NARRATIVE_XML_PATH);

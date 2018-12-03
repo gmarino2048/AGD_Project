@@ -55,6 +55,7 @@ namespace Dialogue
         public Font internalFont;
 
         private DialogDataManager _DialogDataManager;
+        private GameNarrativeManager _GameNarrativeManager;
         private GameSettings _GameSettings;
         private MonsterData _MonsterData;
         private Prompt _CurrentPrompt;
@@ -72,6 +73,12 @@ namespace Dialogue
             if (monsterFactory == null)
             {
                 throw new Exception("MonsterFactory did not exist in scene");
+            }
+
+            _GameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+            if (_GameNarrativeManager == null)
+            {
+                throw new Exception("GameNarrativeManager did not exist in scene");
             }
 
             _GameSettings = GameObject.FindObjectOfType<GameSettings>();
@@ -226,7 +233,10 @@ namespace Dialogue
                     maxResponseScore = response.Value;
 
                 responseButton.GetComponentInChildren<Text>().text = response.Body;
-                responseButton.onClick.AddListener(() => GoToNextPrompt(response));
+                responseButton.onClick.AddListener(() => {
+                    _GameNarrativeManager.LogDialogue(_GameSettings.PlayerName + ": " + response.Body);
+                    GoToNextPrompt(response);
+                });
             }
 
             _TotalPossibleResponseScore += maxResponseScore;
@@ -241,15 +251,18 @@ namespace Dialogue
         /// <param name="sentence">The sentence to type</param>
         private IEnumerator TypeSentence(string speakerName, string sentence)
         {
+            _GameNarrativeManager.LogDialogue(speakerName + ": " + sentence);
+
             nameText.text = speakerName;
 
             dialogueText.text = string.Empty;
             foreach (char letter in sentence)
             {
                 dialogueText.text += letter;
-                yield return null;
+                for (var i = 0; i < _GameSettings.FramesPerCharacter; i++) {
+                    yield return new WaitForSecondsRealtime(Time.deltaTime * _GameSettings.FramesPerCharacter);
+                }
             }
-
             continueButton.SetActive(true);
         }
 

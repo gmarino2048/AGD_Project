@@ -9,7 +9,7 @@ namespace PauseMenu
 	public class ClosePauseMenuButton : MonoBehaviour
 	{
 		public GameObject pauseMenu;
-		
+
 		void Start ()
 		{
 			Time.timeScale = 0;
@@ -19,6 +19,7 @@ namespace PauseMenu
 		private void OnClick()
 		{
 			Time.timeScale = 1;
+			GameObject.Destroy(pauseMenu);
 		}
 	}
 }
