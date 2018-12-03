@@ -639,7 +639,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 863286118}
   Source: {fileID: 863286121}
-  Sound: {fileID: 8300000, guid: 8a2327cb81eb84ad999f8a096ab9371b, type: 3}
+  OrderUp: {fileID: 8300000, guid: 8a2327cb81eb84ad999f8a096ab9371b, type: 3}
+  Approve: {fileID: 8300000, guid: 0612e2a9b8d974654bd1c910b2349f31, type: 3}
+  Disapprove: {fileID: 8300000, guid: 091173685384a42c285d4cbf3b61e751, type: 3}
+  Volume: 0.75
 --- !u!82 &863286121
 AudioSource:
   m_ObjectHideFlags: 0
