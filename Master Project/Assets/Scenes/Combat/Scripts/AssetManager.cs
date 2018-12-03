@@ -57,7 +57,7 @@ namespace Combat
 
 		private void SetNessie(MonsterData monster, GameFlowController gameFlowController, PlayByPlayController playByPlayController)
         {
-			nessieAnimator.enabled = true;
+			nessieAnimator.gameObject.SetActive(true);
 			gameFlowController.MonsterAnimator = nessieAnimator;
 			gameFlowController.StartQuip1 = "Oh no! I messed up.";
 			gameFlowController.StartQuip2 = "I'd better talk her down...";
@@ -99,7 +99,7 @@ namespace Combat
 
         private void SetCerberus(MonsterData monster, GameFlowController gameFlowController, PlayByPlayController playByPlayController)
         {
-			cerberusAnimator.enabled = true;
+			cerberusAnimator.gameObject.SetActive(true);
 			gameFlowController.MonsterAnimator = cerberusAnimator;
 			gameFlowController.StartQuip1 = "Oh no! I messed up.";
 			gameFlowController.StartQuip2 = "I'd better talk her down...";
@@ -141,7 +141,7 @@ namespace Combat
 
         private void SetRedacted(MonsterData monster, GameFlowController gameFlowController, PlayByPlayController playByPlayController)
         {
-			redactedAnimator.enabled = true;
+			redactedAnimator.gameObject.SetActive(true);
 			gameFlowController.MonsterAnimator = redactedAnimator;
 			gameFlowController.StartQuip1 = "Oh no! I messed up.";
 			gameFlowController.StartQuip2 = "I'd better talk her down...";
