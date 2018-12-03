@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,7 +18,17 @@ namespace PauseMenu
 
 		private void OnClick()
 		{
-			SceneManager.LoadScene(_MAIN_MENU_SCENE_NAME);
+            PersistentObject persistent = FindObjectOfType<PersistentObject>();
+            try
+            {
+                DestroyImmediate(persistent.gameObject);
+            }
+            catch (Exception)
+            {
+                Debug.LogWarning("Pause not running in game");
+            }
+
+            SceneManager.LoadScene(_MAIN_MENU_SCENE_NAME);
 		}
 	}
 }

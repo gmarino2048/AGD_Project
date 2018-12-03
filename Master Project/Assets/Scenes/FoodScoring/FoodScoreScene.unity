@@ -229,7 +229,7 @@ MonoBehaviour:
   Overlay: {fileID: 799217493}
   RotateAmount: 1
   Nessie: {fileID: 21300000, guid: 07534332c49e54e5abc026068d14b3d6, type: 3}
-  Cerberus: {fileID: 21300000, guid: 637cbb662407b40028b0dcbfe7ca82c8, type: 3}
+  Cerberus: {fileID: 21300000, guid: 8259d3ed74481432ca9079f3b12bf42c, type: 3}
   Redacted: {fileID: 21300000, guid: 876731a8511b64069808ae5918a22011, type: 3}
 --- !u!114 &383297553
 MonoBehaviour:
@@ -250,9 +250,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 07534332c49e54e5abc026068d14b3d6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
