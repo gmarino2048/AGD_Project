@@ -7,6 +7,7 @@ public class PlacementHelper : MonoBehaviour {
     [Header("Food Object Sprite")]
     public Sprite FoodObject;
     public SpriteRenderer Renderer;
+    public Vector3 Scale;
 
     [Header("Z-Placement Index")]
     public float ZIndex = -2;
@@ -14,7 +15,8 @@ public class PlacementHelper : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Renderer.sprite = FoodObject;
-	}
+        gameObject.transform.localScale = Scale;
+    }
 	
     
 	// Update is called once per frame

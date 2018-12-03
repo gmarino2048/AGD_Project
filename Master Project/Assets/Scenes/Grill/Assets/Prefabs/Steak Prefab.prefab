@@ -9,36 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1799133746962264}
+  m_RootGameObject: {fileID: 1623224637120388}
   m_IsPrefabParent: 1
---- !u!1 &1339498093978972
+--- !u!1 &1449771649375872
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4997469756782692}
-  - component: {fileID: 95879892736565692}
-  - component: {fileID: 212953527458346522}
-  - component: {fileID: 61849286005752044}
-  m_Layer: 0
-  m_Name: Steak
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1777616086919342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4887665382211514}
-  - component: {fileID: 95225972791130332}
-  - component: {fileID: 212546226951787438}
+  - component: {fileID: 4792571160392762}
+  - component: {fileID: 95004320329940102}
+  - component: {fileID: 212418699308903130}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -46,15 +28,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1799133746962264
+--- !u!1 &1605953446963106
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4381936570116500}
-  - component: {fileID: 114630670055956728}
+  - component: {fileID: 4366711505386196}
+  - component: {fileID: 95320479690209850}
+  - component: {fileID: 212590116939844810}
+  - component: {fileID: 61389253822958688}
+  m_Layer: 0
+  m_Name: Steak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1623224637120388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4688911113033694}
+  - component: {fileID: 114629775125159274}
   m_Layer: 0
   m_Name: Steak Prefab
   m_TagString: Untagged
@@ -62,65 +62,65 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4381936570116500
+--- !u!4 &4366711505386196
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799133746962264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
-  m_Children:
-  - {fileID: 4997469756782692}
-  - {fileID: 4887665382211514}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4887665382211514
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1777616086919342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 1.869, z: 0.01}
-  m_LocalScale: {x: 0.28707877, y: 0.49585047, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4381936570116500}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4997469756782692
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1339498093978972}
+  m_GameObject: {fileID: 1605953446963106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4381936570116500}
+  m_Father: {fileID: 4688911113033694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61849286005752044
+--- !u!4 &4688911113033694
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1623224637120388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children:
+  - {fileID: 4366711505386196}
+  - {fileID: 4792571160392762}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4792571160392762
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1449771649375872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.005, y: 1.869, z: 0.01}
+  m_LocalScale: {x: 0.28707877, y: 0.49585047, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4688911113033694}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61389253822958688
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1339498093978972}
+  m_GameObject: {fileID: 1605953446963106}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.000001}
+  m_Offset: {x: 0, y: 0.017540932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.6599998, y: 2}
-    newSize: {x: 2.6599998, y: 2}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.61, y: 1.95}
+    newSize: {x: 2.61, y: 1.95}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -128,13 +128,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6599998, y: 2}
   m_EdgeRadius: 0
---- !u!95 &95225972791130332
+--- !u!95 &95004320329940102
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1777616086919342}
+  m_GameObject: {fileID: 1449771649375872}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5a40f01e98b284c24a2c60e340d722e0, type: 2}
@@ -145,13 +145,13 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95879892736565692
+--- !u!95 &95320479690209850
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1339498093978972}
+  m_GameObject: {fileID: 1605953446963106}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9cbd26cc6a361479d86bfbe9c9b7754f, type: 2}
@@ -162,12 +162,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114630670055956728
+--- !u!114 &114629775125159274
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799133746962264}
+  m_GameObject: {fileID: 1623224637120388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a904d82d9c65849aa90feb8f226ccfa3, type: 3}
@@ -175,22 +175,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeToCook: 6
   TimeToBurn: 4
-  MainController: {fileID: 95879892736565692}
-  FlameController: {fileID: 95225972791130332}
+  MainController: {fileID: 95320479690209850}
+  FlameController: {fileID: 95004320329940102}
   CookingStateName: Steak Cook
   BurningStateName: Steak Burn
   FlameStart: Start
   GameController: {fileID: 0}
   ScoreKeeper: {fileID: 0}
   ActiveList: {fileID: 0}
-  MainCollider: {fileID: 61849286005752044}
+  MainCollider: {fileID: 61389253822958688}
   MainCamera: {fileID: 0}
---- !u!212 &212546226951787438
+  SFX: {fileID: 0}
+  PlatingSound: {fileID: 0}
+--- !u!212 &212418699308903130
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1777616086919342}
+  m_GameObject: {fileID: 1449771649375872}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -229,12 +231,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
---- !u!212 &212953527458346522
+--- !u!212 &212590116939844810
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1339498093978972}
+  m_GameObject: {fileID: 1605953446963106}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -263,13 +265,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ccb85e8adbb974a53b52d3815d6946ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3e555c6f2fc85e44a6ce281463104e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.6599998, y: 2}
+  m_Size: {x: 2.61, y: 1.95}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
