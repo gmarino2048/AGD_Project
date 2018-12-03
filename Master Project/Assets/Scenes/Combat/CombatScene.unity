@@ -630,6 +630,10 @@ MonoBehaviour:
   AttackOptions: []
   HealDefault: Nessie Heals
   HealOptions: []
+  DefaultEnd: Combat Complete
+  Win: []
+  Lose: []
+  Die: []
 --- !u!1 &178991526
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +821,115 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &208101710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 208101711}
+  - component: {fileID: 208101714}
+  - component: {fileID: 208101713}
+  - component: {fileID: 208101712}
+  - component: {fileID: 208101715}
+  m_Layer: 0
+  m_Name: CombatOverlays
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &208101711
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208101710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1330874943}
+  m_Father: {fileID: 1258511000}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &208101712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208101710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &208101713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208101710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &208101714
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208101710}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &208101715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208101710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42eaec58aed714081ab71eefde7e1907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CombatOverlay: {fileID: 1330874946}
+  Heal: heal
+  Damage: damage
 --- !u!1 &209167786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1464,7 @@ MonoBehaviour:
   ManagerCritical: {fileID: 334569976}
   HealthCritical: {fileID: 334569975}
   SFXVolume: 0.5
+  MonsterEnter: {fileID: 8300000, guid: c78eb6052f7bb40abb327ef5060b0e33, type: 3}
   ManagerMeterDown: {fileID: 8300000, guid: bb0c48e59dcb5b241aa76eea20a5494c, type: 3}
   ManagerMeterUp: {fileID: 8300000, guid: ba527d6912396e548aad7da719a8db54, type: 3}
   ManagerMeterCritical: {fileID: 8300000, guid: 4a34fd91e2d1dd946aebfdd2cd776303,
@@ -1363,6 +1477,9 @@ MonoBehaviour:
   MonsterHit: {fileID: 8300000, guid: b3c465361114f66429a3e00b8674694a, type: 3}
   PlayerHit: {fileID: 8300000, guid: 30e7d48998975f84f83c0c5d67936eb4, type: 3}
   MonsterMiss: {fileID: 8300000, guid: b76747dc8b1cb42488e276b3681be940, type: 3}
+  GameWin: {fileID: 8300000, guid: a5fdd23a12818aa4496130d49282b3b5, type: 3}
+  GameLose: {fileID: 8300000, guid: 98731876f0036cd40be4874418852e5a, type: 3}
+  Die: {fileID: 8300000, guid: 99632b7f41e85ed47a5562889990278d, type: 3}
   Health: {fileID: 1462598488}
   Manager: {fileID: 56665937}
 --- !u!1 &334775118
@@ -2725,7 +2842,7 @@ RectTransform:
   - {fileID: 1462598485}
   - {fileID: 56665934}
   m_Father: {fileID: 1258511000}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2787,7 +2904,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 1908888971
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &973841098
 GameObject:
@@ -4053,6 +4170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 178991527}
+  - {fileID: 208101711}
   - {fileID: 955509100}
   - {fileID: 1517145013}
   - {fileID: 1620152992}
@@ -4169,6 +4287,92 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1258892659}
+--- !u!1 &1330874942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1330874943}
+  - component: {fileID: 1330874945}
+  - component: {fileID: 1330874944}
+  - component: {fileID: 1330874946}
+  m_Layer: 0
+  m_Name: CombatOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1330874943
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330874942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 208101711}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000061035, y: -0.00027466}
+  m_SizeDelta: {x: 1920, y: 1081.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1330874944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330874942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 73990a2161c6342dca5ab3c8fc87c78e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1330874945
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330874942}
+--- !u!95 &1330874946
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330874942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: edd3ebee213ba4486a3cd5150082559d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1365086711
 GameObject:
   m_ObjectHideFlags: 0
@@ -5197,6 +5401,8 @@ MonoBehaviour:
   nessieAnimator: {fileID: 2083706993}
   cerberusAnimator: {fileID: 1410905157}
   redactedAnimator: {fileID: 19976604}
+  Manager: {fileID: 56665937}
+  SFX: {fileID: 334569977}
 --- !u!1 &1517145012
 GameObject:
   m_ObjectHideFlags: 0
@@ -5230,7 +5436,7 @@ RectTransform:
   - {fileID: 1446008097}
   - {fileID: 1708580238}
   m_Father: {fileID: 1258511000}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5292,7 +5498,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1517145017
 MonoBehaviour:
@@ -5712,7 +5918,7 @@ RectTransform:
   m_Children:
   - {fileID: 1889203463}
   m_Father: {fileID: 1258511000}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5787,7 +5993,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!1 &1640936634
 GameObject:
@@ -5942,7 +6148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8de1bba2de040d18fd862e72e7353e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayDelay: 2
+  DisplayDelay: 1
   PlayByPlay: {fileID: 117079874}
   SelectionPhrase: I need to make my next move carefully.
   Talk: {fileID: 973841100}
@@ -6775,6 +6981,7 @@ MonoBehaviour:
   ManagerBar: {fileID: 56665937}
   PlayByPlay: {fileID: 117079874}
   SFX: {fileID: 334569977}
+  CombatOverlays: {fileID: 208101715}
   Monster: {fileID: 2083706993}
   AttackTrigger: attack1
   DamageTrigger: hit
@@ -6801,8 +7008,8 @@ MonoBehaviour:
   MonsterAnimator: {fileID: 2083706993}
   StartTrigger: start
   ContinueTrigger: continue
-  EndPhrases: []
   Overlay: {fileID: 1620152993}
+  Controller: {fileID: 1858288105}
   GameMusic: {fileID: 90622028}
   SFX: {fileID: 334569977}
   HealthMeters: {fileID: 955509099}
@@ -7501,7 +7708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2083706992
 Transform:
   m_ObjectHideFlags: 0

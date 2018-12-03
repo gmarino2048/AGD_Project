@@ -73,8 +73,6 @@ namespace Combat
         public void ReasonAction()
         {
             Controller.DamageMonster(Reason);
-            Reason *= ReductionCounter[2] < 5 ? ReductionScaler : 1;
-            ReductionCounter[2]++;
 
             UserChoiceMade = true;
             Choice = UserActionChoice.Reason;

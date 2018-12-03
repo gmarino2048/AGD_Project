@@ -14,6 +14,7 @@ namespace Combat
         [Header("Game Controls")]
         public PlayByPlayController PlayByPlay;
         public SFXController SFX;
+        public CombatReactionController CombatOverlays;
 
         [Header("Reaction Controls")]
         public Animator Monster;
@@ -64,6 +65,7 @@ namespace Combat
         {
             HealthBar.SetValue(HealthBar.Percentage + amount);
 
+            CombatOverlays.PlayHeal();
             StartCoroutine(SFX.PlayerHeal());
         }
 
@@ -78,6 +80,7 @@ namespace Combat
                 HealthBar.SetValue(HealthBar.Percentage - amount);
                 Monster.SetTrigger(AttackTrigger);
 
+                CombatOverlays.PlayDamage();
                 StartCoroutine(SFX.PlayerIsHit());
             }
         }
@@ -85,7 +88,6 @@ namespace Combat
         public void HealMonster (float amount)
         {
             ManagerBar.SetValue(ManagerBar.Percentage + amount);
-            Monster.SetTrigger(AttackTrigger);
 
             StartCoroutine(SFX.MonsterHeal());
         }

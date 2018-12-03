@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Combat
 {
@@ -19,13 +20,11 @@ namespace Combat
         public string StartTrigger = "start";
         public string ContinueTrigger = "continue";
 
-        [Header("Outro Phrases")]
-        public List<string> EndPhrases;
-
         [Header("Overlay Manager")]
         public OverlayController Overlay;
 
         [Header("Music Controller")]
+        public GameController Controller;
         public MusicController GameMusic;
         public SFXController SFX;
 
@@ -37,6 +36,19 @@ namespace Combat
         [Header("Combatant Controllers")]
         public UserController User;
         public MonsterController Monster;
+
+        private readonly string _GAME_OVER_SCENE_NAME = "Game OVer";
+        private readonly string _DIALOGUE_SCENE_NAME = "DialogueScene";
+        private readonly string _MONOLOGUE_SCENE_NAME = "Monologue";
+
+        public enum GameEndConditions
+        {
+            Win,
+            Lose,
+            Die
+        }
+
+        public GameEndConditions EndCondition { get; private set; }
 
         private void Awake()
         {
@@ -53,7 +65,8 @@ namespace Combat
 
         IEnumerator RunGame ()
         {
-            yield return Overlay.HideColor(3);
+            yield return SFX.EnterMonster();
+            yield return Overlay.HideColor(1f);
             yield return RunIntro();
             SFX.Activate();
 
@@ -64,16 +77,21 @@ namespace Combat
                 if (!(Health.Percentage > 0 && Manager.Percentage < 100 && Manager.Percentage > 0)) break;
 
                 yield return Monster.MonsterTurn();
+                Controller.HealMonster(5);
             }
             while (Health.Percentage > 0 && Manager.Percentage < 100 && Manager.Percentage > 0);
 
-            RunOutro();
+            if (Health.Percentage <= 0) EndCondition = GameEndConditions.Die;
+            if (Manager.Percentage >= 100) EndCondition = GameEndConditions.Lose;
+            if (Manager.Percentage <= 0) EndCondition = GameEndConditions.Win;
+
+            yield return RunOutro();
         }
 
         IEnumerator RunIntro ()
         {
             PlayByPlay.Clear();
-            PlayByPlay.DelayFrames = 4;
+            PlayByPlay.DelayFrames = 1;
 
             yield return new WaitForSeconds(2);
             yield return PlayByPlay.Display(StartQuip1);
@@ -99,14 +117,50 @@ namespace Combat
         IEnumerator RunOutro ()
         {
             PlayByPlay.Clear();
-            PlayByPlay.DelayFrames = 4;
+            PlayByPlay.DelayFrames = 1;
 
-            foreach (var endPhrase in EndPhrases) {
-                yield return PlayByPlay.Display(endPhrase);
-                yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
+
+            GameMusic.StopMusic();
+            SFX.StopMusic();
+            switch (EndCondition)
+            {
+                case GameEndConditions.Win:
+                    yield return SFX.Win();
+                    break;
+                case GameEndConditions.Lose:
+                    yield return SFX.Lose();
+                    break;
+                case GameEndConditions.Die:
+                    yield return SFX.Death();
+                    break;
             }
-            
-            //TODO
+
+            yield return PlayByPlay.DisplayOutro(EndCondition);
+            yield return Overlay.ShowColor(new Color(57, 45, 77), 3f);
+
+            if (EndCondition == GameEndConditions.Win)
+            {
+                yield return new WaitForSeconds(1f);
+                var gameNarrativeManager = GameObject.FindObjectOfType<GameNarrativeManager>();
+                if (gameNarrativeManager == null)
+                {
+                    SceneManager.LoadScene(_DIALOGUE_SCENE_NAME);
+                }
+
+                if (gameNarrativeManager.AnyStagesLeft())
+                {
+                    SceneManager.LoadScene(_DIALOGUE_SCENE_NAME, LoadSceneMode.Single);
+                }
+                else
+                {
+                    SceneManager.LoadScene(_MONOLOGUE_SCENE_NAME, LoadSceneMode.Single);
+                }
+            }
+            else
+            {
+                SceneManager.LoadScene(_GAME_OVER_SCENE_NAME, LoadSceneMode.Single);
+            }
         }
     }
 }

@@ -15,6 +15,8 @@ namespace Combat
         bool Ready;
 
         [Header("Sound Files")]
+        public AudioClip MonsterEnter;
+
         public AudioClip ManagerMeterDown;
         public AudioClip ManagerMeterUp;
         public AudioClip ManagerMeterCritical;
@@ -28,6 +30,10 @@ namespace Combat
         public AudioClip MonsterHit;
         public AudioClip PlayerHit;
         public AudioClip MonsterMiss;
+
+        public AudioClip GameWin;
+        public AudioClip GameLose;
+        public AudioClip Die;
 
         [Header("Reference Objects")]
         public InfoBarController Health;
@@ -70,12 +76,43 @@ namespace Combat
             }
         }
 
+        public void StopMusic ()
+        {
+            Regular.Stop();
+            HealthCritical.Stop();
+            ManagerCritical.Stop();
+        }
+
+        public IEnumerator EnterMonster()
+        {
+            Regular.PlayOneShot(MonsterEnter, SFXVolume);
+            yield return null;
+        }
+
+        public IEnumerator Win ()
+        {
+            Regular.PlayOneShot(GameWin, SFXVolume);
+            yield return null;
+        }
+
+        public IEnumerator Lose()
+        {
+            Regular.PlayOneShot(GameLose, SFXVolume);
+            yield return null;
+        }
+
+        public IEnumerator Death()
+        {
+            Regular.PlayOneShot(Die, SFXVolume);
+            yield return null;
+        }
+
         public IEnumerator MonsterIsHit ()
         {
-            Regular.PlayOneShot(MonsterHit);
+            Regular.PlayOneShot(MonsterHit, SFXVolume);
             yield return new WaitWhile(() => Regular.isPlaying);
 
-            Regular.PlayOneShot(ManagerMeterDown);
+            Regular.PlayOneShot(ManagerMeterDown, SFXVolume);
             yield return null;
         }
 
@@ -84,37 +121,37 @@ namespace Combat
             Regular.PlayOneShot(PlayerHit);
             yield return new WaitWhile(() => Regular.isPlaying);
 
-            Regular.PlayOneShot(HealthDown);
+            Regular.PlayOneShot(HealthDown, SFXVolume);
             yield return null;
         }
 
         public IEnumerator MonsterMisses()
         {
-            Regular.PlayOneShot(MonsterMiss);
+            Regular.PlayOneShot(MonsterMiss, SFXVolume);
             yield return null;
         }
 
         public IEnumerator MonsterHeal ()
         {
-            Regular.PlayOneShot(ManagerMeterUp);
+            Regular.PlayOneShot(ManagerMeterUp, SFXVolume);
             yield return null;
         }
 
         public IEnumerator PlayerHeal ()
         {
-            Regular.PlayOneShot(HealthUp);
+            Regular.PlayOneShot(HealthUp, SFXVolume);
             yield return null;
         }
 
         public IEnumerator PlayerDie()
         {
-            Regular.PlayOneShot(HealthZero);
+            Regular.PlayOneShot(HealthZero, SFXVolume);
             yield return null;
         }
 
         public IEnumerator MonsterDie()
         {
-            Regular.PlayOneShot(ManagerMeterZero);
+            Regular.PlayOneShot(ManagerMeterZero, SFXVolume);
             yield return null;
         }
     }

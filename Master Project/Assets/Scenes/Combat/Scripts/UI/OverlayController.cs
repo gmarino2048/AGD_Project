@@ -13,7 +13,6 @@ namespace Combat
 
         public IEnumerator ShowColor(Color color, float duration)
         {
-            FlatColor.color = color;
             ColorCanvas.alpha = 0;
 
             ColorCanvas.gameObject.SetActive(true);

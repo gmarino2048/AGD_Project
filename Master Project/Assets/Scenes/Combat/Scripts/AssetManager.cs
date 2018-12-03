@@ -21,6 +21,10 @@ namespace Combat
         private const string _REDACTED_NAME = "[REDACTED]";
         public Animator redactedAnimator;
 
+        [Header("Monster Meter")]
+        public InfoBarController Manager;
+        public SFXController SFX;
+
         void Awake()
         {
 			var combatInitiator = GameObject.FindObjectOfType<CombatInitiator>();
@@ -53,17 +57,16 @@ namespace Combat
 			userActions.OfferCoupon = monster.CombatChoices[CombatChoice.Coupon].Power;
 			userActions.OfferDrink = monster.CombatChoices[CombatChoice.OfferDrink].Power;
 			userActions.Reason = monster.CombatChoices[CombatChoice.Reason].Power;
+
+            Manager.StartPercentage = combatInitiator.InitialManagerMeterValue * 100;
         }
 
 		private void SetNessie(MonsterData monster, GameFlowController gameFlowController, PlayByPlayController playByPlayController)
         {
 			nessieAnimator.gameObject.SetActive(true);
 			gameFlowController.MonsterAnimator = nessieAnimator;
-			gameFlowController.StartQuip1 = "Oh no! I messed up.";
-			gameFlowController.StartQuip2 = "I'd better talk her down...";
-			gameFlowController.EndPhrases = new List<string> {
-				"Thank goodness, it's over"
-			};
+			gameFlowController.StartQuip1 = "I can't believe I managed to mess up a MILKSHAKE.";
+			gameFlowController.StartQuip2 = "...It appears the tides have turned.";
 
 			playByPlayController.Beg = new List<string> {
 				"Please, I have so much to live for."
@@ -72,19 +75,37 @@ namespace Combat
 				"Here's a voucher for one free meal!"
 			};
 			playByPlayController.Drink = new List<string> {
-				"Have a free drink, on the house."
+				"Can I offer you a free Qennies quality drink?",
+                "It's on the house, drink 'til your heart's content!",
+                "Wash down your sorrows with this free drink!",
+                "We should drink to this crappy job of mine",
+                "I'm thirsty, what about you?"
 			};
 			playByPlayController.Flatter = new List<string> {
-				"You look really hot when you're mad."
+				"You're not on our menu, but you look like a snack to me.",
+                "Is it hot in here, or is it just you?",
+                "Stay here any longer, and I may just have to quit and leave with you.",
+                "Know what's on the menu? Me-n-U.",
+                "Shall we dine together tonight? The bill's on me."
 			};
 			playByPlayController.Food = new List<string> {
-				"Can I offer you some free food?", "I'll make it again! Better this time!"
+				"Can I offer you a free Qennies kids meal on your next visit?",
+                "Food of this quality should be free, here, take it.",
+                "Everyone loves free food, right?",
+                "Would you like your food...free?",
+                "You drive a hard bargain, what about free food?"
 			};
-			playByPlayController.Heal = new List<string> {
-				"Now where was that first aid kit again?"
+            playByPlayController.Heal = new List<string> {
+                "They don't like my cooking? Guess I'll eat it",
+                "An apple a day keeps the monsters away!",
+                "These leftovers have the boss' name on them... Oh well.",
+                "Some take out to take you DOWN.",
+                "Who ate half the sandwich I was saving!?!",
+                "Leftovers. YES!"
 			};
 			playByPlayController.Reason = new List<string> {
-				"Don't you think you're being irrational here?"
+				"Wait, if you hurt me, I'll sue!",
+                "My boss is in "
 			};
 			playByPlayController.AttackOptions = new List<string> {
 				_NESSIE_NAME + " sends a huge splash!"
@@ -101,13 +122,10 @@ namespace Combat
         {
 			cerberusAnimator.gameObject.SetActive(true);
 			gameFlowController.MonsterAnimator = cerberusAnimator;
-			gameFlowController.StartQuip1 = "Oh no! I messed up.";
-			gameFlowController.StartQuip2 = "I'd better talk her down...";
-			gameFlowController.EndPhrases = new List<string> {
-				"Thank goodness, it's over"
-			};
+			gameFlowController.StartQuip1 = "Heh...hehe...nice doggie?";
+			gameFlowController.StartQuip2 = "...I guess I'm in the doghouse now.";
 
-			playByPlayController.Beg = new List<string> {
+            playByPlayController.Beg = new List<string> {
 				"Please, I have so much to live for."
 			};
 			playByPlayController.Coupon = new List<string> {
@@ -143,11 +161,8 @@ namespace Combat
         {
 			redactedAnimator.gameObject.SetActive(true);
 			gameFlowController.MonsterAnimator = redactedAnimator;
-			gameFlowController.StartQuip1 = "Oh no! I messed up.";
-			gameFlowController.StartQuip2 = "I'd better talk her down...";
-			gameFlowController.EndPhrases = new List<string> {
-				"Thank goodness, it's over"
-			};
+			gameFlowController.StartQuip1 = "...Fuck.";
+			gameFlowController.StartQuip2 = "This is gonna hurt.";
 
 			playByPlayController.Beg = new List<string> {
 				"Please, I have so much to live for."

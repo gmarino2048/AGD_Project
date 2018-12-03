@@ -31,6 +31,12 @@ namespace Combat
         public string HealDefault = "Nessie Heals";
         public List<string> HealOptions;
 
+        [Header("Outro Phrases")]
+        public string DefaultEnd = "Combat Complete";
+        public List<string> Win;
+        public List<string> Lose;
+        public List<string> Die;
+
         public void Clear ()
         {
             PlayByPlayText.text = string.Empty;
@@ -104,6 +110,33 @@ namespace Combat
                 yield return Display(message);
             }
             else yield return Display(Default);
+        }
+
+        public IEnumerator DisplayOutro(GameFlowController.GameEndConditions condition)
+        {
+            List<string> options = new List<string>();
+
+            switch (condition)
+            {
+                case GameFlowController.GameEndConditions.Win:
+                    options = Win;
+                    break;
+                case GameFlowController.GameEndConditions.Lose:
+                    options = Lose;
+                    break;
+                case GameFlowController.GameEndConditions.Die:
+                    options = Die;
+                    break;
+            }
+
+            if (options.Count > 0)
+            {
+                int item = Mathf.FloorToInt(Random.Range(0f, options.Count - 0.0001f));
+                string message = options[item];
+
+                yield return Display(message);
+            }
+            else yield return Display(DefaultEnd);
         }
 
         public IEnumerator Display (string text)
