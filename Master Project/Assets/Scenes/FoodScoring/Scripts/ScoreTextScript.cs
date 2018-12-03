@@ -15,7 +15,7 @@ namespace FoodScoring {
 
             float score = dishScoreManager == null ? 0.1f : dishScoreManager.ScoreDish(gameNarrativeManager.CurrentStage.MonsterID);
 
-            textBox.text = "Score: "+ (1-score)*1000;
+            textBox.text = "Score: " + Mathf.RoundToInt((1 - score) * 1000);
         }
     }
 }
