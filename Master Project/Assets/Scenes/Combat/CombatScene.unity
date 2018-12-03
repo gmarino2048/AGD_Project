@@ -4906,7 +4906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1446008097
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5024,17 +5024,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1455803655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.00004505393, y: 0.001034906, z: -0.020905867, w: 0.9997809}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000000017586714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1052389748}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.003, y: 0.119, z: -2.3960001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8, y: -33}
-  m_SizeDelta: {x: 1471.6, y: 143.2}
+  m_AnchoredPosition: {x: 2.9999783, y: -16.999939}
+  m_SizeDelta: {x: 1471.6, y: 167.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1455803657
 MonoBehaviour:
@@ -5057,7 +5057,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37fa0a4ad22a441399a453b0e10dd34, type: 3}
-    m_FontSize: 80
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5068,7 +5068,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the monster play-by play.
+  m_Text: Wait! There's a QR code on the back of your drink for half off on your next
+    meal!
 --- !u!222 &1455803658
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5905,7 +5906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1620152992
 RectTransform:
   m_ObjectHideFlags: 0
