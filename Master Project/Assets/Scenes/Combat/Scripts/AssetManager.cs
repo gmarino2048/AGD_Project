@@ -44,9 +44,11 @@ namespace Combat
 					SetNessie(monster, gameFlowController, playByPlayController);
 					break;
 				case _CERBERUS_NAME:
+                    nessieAnimator.gameObject.SetActive(false);
 					SetCerberus(monster, gameFlowController, playByPlayController);
 					break;
 				case _REDACTED_NAME:
+                    nessieAnimator.gameObject.SetActive(false);
 					SetRedacted(monster, gameFlowController, playByPlayController);
 					break;
 			}
