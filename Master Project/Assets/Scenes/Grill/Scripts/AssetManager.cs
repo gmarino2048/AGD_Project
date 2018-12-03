@@ -48,8 +48,7 @@ namespace Grill
             catch (Exception ex)
             {
                 Debug.LogError(ex.Message + " -- defaulting to beef");
-                //SetParameters(UncookedPatty, BeefPrefab, BeefScale);
-                SetParameters(UncookedSteak, SteakPrefab, SteakScale);
+                SetParameters(UncookedPatty, BeefPrefab, BeefScale);
             }
         }
 
