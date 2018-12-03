@@ -2,22 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ingredients {
-    public class SFXController : MonoBehaviour {
+namespace Ingredients
+{
+    public class SFXController : MonoBehaviour
+	{
 
     	[Header("Sound Effects")]
     	public AudioSource Source;
     	public AudioClip CorrectIngredient;
     	public AudioClip IncorrectIngredient;
 
-    	public float SFXScaler = 1;
+        private GameSettings _GameSettings;
 
-    	public void playForCorrectIngredient() {
+        void Awake()
+        {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
+        }
+
+    	public void playForCorrectIngredient()
+		{
     		Source.PlayOneShot (CorrectIngredient);
     	}
 
-    	public void playForIncorrectIngredient() {
+    	public void playForIncorrectIngredient()
+		{
     		Source.PlayOneShot (IncorrectIngredient);
     	}
+
+		private void OnGameSettingsChanged()
+		{
+			Source.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+		}
     }
 }

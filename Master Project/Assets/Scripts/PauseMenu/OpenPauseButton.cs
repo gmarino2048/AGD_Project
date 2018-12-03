@@ -9,7 +9,7 @@ namespace PauseMenu
 	{
 		public GameObject pauseMenuPrefab;
 
-		void Start ()
+		void Awake ()
 		{
 			gameObject.GetComponent<Button>().onClick.AddListener(OnClick);
 		}

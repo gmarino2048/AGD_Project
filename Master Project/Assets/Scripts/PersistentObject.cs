@@ -19,12 +19,13 @@ public class PersistentObject : MonoBehaviour
             if (isPersistent)
             {
                 Debug.Log("Destroying formerly persistent object");
-                GameObject.DestroyImmediate(gameObject);
+                SceneManager.sceneLoaded -= OnSceneLoaded;
+                //DestroyImmediate(this.gameObject);
             }
             else
             {
                 Debug.Log("Persisting object");
-                DontDestroyOnLoad(gameObject);
+                DontDestroyOnLoad(this.gameObject);
                 isPersistent = true;
             }
         }
