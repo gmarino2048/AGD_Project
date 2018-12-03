@@ -4,7 +4,7 @@
     <!ATTLIST monster id ID #REQUIRED>
 ]>
 <monsters>
-    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" name="Nessie" fightThreshold="0.4">
+    <monster id="{060F70EA-8A92-4117-AB65-75DE3458E407}" name="Nessie" fightThreshold="0.5">
         <ingredient type="AlgaeSlime"/>
         <ingredient type="IceCream"/>
         <ingredient type="AquariumGravel"/>
@@ -17,7 +17,7 @@
         <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
     </monster>
 
-    <monster id="{AFF2D1F2-DDA4-4A57-84F8-A240B4A0476D}" name="Cerberus" fightThreshold="0.5">
+    <monster id="{AFF2D1F2-DDA4-4A57-84F8-A240B4A0476D}" name="Cerberus" fightThreshold="0.6">
         <ingredient type="Eggs"/>
         <ingredient type="Bones"/>
         <ingredient type="CannedMeat"/>
@@ -31,7 +31,7 @@
         <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
     </monster>
 
-    <monster id="{40F4380C-7A27-42D6-8F69-E3D60A83CAB1}" name="[REDACTED]" fightThreshold="0.65">
+    <monster id="{40F4380C-7A27-42D6-8F69-E3D60A83CAB1}" name="[REDACTED]" fightThreshold="0.75">
         <ingredient type="PeculiarPeppers"/>
         <ingredient type="Beans"/>
         <ingredient type="GroundBeef"/>
