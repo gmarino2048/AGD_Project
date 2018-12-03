@@ -23,7 +23,6 @@ namespace Monologue
 
         private Queue<string> _MonologueEntries;
         private bool _IsTypingText = false;
-        private bool _WasKeyDown = false;
         private string _NextSceneName;
         private GameSettings _GameSettings;
 

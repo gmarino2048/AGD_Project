@@ -43,7 +43,7 @@ namespace Dialogue
                     SetNessie();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 Debug.LogWarning("Dialogue not running in scene -- Defaulting to Nessie");
                 SetNessie();

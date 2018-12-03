@@ -36,7 +36,6 @@ namespace Shaking
 
         public float FinalScore { get; private set; } // The final score of the minigame.
         private bool SetEnd;
-        private bool Finished; // Tells whether this minigame scoring has finished.
 
         /// <summary>
         /// Sets the Shaker label to its initial value and sets the shaker score
@@ -88,8 +87,6 @@ namespace Shaking
             }
 
             UIManager.EndGame();
-
-            Finished = true;
         }
 
         /// <summary>

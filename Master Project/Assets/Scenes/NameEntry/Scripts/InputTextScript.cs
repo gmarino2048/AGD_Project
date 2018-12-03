@@ -21,7 +21,6 @@ public class InputTextScript : MonoBehaviour {
 
     private void OnGUI()
     {
-        text = //GUI.TextField(..., text);
         text = Regex.Replace(text, @"[^a-zA-Z0-9 ]", "");
     }
 }

@@ -31,7 +31,6 @@ namespace Ingredients
 
             MonsterFactory monsterFactory = FindObjectOfType<MonsterFactory>();
             GameNarrativeManager narrativeManager = FindObjectOfType<GameNarrativeManager>();
-            DishPreparationManager dishManager = FindObjectOfType<DishPreparationManager>();
 
             uint numPlates;
             List<IngredientType> ingredientTypes;
