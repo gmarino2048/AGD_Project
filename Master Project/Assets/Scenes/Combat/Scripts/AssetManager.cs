@@ -69,10 +69,15 @@ namespace Combat
 			gameFlowController.StartQuip2 = "...It appears the tides have turned.";
 
 			playByPlayController.Beg = new List<string> {
-				"Please, I have so much to live for."
+				"I need this job to pay off my student debt.",
+                "Without this job I can't pay my rent!",
+                "Please! Nobody else will hire me.",
+                "This is my first job, I can't lose it already!",
+                "I have nothing else going for me in life, please, not like this."
 			};
 			playByPlayController.Coupon = new List<string> {
-				"Here's a voucher for one free meal!"
+				"Would you like a Qennies coupon for use on your next visit?",
+                "Wait! There's a QR code "
 			};
 			playByPlayController.Drink = new List<string> {
 				"Can I offer you a free Qennies quality drink?",
@@ -105,7 +110,10 @@ namespace Combat
 			};
 			playByPlayController.Reason = new List<string> {
 				"Wait, if you hurt me, I'll sue!",
-                "My boss is in "
+                "My boss is in the back, he wouldn't be happy to see an upset customer.",
+                "I'm the only worker here, at least let me live until the end of my shift.",
+                "There are cameras in here! ...Somewhere...I think.",
+                "I can't become a better employee if you get me fired!"
 			};
 			playByPlayController.AttackOptions = new List<string> {
 				_NESSIE_NAME + " sends a huge splash!"
