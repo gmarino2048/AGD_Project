@@ -4405,7 +4405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1410905155
 Transform:
   m_ObjectHideFlags: 0
@@ -5162,6 +5162,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1466679245}
+  - component: {fileID: 1466679246}
   m_Layer: 0
   m_Name: AssetManager
   m_TagString: Untagged
@@ -5182,6 +5183,20 @@ Transform:
   m_Father: {fileID: 1858288104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466679246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466679244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c608ec9e025454308a14a8c2189915af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nessieAnimator: {fileID: 2083706993}
+  cerberusAnimator: {fileID: 1410905157}
+  redactedAnimator: {fileID: 19976604}
 --- !u!1 &1517145012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6786,6 +6801,7 @@ MonoBehaviour:
   MonsterAnimator: {fileID: 2083706993}
   StartTrigger: start
   ContinueTrigger: continue
+  EndPhrases: []
   Overlay: {fileID: 1620152993}
   GameMusic: {fileID: 90622028}
   SFX: {fileID: 334569977}
@@ -7485,7 +7501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2083706992
 Transform:
   m_ObjectHideFlags: 0
