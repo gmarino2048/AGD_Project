@@ -19,7 +19,7 @@ public class PersistentObject : MonoBehaviour
             if (isPersistent)
             {
                 Debug.Log("Destroying formerly persistent object");
-                GameObject.Destroy(gameObject);
+                GameObject.DestroyImmediate(gameObject);
             }
             else
             {
