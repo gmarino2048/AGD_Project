@@ -514,7 +514,6 @@ MonoBehaviour:
   Source: {fileID: 466308605}
   CorrectIngredient: {fileID: 8300000, guid: d50c380724e474979b49d1bc472276b3, type: 3}
   IncorrectIngredient: {fileID: 8300000, guid: 90d6aa5f830104a33a15fc95ab1db163, type: 3}
-  SFXScaler: 1
 --- !u!82 &466308605
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1715,7 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3107e20b65f974bb6335cb1bab1d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Space: 0.25
+  Space: 0.1
   UI: {fileID: 682874376}
   SFX: {fileID: 0}
   Plate: {fileID: 114671444157208930, guid: 92b0d10666a864a9d9b3c21afc338d9d, type: 2}
