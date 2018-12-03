@@ -11,7 +11,7 @@
 
         <combatchoice name="Beg" start="35" decayrate="0" min="35"/>
         <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
-        <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
+        <combatchoice name="Flatter" start="-15" decayrate="1.50" min="-15"/>
         <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
         <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
         <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
@@ -24,10 +24,10 @@
         <ingredient type="Steak"/>
 
         <combatchoice name="Beg" start="35" decayrate="0" min="35"/>
-        <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
-        <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
-        <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
-        <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
+        <combatchoice name="Coupon" start="-15" decayrate="0.85" min="5"/>
+        <combatchoice name="Flatter" start="15" decayrate="1.50" min="-15"/>
+        <combatchoice name="FreeFood" start="25" decayrate="0.75" min="3"/>
+        <combatchoice name="OfferDrink" start="10" decayrate="0.80" min="10"/>
         <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
     </monster>
 
@@ -39,10 +39,10 @@
         <ingredient type="CrushedSouls"/>
 
         <combatchoice name="Beg" start="35" decayrate="0" min="35"/>
-        <combatchoice name="Coupon" start="15" decayrate="0.85" min="5"/>
-        <combatchoice name="Flatter" start="-5" decayrate="1.50" min="-15"/>
-        <combatchoice name="FreeFood" start="10" decayrate="0.75" min="3"/>
-        <combatchoice name="OfferDrink" start="25" decayrate="0.80" min="10"/>
+        <combatchoice name="Coupon" start="10" decayrate="0.85" min="5"/>
+        <combatchoice name="Flatter" start="25" decayrate="1.50" min="-15"/>
+        <combatchoice name="FreeFood" start="-15" decayrate="0.75" min="3"/>
+        <combatchoice name="OfferDrink" start="15" decayrate="0.80" min="10"/>
         <combatchoice name="Reason" start="10" decayrate="0.90" min="2"/>
     </monster>
 </monsters>
