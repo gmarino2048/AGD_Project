@@ -19,10 +19,10 @@ public class PlacementHelper : MonoBehaviour {
     
 	// Update is called once per frame
 	void Update () {
-        Vector3 mousePosition = Input.mousePosition;
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector3 mousePosition = Input.mousePosition;
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        Vector3 spritePosition = new Vector3(worldPosition.x, worldPosition.y, ZIndex);
-        Renderer.transform.position = spritePosition;
+                Vector3 spritePosition = new Vector3(worldPosition.x, worldPosition.y, ZIndex);
+                Renderer.transform.position = spritePosition;
 	}
 }
