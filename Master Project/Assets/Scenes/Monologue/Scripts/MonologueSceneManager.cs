@@ -18,7 +18,7 @@ namespace Monologue
         public Text textDisplay;
 
         private readonly string _WIN_SCENE_NAME = "FinalChoice";
-        private readonly string _LOSE_SCENE_NAME = "Game OVer";
+        private readonly string _LOSE_SCENE_NAME = "Main Menu";
         private readonly string _DIALOGUE_SCENE_NAME = "DialogueScene";
 
         private Queue<string> _MonologueEntries;
