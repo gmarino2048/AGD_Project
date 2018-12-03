@@ -1955,7 +1955,7 @@ MonoBehaviour:
   IceCreamAudio: {fileID: 8300000, guid: c704c45190e134dd8b3a0fd4791a4b75, type: 3}
   EggsTrigger: Eggs
   EggsOverlay: {fileID: 21300000, guid: e9b6035aa010c483abacb38623eeeb54, type: 3}
-  EggsAudio: {fileID: 8300000, guid: b532b685d03cf4e62bdc11b1d78444fe, type: 3}
+  EggsAudio: {fileID: 8300000, guid: 37b11d2b2529f40d6bb03274a4e1203b, type: 3}
   ChiliTrigger: Chili
   ChiliOverlay: {fileID: 21300000, guid: 80fccbd27887f47ffac2da54d928b7de, type: 3}
   ChiliAudio: {fileID: 8300000, guid: 3fec8f4a06a564c09b89954d0ec350da, type: 3}
