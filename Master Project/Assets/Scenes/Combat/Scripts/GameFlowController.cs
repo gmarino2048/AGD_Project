@@ -19,6 +19,9 @@ namespace Combat
         public string StartTrigger = "start";
         public string ContinueTrigger = "continue";
 
+        [Header("Outro Phrases")]
+        public List<string> EndPhrases;
+
         [Header("Overlay Manager")]
         public OverlayController Overlay;
 
@@ -63,6 +66,8 @@ namespace Combat
                 yield return Monster.MonsterTurn();
             }
             while (Health.Percentage > 0 && Manager.Percentage < 100 && Manager.Percentage > 0);
+
+            RunOutro();
         }
 
         IEnumerator RunIntro ()
@@ -89,6 +94,19 @@ namespace Combat
             yield return Overlay.HideColor(0.2f);
 
             yield return new WaitForSeconds(1);
+        }
+
+        IEnumerator RunOutro ()
+        {
+            PlayByPlay.Clear();
+            PlayByPlay.DelayFrames = 4;
+
+            foreach (var endPhrase in EndPhrases) {
+                yield return PlayByPlay.Display(endPhrase);
+                yield return new WaitForSeconds(2);
+            }
+            
+            //TODO
         }
     }
 }
