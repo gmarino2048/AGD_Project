@@ -23,9 +23,9 @@ namespace FinalChoice
 
         public Image resultScreen;
 
-        public Sprite Nessie;
-        public Sprite Cerberus;
-        public Sprite Redacted;
+        public Button Nessie;
+        public Button Cerberus;
+        public Button Redacted;
 
         public Sprite NessieSplash;
         public Sprite CerberusSplash;
@@ -46,17 +46,22 @@ namespace FinalChoice
             Group.gameObject.SetActive(false);
             PurpleStuff.gameObject.SetActive(false);
 
+            Nessie.gameObject.SetActive(false);
+            Cerberus.gameObject.SetActive(false);
+            Redacted.gameObject.SetActive(false);
+
             if (GameObject.Find("GameData") == null)
             {
                 _MonsterFactory = gameObject.AddComponent(typeof(MonsterFactory)) as MonsterFactory;
 
-                var gameNarrativeManager = gameObject.AddComponent(typeof(GameNarrativeManager)) as GameNarrativeManager;
+                GameNarrativeManager gameNarrativeManager = gameObject.AddComponent<GameNarrativeManager>();
                 gameNarrativeManager.Start();
                 while (gameNarrativeManager.AnyStagesLeft())
                 {
                     gameNarrativeManager.StartNextStage();
                     gameNarrativeManager.DateableMonsterIDs.Add(gameNarrativeManager.CurrentStage.MonsterID);
                 }
+                gameNarrativeManager.DateableMonsterIDs.Remove(gameNarrativeManager.DateableMonsterIDs[0]);
             }
             else
             {
@@ -79,24 +84,20 @@ namespace FinalChoice
             foreach (var monsterID in gameNarrativeManager.DateableMonsterIDs)
 			{
 				var monsterData = _MonsterFactory.LoadMonster(monsterID);
-				var button = (Button) Instantiate(choiceButtonPrefab, choicesParent);
-
-                button.GetComponentInChildren<Text>().text = "";
-                button.onClick.AddListener(() => StartCoroutine(ChooseMonster(monsterID)));
 
                 if(monsterData.Name == "Nessie"){
-                    button.GetComponent<Image>().sprite = Nessie;
-                    button.transform.position = new Vector3(-300,250,0);
+                    Nessie.gameObject.SetActive(true);
+                    Nessie.onClick.AddListener(() => StartCoroutine(ChooseMonster(monsterID)));
                 }
                 if (monsterData.Name == "Cerberus")
                 {
-                    button.GetComponent<Image>().sprite = Cerberus;
-                    button.transform.position = new Vector3(250, 0, 0);
+                    Cerberus.gameObject.SetActive(true);
+                    Cerberus.onClick.AddListener(() => StartCoroutine(ChooseMonster(monsterID)));
                 }
                 if (monsterData.Name == "[REDACTED]")
                 {
-                    button.GetComponent<Image>().sprite = Redacted;
-                    button.transform.position = new Vector3(-300, -250, 0);
+                    Redacted.gameObject.SetActive(true);
+                    Redacted.onClick.AddListener(() => StartCoroutine(ChooseMonster(monsterID)));
                 }
             }
             //resultScreen.enabled = true;
