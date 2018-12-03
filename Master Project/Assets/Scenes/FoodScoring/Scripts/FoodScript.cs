@@ -8,6 +8,8 @@ namespace FoodScoring {
     public class FoodScript : MonoBehaviour
     {
         public GameObject FoodSprite;
+        public SpriteRenderer Overlay;
+        public float RotateAmount;
 
         public Sprite Nessie;
         public Sprite Cerberus;
@@ -36,6 +38,17 @@ namespace FoodScoring {
                 //RectTransform rt = (RectTransform)FoodSprite.transform;
                 //FoodSprite.GetComponent(rt).sizeDelta = new Vector2(1920, 1080);
                 FoodSprite.transform.localScale = new Vector3(.75f, .75f, 0);
+            }
+
+            StartCoroutine(RotateImage());
+        }
+
+        public IEnumerator RotateImage ()
+        {
+            while (true)
+            {
+                Overlay.transform.Rotate(new Vector3(0, 0, RotateAmount));
+                yield return new WaitForEndOfFrame();
             }
         }
     }
