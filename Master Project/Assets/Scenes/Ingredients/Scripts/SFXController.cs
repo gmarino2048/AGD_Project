@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Ingredients
 {
@@ -21,6 +22,7 @@ namespace Ingredients
             {
                 _GameSettings.OnChanged += OnGameSettingsChanged;
                 OnGameSettingsChanged();
+				SceneManager.sceneUnloaded += (Scene scene) => _GameSettings.OnChanged -= OnGameSettingsChanged;
             }
         }
 

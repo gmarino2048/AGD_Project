@@ -150,6 +150,7 @@ namespace Combat
 
                 if (gameNarrativeManager.AnyStagesLeft())
                 {
+                    gameNarrativeManager.StartNextStage();
                     SceneManager.LoadScene(_DIALOGUE_SCENE_NAME, LoadSceneMode.Single);
                 }
                 else
