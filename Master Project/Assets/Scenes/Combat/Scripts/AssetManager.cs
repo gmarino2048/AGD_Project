@@ -12,17 +12,21 @@ namespace Combat
         [Header("Nessie Assets")]
         private const string _NESSIE_NAME = "Nessie";
         public Animator nessieAnimator;
+        public AudioClip NessieMusic;
 
         [Header("Cerberus Assets")]
         private const string _CERBERUS_NAME = "Cerberus";
         public Animator cerberusAnimator;
+        public AudioClip CerberusMusic;
 
         [Header("[REDACTED] Assets")]
         private const string _REDACTED_NAME = "[REDACTED]";
         public Animator redactedAnimator;
+        public AudioClip RedactedMusic;
 
         [Header("Monster Meter")]
         public InfoBarController Manager;
+        public MusicController Music;
         public SFXController SFX;
 
         void Awake()
@@ -70,6 +74,8 @@ namespace Combat
 			gameFlowController.StartQuip1 = "I can't believe I managed to mess up a MILKSHAKE.";
 			gameFlowController.StartQuip2 = "...It appears the tides have turned.";
 
+            Music.Music = NessieMusic;
+
             SetCommonDialogue(playByPlayController);
         }
 
@@ -80,6 +86,8 @@ namespace Combat
 			gameFlowController.StartQuip1 = "Heh...hehe...nice doggie?";
 			gameFlowController.StartQuip2 = "...I guess I'm in the doghouse now.";
 
+            Music.Music = CerberusMusic;
+
             SetCommonDialogue(playByPlayController);
         }
 
@@ -89,6 +97,8 @@ namespace Combat
 			gameFlowController.MonsterAnimator = redactedAnimator;
 			gameFlowController.StartQuip1 = "...Fuck.";
 			gameFlowController.StartQuip2 = "This is gonna hurt.";
+
+            Music.Music = RedactedMusic;
 
             SetCommonDialogue(playByPlayController);
         }

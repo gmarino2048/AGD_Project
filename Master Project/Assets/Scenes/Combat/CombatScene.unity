@@ -5398,9 +5398,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nessieAnimator: {fileID: 2083706993}
+  NessieMusic: {fileID: 8300000, guid: e2b9ee5742a23e244bfa84df0903b5fa, type: 3}
   cerberusAnimator: {fileID: 1410905157}
+  CerberusMusic: {fileID: 8300000, guid: e996460dcdd096546bfc19213499d9ba, type: 3}
   redactedAnimator: {fileID: 19976604}
+  RedactedMusic: {fileID: 8300000, guid: 46a75f64a0471b146960ae982ebd499a, type: 3}
   Manager: {fileID: 56665937}
+  Music: {fileID: 90622028}
   SFX: {fileID: 334569977}
 --- !u!1 &1517145012
 GameObject:
