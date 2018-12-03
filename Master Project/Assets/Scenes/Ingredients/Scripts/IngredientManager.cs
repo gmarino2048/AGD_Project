@@ -12,6 +12,7 @@ namespace Ingredients
         [Header("Settings")]
         public float Space = 0.25f;
         public UIManager UI;
+        public SFXController SFX;
 
         public bool GameActive { get; private set; }
 
