@@ -25,6 +25,7 @@ namespace Combat
         public AudioClip RedactedMusic;
 
         [Header("Monster Meter")]
+        public GameController Controller;
         public InfoBarController Manager;
         public MusicController Music;
         public SFXController SFX;
@@ -74,6 +75,7 @@ namespace Combat
 			gameFlowController.StartQuip1 = "I can't believe I managed to mess up a MILKSHAKE.";
 			gameFlowController.StartQuip2 = "...It appears the tides have turned.";
 
+            Controller.Monster = nessieAnimator;
             Music.Music = NessieMusic;
 
             SetCommonDialogue(playByPlayController);
@@ -86,6 +88,7 @@ namespace Combat
 			gameFlowController.StartQuip1 = "Heh...hehe...nice doggie?";
 			gameFlowController.StartQuip2 = "...I guess I'm in the doghouse now.";
 
+            Controller.Monster = cerberusAnimator;
             Music.Music = CerberusMusic;
 
             SetCommonDialogue(playByPlayController);
@@ -98,6 +101,7 @@ namespace Combat
 			gameFlowController.StartQuip1 = "...Fuck.";
 			gameFlowController.StartQuip2 = "This is gonna hurt.";
 
+            Controller.Monster = redactedAnimator;
             Music.Music = RedactedMusic;
 
             SetCommonDialogue(playByPlayController);

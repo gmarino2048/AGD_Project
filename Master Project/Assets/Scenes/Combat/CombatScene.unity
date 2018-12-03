@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &19976602
 Transform:
   m_ObjectHideFlags: 0
@@ -5403,6 +5403,7 @@ MonoBehaviour:
   CerberusMusic: {fileID: 8300000, guid: e996460dcdd096546bfc19213499d9ba, type: 3}
   redactedAnimator: {fileID: 19976604}
   RedactedMusic: {fileID: 8300000, guid: 46a75f64a0471b146960ae982ebd499a, type: 3}
+  Controller: {fileID: 1858288105}
   Manager: {fileID: 56665937}
   Music: {fileID: 90622028}
   SFX: {fileID: 334569977}
