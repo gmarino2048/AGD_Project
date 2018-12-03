@@ -9,12 +9,20 @@ namespace Combat
     {
 
         [Header("Components")]
-        public float Volume;
         public AudioSource MusicPlayer;
         public AudioClip Music;
 
+        private GameSettings _GameSettings;
+
         void Awake()
         {
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
+
             List<AudioSource> sources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
             sources.ForEach((source) => source.Stop());
         }
@@ -23,7 +31,6 @@ namespace Combat
         {
             MusicPlayer.clip = Music;
             MusicPlayer.loop = true;
-            MusicPlayer.volume = Volume;
 
             MusicPlayer.Play();
         }
@@ -36,6 +43,11 @@ namespace Combat
         public void AdjustVolume(float newVolume)
         {
             MusicPlayer.volume = newVolume;
+        }
+        
+        private void OnGameSettingsChanged()
+        {
+            MusicPlayer.volume = _GameSettings.MusicVolume * _GameSettings.MasterVolume;
         }
     }
 }

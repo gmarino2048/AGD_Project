@@ -10,7 +10,6 @@ namespace Combat
         public AudioSource Regular;
         public AudioSource ManagerCritical;
         public AudioSource HealthCritical;
-        public float SFXVolume;
 
         bool Ready;
 
@@ -39,11 +38,16 @@ namespace Combat
         public InfoBarController Health;
         public InfoBarController Manager;
 
-        private void Start()
+        private GameSettings _GameSettings;
+
+        void Awake()
         {
-            Regular.volume = SFXVolume;
-            ManagerCritical.volume = SFXVolume;
-            HealthCritical.volume = SFXVolume;
+            _GameSettings = GameObject.FindObjectOfType<GameSettings>();
+            if (_GameSettings != null)
+            {
+                _GameSettings.OnChanged += OnGameSettingsChanged;
+                OnGameSettingsChanged();
+            }
         }
 
         public void Activate() { Ready = true; }
@@ -85,34 +89,34 @@ namespace Combat
 
         public IEnumerator EnterMonster()
         {
-            Regular.PlayOneShot(MonsterEnter, SFXVolume);
+            Regular.PlayOneShot(MonsterEnter);
             yield return null;
         }
 
         public IEnumerator Win ()
         {
-            Regular.PlayOneShot(GameWin, SFXVolume);
+            Regular.PlayOneShot(GameWin);
             yield return null;
         }
 
         public IEnumerator Lose()
         {
-            Regular.PlayOneShot(GameLose, SFXVolume);
+            Regular.PlayOneShot(GameLose);
             yield return null;
         }
 
         public IEnumerator Death()
         {
-            Regular.PlayOneShot(Die, SFXVolume);
+            Regular.PlayOneShot(Die);
             yield return null;
         }
 
         public IEnumerator MonsterIsHit ()
         {
-            Regular.PlayOneShot(MonsterHit, SFXVolume);
+            Regular.PlayOneShot(MonsterHit);
             yield return new WaitWhile(() => Regular.isPlaying);
 
-            Regular.PlayOneShot(ManagerMeterDown, SFXVolume);
+            Regular.PlayOneShot(ManagerMeterDown);
             yield return null;
         }
 
@@ -121,38 +125,45 @@ namespace Combat
             Regular.PlayOneShot(PlayerHit);
             yield return new WaitWhile(() => Regular.isPlaying);
 
-            Regular.PlayOneShot(HealthDown, SFXVolume);
+            Regular.PlayOneShot(HealthDown);
             yield return null;
         }
 
         public IEnumerator MonsterMisses()
         {
-            Regular.PlayOneShot(MonsterMiss, SFXVolume);
+            Regular.PlayOneShot(MonsterMiss);
             yield return null;
         }
 
         public IEnumerator MonsterHeal ()
         {
-            Regular.PlayOneShot(ManagerMeterUp, SFXVolume);
+            Regular.PlayOneShot(ManagerMeterUp);
             yield return null;
         }
 
         public IEnumerator PlayerHeal ()
         {
-            Regular.PlayOneShot(HealthUp, SFXVolume);
+            Regular.PlayOneShot(HealthUp);
             yield return null;
         }
 
         public IEnumerator PlayerDie()
         {
-            Regular.PlayOneShot(HealthZero, SFXVolume);
+            Regular.PlayOneShot(HealthZero);
             yield return null;
         }
 
         public IEnumerator MonsterDie()
         {
-            Regular.PlayOneShot(ManagerMeterZero, SFXVolume);
+            Regular.PlayOneShot(ManagerMeterZero);
             yield return null;
+        }
+        
+        private void OnGameSettingsChanged()
+        {
+            Regular.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+            ManagerCritical.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+            HealthCritical.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
         }
     }
 }
