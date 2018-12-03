@@ -10,6 +10,7 @@ namespace Grill
 
         [Header("Audio Settings")]
         public AudioSource SFXPlayer;
+        float Volume;
 
         [Header("Sound Effect Clips")]
         public AudioClip Meat;
@@ -33,24 +34,25 @@ namespace Grill
 
         public void PlayMeat ()
         {
-            SFXPlayer.PlayOneShot(Meat);
+            SFXPlayer.PlayOneShot(Meat, Volume);
         }
 
         public void PlaySizzle()
         {
-            SFXPlayer.PlayOneShot(Sizzle);
+            SFXPlayer.PlayOneShot(Sizzle, Volume);
         }
 
         public void PlayFire()
         {
             SFXPlayer.clip = Fire;
             SFXPlayer.loop = true;
+            SFXPlayer.volume = Volume;
             SFXPlayer.Play();
         }
 
         private void OnGameSettingsChanged()
         {
-            SFXPlayer.volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
+            Volume = _GameSettings.SfxVolume * _GameSettings.MasterVolume;
         }
     }
 }
