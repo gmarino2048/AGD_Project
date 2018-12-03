@@ -97,6 +97,7 @@ namespace Ingredients
                     }
                 }
             }
+            gameObject.transform.position -= Vector3.forward * gameObject.transform.position.z;
         }
 
         private void OnMouseUp()
