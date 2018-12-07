@@ -18,14 +18,20 @@ namespace PauseMenu
 
 		private void OnClick()
 		{
-            PersistentObject persistent = FindObjectOfType<PersistentObject>();
+            var gameData = FindObjectOfType<GameNarrativeManager>().gameObject;
             try
             {
-                DestroyImmediate(persistent.gameObject);
+                DestroyImmediate(gameData);
             }
             catch (Exception)
             {
                 Debug.LogWarning("Pause not running in game");
+            }
+
+            
+            for (int i = 0; i < SceneManager.sceneCount; i++) {
+                Scene scene = SceneManager.GetSceneAt (i);
+                SceneManager.UnloadSceneAsync(scene);
             }
 
             SceneManager.LoadScene(_MAIN_MENU_SCENE_NAME);
